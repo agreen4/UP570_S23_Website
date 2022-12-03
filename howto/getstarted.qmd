@@ -7,4 +7,4 @@ format: html
 editor: visual
 ---
 
-## 
+Here you will find a range of "how to" resources and code base to help you advance tasks in Neighborhood Analysis.
