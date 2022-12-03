@@ -1,0 +1,34 @@
+---
+title: "Course Introduction"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Session Description
+
+Welcome to UP 570: Neighborhood Analysis! This session serves as our introduction to the class and an opportunity to start exploring how we will work together over the course of the semester. We will introduce ourselves and discuss how we will learn together over the course of the semester. We'll also think through two foundational questions:
+
+1.  What is a neighborhood?
+2.  Why do neighborhoods matter?
+
+## Before Class
+
+-   Read the [course syllabus](../syllabus/index.qmd) and bring questions with you.
+-   Complete the course introductory survey.
+-   Configure R and RStudio for our class.
+
+## Reflect
+
+-   What are your goals for taking this class? What would you like to learn about neighborhoods?
+-   What matters about neighborhoods? How have neighborhoods shaped your life?
+-   What types of stories do we tend to tell about neighborhoods? How do these stories contextualize how neighborhoods "fit" within cities and their regions?
+
+## Slides
+
+```{=html}
+<iframe class="slide-deck" src="../slides/01_CourseIntroduction.html" style="width:100%;height:100vh;margin:0;padding:0"; frameborder="1"></iframe>
+```
+## Resources for Further Exploration

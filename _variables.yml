@@ -1,0 +1,33 @@
+author: Andrew J. Greenlee
+
+instructor:
+  name: Dr. Andrew J. Greenlee
+  email: agreen4@illinois.edu
+  url: https://urban.illinois.edu/people/profiles/andrew-greenlee/
+  github: https://github.com/agreen4
+  twitter: urbprof
+  mastodon: https://fediscience.org/@urbprof
+  office: "M210 Temple Buell Hall"
+  calendly_url: https://calendly.com/agreen4/office-hours
+
+ta:
+  name: Ouafa Benkraouda
+  email: ouafab2@illinois.edu
+  calendly_url: https://calendly.com/agreen4/office-hours
+
+course:
+  number: "UP 570"
+  semester: "Spring 2023"
+  days: "Mondays and Wednesdays"
+  time: "11:00 AM - 12:20 PM"
+  location: "Temple Buell Hall 223"
+  copyright_year: "2023"
+  slack: "https://up570s23.slack.com/"
+
+university:
+  name: University of Illinois at Urbana-Champaign
+  url: "https://www.illinois.edu"
+
+department:
+  name: Department of Urban and Regional Planning
+  url: "https://www.irban.edu/"

@@ -1,0 +1,54 @@
+---
+title: "Place Selection Memorandum"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Introduction
+
+A very important early task in Neighborhood Analysis is to select the place that you will spend time examining in depth this semester. The place you select will be the location that you focus your social, economic, and demographic analysis on. Given the structure of this class, you need to choose a location in the United States.
+
+Your work will include thinking about how that place fits within its larger "region." What do we mean by "place"? It might be a city or town---the City of Champaign---or even twin cities---the cities of Champaign and Urbana. It could also be a county. For our purposes, it is not an entire metropolitan area or a larger macro region (such as the Great Plains or Mississippi Delta).
+
+## Goals
+
+-   Identify a particular place that you will focus your analytic work on over the course of the semester
+
+-   Think critically about place, geography, and audience
+
+## Place Selection Considerations
+
+-   Big places---the cities of Chicago, Los Angeles, New York---are interesting. They are socioeconomically, racially, and ethnically diverse and it is usually not hard to find "stories in the data" with respect to neighborhood trends. However, large cities are very complex. Properly understanding the past, present, and future of such places and their neighborhoods can be a herculean task. Unless you are very familiar with a big place, we suggest focusing on a smaller place.
+
+-   Many of the techniques you will learn use methods that draw on data available at the census tract level, as census tracts are frequently used as (imperfect) proxies for neighborhoods. As you work to select your place, it may be useful to identify the number of census tracts that overlap. As a rule of thumb, your place should have no fewer than 15 tracts. More is certainly ok, but let's talk if you are considering a place with fewer than 15 tracts.
+
+-   Consider selecting a place in a broader area of particular policy concern, such as an economically distressed region (central Appalachia, the Mississippi Delta, or the Black Belt). Many communities in the Great Plains and Mountain states are not distressed by conventional measures but they face significant out-migration and population decline, which introduce their own challenges at the local level. Places around international borders can also be interesting to examine.
+
+-   Consider selecting a place within driving distance of Champaign-Urbana (although you may not select Champaign County or it's constituent cities as your place). Making a site visit to the county and its principal urban centers could help you understand its conditions and context better, giving you the ability to write about it with more authority.
+
+-   Having some personal experience in the place you select can be helpful. Many students select their hometown or other community/county in which they have lived, provided the criteria above are satisfied. Some students also select places there are interested in living or working in.
+
+-   Islands and territories (such as Puerto Rico and Hawaii) and remote areas (such as Alaska) are interesting, but geography and data availability can make them challenging places to analyze. Students have analyzed all of these places in recent years- but with extra effort needed to address data gaps and limitations. You may want to explore these issues before committing to one of these places.
+
+-   If you have any questions about the places you are considering, or you wish to talk through your choices, please talk with me.
+
+## Your Place Selection Memorandum
+
+Prepare a memorandum of around 500 words that identifies the place that you propose focusing your analysis on this semester.
+
+At a minimum, the narrative associated with your memorandum should address the following:
+
+-   What is the name of the place which you have selected, and where is it located?
+
+-   What is the specific geography associated with this place (city, county, etc.)?
+
+-   What characteristics of this place make its neighborhoods important to examine?
+
+-   Based upon your preliminary background research, what types of policy issues may be important to examine through your analysis?
+
+## Submission Instructions
+
+Save your memorandum as a PDF and upload to the appropriate folder in your class GitHub repository.

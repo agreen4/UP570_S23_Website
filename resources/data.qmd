@@ -1,0 +1,38 @@
+---
+title: "Data Analysis"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+-   [covdata R Package](https://kjhealy.github.io/covdata/)
+
+-   Data Science Central [Big data sets available for free](https://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-free)
+
+-   Economic Innovation Group [Distressed Communities Index](https://eig.org/dci)
+
+-   [Eviction Lab](https://evictionlab.org/get-the-data/) data on residential evictions summarized to various administrative geographies
+
+-   [Global Human Settlements Dataset](http://www.statsmapsnpix.com/2016/10/the-global-human-settlement-layer.html?m=1)
+
+-   HUD [Location Affordability Index](https://www.hudexchange.info/programs/location-affordability-index/)
+
+-   HUD [Urbanization Perceptions Small Area Index](https://www.huduser.gov/portal/AHS-neighborhood-description-study-2017.html#small-area-tab)
+
+-   HUD [USPS Vacancy Data](https://www.huduser.gov/portal/datasets/usps.html)
+
+-   [Longitudinal Tract Database (LTDB)](https://s4.ad.brown.edu/projects/diversity/researcher/bridging.htm): 1970 - 2010 Census data normalized to 2010 census tracts
+
+-   MIT Senseable Cities Lab [Treepedia](http://senseable.mit.edu/treepedia/)
+
+-   [National Housing Preservation Database (NHPD)](https://preservationdatabase.org/about-the-database/)
+
+-   Policy Surveillance Program [Eviction Laws database](https://lawatlas.org/datasets/eviction-laws-1530797420)
+
+-   USDA [Rural-Urban Commuting Area Codes](https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes.aspx)
+
+-   [Stanford Open Policing Project](https://openpolicing.stanford.edu/)
+
+-   SURGO Foundation [U.S. COVID Community Vulnerability Index (CCVI)](https://precisionforcovid.org/ccvi)

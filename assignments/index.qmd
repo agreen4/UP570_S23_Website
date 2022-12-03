@@ -1,0 +1,127 @@
+---
+title: "Assignments Overview"
+sidebar: true
+toc: false
+page-layout: full
+format: html
+editor: visual
+---
+
+```{mermaid}
+flowchart LR
+
+subgraph Learn
+AA[Data Pipeline]
+AB[Sharing Your Work]
+AC[Learner's Permit]
+AD[Describing Places]
+AE[Population]
+AF[Projections]
+AG[Segregation]
+AH[Neighborhood Change]
+AI[Place Opportunity]
+end
+
+subgraph Apply
+
+AA --> B[Place Selection]
+AB --> B
+AC --> C
+AD --> C[Place Background]
+AE --> D[Population]
+AF --> D
+AG --> E[Policy]
+AH --> E
+AI --> E
+end
+
+subgraph Communicate
+  direction LR
+B --> F{Final Report}
+C --> F
+D --> F
+E --> F
+F --> G[Document or Website]
+F --> H[Presentation]
+end
+```
+
+### Learn
+
+On a weekly basis, we'll incorporate new tools and analytic strategies into our repertoire. We'll devote some time most weeks in class to working through lab examples in class that help to illustrate how tools work and how to apply them. Labs are designed to be a low-stakes opportunity to learn.
+
+### Apply
+
+You'll apply what you've learned over the course of the semester to the analysis of a place of your choosing. At the beginning of the semester, you will identify a place, and start to examine the relevant policy issues that motivate your analysis. You will then apply course tools and concepts to your place and will communicate your findings in a series of memos.
+
+### Communicate
+
+Our ultimate goal is to develop the capacity to communicate our analysis to diverse audiences. You will draw from your place analysis and memos to develop a final policy report in which you communicate your to a public audience in a form that is polished and professional.
+
+### Engage
+
+Consistent contributions in class, thoughtful engagement with course material, and other achievements may lead to overall adjustments in your course grade.
+
+## Evaluation
+
+### Assignment Weights
+
++--------------+------------------------------+------------------------------+--------------+
+| Strategy     | Master's Students            | Ph.D. Students               | Grade Weight |
++==============+==============================+==============================+==============+
+| Learn        | Labs                         | Labs                         | 10 percent   |
++--------------+------------------------------+------------------------------+--------------+
+| Apply        | Memos                        | Paper Proposal               | 40 percent   |
+|              |                              |                              |              |
+|              |                              | Paper Outline                |              |
+|              |                              |                              |              |
+|              |                              | Paper Draft                  |              |
++--------------+------------------------------+------------------------------+--------------+
+| Communicate  | Final Report                 | Term Paper                   | 40 percent   |
++--------------+------------------------------+------------------------------+--------------+
+| Engage       | Participation and Engagement | Participation and Engagement | 10 percent   |
++--------------+------------------------------+------------------------------+--------------+
+
+### Ph.D. Students
+
+Doctoral students may elect to either satisfy course requirements laid out for Master's students or may instead complete a research-oriented term project that applies neighborhood analysis techniques to a specific research problem.
+
+Doctoral students should speak with me during weeks 1 or 2 if you wish to pursue this option so we can develop an appropriate research proposal, timeline, and outputs.
+
+### Grading
+
+### Grading Policy
+
+This course requires your engagement both within and outside of the classroom. Grading criteria include contribution to the course environment, quality of writing, and depth of analysis. Your work will be graded on a 100-point scale:
+
++---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Grade   | Points      | Description                                                                                                                                                                               |
++=========+=============+===========================================================================================================================================================================================+
+| A+      | 97-100      | Outstanding work, ready for dissemination. Demonstrates mastery of course concepts and skills, clear communication, and appropriate use of analytical methods.                            |
+|         |             |                                                                                                                                                                                           |
+| A       | 93-96       |                                                                                                                                                                                           |
+|         |             |                                                                                                                                                                                           |
+| A-      | 90-92       |                                                                                                                                                                                           |
++---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| B+      | 87-89       | Good work, that meets expectations. Work needs minor revision address minor communication or technical errors in order to be ready for dissemination                                      |
+|         |             |                                                                                                                                                                                           |
+| B       | 83-86       |                                                                                                                                                                                           |
+|         |             |                                                                                                                                                                                           |
+| B-      | 80-82       |                                                                                                                                                                                           |
++---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| C+      | 77-79       | Work needs major revision to writing or analysis due to technical errors, not ready for dissemination.                                                                                    |
+|         |             |                                                                                                                                                                                           |
+| C       | 73-77       |                                                                                                                                                                                           |
+|         |             |                                                                                                                                                                                           |
+| C-      | 70-72       |                                                                                                                                                                                           |
++---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| D+      | 67-69       | Work does not meet course expectations for graduate-level work. Reflects lack of understanding or conceptualization of work, major technical errors, and requires significant rethinking. |
+|         |             |                                                                                                                                                                                           |
+| D       | 60-66       |                                                                                                                                                                                           |
++---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F       | 0-59        | Work does not meet minimum expectations, effort, or understanding.                                                                                                                        |
++---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+### Attendance Policy
+
+The learning environment in this class depends upon your engagement and participation. Full participation is expected for course sessions. For each course session that you are absent from (excluding excused absences), 2 percent will be deducted from your *final course grade*. Excused absences will be granted on a case-by-case basis for extenuating circumstances such as illness or work-related travel, but must be approved by me prior to the course session which you are absent from.

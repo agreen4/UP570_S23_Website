@@ -1,0 +1,32 @@
+---
+title: "Inspiration"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+-   BBC: [How the BBC Visual and Data Journalism Team Works with Graphics in R](https://medium.com/bbc-visual-and-data-journalism/how-the-bbc-visual-and-data-journalism-team-works-with-graphics-in-r-ed0b35693535)
+
+-   Bloomberg: [Visualizing U.S. Immigration History as Tree Rings](https://www.bloomberg.com/news/articles/2018-12-17/visualizing-u-s-immigration-history-as-tree-rings)
+
+-   Craig Dalton and Timm Stallmann: [Counter-mapping data science](https://onlinelibrary.wiley.com/doi/full/10.1111/cag.12398)
+
+-   [Gapminder](https://www.gapminder.org/) (check out in particular their [temporal animations](https://www.gapminder.org/tools/#$model$markers$bubble$encoding$frame$value=1800;;;;;&chart-type=bubbles&url=v1))
+
+-   GeoDa Center [U.S. COVID Atlas](https://geodacenter.github.io/covid/)
+
+-   [R at the ACLU: Joining Tables to Reunite Families](https://rstudio.com/resources/rstudioconf-2019/r-at-the-aclu-joining-tables-to-to-reunite-families/)
+
+-   [London: The Information Capital](http://www.oliveruberti.com/the-information-capital): Stunning book featuring 100 visualizations about the city of London. Many visualizations [were created using R](https://www.r-bloggers.com/2014/11/improving-r-data-visualisations-through-design/).
+
+-   MIT: [Atlas of Inequality](https://inequality.media.mit.edu/#)
+
+-   New York City [Neighborhood Planning Playbook](https://www1.nyc.gov/assets/hpd/downloads/pdfs/services/neighborhood-planning-playbook.pdf)
+
+-   [R Graph Gallery](https://www.r-graph-gallery.com/index.html)
+
+-   Washington Post: [America is more diverse than ever - but still segregated](https://www.washingtonpost.com/graphics/2018/national/segregation-us-cities/?noredirect=on&utm_term=.5d7398b764d0)
+
+-   [W.E.B. Du Bois's Data Portraits: Visualizing Black America](https://papress.com/products/w-e-b-du-boiss-data-portraits-visualizing-black-america) and related background from [Smithsonian Magazine](https://www.smithsonianmag.com/history/first-time-together-and-color-book-displays-web-du-bois-visionary-infographics-180970826/)

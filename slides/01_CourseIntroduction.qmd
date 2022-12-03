@@ -1,0 +1,21 @@
+---
+title: "Course Introduction"
+format: 
+  revealjs:
+    embed-resources: true
+editor: visual
+---
+
+## Welcome to UP 570: Neighborhood Analysis
+
+---
+
+What is a Neighborhood?
+
+---
+
+We're going to find out...
+
+--- 
+
+If you know, you know...

@@ -1,0 +1,24 @@
+---
+title: "Neighborhood Analysis"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+-   City of Champaign [Neighborhood Wellness Vision Report](https://cityofchampaign.sharepoint.com/City%20Documents%20Internal/WordPress%20Media%20Files/Planning%20and%20Development%20Department/Long%20Range%20Planning/2006-2010%20NW%20Vision%20Report_final.pdf?originalPath=aHR0cHM6Ly9jaXR5b2ZjaGFtcGFpZ24uc2hhcmVwb2ludC5jb20vOmI6L2cvRVFVdzd6ZGVQMlpJcGtSVFAxTnFuTDRCSnZHOXQ4VzNUX2VJeVV6UFNsNUh0QT9ydGltZT1PNnYtZGxDNjJFZw) and [Action Plan](https://cityofchampaign.sharepoint.com/City%20Documents%20Internal/WordPress%20Media%20Files/Neighborhood%20Services%20Department/Neighborhood%20Wellness%202008-10-Action-Plan-Final.pdf?originalPath=aHR0cHM6Ly9jaXR5b2ZjaGFtcGFpZ24uc2hhcmVwb2ludC5jb20vOmI6L2cvRVJCMGtaUEo2dWRCcUJJaDg5aVFQYW9Cd091bTFFU1V5ZzcwVFMzZFVxV2dyUT9ydGltZT1QZkF2a0ZDNjJFZw)
+
+-   [Chicago\'s Million Dollar Blocks](https://chicagosmilliondollarblocks.com/)
+
+-   DePaul Institute for Housing Studies: [Mapping Displacement Pressure in Chicago, 2020](https://www.housingstudies.org/releases/mapping-displacement-pressure-chic-2020/)
+
+-   Nathalie P. Voorhees Center\'s [Socioeconomic Change of Chicago\'s Community Areas (1970-2010)](https://voorheescenter.uic.edu/what-we-do/areas-of-research/gentrification-index/)
+
+-   [National Neighborhood Indicators Partnership](https://www.neighborhoodindicators.org/)
+
+-   [Find My Landlord](https://findmylandlord.chicagodsa.org/), a tool that maps the properties in Chicago owned by a single landlord or management company.
+
+-   Metropolitan Planning Council and Urban Institute\'s [The Cost of Segregation](https://www.urban.org/sites/default/files/publication/98453/the_cost_of_segregation_7.pdf)report for Chicago.
+
+-   [American segregation, mapped at day and night](https://www.vox.com/policy-and-politics/2019/2/18/18217346/work-home-segregation-map)

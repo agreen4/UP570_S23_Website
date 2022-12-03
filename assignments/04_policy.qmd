@@ -1,0 +1,34 @@
+---
+title: "Policy Memorandum"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+# Policy Memorandum
+
+## Introduction
+
+In your prior memorandums you developed a preliminary narrative around your place based upon the characteristics of the population. Simultaneously, in your labs, you've been learning about a range of analytical strategies. In this lab, you will identify a specific policy-based problem and will develop and implement an appropriate analysis to better inform the problem. This is the final sub-element of your final policy report which will draw from your prior writing and analysis to present a polished report for your place.
+
+## Goals
+
+-   Draw from your prior population profiles and analyses to identify a policy issue or question for analysis.
+
+-   Build off of the analysis strategies we've learned about in class to develop an appropriate analytic strategy for the identified policy issue of your choice.
+
+## Memorandum Preparation Tips
+
+-   The challenge of this assignment is picking an appropriate policy question to engage with. Please rely upon each other as peer reviewers and on your instructors for help in identifying an appropriate policy or research question to focus your memorandum on.
+
+-   Policy analysis depends upon following a logical chain of thought through existing policies and questions. Be sure to review and understand these before attempting to develop your own approach. Please also think carefully and critically about how your your chosen analysis may iterate over various neighborhoods in your place.
+
+-   At this point in the semester, we expect to see refined maps, data visualizations, and tables in your memos. Please allocate appropriate time to working on these elements of your memo.
+
+-   Think through how the story of your policy analysis relates back to the other stories you've told in subsequent memos over the course of the semester. Your final assignment depends upon you integrating these items into a final policy report, so having a good understanding of how these stories are related will make it easier to develop a coherent narrative in your final report.
+
+## Submission Instructions
+
+Upload your memorandum R notebook to the appropriate folder in your class GitHub repository.

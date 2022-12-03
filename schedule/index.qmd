@@ -1,0 +1,62 @@
+---
+title: "Schedule"
+sidebar: true
+toc: false
+page-layout: full
+format: html
+editor: visual
+---
+
+Please find descriptions for our course sessions here - you will also find resources that will help you prepare for each session.
+
+## Course Introduction
+
+| Week   | Session   | Date       | Description                                                         |
+|--------------|--------------|--------------|-------------------------------|
+| Week 1 | Session 1 | January 18 | [Course Introduction](01_introduction.qmd)                          |
+| Week 2 | Session 2 | January 23 | [What is a Neighborhood?](02_neighborhood.qmd)                      |
+| Week 2 | Session 3 | January 25 | Building a Data Pipeline                                            |
+| Week 3 | Session 4 | January 30 | Sharing Your Work                                                   |
+| Week 3 | Session 5 | February 1 | Earning your Learner's Permit                                       |
+| Week 3 |           | February 3 | [Place Selection Memorandum](../assignments/01_place_selection.qmd) |
+| Week 4 | Session 6 | February 6 | Describing Places                                                   |
+| Week 4 | Session 7 | February 8 | Describing Places                                                   |
+
+## Strategies for Analysis
+
+| Week    | Session    | Date        | Description                                                           |
+|-------------|-------------|-------------|---------------------------------|
+| Week 5  | Session 8  | February 13 | Population and the Census                                             |
+| Week 5  | Session 9  | February 15 | Population and the Census                                             |
+| Week 5  |            | February 17 | [Place Background Memorandum](../assignments/02_place_background.qmd) |
+| Week 6  | Session 10 | February 20 | Population Projections                                                |
+| Week 6  | Session 11 | February 22 | Population Projections                                                |
+| Week 7  | Session 12 | February 27 | Segregation                                                           |
+| Week 7  | Session 13 | March 1     | Segregation                                                           |
+| Week 7  |            | March 3     | [Population Memorandum](../assignments/03_population.qmd)             |
+| Week 8  | Session 14 | March 6     | Neighborhood Change                                                   |
+| Week 8  | Session 15 | March 8     | Neighborhood Change                                                   |
+| Week 9  |            | March 13    | Spring Break                                                          |
+| Week 9  |            | March 15    | Spring Break                                                          |
+| Week 10 | Session 16 | March 20    | Place Opportunity                                                     |
+| Week 10 | Session 17 | March 22    | Place Opportunity                                                     |
+| Week 10 |            | March 24    | [Policy Memorandum](../assignments/04_policy.qmd)                     |
+| Week 11 | Session 18 | March 27    | TBD - Based on Interests                                              |
+| Week 11 | Session 19 | March 29    | TBD - Based on Interests                                              |
+| Week 12 | Session 20 | April 3     | TBD - Based on Interests                                              |
+| Week 12 | Session 21 | April 5     | TBD - Based on Interests                                              |
+| Week 13 | Session 22 | April 10    | Field Observation                                                     |
+| Week 13 | Session 23 | April 12    | Field Observation                                                     |
+| Week 13 |            | April 14    | [Final Assignment](../assignments/05_term.qmd) First Draft            |
+
+## Course Wrap-Up
+
+| Week    | Session    | Date     | Description                                    |
+|--------------|--------------|--------------|-------------------------------|
+| Week 14 | Session 24 | April 17 | Final Project Peer Review                      |
+| Week 14 | Session 25 | April 19 | Final Presentations                            |
+| Week 15 | Session 26 | April 24 | Independent Work and Advising                  |
+| Week 15 | Session 27 | April 26 | Independent Work and Advising                  |
+| Week 16 | Session 28 | May 1    | Final Presentations                            |
+| Week 16 | Session 29 | May 3    | Final Presentations                            |
+| Week 17 |            | May 10   | [Final Assignment](../assignments/05_term.qmd) |

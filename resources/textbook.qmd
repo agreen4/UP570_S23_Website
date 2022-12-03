@@ -1,0 +1,8 @@
+---
+title: "Text Resources"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---

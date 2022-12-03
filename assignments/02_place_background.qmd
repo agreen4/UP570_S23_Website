@@ -1,0 +1,42 @@
+---
+title: "Place Background Memorandum"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+# Place Background Memorandum
+
+## Introduction
+
+In your previous memorandum, you identified a place to focus your analysis on, and provided some preliminary justification for your choice. In this memorandum, you will leverage additional research to identify priority populations, issues, and neighborhoods, and also to lay out an analysis roadmap that will guide your subsequent analysis.
+
+## Goals
+
+-   Add more thought and detail to your previous place selection memorandum
+
+-   Draw upon a range of sources to critically analyze the place you selected
+
+-   Use research to develop priorities for exploratory analysis
+
+## Your Place Background Memorandum
+
+Drawing from external sources and your own research, prepare a memorandum of around 2,000 words that provides background on your chosen place. Your memorandum should provide some general background on your place, and should then identify one or several key issues that will guide your subsequent analysis and work over the course of the semester. Key issues should be guided by a combination of your interests and what you can justify as relevant given your background research.
+
+Below, please find some guiding questions to help you structure your memorandum:
+
+-   What is the overall history of your place? What are the types of issues that have mattered in the past, and what types of issues matter at present?
+
+-   Which neighborhoods or subareas of your place are frequently mentioned in local plans, reports, or journalistic accounts? What differentiates those neighborhoods? At what geographic scale can these subareas be classified or analyzed?
+
+-   Based upon your background research, are there any population groups that are likely to warrant special attention. Why?
+
+-   Based upon your background research, are there policy issues or debates that warrant special attention or that could benefit from detailed analysis. What are these, and what factors are important for understanding them?
+
+-   Based upon your exploration, identify key themes and indicators which you believe will be important to focus on in your subsequent analyses. What types of strategies do you intend to use in order to examine these themes and indicators?
+
+## Submission Instructions
+
+Upload your memorandum R notebook to the appropriate folder in your class GitHub repository.

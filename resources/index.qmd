@@ -1,0 +1,10 @@
+---
+title: "Resources"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+This page contains resources that will help you over the course of the class. As you encounter more resources that you find useful, please share them so they can be added to this page.

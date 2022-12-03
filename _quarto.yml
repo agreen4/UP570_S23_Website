@@ -1,0 +1,133 @@
+project:
+  type: website
+  render: 
+    - "*.qmd"
+
+execute: 
+  freeze: auto
+  
+website:
+  title: "Neighborhood Analysis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus/index.qmd
+        text: Syllabus
+      - href: schedule/index.qmd
+        text: Schedule
+      - href: assignments/index.qmd
+        text: Assignments
+      - href: howto/index.qmd
+        text: "How To"
+      - href: resources/index.qmd
+        text: Resources
+      - href: "https://up570s23.slack.com/"
+        icon: slack
+        aria-label: Slack
+    search: true
+  page-footer:
+    left: "Content {{< fa regular copyright >}} Andrew J. Greenlee"
+    right: "Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)"
+
+  sidebar:
+    - title: "Schedule"
+      contents:
+        - section: "Schedule Overview"
+          contents:
+            - text: "Course Schedule"
+              file: schedule/index.qmd
+        - section: "Course Introduction"
+          contents:
+            - text: "1. Course Introduction"
+              file: schedule/01_introduction.qmd
+            - text: "2. What is a Neighborhood?"
+              file: schedule/02_neighborhood.qmd
+            - text: "3. Building a Data Pipeline"
+            - text: "4. Sharing Your Work"
+            - text: "5. Learner's Permit"
+            - text: "6. Describing Places"
+            - text: "7. Describing Places"
+        - section: "Strategies for Analysis"
+          contents:
+            - text: "8. Population and the Census"
+            - text: "9. Population and the Census"
+            - text: "10. Population Projections"
+            - text: "11. Population Projections"
+            - text: "12. Segregation"
+            - text: "13. Segregation"
+            - text: "14. Neighborhood Change"
+            - text: "15. Neighborhood Change"
+            - text: "16. Place Opportunity"
+            - text: "17. Place Opportunity"
+            - text: "18. TBD"
+            - text: "19. TBD"
+            - text: "20. TBD"
+            - text: "21. TBD"
+            - text: "22. Field Observation"
+            - text: "23. Field Observation"
+        - section: "Course Wrap-Up"
+          contents:
+            - text: "24. Final Project Peer Review"
+            - text: "25. Final Presentations"
+            - text: "26. Independent Work and Advising"
+            - text: "27. Independent Work and Advising"
+            - text: "28. Final Presentations"
+            - text: "29. Final Presentations"
+    - title: "Assignments"
+      contents:
+        - section: "Overview"
+          contents:
+            - assignments/index.qmd
+        - section: "Assignments"
+          contents:
+            - text: "Place Selection Memorandum"
+              file: assignments/01_place_selection.qmd
+            - text: "Place Background Memorandum"
+              file: assignments/02_place_background.qmd
+            - text: "Population Memorandum"
+              file: assignments/03_population.qmd
+            - text: "Policy Memorandum"
+              file: assignments/04_policy.qmd
+            - text: "Term Assignment"
+              file: assignments/05_term.qmd
+              
+    - title: "How To"
+      contents:
+        - section: "Get Started"
+          contents:
+            - text: "Introduction"
+              file: howto/index.qmd
+            - text: "Set Up R and RStudio"
+              file: howto/setupr.qmd
+        - section: "Code Base"
+          contents:
+        - section: "Share Your Work"
+          contents:             
+
+    - title: "Resources"
+      contents:
+        - section: "Overview"
+          contents:
+            - resources/index.qmd
+        - section: "Resources"
+          contents:
+            - text: "Course Texts"
+              file: resources/textbook.qmd
+            - text: "Neighborhood Analysis"
+              file: resources/analysis.qmd
+            - text: "Data Sources"
+              file: resources/data.qmd
+            - text: "Inspiration"
+              file: resources/inspiration.qmd
+
+format:
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+
+editor: visual
+

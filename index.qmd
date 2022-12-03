@@ -1,0 +1,47 @@
+---
+sidebar: false
+toc: false
+page-layout: full
+format: html
+---
+
+# Neighborhood Analysis <br/>Spring 2023
+
+Learn to tell stories about neighborhoods for decision-making, public deliberation, and accountability using {{< fa brands r-project >}} and principles of reproducible data analysis.
+
+<br/>
+
+![](neighborhood_hu0759e748e15c0378cd00c54866cc265b_3994708_1200x0_resize_lanczos_2.png) <br/> <br/>
+
+::: home
+::: {.grid .course-details}
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Instructor
+
+-   {{< fa user >}}   [{{< var instructor.name >}}](%7B%7B%3C%20var%20instructor.url%20%3E%7D%7D)
+-   {{< fa university >}}   {{< var instructor.office >}}
+-   {{< fa envelope >}}   <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+-   {{< fa brands github >}}   [Github](%7B%7B%3C%20var%20instructor.github%20%3E%7D%7D)
+-   {{< fa brands twitter >}}   [{{< var instructor.twitter >}}](https://www.twitter.com/%7B%7B%3C%20var%20instructor.twitter%20%3E%7D%7D)
+-   {{< fa brands mastodon >}}   [{{< var instructor.mastodon >}}](%7B%7B%3C%20var%20instructor.mastodon%20%3E%7D%7D)
+-   {{< fa calendar-check >}}   [Schedule an appointment](%7B%7B%3C%20var%20instructor.calendly_url%20%3E%7D%7D)
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Teaching Assistant
+
+-   {{< fa user >}}   {{< var ta.name >}}
+-   {{< fa envelope >}}   <a href="mailto:{{< var ta.email >}}">{{< var ta.email >}}</a>
+-   {{< fa calendar-check >}}   [Schedule an appointment](%7B%7B%3C%20var%20ta.calendly_url%20%3E%7D%7D)
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Course details
+
+-   {{< fa calendar >}}   {{< var course.days >}}
+-   {{< fa clock >}}   {{< var course.time >}}
+-   {{< fa location-dot >}}   {{< var course.location >}}
+-   {{< fa brands slack >}}   [Slack](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D)
+:::
+:::
+:::

@@ -1,0 +1,52 @@
+---
+title: "Setting up R and RStudio"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Download R
+
+R can be downloaded from the Comprehensive R Archive Network (CRAN), a network of mirrored servers throughout the world that host the R software as well as user-developed packages. Visit [https://cloud.r-project.org](https://cloud.r-project.org/) which will automatically direct you to the best download server.
+
+Once here, you can then download and install R using the version that matches your operating system:
+
+![](https://neighborhood-analysis-f21.netlify.app/howto/howto/01-Install-R_files/02_RDownload.png)
+
+Go ahead and download R and install following the installer defaults. After R is downloaded and installed, run R to confirm. You should see a single window that looks something like this:
+
+![](https://neighborhood-analysis-f21.netlify.app/howto/howto/01-Install-R_files/03_ROpen.png)That's it for R. This should be the first and last time you'll need to open the R console directly. We typically will not access R directly, but instead will use RStudio as our primary interface. Go ahead and close the R console and proceed by downloading and installing RStudio, which is the IDE we will use to interface and write code with R.
+
+## Downlad RStudio
+
+Next up, let's download RStudio. Go to <https://rstudio.com/products/rstudio/download>. Click on "Download" under RStudio Desktop. The website will suggest the most appropriate current version of the software based upon the computer you are loading RStudio on. You may also choose from an alternate installer if you believe it is more appropriate for your operating system.
+
+Download and install RStudio, again using the default installation settings.
+
+Once you have RStudio installed, open RStudio. You should see something that looks like this (the information in your console window will likely describe a newer version of R than what is displayed here).
+
+![](https://neighborhood-analysis-f21.netlify.app/howto/howto/01-Install-R_files/04_RStudioOpen.png)
+
+You'll note that what appears in the portion of the console to the left looks very similar to the R console window which you opened before you started your install of RStudio. This console functions in exactly the same way, however, you'll also note that there are other areas which you have access to as well.
+
+![](https://neighborhood-analysis-f21.netlify.app/howto/howto/01-Install-R_files/05_RStudioOpenAnnotate.png)\## Rtools error (PC users)
+
+Some PC users may encounter an error message regarding Rtools not being installed. This would come up with you first try to install a package such as `tidyverse` either using R's package manager or using the `install.packages()` command. To remedy this error if it occurs, PC users need to close R, manually download a patch, install it, and restart your computer. This error should then be remedied.
+
+If you are a PC user who encounters this error, please do the following: 1. Save any work and close your RStudio session 2. Download Rtools ([download link](https://cran.rstudio.com/bin/windows/Rtools/)) + the link above contains instructions for putting Rtools on the PATH - you should not need to do this. 3. Run the downloaded executable file to install Rtools 4. Restart your computer 5. Re-open RStudio - the problem should be resolved
+
+## Run R in the Cloud
+
+[UIUC AnyWare](https://uiucanyware.cloud.com/) provides cloud-based options for running software including RStudio.
+
+## The RStudio Interface
+
+-   **The R Console** is the place where code you write is executed. Typically we'll write code in a *script* or *R Notebook* (more on those later) and active pieces of code will them be executed in the R console. You can also type code directly into the console and execute it by hitting the return or enter key.
+
+-   **The Environment Window** provides information on variables, data tables, and other objects you create and define as you work.
+
+-   **The Auxiliary Window** provides a range of information, and includes a file browser, plot visualization window, and access to help documentation.
+
+With those basics in mind, you can start to explore the basic functionality of R.

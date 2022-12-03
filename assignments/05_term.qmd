@@ -1,0 +1,46 @@
+---
+title: "Term Assignment"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+# Assignment Introduction
+
+For your term assignment, you will independently apply the skills and principles of data analysis we've learned over the course of the semester to produce a policy-relevant analysis and report. Building upon your memorandums, produce a publication ready policy report for your place as well as complimentary reproducible documentation.
+
+At a minimum, your report to address the following:
+
+-   **Context and Background:** Drawing upon secondary sources, craft a narrative context and background for your analysis. This may include in-depth profiling of the neighborhood(s) of interest or may involve broader contextualizing drawing from the history and background of your place. Your narrative does not have to be long, but it should help to contextualize the questions you are engaging with and the methods you use to engage those questions.
+
+-   **Methods and Approach:** Describe your approach to analysis - what is the specific question or problem you are taking on? What precedents or work that others have done is helping to inform your approach? Why is the selected geographic scale of your analysis appropriate?
+
+-   **Data Sources:** Describe the data source(s) that you are using for your analysis. Where are these data coming from? What are each contributing? What are the specific indicators you are using from these data?
+
+-   **Data Description, Analysis and Interpretation:** Please describe the analysis which you've done with the data, as well as your written interpretation based upon your analysis.
+
+-   **Implications for Policy and Impact:** Share your thoughts on how your findings can or should influence policy or otherwise have an impact within your place. You may also wish to provide some thoughts on how you or others may expand upon this work in the future or describe a set of future questions or analyses that build upon what you've done.
+
+The actual structure of your report is up to you, and will likely vary depending upon your place and the questions you seek to engage.
+
+## Design Considerations
+
+-   You have nearly all of the raw material you need from your prior memorandums, however, you probably received comments from your peers and your instructors about how you might improve your analyses. Now is the time to implement that advice.
+
+-   As usual, you are not required to include all of the tables and graphics you produced for your drafts and exercises. Narrow the focus to the most significant trends.
+
+-   You are encouraged to bring in other material (e.g., existing reports or studies) that will help you provide context for your discussion or help you interpret trends. Cite accordingly.
+
+-   You should strive to write this report in fewer than 4,000 words, not including references, tables, figures, or appendices. The aim is to produce a narrative that is concise and focused. Highlight what matters in the context of your narrative. Follow the strategies for effective professional writing---including use of active headings and concise reporting of trends---to convey the information succinctly. Title your report appropriately.
+
+## Outputs
+
+1.  **Report:** Prepare a professional report of around 4,000 words. In April, you will share a draft report and will receive feedback during a peer review session. Your final report will be due after the conclusion of classes. Your report may be formatted as a stand alone document or may be shared as a website.
+
+2.  **Presentation:** Prepare and deliver a 12-minute professional presentation that summarizes your policy issue, analysis, and policy recommendations. Your presentation should around 10 minutes long and the remainder of your time will be devoted to immediate questions. We will also complete written feedback and reactions that will be shared after the conclusion of your presentation.
+
+## Submission Instructions
+
+Upload your final project document and associated files to the appropriate folder in your class GitHub repository.

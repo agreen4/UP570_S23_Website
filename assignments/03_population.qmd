@@ -1,0 +1,56 @@
+---
+title: "Population Memorandum"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+# Population Memorandum
+
+## Introduction
+
+Your prior two memorandums focused on using secondary sources to scope analysis for your place. In this memorandum you will draw upon multiple sources of available quantitative data to describe the population of your place and their characteristics. This background on the population will help you to identify a specific policy issue or other questions which you will analyze in your next memorandum.
+
+## Goals
+
+-   Integrate analytical techniques learned from labs into targeted demographic analysis of your place
+
+-   Critically assess the story of your region and use it as a framework for writing and description
+
+-   Develop baseline analysis that supports future policy analysis
+
+## Your Population Memorandum
+
+Prepare a memorandum of around 2,000 words (not including tables and graphics) that provides an overview of the population of your place, and that identifies important policy-relevant population subgroups. Your memorandum should summarize for your place major characteristics and trends in:
+
+1.  Population and population change;
+
+2.  Racial and ethnic composition;
+
+3.  Age structure;
+
+4.  Income, wages, and poverty;
+
+5.  Educational attainment and employment by industry
+
+The objective is to provide a clear portrait of the demographic characteristics of your place and how they are changing over time and space. Support your discussion with tables and figures as appropriate, and include at least one map displaying the geography of your place.
+
+## Memorandum Preparation Tips
+
+-   Provide some context, namely information on the area's physical features and a very brief history. This does not need to be done in a separate section and it should not adopt the "booster" language of your typical Chamber of Commerce brochure. Sometimes it can be accomplished in a sentence or two, or in a few well-placed sentences in the report.
+
+-   Look for a story line in the data. Often there are some important local trends (sustained economic distress, rapid economic growth, high rates of international migration, etc.) that provide a good organizing framework for more specific social and demographic trends.
+
+-   You already have most of the data and code you need from class lab sessions. You should plan on drawing from these, but also expanding upon them. Expansion may mean looking at data sources or indicators we have not explored before. We are looking for evidence that you are using the most appropriate information to follow through on your lines of argumentation. What is important is dictated by... your place!
+
+-   Likewise, you are not required to include all of the types of tables, graphics, and analyses you produced for the prior exercises. Now is the time to narrow your focus to the most significant local characteristics and trends.
+
+-   Feel free to incorporate other material (e.g., existing studies or reports) that will help you provide context for your discussion or help you interpret trends. Cite accordingly.
+
+-   You should strive to write this memorandum in fewer than 2,000 words, not including references, tables, and figures. Two thousand words is a maximum, not a minimum. Follow the strategies for effective professional writing---including use of active headings and concise reporting of trends---to convey the information concisely.
+
+## Submission Instructions
+
+Upload your memorandum R notebook to the appropriate folder in your class GitHub repository.

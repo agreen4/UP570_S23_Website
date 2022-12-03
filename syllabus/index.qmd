@@ -1,0 +1,107 @@
+---
+title: "Syllabus"
+sidebar: true
+toc: true
+---
+
+Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester.
+
+## Course Overview and Objectives
+
+This course teaches techniques for analyzing the demographic, economic, physical, and social conditions that exist at the neighborhood and local government scale. While our focus will be on analyzing current conditions, we will also learn how to tell stories about neighborhood change, and will learn how to project and forecast future trends. We will learn how to describe community characteristics with small area census data, work with local administrative data, and will think about how our analysis of quantitative data fit with other forms of data and engagement to fill in gaps in knowledge.
+
+By the end of this course, we will:
+
+1.  Become familiar with common sources of information used to describe neighborhoods and neighborhood characteristics;
+
+2.  Learn how to use [R](https://www.r-project.org/), [RStudio](https://rstudio.com/), and [Github](https://github.com/) to create reproducible analysis;
+
+3.  Learn how to work collaboratively to tell compelling stories for deliberation and decision-making.
+
+## Course Format and Expectations
+
+We will learn together using a combination of direct instruction, lab sessions, and tutorials. We will use reading and reflection to help us contextualize our understanding of neighborhoods, however, our focus will be on learning by doing. Our class will meet in person twice per week - Tuesdays will typically be devoted to introducing and discussing new information, and Thursdays will typically be devoted to labs and independent work.
+
+Unless otherwise noted, please plan on bringing to class a computer that will run R and RStudio (available for PC/Mac/Linux) and for which you have administrative privileges.
+
+### What to Expect from Me
+
+-   **Office Hours and Availability:** Please make an appointment to speak one-on-one using my [Calendly page](%7B%7B%3C%20var%20instructor.calendly_url%20%3E%7D%7D). Of course, I'm also happy to chat either before or after our class if i'm available.
+-   **Email:** The easiest way to communicate with me outside of class is via [email](mailto:%7B%7B%3C%20var%20instructor.email%20%3E%7D%7D). I try to respond to emails sent during the week within 24 hours. Emails sent over the weekend will receive a response within 48 hours. If you don't hear from me after that amount of time, it's okay to nudge me to respond.
+-   **Troubleshooting:** Plan on using our class [Slack channel](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D), email, and office hours to get help with troubleshooting problems as they arise in your work. The [Resources](/resources) page provides thoughts and resources for troubleshooting. I also encourage you to work with others in the class to troubleshoot problems - it is highly likely that others in the class have encountered similar problems, and this also allows us to create a repository of our problems and responses.
+
+### What I Expect From You
+
+-   **Be Present:** I expect that you'll engage fully in our course sessions and in our class community.
+-   **Actively Support Each Other:** I expect that each of you will take on individual leadership roles within our class, that includes actively supporting our learning community over the course of the semester. This class assumes collaboration and sharing as part of our learning model.
+-   **Read with Care:** This course focuses on learning by doing, however, there are important details contained within the documentation on our course website and within reading selections. Details matter in this class - be intentional about reading carefully and completely important course documents (including this syllabus).
+-   **Act with Integrity:** I expect that you will act with integrity in all that you do in this class. The class contract grading system places trust in you to not just meet the nominal standards contained within the contract, but to push yourself to produce your best work.
+-   **Seek Balance:** I expect that you'll actively work to find balance between the many demands in your life. This means budgeting adequate time to engage fully in our course but also budgeting time for adequate rest and sleep, exercise, and other actions that support your mental and physical health.
+
+### Course Prerequisites
+
+UP 570: Neighborhood Analysis is open to students with graduate-level standing. The course assumes that you have previously taken [UP 517: Data Science for Planners](https://courses.illinois.edu/schedule/terms/UP/517) or have substantial experience with manipulating data in R.
+
+Please *talk with me* if you have any questions regarding whether this course is right for you.
+
+## Assignments, Evaluation, and Grading
+
+You will find detailed information on assignments, evaluation, and grading in the [Assignments]() section.
+
+## Honor Code
+
+The [Illinois Student Code](https://studentcode.illinois.edu) states: "It is the responsibility of the student to refrain from infractions of academic integrity, from conduct that may lead to suspicion of such infractions, and from conduct that aids others in such infractions." Note that you are subject to the Honor Code, as well as procedures for addressing violations to the Code, regardless of whether you have read it and understand it. According to the Code, "ignorance is no excuse."
+
+To meet this standard in this course, note the following: in written work, all ideas (as well as data or other information) that are not your own must be cited. Note that ideas that require citation may not have been published or written down anywhere. While you are free---and indeed encouraged---to discuss assignments with your peers, all of your analysis, and writing should be your own. The consequence for violating these expectations may include receiving no credit for the assignment in question, and may include automatic failure of the course.
+
+::: callout-warning
+## A Simple Standard
+
+Put simply, don't cheat and give credit where credit is due.
+:::
+
+## Learning Environment and Support
+
+### Our Learning Environment
+
+[The Department of Urban and Regional Planning](https://urban.illinois.edu) is committed to maintaining a learning environment that is rooted in the goals and responsibilities of professional planners. By enrolling in a class offered by the Department of Urban and Regional Planning, students agree to be responsible for maintaining an atmosphere of mutual respect in all activities, including lectures, discussions, labs, projects, and extracurricular opportunities. See [Student Code Article 1-Student Rights and Responsibilities, Part 1. Student Rights: §1-102.](https://studentcode.illinois.edu/article1/part1/1-101/)
+
+### Our Class Environment
+
+As part of our classroom and university community, you have an obligation to do the following:
+
+-   Attend all class sessions if you are feeling well.
+-   If you feel ill, do not come to class. If you test positive or have an exposure that requires testing or quarantine, do not come to class.
+-   Please be respectful of all members of our learning community and their decisions regarding health and safety precautions.
+
+## Your Wellness
+
+**Wellness at Illinois:** Throughout the semester, you may need assistance coping with emotional, interpersonal, or academic concerns. [wellness.illinois.edu](https://wellness.illinois.edu) is a good resource to identify help for yourself or others who may need assistance. Please do not hesitate to reach out or request assistance.
+
+### Learning R and Your Wellness
+
+As you have learned throughout your journey learning R, you will face challenges related to working with the software this semester. That's a given, and is an expected part of learning in this class. Part of the goal is to teach you how to understand the intentionality and logic behind the software so that you can anticipate where errors are likely to occur.
+
+::: callout-tip
+## Experiential Learning
+
+The only way to do this is to encounter errors - and there will be many!
+:::
+
+You are entering an intermediate to advanced stage of learning a new language, it's grammar, and its application. While this will be frustrating at times, there is a major payoff in the capacity you will gain in analytic skills and problem-solving. This payoff will come slowly over time - do not expect it to come easily.
+
+![](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51084276-ab7f-4c57-a0e7-5cf14a277359.png?h=69e1a6fbff194b606222a0795f89b6c8)
+
+You are not alone in this struggle. In addition to your classmates and others who are going through the same thing, there is a large R user community, and lots of existing documentation and troubleshooting. Any problem you will encounter has likely been encountered and addressed before.
+
+::: callout-tip
+When I run into an error, after an initial check for simple issues like closing parentheses and spelling errors, I copy and paste error codes directly into a web search to see how others have dealt with similar problems. I encourage you to do the same.
+:::
+
+You got this, and there will be a payoff, so long as you use the tools consistently - I promise!
+
+### We're Here For You
+
+We've been living in particularly abnormal times for the last few years - while for many, things are improving, it would be irresponsible to expect that teaching and learning would occur "normally" right now. We continue to teach and learn under emergency circumstances.
+
+As you face challenges this semester (and beyond) I need you to communicate with me, either during our course sessions or individually. You can schedule an appointment with me at your convenience via my [Calendly page](%7B%7B%3C%20var%20instructor.calendly_url%20%3E%7D%7D). I promise to listen, to be a resource, and to help in any way that I can - if I can't help you, I will find someone who can.

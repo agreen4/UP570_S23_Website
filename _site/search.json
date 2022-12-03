@@ -1,0 +1,415 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Neighborhood Analysis",
+    "section": "",
+    "text": "Neighborhood Analysis Spring 2023\nLearn to tell stories about neighborhoods for decision-making, public deliberation, and accountability using  and principles of reproducible data analysis.\n\n  \n\n\n\nInstructor\n\n   Dr. Andrew J. Greenlee\n   M210 Temple Buell Hall\n   agreen4@illinois.edu\n   Github\n   urbprof\n   https://fediscience.org/@urbprof\n   Schedule an appointment\n\n\n\nTeaching Assistant\n\n   Ouafa Benkraouda\n   ouafab2@illinois.edu\n   Schedule an appointment\n\n\n\nCourse details\n\n   Mondays and Wednesdays\n   11:00 AM - 12:20 PM\n   Temple Buell Hall 223\n   Slack"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "syllabus/syllabus.html",
+    "href": "syllabus/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester."
+  },
+  {
+    "objectID": "syllabus/syllabus.html#course-overview-and-objectives",
+    "href": "syllabus/syllabus.html#course-overview-and-objectives",
+    "title": "Syllabus",
+    "section": "Course Overview and Objectives",
+    "text": "Course Overview and Objectives\nThis course teaches techniques for analyzing the demographic, economic, physical, and social conditions that exist at the neighborhood and local government scale. While our focus will be on analyzing current conditions, we will also learn how to tell stories about neighborhood change, and will learn how to project and forecast future trends. We will learn how to describe community characteristics with small area census data, work with local administrative data, and will think about how our analysis of quantitative data fit with other forms of data and engagement to fill in gaps in knowledge.\nBy the end of this course, we will:\n\nBecome familiar with common sources of information used to describe neighborhoods and neighborhood characteristics;\nLearn how to use R, RStudio, and Github to create reproducible analysis;\nLearn how to work collaboratively to tell compelling stories for deliberation and decision-making."
+  },
+  {
+    "objectID": "syllabus/syllabus.html#course-format-and-expectations",
+    "href": "syllabus/syllabus.html#course-format-and-expectations",
+    "title": "Syllabus",
+    "section": "Course Format and Expectations",
+    "text": "Course Format and Expectations\nWe will learn together using a combination of direct instruction, lab sessions, and tutorials. We will use reading and reflection to help us contextualize our understanding of neighborhoods, however, our focus will be on learning by doing. Our class will meet in person twice per week - Tuesdays will typically be devoted to introducing and discussing new information, and Thursdays will typically be devoted to labs and independent work.\nUnless otherwise noted, please plan on bringing to class a computer that will run R and RStudio (available for PC/Mac/Linux) and for which you have administrative privileges.\n\nWhat to Expect from Me\n\nOffice Hours and Availability: Please make an appointment to speak one-on-one using my Calendly page. Of course, I’m also happy to chat either before or after our class if i’m available.\nEmail: The easiest way to communicate with me outside of class is via email. I try to respond to emails sent during the week within 24 hours. Emails sent over the weekend will receive a response within 48 hours. If you don’t hear from me after that amount of time, it’s okay to nudge me to respond.\nTroubleshooting: Plan on using our class Slack channel, email, and office hours to get help with troubleshooting problems as they arise in your work. The Resources page provides thoughts and resources for troubleshooting. I also encourage you to work with others in the class to troubleshoot problems - it is highly likely that others in the class have encountered similar problems, and this also allows us to create a repository of our problems and responses.\n\n\n\nWhat I Expect From You\n\nBe Present: I expect that you’ll engage fully in our course sessions and in our class community.\nActively Support Each Other: I expect that each of you will take on individual leadership roles within our class, that includes actively supporting our learning community over the course of the semester. This class assumes collaboration and sharing as part of our learning model.\nRead with Care: This course focuses on learning by doing, however, there are important details contained within the documentation on our course website and within reading selections. Details matter in this class - be intentional about reading carefully and completely important course documents (including this syllabus).\nAct with Integrity: I expect that you will act with integrity in all that you do in this class. The class contract grading system places trust in you to not just meet the nominal standards contained within the contract, but to push yourself to produce your best work.\nSeek Balance: I expect that you’ll actively work to find balance between the many demands in your life. This means budgeting adequate time to engage fully in our course but also budgeting time for adequate rest and sleep, exercise, and other actions that support your mental and physical health.\n\n\n\nCourse Prerequisites\nUP 570: Neighborhood Analysis is open to students with graduate-level standing. The course assumes that you have previously taken UP 517: Data Science for Planners or have substantial experience with manipulating data in R.\nPlease talk with me if you have any questions regarding whether this course is right for you."
+  },
+  {
+    "objectID": "syllabus/syllabus.html#assignments-evaluation-and-grading-contract",
+    "href": "syllabus/syllabus.html#assignments-evaluation-and-grading-contract",
+    "title": "Syllabus",
+    "section": "Assignments, Evaluation, and Grading Contract",
+    "text": "Assignments, Evaluation, and Grading Contract\nAlongside our learning of techniques and perspectives on working with small area data, a primary goal of this class is to learn to think critically about the ways in which those data and our analysis embody power and exist within power relationships. One implicit goal of our learning this semester is to embody through our work alternative ways to share power and create meaning.\n\nAssignments\nAssignments You will find detailed information on assignments in the Assignments section."
+  },
+  {
+    "objectID": "syllabus/syllabus.html#honor-code",
+    "href": "syllabus/syllabus.html#honor-code",
+    "title": "Syllabus",
+    "section": "Honor Code",
+    "text": "Honor Code\nThe Illinois Student Code states: “It is the responsibility of the student to refrain from infractions of academic integrity, from conduct that may lead to suspicion of such infractions, and from conduct that aids others in such infractions.” Note that you are subject to the Honor Code, as well as procedures for addressing violations to the Code, regardless of whether you have read it and understand it. According to the Code, “ignorance is no excuse.”\nTo meet this standard in this course, note the following: in written work, all ideas (as well as data or other information) that are not your own must be cited. Note that ideas that require citation may not have been published or written down anywhere. While you are free—and indeed encouraged—to discuss assignments with your peers, all of your analysis, and writing should be your own. The consequence for violating these expectations may include receiving no credit for the assignment in question, and may include automatic failure of the course.\n\n\n\n\n\n\nA Simple Standard\n\n\n\nPut simply, don’t cheat and give credit where credit is due."
+  },
+  {
+    "objectID": "syllabus/syllabus.html#learning-environment-and-support",
+    "href": "syllabus/syllabus.html#learning-environment-and-support",
+    "title": "Syllabus",
+    "section": "Learning Environment and Support",
+    "text": "Learning Environment and Support\n\nOur Learning Environment\nThe Department of Urban and Regional Planning is committed to maintaining a learning environment that is rooted in the goals and responsibilities of professional planners. By enrolling in a class offered by the Department of Urban and Regional Planning, students agree to be responsible for maintaining an atmosphere of mutual respect in all activities, including lectures, discussions, labs, projects, and extracurricular opportunities. See Student Code Article 1-Student Rights and Responsibilities, Part 1. Student Rights: §1-102.\n\n\nOur Class Environment\nAs part of our classroom and university community, you have an obligation to do the following:\n\nIf you feel ill, do not come to class. If you test positive or have an exposure that requires testing or quarantine, do not come to class.\nPlease be respectful of all members of our learning community and their decisions regarding health and safety precautions."
+  },
+  {
+    "objectID": "syllabus/syllabus.html#your-wellness",
+    "href": "syllabus/syllabus.html#your-wellness",
+    "title": "Syllabus",
+    "section": "Your Wellness",
+    "text": "Your Wellness\nWellness at Illinois: Throughout the semester, you may need assistance coping with emotional, interpersonal, or academic concerns. wellness.illinois.edu is a good resource to identify help for yourself or others who may need assistance. Please do not hesitate to reach out or request assistance.\n\nLearning R and Your Wellness\nAs you have learned throughout your journey learning R, you will face challenges related to working with the software this semester. That’s a given, and is an expected part of learning in this class. Part of the goal is to teach you how to understand the intentionality and logic behind the software so that you can anticipate where errors are likely to occur.\n\n\n\n\n\n\nExperiential Learning\n\n\n\nThe only way to do this is to encounter errors - and there will be many!\n\n\nYou are entering an intermediate to advanced stage of learning a new language, it’s grammar, and its application. While this will be frustrating at times, there is a major payoff in the capacity you will gain in analytic skills and problem-solving. This payoff will come slowly over time - do not expect it to come easily.\n\nYou are not alone in this struggle. In addition to your classmates and others who are going through the same thing, there is a large R user community, and lots of existing documentation and troubleshooting. Any problem you will encounter has likely been encountered and addressed before.\n\n\n\n\n\n\nTip\n\n\n\nWhen I run into an error, after an initial check for simple issues like closing parentheses and spelling errors, I copy and paste error codes directly into a web search to see how others have dealt with similar problems. I encourage you to do the same.\n\n\nYou got this, and there will be a payoff, so long as you use the tools consistently - I promise!"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#were-here-for-you",
+    "href": "syllabus/syllabus.html#were-here-for-you",
+    "title": "Syllabus",
+    "section": "We’re Here For You",
+    "text": "We’re Here For You\nWe’ve been living in particularly abnormal times for the last few years - while for many, things are improving, it would be irresponsible to expect that teaching and learning would occur “normally” right now. We continue to teach and learn under emergency circumstances.\nAs you face challenges this semester (and beyond) I need you to communicate with me, either during our course sessions or individually. You can schedule an appointment with me at your convenience via my Calendly page. I promise to listen, to be a resource, and to help in any way that I can - if I can’t help you, I will find someone who can."
+  },
+  {
+    "objectID": "assignments/01_place_selection.html",
+    "href": "assignments/01_place_selection.html",
+    "title": "Place Selection Memorandum",
+    "section": "",
+    "text": "A very important early task in Neighborhood Analysis is to select the place that you will spend time examining in depth this semester. The place you select will be the location that you focus your social, economic, and demographic analysis on. Given the structure of this class, you need to choose a location in the United States.\nYour work will include thinking about how that place fits within its larger “region.” What do we mean by “place”? It might be a city or town—the City of Champaign—or even twin cities—the cities of Champaign and Urbana. It could also be a county. For our purposes, it is not an entire metropolitan area or a larger macro region (such as the Great Plains or Mississippi Delta)."
+  },
+  {
+    "objectID": "assignments/01_place_selection.html#goals",
+    "href": "assignments/01_place_selection.html#goals",
+    "title": "Place Selection Memorandum",
+    "section": "Goals",
+    "text": "Goals\n\nIdentify a particular place that you will focus your analytic work on over the course of the semester\nThink critically about place, geography, and audience"
+  },
+  {
+    "objectID": "assignments/01_place_selection.html#place-selection-considerations",
+    "href": "assignments/01_place_selection.html#place-selection-considerations",
+    "title": "Place Selection Memorandum",
+    "section": "Place Selection Considerations",
+    "text": "Place Selection Considerations\n\nBig places—the cities of Chicago, Los Angeles, New York—are interesting. They are socioeconomically, racially, and ethnically diverse and it is usually not hard to find “stories in the data” with respect to neighborhood trends. However, large cities are very complex. Properly understanding the past, present, and future of such places and their neighborhoods can be a herculean task. Unless you are very familiar with a big place, we suggest focusing on a smaller place.\nMany of the techniques you will learn use methods that draw on data available at the census tract level, as census tracts are frequently used as (imperfect) proxies for neighborhoods. As you work to select your place, it may be useful to identify the number of census tracts that overlap. As a rule of thumb, your place should have no fewer than 15 tracts. More is certainly ok, but let’s talk if you are considering a place with fewer than 15 tracts.\nConsider selecting a place in a broader area of particular policy concern, such as an economically distressed region (central Appalachia, the Mississippi Delta, or the Black Belt). Many communities in the Great Plains and Mountain states are not distressed by conventional measures but they face significant out-migration and population decline, which introduce their own challenges at the local level. Places around international borders can also be interesting to examine.\nConsider selecting a place within driving distance of Champaign-Urbana (although you may not select Champaign County or it’s constituent cities as your place). Making a site visit to the county and its principal urban centers could help you understand its conditions and context better, giving you the ability to write about it with more authority.\nHaving some personal experience in the place you select can be helpful. Many students select their hometown or other community/county in which they have lived, provided the criteria above are satisfied. Some students also select places there are interested in living or working in.\nIslands and territories (such as Puerto Rico and Hawaii) and remote areas (such as Alaska) are interesting, but geography and data availability can make them challenging places to analyze. Students have analyzed all of these places in recent years- but with extra effort needed to address data gaps and limitations. You may want to explore these issues before committing to one of these places.\nIf you have any questions about the places you are considering, or you wish to talk through your choices, please talk with me."
+  },
+  {
+    "objectID": "assignments/01_place_selection.html#your-place-selection-memorandum",
+    "href": "assignments/01_place_selection.html#your-place-selection-memorandum",
+    "title": "Place Selection Memorandum",
+    "section": "Your Place Selection Memorandum",
+    "text": "Your Place Selection Memorandum\nPrepare a memorandum of around 500 words that identifies the place that you propose focusing your analysis on this semester.\nAt a minimum, the narrative associated with your memorandum should address the following:\n\nWhat is the name of the place which you have selected, and where is it located?\nWhat is the specific geography associated with this place (city, county, etc.)?\nWhat characteristics of this place make its neighborhoods important to examine?\nBased upon your preliminary background research, what types of policy issues may be important to examine through your analysis?"
+  },
+  {
+    "objectID": "assignments/01_place_selection.html#submission-instructions",
+    "href": "assignments/01_place_selection.html#submission-instructions",
+    "title": "Place Selection Memorandum",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\nSave your memorandum as a PDF and upload to the appropriate folder in your class GitHub repository."
+  },
+  {
+    "objectID": "assignments/02_place_background.html",
+    "href": "assignments/02_place_background.html",
+    "title": "Place Background Memorandum",
+    "section": "",
+    "text": "In your previous memorandum, you identified a place to focus your analysis on, and provided some preliminary justification for your choice. In this memorandum, you will leverage additional research to identify priority populations, issues, and neighborhoods, and also to lay out an analysis roadmap that will guide your subsequent analysis.\n\n\n\n\nAdd more thought and detail to your previous place selection memorandum\nDraw upon a range of sources to critically analyze the place you selected\nUse research to develop priorities for exploratory analysis\n\n\n\n\nDrawing from external sources and your own research, prepare a memorandum of around 2,000 words that provides background on your chosen place. Your memorandum should provide some general background on your place, and should then identify one or several key issues that will guide your subsequent analysis and work over the course of the semester. Key issues should be guided by a combination of your interests and what you can justify as relevant given your background research.\nBelow, please find some guiding questions to help you structure your memorandum:\n\nWhat is the overall history of your place? What are the types of issues that have mattered in the past, and what types of issues matter at present?\nWhich neighborhoods or subareas of your place are frequently mentioned in local plans, reports, or journalistic accounts? What differentiates those neighborhoods? At what geographic scale can these subareas be classified or analyzed?\nBased upon your background research, are there any population groups that are likely to warrant special attention. Why?\nBased upon your background research, are there policy issues or debates that warrant special attention or that could benefit from detailed analysis. What are these, and what factors are important for understanding them?\nBased upon your exploration, identify key themes and indicators which you believe will be important to focus on in your subsequent analyses. What types of strategies do you intend to use in order to examine these themes and indicators?\n\n\n\n\nUpload your memorandum R notebook to the appropriate folder in your class GitHub repository."
+  },
+  {
+    "objectID": "assignments/03_population.html",
+    "href": "assignments/03_population.html",
+    "title": "Population Memorandum",
+    "section": "",
+    "text": "Your prior two memorandums focused on using secondary sources to scope analysis for your place. In this memorandum you will draw upon multiple sources of available quantitative data to describe the population of your place and their characteristics. This background on the population will help you to identify a specific policy issue or other questions which you will analyze in your next memorandum.\n\n\n\n\nIntegrate analytical techniques learned from labs into targeted demographic analysis of your place\nCritically assess the story of your region and use it as a framework for writing and description\nDevelop baseline analysis that supports future policy analysis\n\n\n\n\nPrepare a memorandum of around 2,000 words (not including tables and graphics) that provides an overview of the population of your place, and that identifies important policy-relevant population subgroups. Your memorandum should summarize for your place major characteristics and trends in:\n\nPopulation and population change;\nRacial and ethnic composition;\nAge structure;\nIncome, wages, and poverty;\nEducational attainment and employment by industry\n\nThe objective is to provide a clear portrait of the demographic characteristics of your place and how they are changing over time and space. Support your discussion with tables and figures as appropriate, and include at least one map displaying the geography of your place.\n\n\n\n\nProvide some context, namely information on the area’s physical features and a very brief history. This does not need to be done in a separate section and it should not adopt the “booster” language of your typical Chamber of Commerce brochure. Sometimes it can be accomplished in a sentence or two, or in a few well-placed sentences in the report.\nLook for a story line in the data. Often there are some important local trends (sustained economic distress, rapid economic growth, high rates of international migration, etc.) that provide a good organizing framework for more specific social and demographic trends.\nYou already have most of the data and code you need from class lab sessions. You should plan on drawing from these, but also expanding upon them. Expansion may mean looking at data sources or indicators we have not explored before. We are looking for evidence that you are using the most appropriate information to follow through on your lines of argumentation. What is important is dictated by… your place!\nLikewise, you are not required to include all of the types of tables, graphics, and analyses you produced for the prior exercises. Now is the time to narrow your focus to the most significant local characteristics and trends.\nFeel free to incorporate other material (e.g., existing studies or reports) that will help you provide context for your discussion or help you interpret trends. Cite accordingly.\nYou should strive to write this memorandum in fewer than 2,000 words, not including references, tables, and figures. Two thousand words is a maximum, not a minimum. Follow the strategies for effective professional writing—including use of active headings and concise reporting of trends—to convey the information concisely.\n\n\n\n\nUpload your memorandum R notebook to the appropriate folder in your class GitHub repository."
+  },
+  {
+    "objectID": "assignments/04_policy.html",
+    "href": "assignments/04_policy.html",
+    "title": "Policy Memorandum",
+    "section": "",
+    "text": "In your prior memorandums you developed a preliminary narrative around your place based upon the characteristics of the population. Simultaneously, in your labs, you’ve been learning about a range of analytical strategies. In this lab, you will identify a specific policy-based problem and will develop and implement an appropriate analysis to better inform the problem. This is the final sub-element of your final policy report which will draw from your prior writing and analysis to present a polished report for your place.\n\n\n\n\nDraw from your prior population profiles and analyses to identify a policy issue or question for analysis.\nBuild off of the analysis strategies we’ve learned about in class to develop an appropriate analytic strategy for the identified policy issue of your choice.\n\n\n\n\n\nThe challenge of this assignment is picking an appropriate policy question to engage with. Please rely upon each other as peer reviewers and on your instructors for help in identifying an appropriate policy or research question to focus your memorandum on.\nPolicy analysis depends upon following a logical chain of thought through existing policies and questions. Be sure to review and understand these before attempting to develop your own approach. Please also think carefully and critically about how your your chosen analysis may iterate over various neighborhoods in your place.\nAt this point in the semester, we expect to see refined maps, data visualizations, and tables in your memos. Please allocate appropriate time to working on these elements of your memo.\nThink through how the story of your policy analysis relates back to the other stories you’ve told in subsequent memos over the course of the semester. Your final assignment depends upon you integrating these items into a final policy report, so having a good understanding of how these stories are related will make it easier to develop a coherent narrative in your final report.\n\n\n\n\nUpload your memorandum R notebook to the appropriate folder in your class GitHub repository."
+  },
+  {
+    "objectID": "assignments/05_term.html",
+    "href": "assignments/05_term.html",
+    "title": "Term Assignment",
+    "section": "",
+    "text": "For your term assignment, you will independently apply the skills and principles of data analysis we’ve learned over the course of the semester to produce a policy-relevant analysis and report. Building upon your memorandums, produce a publication ready policy report for your place as well as complimentary reproducible documentation.\nAt a minimum, your report to address the following:\n\nContext and Background: Drawing upon secondary sources, craft a narrative context and background for your analysis. This may include in-depth profiling of the neighborhood(s) of interest or may involve broader contextualizing drawing from the history and background of your place. Your narrative does not have to be long, but it should help to contextualize the questions you are engaging with and the methods you use to engage those questions.\nMethods and Approach: Describe your approach to analysis - what is the specific question or problem you are taking on? What precedents or work that others have done is helping to inform your approach? Why is the selected geographic scale of your analysis appropriate?\nData Sources: Describe the data source(s) that you are using for your analysis. Where are these data coming from? What are each contributing? What are the specific indicators you are using from these data?\nData Description, Analysis and Interpretation: Please describe the analysis which you’ve done with the data, as well as your written interpretation based upon your analysis.\nImplications for Policy and Impact: Share your thoughts on how your findings can or should influence policy or otherwise have an impact within your place. You may also wish to provide some thoughts on how you or others may expand upon this work in the future or describe a set of future questions or analyses that build upon what you’ve done.\n\nThe actual structure of your report is up to you, and will likely vary depending upon your place and the questions you seek to engage.\n\n\n\nYou have nearly all of the raw material you need from your prior memorandums, however, you probably received comments from your peers and your instructors about how you might improve your analyses. Now is the time to implement that advice.\nAs usual, you are not required to include all of the tables and graphics you produced for your drafts and exercises. Narrow the focus to the most significant trends.\nYou are encouraged to bring in other material (e.g., existing reports or studies) that will help you provide context for your discussion or help you interpret trends. Cite accordingly.\nYou should strive to write this report in fewer than 4,000 words, not including references, tables, figures, or appendices. The aim is to produce a narrative that is concise and focused. Highlight what matters in the context of your narrative. Follow the strategies for effective professional writing—including use of active headings and concise reporting of trends—to convey the information succinctly. Title your report appropriately.\n\n\n\n\n\nReport: Prepare a professional report of around 4,000 words. In April, you will share a draft report and will receive feedback during a peer review session. Your final report will be due after the conclusion of classes. Your report may be formatted as a stand alone document or may be shared as a website.\nPresentation: Prepare and deliver a 12-minute professional presentation that summarizes your policy issue, analysis, and policy recommendations. Your presentation should around 10 minutes long and the remainder of your time will be devoted to immediate questions. We will also complete written feedback and reactions that will be shared after the conclusion of your presentation.\n\n\n\n\nUpload your final project document and associated files to the appropriate folder in your class GitHub repository."
+  },
+  {
+    "objectID": "syllabus/index.html",
+    "href": "syllabus/index.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester."
+  },
+  {
+    "objectID": "syllabus/index.html#course-overview-and-objectives",
+    "href": "syllabus/index.html#course-overview-and-objectives",
+    "title": "Syllabus",
+    "section": "Course Overview and Objectives",
+    "text": "Course Overview and Objectives\nThis course teaches techniques for analyzing the demographic, economic, physical, and social conditions that exist at the neighborhood and local government scale. While our focus will be on analyzing current conditions, we will also learn how to tell stories about neighborhood change, and will learn how to project and forecast future trends. We will learn how to describe community characteristics with small area census data, work with local administrative data, and will think about how our analysis of quantitative data fit with other forms of data and engagement to fill in gaps in knowledge.\nBy the end of this course, we will:\n\nBecome familiar with common sources of information used to describe neighborhoods and neighborhood characteristics;\nLearn how to use R, RStudio, and Github to create reproducible analysis;\nLearn how to work collaboratively to tell compelling stories for deliberation and decision-making."
+  },
+  {
+    "objectID": "syllabus/index.html#course-format-and-expectations",
+    "href": "syllabus/index.html#course-format-and-expectations",
+    "title": "Syllabus",
+    "section": "Course Format and Expectations",
+    "text": "Course Format and Expectations\nWe will learn together using a combination of direct instruction, lab sessions, and tutorials. We will use reading and reflection to help us contextualize our understanding of neighborhoods, however, our focus will be on learning by doing. Our class will meet in person twice per week - Tuesdays will typically be devoted to introducing and discussing new information, and Thursdays will typically be devoted to labs and independent work.\nUnless otherwise noted, please plan on bringing to class a computer that will run R and RStudio (available for PC/Mac/Linux) and for which you have administrative privileges.\n\nWhat to Expect from Me\n\nOffice Hours and Availability: Please make an appointment to speak one-on-one using my Calendly page. Of course, I’m also happy to chat either before or after our class if i’m available.\nEmail: The easiest way to communicate with me outside of class is via email. I try to respond to emails sent during the week within 24 hours. Emails sent over the weekend will receive a response within 48 hours. If you don’t hear from me after that amount of time, it’s okay to nudge me to respond.\nTroubleshooting: Plan on using our class Slack channel, email, and office hours to get help with troubleshooting problems as they arise in your work. The Resources page provides thoughts and resources for troubleshooting. I also encourage you to work with others in the class to troubleshoot problems - it is highly likely that others in the class have encountered similar problems, and this also allows us to create a repository of our problems and responses.\n\n\n\nWhat I Expect From You\n\nBe Present: I expect that you’ll engage fully in our course sessions and in our class community.\nActively Support Each Other: I expect that each of you will take on individual leadership roles within our class, that includes actively supporting our learning community over the course of the semester. This class assumes collaboration and sharing as part of our learning model.\nRead with Care: This course focuses on learning by doing, however, there are important details contained within the documentation on our course website and within reading selections. Details matter in this class - be intentional about reading carefully and completely important course documents (including this syllabus).\nAct with Integrity: I expect that you will act with integrity in all that you do in this class. The class contract grading system places trust in you to not just meet the nominal standards contained within the contract, but to push yourself to produce your best work.\nSeek Balance: I expect that you’ll actively work to find balance between the many demands in your life. This means budgeting adequate time to engage fully in our course but also budgeting time for adequate rest and sleep, exercise, and other actions that support your mental and physical health.\n\n\n\nCourse Prerequisites\nUP 570: Neighborhood Analysis is open to students with graduate-level standing. The course assumes that you have previously taken UP 517: Data Science for Planners or have substantial experience with manipulating data in R.\nPlease talk with me if you have any questions regarding whether this course is right for you."
+  },
+  {
+    "objectID": "syllabus/index.html#assignments-evaluation-and-grading-contract",
+    "href": "syllabus/index.html#assignments-evaluation-and-grading-contract",
+    "title": "Syllabus",
+    "section": "Assignments, Evaluation, and Grading Contract",
+    "text": "Assignments, Evaluation, and Grading Contract\nAlongside our learning of techniques and perspectives on working with small area data, a primary goal of this class is to learn to think critically about the ways in which those data and our analysis embody power and exist within power relationships. One implicit goal of our learning this semester is to embody through our work alternative ways to share power and create meaning.\n\nAssignments\nAssignments You will find detailed information on assignments in the Assignments section."
+  },
+  {
+    "objectID": "syllabus/index.html#honor-code",
+    "href": "syllabus/index.html#honor-code",
+    "title": "Syllabus",
+    "section": "Honor Code",
+    "text": "Honor Code\nThe Illinois Student Code states: “It is the responsibility of the student to refrain from infractions of academic integrity, from conduct that may lead to suspicion of such infractions, and from conduct that aids others in such infractions.” Note that you are subject to the Honor Code, as well as procedures for addressing violations to the Code, regardless of whether you have read it and understand it. According to the Code, “ignorance is no excuse.”\nTo meet this standard in this course, note the following: in written work, all ideas (as well as data or other information) that are not your own must be cited. Note that ideas that require citation may not have been published or written down anywhere. While you are free—and indeed encouraged—to discuss assignments with your peers, all of your analysis, and writing should be your own. The consequence for violating these expectations may include receiving no credit for the assignment in question, and may include automatic failure of the course.\n\n\n\n\n\n\nA Simple Standard\n\n\n\nPut simply, don’t cheat and give credit where credit is due."
+  },
+  {
+    "objectID": "syllabus/index.html#learning-environment-and-support",
+    "href": "syllabus/index.html#learning-environment-and-support",
+    "title": "Syllabus",
+    "section": "Learning Environment and Support",
+    "text": "Learning Environment and Support\n\nOur Learning Environment\nThe Department of Urban and Regional Planning is committed to maintaining a learning environment that is rooted in the goals and responsibilities of professional planners. By enrolling in a class offered by the Department of Urban and Regional Planning, students agree to be responsible for maintaining an atmosphere of mutual respect in all activities, including lectures, discussions, labs, projects, and extracurricular opportunities. See Student Code Article 1-Student Rights and Responsibilities, Part 1. Student Rights: §1-102.\n\n\nOur Class Environment\nAs part of our classroom and university community, you have an obligation to do the following:\n\nAttend all class sessions if you are feeling well.\nIf you feel ill, do not come to class. If you test positive or have an exposure that requires testing or quarantine, do not come to class.\nPlease be respectful of all members of our learning community and their decisions regarding health and safety precautions."
+  },
+  {
+    "objectID": "syllabus/index.html#your-wellness",
+    "href": "syllabus/index.html#your-wellness",
+    "title": "Syllabus",
+    "section": "Your Wellness",
+    "text": "Your Wellness\nWellness at Illinois: Throughout the semester, you may need assistance coping with emotional, interpersonal, or academic concerns. wellness.illinois.edu is a good resource to identify help for yourself or others who may need assistance. Please do not hesitate to reach out or request assistance.\n\nLearning R and Your Wellness\nAs you have learned throughout your journey learning R, you will face challenges related to working with the software this semester. That’s a given, and is an expected part of learning in this class. Part of the goal is to teach you how to understand the intentionality and logic behind the software so that you can anticipate where errors are likely to occur.\n\n\n\n\n\n\nExperiential Learning\n\n\n\nThe only way to do this is to encounter errors - and there will be many!\n\n\nYou are entering an intermediate to advanced stage of learning a new language, it’s grammar, and its application. While this will be frustrating at times, there is a major payoff in the capacity you will gain in analytic skills and problem-solving. This payoff will come slowly over time - do not expect it to come easily.\n\nYou are not alone in this struggle. In addition to your classmates and others who are going through the same thing, there is a large R user community, and lots of existing documentation and troubleshooting. Any problem you will encounter has likely been encountered and addressed before.\n\n\n\n\n\n\nTip\n\n\n\nWhen I run into an error, after an initial check for simple issues like closing parentheses and spelling errors, I copy and paste error codes directly into a web search to see how others have dealt with similar problems. I encourage you to do the same.\n\n\nYou got this, and there will be a payoff, so long as you use the tools consistently - I promise!\n\n\nWe’re Here For You\nWe’ve been living in particularly abnormal times for the last few years - while for many, things are improving, it would be irresponsible to expect that teaching and learning would occur “normally” right now. We continue to teach and learn under emergency circumstances.\nAs you face challenges this semester (and beyond) I need you to communicate with me, either during our course sessions or individually. You can schedule an appointment with me at your convenience via my Calendly page. I promise to listen, to be a resource, and to help in any way that I can - if I can’t help you, I will find someone who can."
+  },
+  {
+    "objectID": "howto/getstarted.html",
+    "href": "howto/getstarted.html",
+    "title": "Get Started",
+    "section": "",
+    "text": "R is an open source programming language that is a common tool used for data analysis across a range of disciplines. This means that in addition to being free and available for a range of operating systems and environments, R is also directly supported by a diverse user community who continually develop approaches for specialized applications or data. Need to download U.S. Census Data? There's an R package for that. Need to perform common data cleaning tasks? There's an R package for that too. We'll be exploring a range of these specialized applications over the course of the semester.\nOf course there are alternate languages which we could employ in service of neighborhood analysis. Python, for example, is an even more ubiquitous programming language with its own set of tools for data science. R was originally built as a statistical computing language, and that brings some important benefits for the types of data science we'll be learning this semester. R is also fairly prevalent among the user community working in public policy analysis and urban data science - this is the user community which you will be joining. Finally, R has a high learning curve, but also a very active user community, meaning that abundant documentation of problems and their solutions is available.\nAs we get started, let's be clear - you are going to experience some frustration and challenges as you learn the R programming language. This class assumes no prior background in R or any other programming language for that matter, and we'll work to quickly build your \"vocabulary\" and the ability to get results. We will spend some time picking up basics, and will then use our exploration of specific analysis approaches to reinforce our use of the grammar and structure of the language and to build more complex scripts over time.\nIt's fair to equate learning R with learning to drive a manual car. Increasingly, people learn how to drive in automatic cars - essentially allowing the car to handle the function of switching gears - you put the car into drive, press the accelerator pedal and the car moves forward. Your past exposure to computer-based analytic tools has probably followed a similar strategy - you likely learned using software that had graphical user interfaces that allow them to call up and run programs and then spit out results. Most of us learn to point and click in order to accomplish a particular set of analytic tasks, meaning that if we want to generate the same results in the future, we would have to repeat all of those same steps over again.\nSo why learn on a manual? For many car enthusiasts, manuals are both more efficient and more engaging to drive - they offer additional control, and come with a heightened awareness of what the car is doing. Of course, they also come with a steep learning curve.\nSome of the same attributes apply to our use of R as a tool for analysis.\n\nFirst, a manual approach forces you to explicitly understand more of the requirements and assumptions that go into the analysis that you're doing.\nSecond, you have to know your data (and its strengths and limitations) well in order to get it set up for analysis and to produce useful output.\nThird, this approach emphasizes reproducible analysis, meaning that you will develop workflows that can be repeated over and over again producing the same results - important for sharing your work with others and for accountability, especially within contexts related to public deliberation of the strengths and weaknesses of policy arguments.\n\nKeeping these three benefits in mind, we'll be using the R software coupled with the RStudio Integrated Development Environment (IDE) to counter some of the downsides of a purely manual approach. RStudio will help us implement R code more effectively and efficiently. Hopefully at this point, this prospect leaves you excited rather than daunted!"
+  },
+  {
+    "objectID": "schedule/index.html",
+    "href": "schedule/index.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Please find descriptions for our course sessions here - you will also find resources that will help you prepare for each session."
+  },
+  {
+    "objectID": "schedule/index.html#course-introduction",
+    "href": "schedule/index.html#course-introduction",
+    "title": "Schedule",
+    "section": "Course Introduction",
+    "text": "Course Introduction\n\n\n\nWeek\nSession\nDate\nDescription\n\n\n\n\nWeek 1\nSession 1\nJanuary 18\nCourse Introduction\n\n\nWeek 2\nSession 2\nJanuary 23\nWhat is a Neighborhood?\n\n\nWeek 2\nSession 3\nJanuary 25\nBuilding a Data Pipeline\n\n\nWeek 3\nSession 4\nJanuary 30\nSharing Your Work\n\n\nWeek 3\nSession 5\nFebruary 1\nEarning your Learner’s Permit\n\n\nWeek 3\n\nFebruary 3\nPlace Selection Memorandum\n\n\nWeek 4\nSession 6\nFebruary 6\nDescribing Places\n\n\nWeek 4\nSession 7\nFebruary 8\nDescribing Places"
+  },
+  {
+    "objectID": "schedule/index.html#strategies-for-analysis",
+    "href": "schedule/index.html#strategies-for-analysis",
+    "title": "Schedule",
+    "section": "Strategies for Analysis",
+    "text": "Strategies for Analysis\n\n\n\nWeek\nSession\nDate\nDescription\n\n\n\n\nWeek 5\nSession 8\nFebruary 13\nPopulation and the Census\n\n\nWeek 5\nSession 9\nFebruary 15\nPopulation and the Census\n\n\nWeek 5\n\nFebruary 17\nPlace Background Memorandum\n\n\nWeek 6\nSession 10\nFebruary 20\nPopulation Projections\n\n\nWeek 6\nSession 11\nFebruary 22\nPopulation Projections\n\n\nWeek 7\nSession 12\nFebruary 27\nSegregation\n\n\nWeek 7\nSession 13\nMarch 1\nSegregation\n\n\nWeek 7\n\nMarch 3\nPopulation Memorandum\n\n\nWeek 8\nSession 14\nMarch 6\nNeighborhood Change\n\n\nWeek 8\nSession 15\nMarch 8\nNeighborhood Change\n\n\nWeek 9\n\nMarch 13\nSpring Break\n\n\nWeek 9\n\nMarch 15\nSpring Break\n\n\nWeek 10\nSession 16\nMarch 20\nPlace Opportunity\n\n\nWeek 10\nSession 17\nMarch 22\nPlace Opportunity\n\n\nWeek 10\n\nMarch 24\nPolicy Memorandum\n\n\nWeek 11\nSession 18\nMarch 27\nTBD - Based on Interests\n\n\nWeek 11\nSession 19\nMarch 29\nTBD - Based on Interests\n\n\nWeek 12\nSession 20\nApril 3\nTBD - Based on Interests\n\n\nWeek 12\nSession 21\nApril 5\nTBD - Based on Interests\n\n\nWeek 13\nSession 22\nApril 10\nField Observation\n\n\nWeek 13\nSession 23\nApril 12\nField Observation\n\n\nWeek 13\n\nApril 14\nFinal Assignment First Draft"
+  },
+  {
+    "objectID": "schedule/index.html#course-wrap-up",
+    "href": "schedule/index.html#course-wrap-up",
+    "title": "Schedule",
+    "section": "Course Wrap-Up",
+    "text": "Course Wrap-Up\n\n\n\nWeek\nSession\nDate\nDescription\n\n\n\n\nWeek 14\nSession 24\nApril 17\nFinal Project Peer Review\n\n\nWeek 14\nSession 25\nApril 19\nFinal Presentations\n\n\nWeek 15\nSession 26\nApril 24\nIndependent Work and Advising\n\n\nWeek 15\nSession 27\nApril 26\nIndependent Work and Advising\n\n\nWeek 16\nSession 28\nMay 1\nFinal Presentations\n\n\nWeek 16\nSession 29\nMay 3\nFinal Presentations\n\n\nWeek 17\n\nMay 10\nFinal Assignment"
+  },
+  {
+    "objectID": "schedule/01_introduction.html",
+    "href": "schedule/01_introduction.html",
+    "title": "Course Introduction",
+    "section": "",
+    "text": "Welcome to UP 570: Neighborhood Analysis! This session serves as our introduction to the class and an opportunity to start exploring how we will work together over the course of the semester. We will introduce ourselves and discuss how we will learn together over the course of the semester. We’ll also think through two foundational questions:\n\nWhat is a neighborhood?\nWhy do neighborhoods matter?"
+  },
+  {
+    "objectID": "schedule/01_introduction.html#before-class",
+    "href": "schedule/01_introduction.html#before-class",
+    "title": "Course Introduction",
+    "section": "Before Class",
+    "text": "Before Class\n\nRead the course syllabus and bring questions with you.\nComplete the course introductory survey.\nConfigure R and RStudio for our class."
+  },
+  {
+    "objectID": "schedule/01_introduction.html#reflect",
+    "href": "schedule/01_introduction.html#reflect",
+    "title": "Course Introduction",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhat are your goals for taking this class? What would you like to learn about neighborhoods?\nWhat matters about neighborhoods? How have neighborhoods shaped your life?\nWhat types of stories do we tend to tell about neighborhoods? How do these stories contextualize how neighborhoods “fit” within cities and their regions?"
+  },
+  {
+    "objectID": "schedule/01_introduction.html#slides",
+    "href": "schedule/01_introduction.html#slides",
+    "title": "Course Introduction",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/01_introduction.html#resources-for-further-exploration",
+    "href": "schedule/01_introduction.html#resources-for-further-exploration",
+    "title": "Course Introduction",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "slides/01_CourseIntroduction.html#welcome-to-up-570-neighborhood-analysis",
+    "href": "slides/01_CourseIntroduction.html#welcome-to-up-570-neighborhood-analysis",
+    "title": "Course Introduction",
+    "section": "Welcome to UP 570: Neighborhood Analysis",
+    "text": "Welcome to UP 570: Neighborhood Analysis"
+  },
+  {
+    "objectID": "schedule/02_neighborhood.html",
+    "href": "schedule/02_neighborhood.html",
+    "title": "What is a Neighborhood?",
+    "section": "",
+    "text": "In this session, we’ll explore the many ways in which the concept of neighborhoods are used in various areas of urban planning and governance. We will continue to build upon previous questions regarding the significance of neighborhoods as a unit of analysis, planning, and policymaking, and will explore frameworks for neighborhood analysis."
+  },
+  {
+    "objectID": "schedule/02_neighborhood.html#before-class",
+    "href": "schedule/02_neighborhood.html#before-class",
+    "title": "What is a Neighborhood?",
+    "section": "Before Class",
+    "text": "Before Class\nYour readings for today provide insight into some of the working definitions for value judgments regarding the qualities of neighborhoods and why planners have found these qualities to be of importance to measure and understand.\nNote that you must be logged in to your UIUC Box.com account in order to access these readings. This is to respect the copyright of the authors on a publicly accessible website.\nTalen, Emily, Sunny Menozzi, and Chloe Schaefer. (2015). What is a “Great Neighborhood”? An Analysis of APA’s Top-Rated Places. Journal of the American Planning Association, 81(2): 121-141.\nRohe, William. (2009). From Local to Global: One Hundred Years of Neighborhood Planning. Journal of the American Planning Association 75(2): 209-230"
+  },
+  {
+    "objectID": "schedule/02_neighborhood.html#reflect",
+    "href": "schedule/02_neighborhood.html#reflect",
+    "title": "What is a Neighborhood?",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhat are your goals for taking this class? What would you like to learn about neighborhoods?\nWhat matters about neighborhoods? How have neighborhoods shaped your life?\nWhat types of stories do we tend to tell about neighborhoods? How do these stories contextualize how neighborhoods “fit” within cities and their regions?"
+  },
+  {
+    "objectID": "schedule/02_neighborhood.html#slides",
+    "href": "schedule/02_neighborhood.html#slides",
+    "title": "What is a Neighborhood?",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/02_neighborhood.html#resources-for-further-exploration",
+    "href": "schedule/02_neighborhood.html#resources-for-further-exploration",
+    "title": "What is a Neighborhood?",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments Overview",
+    "section": "",
+    "text": "flowchart LR\n\nsubgraph Learn\nAA[Data Pipeline]\nAB[Sharing Your Work]\nAC[Learner's Permit]\nAD[Describing Places]\nAE[Population]\nAF[Projections]\nAG[Segregation]\nAH[Neighborhood Change]\nAI[Place Opportunity]\nend\n\nsubgraph Apply\n\nAA --> B[Place Selection]\nAB --> B\nAC --> C\nAD --> C[Place Background]\nAE --> D[Population]\nAF --> D\nAG --> E[Policy]\nAH --> E\nAI --> E\nend\n\nsubgraph Communicate\n  direction LR\nB --> F{Final Report}\nC --> F\nD --> F\nE --> F\nF --> G[Document or Website]\nF --> H[Presentation]\nend"
+  },
+  {
+    "objectID": "assignments/index.html#apply",
+    "href": "assignments/index.html#apply",
+    "title": "Assignments Overview",
+    "section": "Apply",
+    "text": "Apply\nYou’ll apply what you’ve learned over the course of the semester to the analysis of a place of your choosing. At the beginning of the semester, you will identify a place, and start to examine the relevant policy issues that motivate your analysis. You will then apply course tools and concepts to your place and will communicate your findings in a series of memos."
+  },
+  {
+    "objectID": "assignments/index.html#communicate",
+    "href": "assignments/index.html#communicate",
+    "title": "Assignments Overview",
+    "section": "Communicate",
+    "text": "Communicate\nOur ultimate goal is to develop the capacity to communicate our analysis to diverse audiences. You will draw from your place analysis and memos to develop a final policy report in which you communicate your to a public audience in a form that is polished and professional."
+  },
+  {
+    "objectID": "assignments/index.html#learn",
+    "href": "assignments/index.html#learn",
+    "title": "Assignments Overview",
+    "section": "Learn",
+    "text": "Learn\nOn a weekly basis, we’ll incorporate new tools and analytic strategies into our repertoire. We’ll devote some time most weeks in class to working through lab examples in class that help to illustrate how tools work and how to apply them. Labs are designed to be a low-stakes opportunity to learn."
+  },
+  {
+    "objectID": "assignments/index.html#evaluation",
+    "href": "assignments/index.html#evaluation",
+    "title": "Assignments Overview",
+    "section": "Evaluation",
+    "text": "Evaluation\n\nAssignment Weights\n\n\n\n\n\n\n\n\n\nStrategy\nMaster’s Students\nPh.D. Students\nGrade Weight\n\n\n\n\nLearn\nLabs\nLabs\n10 percent\n\n\nApply\nMemos\nPaper Proposal\nPaper Outline\nPaper Draft\n40 percent\n\n\nCommunicate\nFinal Report\nTerm Paper\n40 percent\n\n\nEngage\nParticipation and Engagement\nParticipation and Engagement\n10 percent\n\n\n\n\n\nPh.D. Students\nDoctoral students may elect to either satisfy course requirements laid out for Master’s students or may instead complete a research-oriented term project that applies neighborhood analysis techniques to a specific research problem.\nDoctoral students should speak with me during weeks 1 or 2 if you wish to pursue this option so we can develop an appropriate research proposal, timeline, and outputs.\n\n\nGrading\n\n\nGrading Policy\nThis course requires your engagement both within and outside of the classroom. Grading criteria include contribution to the course environment, quality of writing, and depth of analysis. Your work will be graded on a 100-point scale:\n\n\n\n\n\n\n\n\nGrade\nPoints\nDescription\n\n\n\n\nA+\nA\nA-\n97-100\n93-96\n90-92\nOutstanding work, ready for dissemination. Demonstrates mastery of course concepts and skills, clear communication, and appropriate use of analytical methods.\n\n\nB+\nB\nB-\n87-89\n83-86\n80-82\nGood work, that meets expectations. Work needs minor revision address minor communication or technical errors in order to be ready for dissemination\n\n\nC+\nC\nC-\n77-79\n73-77\n70-72\nWork needs major revision to writing or analysis due to technical errors, not ready for dissemination.\n\n\nD+\nD\n67-69\n60-66\nWork does not meet course expectations for graduate-level work. Reflects lack of understanding or conceptualization of work, major technical errors, and requires significant rethinking.\n\n\nF\n0-59\nWork does not meet minimum expectations, effort, or understanding.\n\n\n\n\n\nAttendance Policy\nThe learning environment in this class depends upon your engagement and participation. Full participation is expected for course sessions. For each course session that you are absent from (excluding excused absences), 2 percent will be deducted from your final course grade. Excused absences will be granted on a case-by-case basis for extenuating circumstances such as illness or work-related travel, but must be approved by me prior to the course session which you are absent from."
+  },
+  {
+    "objectID": "assignments/index.html#engage",
+    "href": "assignments/index.html#engage",
+    "title": "Assignments Overview",
+    "section": "Engage",
+    "text": "Engage\nConsistent contributions in class, thoughtful engagement with course material, and other achievements may lead to overall adjustments in your course grade."
+  },
+  {
+    "objectID": "assignments/index.html#grading-policy",
+    "href": "assignments/index.html#grading-policy",
+    "title": "Assignments Overview",
+    "section": "Grading Policy",
+    "text": "Grading Policy\nThis course requires your engagement both within and outside of the classroom. Grading criteria include contribution to the course environment, quality of writing, and depth of analysis. Your work will be graded on a 100-point scale:\n\n\n\n\n\n\n\n\nGrade\nPoints\nDescription\n\n\n\n\nA\n90-100\nOutstanding work, ready for dissemination\n\n\nB\n80-89\nGood work, needs minor revision to be ready for dissemination\n\n\nC\n70-79\nWork needs major revision, not ready for dissemination\n\n\nD\n60-69\nWork does not meet course expectations\n\n\nF\n0-59\nWork does not meet minimum standards"
+  },
+  {
+    "objectID": "syllabus/index.html#assignments-evaluation-and-grading",
+    "href": "syllabus/index.html#assignments-evaluation-and-grading",
+    "title": "Syllabus",
+    "section": "Assignments, Evaluation, and Grading",
+    "text": "Assignments, Evaluation, and Grading\nYou will find detailed information on assignments, evaluation, and grading in the Assignments section."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This page contains resources that will help you over the course of the class. As you encounter more resources that you find useful, please share them so they can be added to this page."
+  },
+  {
+    "objectID": "resources/analysis.html",
+    "href": "resources/analysis.html",
+    "title": "Neighborhood Analysis",
+    "section": "",
+    "text": "City of Champaign Neighborhood Wellness Vision Report and Action Plan\nChicago's Million Dollar Blocks\nDePaul Institute for Housing Studies: Mapping Displacement Pressure in Chicago, 2020\nNathalie P. Voorhees Center's Socioeconomic Change of Chicago's Community Areas (1970-2010)\nNational Neighborhood Indicators Partnership\nFind My Landlord, a tool that maps the properties in Chicago owned by a single landlord or management company.\nMetropolitan Planning Council and Urban Institute's The Cost of Segregationreport for Chicago.\nAmerican segregation, mapped at day and night"
+  },
+  {
+    "objectID": "resources/data.html",
+    "href": "resources/data.html",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "covdata R Package\nData Science Central Big data sets available for free\nEconomic Innovation Group Distressed Communities Index\nEviction Lab data on residential evictions summarized to various administrative geographies\nGlobal Human Settlements Dataset\nHUD Location Affordability Index\nHUD Urbanization Perceptions Small Area Index\nHUD USPS Vacancy Data\nLongitudinal Tract Database (LTDB): 1970 - 2010 Census data normalized to 2010 census tracts\nMIT Senseable Cities Lab Treepedia\nNational Housing Preservation Database (NHPD)\nPolicy Surveillance Program Eviction Laws database\nUSDA Rural-Urban Commuting Area Codes\nStanford Open Policing Project\nSURGO Foundation U.S. COVID Community Vulnerability Index (CCVI)"
+  },
+  {
+    "objectID": "resources/inspiration.html",
+    "href": "resources/inspiration.html",
+    "title": "Inspiration",
+    "section": "",
+    "text": "BBC: How the BBC Visual and Data Journalism Team Works with Graphics in R\nBloomberg: Visualizing U.S. Immigration History as Tree Rings\nCraig Dalton and Timm Stallmann: Counter-mapping data science\nGapminder (check out in particular their temporal animations)\nGeoDa Center U.S. COVID Atlas\nR at the ACLU: Joining Tables to Reunite Families\nLondon: The Information Capital: Stunning book featuring 100 visualizations about the city of London. Many visualizations were created using R.\nMIT: Atlas of Inequality\nNew York City Neighborhood Planning Playbook\nR Graph Gallery\nWashington Post: America is more diverse than ever - but still segregated\nW.E.B. Du Bois’s Data Portraits: Visualizing Black America and related background from Smithsonian Magazine"
+  },
+  {
+    "objectID": "howto/index.html",
+    "href": "howto/index.html",
+    "title": "How To",
+    "section": "",
+    "text": "R is an open source programming language that is a common tool used for data analysis across a range of disciplines. This means that in addition to being free and available for a range of operating systems and environments, R is also directly supported by a diverse user community who continually develop approaches for specialized applications or data. Need to download U.S. Census Data? There’s an R package for that. Need to perform common data cleaning tasks? There’s an R package for that too. We’ll be exploring a range of these specialized applications over the course of the semester.\nOf course there are alternate languages which we could employ in service of neighborhood analysis. Python, for example, is an even more ubiquitous programming language with its own set of tools for data science. R was originally built as a statistical computing language, and that brings some important benefits for the types of data science we’ll be learning this semester. R is also fairly prevalent among the user community working in public policy analysis and urban data science - this is the user community which you will be joining. Finally, R has a high learning curve, but also a very active user community, meaning that abundant documentation of problems and their solutions is available.\nAs we get started, let’s be clear - you are going to experience some frustration and challenges as you learn the R programming language. This class assumes no prior background in R or any other programming language for that matter, and we’ll work to quickly build your “vocabulary” and the ability to get results. We will spend some time picking up basics, and will then use our exploration of specific analysis approaches to reinforce our use of the grammar and structure of the language and to build more complex scripts over time.\nIt’s fair to equate learning R with learning to drive a manual car. Increasingly, people learn how to drive in automatic cars - essentially allowing the car to handle the function of switching gears - you put the car into drive, press the accelerator pedal and the car moves forward. Your past exposure to computer-based analytic tools has probably followed a similar strategy - you likely learned using software that had graphical user interfaces that allow them to call up and run programs and then spit out results. Most of us learn to point and click in order to accomplish a particular set of analytic tasks, meaning that if we want to generate the same results in the future, we would have to repeat all of those same steps over again.\nSo why learn on a manual? For many car enthusiasts, manuals are both more efficient and more engaging to drive - they offer additional control, and come with a heightened awareness of what the car is doing. Of course, they also come with a steep learning curve.\nSome of the same attributes apply to our use of R as a tool for analysis.\n\nFirst, a manual approach forces you to explicitly understand more of the requirements and assumptions that go into the analysis that you’re doing.\nSecond, you have to know your data (and its strengths and limitations) well in order to get it set up for analysis and to produce useful output.\nThird, this approach emphasizes reproducible analysis, meaning that you will develop workflows that can be repeated over and over again producing the same results - important for sharing your work with others and for accountability, especially within contexts related to public deliberation of the strengths and weaknesses of policy arguments.\n\nKeeping these three benefits in mind, we’ll be using the R software coupled with the RStudio Integrated Development Environment (IDE) to counter some of the downsides of a purely manual approach. RStudio will help us implement R code more effectively and efficiently. Hopefully at this point, this prospect leaves you excited rather than daunted!"
+  },
+  {
+    "objectID": "howto/setupr.html",
+    "href": "howto/setupr.html",
+    "title": "Setting up R and RStudio",
+    "section": "",
+    "text": "R can be downloaded from the Comprehensive R Archive Network (CRAN), a network of mirrored servers throughout the world that host the R software as well as user-developed packages. Visit https://cloud.r-project.org which will automatically direct you to the best download server.\nOnce here, you can then download and install R using the version that matches your operating system:\n\nGo ahead and download R and install following the installer defaults. After R is downloaded and installed, run R to confirm. You should see a single window that looks something like this:\nThat’s it for R. This should be the first and last time you’ll need to open the R console directly. We typically will not access R directly, but instead will use RStudio as our primary interface. Go ahead and close the R console and proceed by downloading and installing RStudio, which is the IDE we will use to interface and write code with R."
+  },
+  {
+    "objectID": "howto/setupr.html#downlad-rstudio",
+    "href": "howto/setupr.html#downlad-rstudio",
+    "title": "Setting up R and RStudio",
+    "section": "Downlad RStudio",
+    "text": "Downlad RStudio\nNext up, let’s download RStudio. Go to https://rstudio.com/products/rstudio/download. Click on “Download” under RStudio Desktop. The website will suggest the most appropriate current version of the software based upon the computer you are loading RStudio on. You may also choose from an alternate installer if you believe it is more appropriate for your operating system.\nDownload and install RStudio, again using the default installation settings.\nOnce you have RStudio installed, open RStudio. You should see something that looks like this (the information in your console window will likely describe a newer version of R than what is displayed here).\n\nYou’ll note that what appears in the portion of the console to the left looks very similar to the R console window which you opened before you started your install of RStudio. This console functions in exactly the same way, however, you’ll also note that there are other areas which you have access to as well.\n## Rtools error (PC users)\nSome PC users may encounter an error message regarding Rtools not being installed. This would come up with you first try to install a package such as tidyverse either using R’s package manager or using the install.packages() command. To remedy this error if it occurs, PC users need to close R, manually download a patch, install it, and restart your computer. This error should then be remedied.\nIf you are a PC user who encounters this error, please do the following: 1. Save any work and close your RStudio session 2. Download Rtools (download link) + the link above contains instructions for putting Rtools on the PATH - you should not need to do this. 3. Run the downloaded executable file to install Rtools 4. Restart your computer 5. Re-open RStudio - the problem should be resolved"
+  },
+  {
+    "objectID": "howto/setupr.html#run-r-in-the-cloud",
+    "href": "howto/setupr.html#run-r-in-the-cloud",
+    "title": "Setting up R and RStudio",
+    "section": "Run R in the Cloud",
+    "text": "Run R in the Cloud\nUIUC AnyWare provides cloud-based options for running software including RStudio."
+  },
+  {
+    "objectID": "howto/setupr.html#the-rstudio-interface",
+    "href": "howto/setupr.html#the-rstudio-interface",
+    "title": "Setting up R and RStudio",
+    "section": "The RStudio Interface",
+    "text": "The RStudio Interface\n\nThe R Console is the place where code you write is executed. Typically we’ll write code in a script or R Notebook (more on those later) and active pieces of code will them be executed in the R console. You can also type code directly into the console and execute it by hitting the return or enter key.\nThe Environment Window provides information on variables, data tables, and other objects you create and define as you work.\nThe Auxiliary Window provides a range of information, and includes a file browser, plot visualization window, and access to help documentation.\n\nWith those basics in mind, you can start to explore the basic functionality of R."
+  }
+]
