@@ -28,7 +28,7 @@ website:
     search: true
   page-footer:
     left: "Content {{< fa regular copyright >}} Andrew J. Greenlee"
-    right: "Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)"
+    right: "Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/) </br> Website Code on [Github {{< fa brands github >}}]({{< var course.github >}})"
 
   sidebar:
     - title: "Schedule"
