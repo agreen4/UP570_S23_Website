@@ -9,7 +9,7 @@ format: html
 
 Learn to tell stories about neighborhoods for decision-making, public deliberation, and accountability using {{< fa brands r-project >}} and principles of reproducible data analysis.
 
-<br/>
+<br/> ***Note: This is a website under development - site content is subject to change until the class begins in January 2023.*** <br/>
 
 ![](neighborhood_hu0759e748e15c0378cd00c54866cc265b_3994708_1200x0_resize_lanczos_2.png) <br/> <br/>
 
