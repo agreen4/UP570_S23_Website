@@ -29,6 +29,11 @@ Welcome to UP 570: Neighborhood Analysis! This session serves as our introductio
 ## Slides
 
 ```{=html}
-<iframe class="slide-deck" src="../slides/01_CourseIntroduction.html" style="width:100%;height:100vh;margin:0;padding:0"; frameborder="1"></iframe>
+<iframe class="slide-deck" src="../slides/01_CourseIntroduction.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="1"></iframe>
 ```
+
+```{=html}
+<iframe class="slide-deck" src="../slides/S1 Course Introduction/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
+
 ## Resources for Further Exploration
