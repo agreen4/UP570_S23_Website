@@ -7,8 +7,6 @@ format: html
 editor: visual
 ---
 
-# Population Memorandum
-
 ## Introduction
 
 Your prior two memorandums focused on using secondary sources to scope analysis for your place. In this memorandum you will draw upon multiple sources of available quantitative data to describe the population of your place and their characteristics. This background on the population will help you to identify a specific policy issue or other questions which you will analyze in your next memorandum.

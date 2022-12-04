@@ -7,7 +7,7 @@ format: html
 editor: visual
 ---
 
-# Assignment Introduction
+## Introduction
 
 For your term assignment, you will independently apply the skills and principles of data analysis we've learned over the course of the semester to produce a policy-relevant analysis and report. Building upon your memorandums, produce a publication ready policy report for your place as well as complimentary reproducible documentation.
 

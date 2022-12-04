@@ -7,8 +7,6 @@ format: html
 editor: visual
 ---
 
-# Place Background Memorandum
-
 ## Introduction
 
 In your previous memorandum, you identified a place to focus your analysis on, and provided some preliminary justification for your choice. In this memorandum, you will leverage additional research to identify priority populations, issues, and neighborhoods, and also to lay out an analysis roadmap that will guide your subsequent analysis.

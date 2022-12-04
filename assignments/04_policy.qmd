@@ -7,8 +7,6 @@ format: html
 editor: visual
 ---
 
-# Policy Memorandum
-
 ## Introduction
 
 In your prior memorandums you developed a preliminary narrative around your place based upon the characteristics of the population. Simultaneously, in your labs, you've been learning about a range of analytical strategies. In this lab, you will identify a specific policy-based problem and will develop and implement an appropriate analysis to better inform the problem. This is the final sub-element of your final policy report which will draw from your prior writing and analysis to present a polished report for your place.
