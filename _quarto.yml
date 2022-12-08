@@ -123,10 +123,11 @@ website:
 
 format:
   html:
-    theme: 
+    theme:
       light: flatly
       dark: darkly
-    css: styles.css
+    css: 
+      - styles.css
     toc: true
 
 editor: visual
