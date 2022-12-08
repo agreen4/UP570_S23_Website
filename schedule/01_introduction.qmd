@@ -16,8 +16,10 @@ Welcome to UP 570: Neighborhood Analysis! This session serves as our introductio
 
 ## Before Class
 
+-   Bookmark this website so you can access it easily.
+-   Join our course [Slack Channel](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D)
 -   Read the [course syllabus](../syllabus/index.qmd) and bring questions with you.
--   Complete the course introductory survey.
+-   Complete the course [introductory survey](%7B%7B%3C%20var%20course.survey%20%3E%7D%7D).
 -   Configure R and RStudio for our class.
 
 ## Reflect
@@ -31,9 +33,7 @@ Welcome to UP 570: Neighborhood Analysis! This session serves as our introductio
 ```{=html}
 <iframe class="slide-deck" src="../slides/01_CourseIntroduction.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="1"></iframe>
 ```
-
 ```{=html}
 <iframe class="slide-deck" src="../slides/S1 Course Introduction/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
 ```
-
 ## Resources for Further Exploration
