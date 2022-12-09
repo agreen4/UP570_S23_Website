@@ -12,10 +12,10 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Course Introduction
 
 | Week   | Session   | Date       | Description                                                         |
-|--------------|--------------|--------------|-------------------------------|
+|--------|-----------|------------|---------------------------------------------------------------------|
 | Week 1 | Session 1 | January 18 | [Course Introduction](01_introduction.qmd)                          |
 | Week 2 | Session 2 | January 23 | [What is a Neighborhood?](02_neighborhood.qmd)                      |
-| Week 2 | Session 3 | January 25 | Building a Data Pipeline                                            |
+| Week 2 | Session 3 | January 25 | [Building a Data Pipeline](03_datapipeline.qmd)                     |
 | Week 3 | Session 4 | January 30 | Sharing Your Work                                                   |
 | Week 3 | Session 5 | February 1 | Earning your Learner's Permit                                       |
 | Week 3 |           | February 3 | [Place Selection Memorandum](../assignments/01_place_selection.qmd) |
@@ -25,7 +25,7 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Strategies for Analysis
 
 | Week    | Session    | Date        | Description                                                           |
-|-------------|-------------|-------------|---------------------------------|
+|---------|------------|-------------|-----------------------------------------------------------------------|
 | Week 5  | Session 8  | February 13 | Population and the Census                                             |
 | Week 5  | Session 9  | February 15 | Population and the Census                                             |
 | Week 5  |            | February 17 | [Place Background Memorandum](../assignments/02_place_background.qmd) |
@@ -52,7 +52,7 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Course Wrap-Up
 
 | Week    | Session    | Date     | Description                                    |
-|--------------|--------------|--------------|-------------------------------|
+|---------|------------|----------|------------------------------------------------|
 | Week 14 | Session 24 | April 17 | Final Project Peer Review                      |
 | Week 14 | Session 25 | April 19 | Final Presentations                            |
 | Week 15 | Session 26 | April 24 | Independent Work and Advising                  |

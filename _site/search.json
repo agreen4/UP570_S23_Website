@@ -228,7 +228,7 @@
     "href": "schedule/01_introduction.html#before-class",
     "title": "Course Introduction",
     "section": "Before Class",
-    "text": "Before Class\n\nBookmark this website so you can access it easily.\nJoin our course Slack Channel\nRead the course syllabus and bring questions with you.\nComplete the course introductory survey.\nConfigure R and RStudio for our class."
+    "text": "Before Class\n\nBookmark this website so you can access it easily.\nJoin our course Slack Channel\nRead the course syllabus and bring questions with you.\nComplete the course introductory survey.\nJoin the Data Science in Planning (DSIP) Listserv (dsip-durp-l@lists.illinois.edu) where members of our community can share opportunities things of interest.\n\nIn the subject line of your email, type in: subscribe dsip-durp-l@lists.illinois.edu Firstname Name (replace your own first name and name).\nLeave the message body blank.\n\nConfigure R and RStudio for our class."
   },
   {
     "objectID": "schedule/01_introduction.html#reflect",
@@ -263,14 +263,14 @@
     "href": "schedule/02_neighborhood.html",
     "title": "What is a Neighborhood?",
     "section": "",
-    "text": "In this session, we’ll explore the many ways in which the concept of neighborhoods are used in various areas of urban planning and governance. We will continue to build upon previous questions regarding the significance of neighborhoods as a unit of analysis, planning, and policymaking, and will explore frameworks for neighborhood analysis."
+    "text": "In this session, we’ll explore the many ways in which the concept of neighborhoods are used in various areas of urban planning and governance. We will continue to build upon our initial discussion regarding the significance of neighborhoods as a unit of analysis, planning, and policymaking, and will explore frameworks for neighborhood analysis."
   },
   {
     "objectID": "schedule/02_neighborhood.html#before-class",
     "href": "schedule/02_neighborhood.html#before-class",
     "title": "What is a Neighborhood?",
     "section": "Before Class",
-    "text": "Before Class\nYour readings for today provide insight into some of the working definitions for value judgments regarding the qualities of neighborhoods and why planners have found these qualities to be of importance to measure and understand.\nNote that you must be logged in to your UIUC Box.com account in order to access these readings. This is to respect the copyright of the authors on a publicly accessible website.\nTalen, Emily, Sunny Menozzi, and Chloe Schaefer. (2015). What is a “Great Neighborhood”? An Analysis of APA’s Top-Rated Places. Journal of the American Planning Association, 81(2): 121-141.\nRohe, William. (2009). From Local to Global: One Hundred Years of Neighborhood Planning. Journal of the American Planning Association 75(2): 209-230"
+    "text": "Before Class\nYour readings for today provide insight into some of the working definitions for value judgments regarding the qualities of neighborhoods and why planners have found these qualities to be of importance to measure and understand.\n\n\n\n\n\n\nImportant\n\n\n\nYou must be logged in to your UIUC Box.com account in order to access these readings. This is to respect the copyright of the authors on a publicly accessible website.\n\n\nTalen, Emily, Sunny Menozzi, and Chloe Schaefer. (2015). What is a “Great Neighborhood”? An Analysis of APA’s Top-Rated Places. Journal of the American Planning Association, 81(2): 121-141.\nRohe, William. (2009). From Local to Global: One Hundred Years of Neighborhood Planning. Journal of the American Planning Association 75(2): 209-230"
   },
   {
     "objectID": "schedule/02_neighborhood.html#reflect",
@@ -291,7 +291,7 @@
     "href": "schedule/02_neighborhood.html#resources-for-further-exploration",
     "title": "What is a Neighborhood?",
     "section": "Resources for Further Exploration",
-    "text": "Resources for Further Exploration"
+    "text": "Resources for Further Exploration\nDahir, James. (1947). The Neighborhood Unit Plan: Its Spread and Acceptance. New York: The Russell Sage Foundation.\nMumford, Lewis. (1954). The Neighborhood and Neighborhood Unit. The Town Planning Review, 24(4): 256-270."
   },
   {
     "objectID": "assignments/index.html",
@@ -502,5 +502,68 @@
     "title": "Policy Memorandum",
     "section": "Submission Instructions",
     "text": "Submission Instructions\nUpload your memorandum R notebook to the appropriate folder in your class GitHub repository."
+  },
+  {
+    "objectID": "schedule/03_datapipeline.html",
+    "href": "schedule/03_datapipeline.html",
+    "title": "Building a Data Pipeline",
+    "section": "",
+    "text": "In this session, we’ll explore some of the basic workflow which we’ll use over the course of the semester to package and share analysis. We’ll develop familiarity with Quarto, and basic operations in Github so that you are able to share code and analysis over the course of the semester."
+  },
+  {
+    "objectID": "schedule/03_datapipeline.html#before-class",
+    "href": "schedule/03_datapipeline.html#before-class",
+    "title": "Building a Data Pipeline",
+    "section": "Before Class",
+    "text": "Before Class\nDownload the Quarto Workbook associated with our Nuts and Bolts work.\nConfirm that you are familiar with the following packages and functions which we will make use of during this session - if you are not familiar read the documentation and bring questions to our session.\n\n\n\nPackage\nFunction\n\n\n\n\nTidyverse\n|>\n\n\nTidyverse\nselect()\n\n\nTidyverse\nfilter()\n\n\nTidyverse\ngroup_by()\n\n\nTidycensus\nget_acs()\n\n\nTidycensus\nget_decennial()\n\n\nTidycensus\nload_variables()\n\n\nsf"
+  },
+  {
+    "objectID": "schedule/03_datapipeline.html#reflect",
+    "href": "schedule/03_datapipeline.html#reflect",
+    "title": "Building a Data Pipeline",
+    "section": "Reflect",
+    "text": "Reflect\nWhat are the types of common tasks in your workflows that you think would benefit from a data pipeline?"
+  },
+  {
+    "objectID": "schedule/03_datapipeline.html#slides",
+    "href": "schedule/03_datapipeline.html#slides",
+    "title": "Building a Data Pipeline",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/03_datapipeline.html#resources-for-further-exploration",
+    "href": "schedule/03_datapipeline.html#resources-for-further-exploration",
+    "title": "Building a Data Pipeline",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/Session_template.html#before-class",
+    "href": "schedule/Session_template.html#before-class",
+    "title": "NAME",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/Session_template.html#reflect",
+    "href": "schedule/Session_template.html#reflect",
+    "title": "NAME",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/Session_template.html#slides",
+    "href": "schedule/Session_template.html#slides",
+    "title": "NAME",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/Session_template.html#resources-for-further-exploration",
+    "href": "schedule/Session_template.html#resources-for-further-exploration",
+    "title": "NAME",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
   }
 ]

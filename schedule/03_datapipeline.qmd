@@ -1,0 +1,37 @@
+---
+title: "Building a Data Pipeline"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Session Description
+
+In this session, we'll explore some of the basic workflow which we'll use over the course of the semester to package and share analysis. We'll develop familiarity with Quarto, and basic operations in Github so that you are able to share code and analysis over the course of the semester.
+
+## Before Class
+
+Download the Quarto Workbook associated with our Nuts and Bolts work.
+
+Confirm that you are familiar with the following packages and functions which we will make use of during this session - if you are not familiar read the documentation and bring questions to our session.
+
+| Package    | Function         |
+|------------|------------------|
+| Tidyverse  | `|>`             |
+| Tidyverse  | `select()`        |
+| Tidyverse  | `filter()`        |
+| Tidyverse  | `group_by()`        |
+| Tidycensus | `get_acs()`        |
+| Tidycensus | `get_decennial()`  |
+| Tidycensus | `load_variables()` |
+| sf         |                  |
+
+## Reflect
+
+What are the types of common tasks in your workflows that you think would benefit from a data pipeline?
+
+## Slides
+
+## Resources for Further Exploration
