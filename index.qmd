@@ -32,7 +32,7 @@ Learn to tell stories about neighborhoods for decision-making, public deliberati
 
 -   {{< fa user >}}   {{< var ta.name >}}
 -   {{< fa envelope >}}   <a href="mailto:{{< var ta.email >}}">{{< var ta.email >}}</a>
--   {{< fa brands github >}}   [Github]({{< var ta.github >}})
+-   {{< fa brands github >}}   [Github](%7B%7B%3C%20var%20ta.github%20%3E%7D%7D)
 -   {{< fa calendar-check >}}   [Schedule an appointment](%7B%7B%3C%20var%20ta.calendly_url%20%3E%7D%7D)
 :::
 
