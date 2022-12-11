@@ -20,9 +20,9 @@ Welcome to UP 570: Neighborhood Analysis! This session serves as our introductio
 -   Join our course [Slack Channel](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D)
 -   Read the [course syllabus](../syllabus/index.qmd) and bring questions with you.
 -   Complete the course [introductory survey](%7B%7B%3C%20var%20course.survey%20%3E%7D%7D).
--   Join the Data Science in Planning (DSIP) Listserv (dsip-durp-l@lists.illinois.edu) where members of our community can share opportunities things of interest.
-    -   In the subject line of your email, type in: subscribe dsip-durp-l@lists.illinois.edu Firstname Name (replace your own first name and name).
-    -   Leave the message body blank. 
+-   Join the Data Science in Planning (DSIP) Listserv (dsip-durp-l\@lists.illinois.edu) where members of our community can share opportunities things of interest.
+    -   In the subject line of your email, type in: subscribe dsip-durp-l\@lists.illinois.edu Firstname Name (replace your own first name and name).
+    -   Leave the message body blank.
 -   Configure R and RStudio for our class.
 
 ## Reflect
