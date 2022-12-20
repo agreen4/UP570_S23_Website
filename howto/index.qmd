@@ -19,7 +19,7 @@ It's fair to equate learning R with learning to drive a manual car. Increasingly
 
 So why learn on a manual? For many car enthusiasts, manuals are both more efficient and more engaging to drive - they offer additional control, and come with a heightened awareness of what the car is doing. Of course, they also come with a steep learning curve.
 
-Some of the same attributes apply to our use of R as a tool for analysis.
+Some of the same attributes apply to our use of R as a tool for analysis:
 
 -   First, a manual approach forces you to explicitly understand more of the **requirements and assumptions** that go into the analysis that you're doing.
 
