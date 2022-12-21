@@ -80,6 +80,16 @@ website:
         - section: "Overview"
           contents:
             - assignments/index.qmd
+        - section: "Labs"
+          contents:     
+            - text: "Building a Data Pipeline"
+            - text: "Sharing Your Work"
+            - text: "Describing Places"
+            - text: "Population and the Census"
+            - text: "Population Projections"
+            - text: "Segregation"
+            - text: "Neighborhood Change"
+            - text: "Place Opportunity"
         - section: "Assignments"
           contents:
             - text: "Place Selection Memorandum"
