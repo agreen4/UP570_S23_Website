@@ -66,21 +66,23 @@ Consistent contributions in class, thoughtful engagement with course material, a
 
 ### Assignment Weights
 
-+--------------+------------------------------+------------------------------+--------------+
-| Strategy     | Master's Students            | Ph.D. Students               | Grade Weight |
-+==============+==============================+==============================+==============+
-| Learn        | Labs                         | Labs                         | 10 percent   |
-+--------------+------------------------------+------------------------------+--------------+
-| Apply        | Memos                        | Paper Proposal               | 40 percent   |
-|              |                              |                              |              |
-|              |                              | Paper Outline                |              |
-|              |                              |                              |              |
-|              |                              | Paper Draft                  |              |
-+--------------+------------------------------+------------------------------+--------------+
-| Communicate  | Final Report                 | Term Paper                   | 40 percent   |
-+--------------+------------------------------+------------------------------+--------------+
-| Engage       | Participation and Engagement | Participation and Engagement | 10 percent   |
-+--------------+------------------------------+------------------------------+--------------+
++-------------+------------------------------+------------------------------+--------------+
+| Strategy    | Master's Students            | Ph.D. Students               | Grade Weight |
++=============+==============================+==============================+==============+
+| Learn       | Labs                         | Labs                         | 10 percent   |
++-------------+------------------------------+------------------------------+--------------+
+| Apply       | Place Selection Memo         | Paper Proposal               | 40 percent   |
+|             |                              |                              |              |
+|             | Place Background Memo        | Paper Outline                |              |
+|             |                              |                              |              |
+|             | Population Memo              | Paper Draft                  |              |
+|             |                              |                              |              |
+|             | Policy Memo                  |                              |              |
++-------------+------------------------------+------------------------------+--------------+
+| Communicate | Final Report                 | Term Paper                   | 40 percent   |
++-------------+------------------------------+------------------------------+--------------+
+| Engage      | Participation and Engagement | Participation and Engagement | 10 percent   |
++-------------+------------------------------+------------------------------+--------------+
 
 ### Ph.D. Students
 
@@ -88,39 +90,39 @@ Doctoral students may elect to either satisfy course requirements laid out for M
 
 Doctoral students should speak with me during weeks 1 or 2 if you wish to pursue this option so we can develop an appropriate research proposal, timeline, and outputs.
 
-### Grading
+## Grading
 
 ### Grading Policy
 
 This course requires your engagement both within and outside of the classroom. Grading criteria include contribution to the course environment, quality of writing, and depth of analysis. Your work will be graded on a 100-point scale:
 
-+---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Grade   | Points      | Description                                                                                                                                                                               |
-+=========+=============+===========================================================================================================================================================================================+
-| A+      | 97-100      | Outstanding work, ready for dissemination. Demonstrates mastery of course concepts and skills, clear communication, and appropriate use of analytical methods.                            |
-|         |             |                                                                                                                                                                                           |
-| A       | 93-96       |                                                                                                                                                                                           |
-|         |             |                                                                                                                                                                                           |
-| A-      | 90-92       |                                                                                                                                                                                           |
-+---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| B+      | 87-89       | Good work, that meets expectations. Work needs minor revision address minor communication or technical errors in order to be ready for dissemination                                      |
-|         |             |                                                                                                                                                                                           |
-| B       | 83-86       |                                                                                                                                                                                           |
-|         |             |                                                                                                                                                                                           |
-| B-      | 80-82       |                                                                                                                                                                                           |
-+---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| C+      | 77-79       | Work needs major revision to writing or analysis due to technical errors, not ready for dissemination.                                                                                    |
-|         |             |                                                                                                                                                                                           |
-| C       | 73-77       |                                                                                                                                                                                           |
-|         |             |                                                                                                                                                                                           |
-| C-      | 70-72       |                                                                                                                                                                                           |
-+---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| D+      | 67-69       | Work does not meet course expectations for graduate-level work. Reflects lack of understanding or conceptualization of work, major technical errors, and requires significant rethinking. |
-|         |             |                                                                                                                                                                                           |
-| D       | 60-66       |                                                                                                                                                                                           |
-+---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F       | 0-59        | Work does not meet minimum expectations, effort, or understanding.                                                                                                                        |
-+---------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Grade | Points | Description                                                                                                                                                                               |
++=======+========+===========================================================================================================================================================================================+
+| A+    | 97-100 | Outstanding work, ready for dissemination. Demonstrates mastery of course concepts and skills, clear communication, and appropriate use of analytical methods.                            |
+|       |        |                                                                                                                                                                                           |
+| A     | 93-96  |                                                                                                                                                                                           |
+|       |        |                                                                                                                                                                                           |
+| A-    | 90-92  |                                                                                                                                                                                           |
++-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| B+    | 87-89  | Good work, that meets expectations. Work needs minor revision address minor communication or technical errors in order to be ready for dissemination                                      |
+|       |        |                                                                                                                                                                                           |
+| B     | 83-86  |                                                                                                                                                                                           |
+|       |        |                                                                                                                                                                                           |
+| B-    | 80-82  |                                                                                                                                                                                           |
++-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| C+    | 77-79  | Work needs major revision to writing or analysis due to technical errors, not ready for dissemination.                                                                                    |
+|       |        |                                                                                                                                                                                           |
+| C     | 73-77  |                                                                                                                                                                                           |
+|       |        |                                                                                                                                                                                           |
+| C-    | 70-72  |                                                                                                                                                                                           |
++-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| D+    | 67-69  | Work does not meet course expectations for graduate-level work. Reflects lack of understanding or conceptualization of work, major technical errors, and requires significant rethinking. |
+|       |        |                                                                                                                                                                                           |
+| D     | 60-66  |                                                                                                                                                                                           |
++-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F     | 0-59   | Work does not meet minimum expectations, effort, or understanding.                                                                                                                        |
++-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ### Attendance Policy
 

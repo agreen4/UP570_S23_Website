@@ -2,6 +2,7 @@
 title: "Syllabus"
 sidebar: true
 toc: true
+smooth-scroll: true
 ---
 
 Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester.
@@ -24,23 +25,27 @@ We will learn together using a combination of direct instruction, lab sessions, 
 
 Unless otherwise noted, please plan on bringing to class a computer that will run R and RStudio (available for PC/Mac/Linux) and for which you have administrative privileges.
 
-### What to Expect from Me
+### What to Expect from Your Instructors
 
--   **Office Hours and Availability:** Please make an appointment to speak one-on-one using my [Calendly page](%7B%7B%3C%20var%20instructor.calendly_url%20%3E%7D%7D). Of course, I'm also happy to chat either before or after our class if i'm available.
+-   **Office Hours and Availability:** We are available to speak one on one - you can book appointments with us via our Calendly pages:
+    -   [Andrew Greenlee]({{< var instructor.calendly_url >}})
+    -   [Ouafa Benkraouda]({{< var ta.calendly_url >}})
+
+        Of course, we are happy to chat either before or after class if we are available.
 -   **Email:** The easiest way to communicate with me outside of class is via [email](mailto:%7B%7B%3C%20var%20instructor.email%20%3E%7D%7D). I try to respond to emails sent during the week within 24 hours. Emails sent over the weekend will receive a response within 48 hours. If you don't hear from me after that amount of time, it's okay to nudge me to respond.
 -   **Troubleshooting:** Plan on using our class [Slack channel](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D), email, and office hours to get help with troubleshooting problems as they arise in your work. The [Resources](/resources) page provides thoughts and resources for troubleshooting. I also encourage you to work with others in the class to troubleshoot problems - it is highly likely that others in the class have encountered similar problems, and this also allows us to create a repository of our problems and responses.
 
-### What I Expect From You
+### What We Expect From You
 
--   **Be Present:** I expect that you'll engage fully in our course sessions and in our class community.
--   **Actively Support Each Other:** I expect that each of you will take on individual leadership roles within our class, that includes actively supporting our learning community over the course of the semester. This class assumes collaboration and sharing as part of our learning model.
+-   **Be Present:** We expect that you'll engage fully in our course sessions and in our class community.
+-   **Actively Support Each Other:** We expect that each of you will take on individual leadership roles within our class, that includes actively supporting our learning community over the course of the semester. This class assumes collaboration and sharing as part of our learning model.
 -   **Read with Care:** This course focuses on learning by doing, however, there are important details contained within the documentation on our course website and within reading selections. Details matter in this class - be intentional about reading carefully and completely important course documents (including this syllabus).
--   **Act with Integrity:** I expect that you will act with integrity in all that you do in this class. The class contract grading system places trust in you to not just meet the nominal standards contained within the contract, but to push yourself to produce your best work.
--   **Seek Balance:** I expect that you'll actively work to find balance between the many demands in your life. This means budgeting adequate time to engage fully in our course but also budgeting time for adequate rest and sleep, exercise, and other actions that support your mental and physical health.
+-   **Act with Integrity:** We expect that you will act with integrity in all that you do in this class. The class contract grading system places trust in you to not just meet the nominal standards contained within the contract, but to push yourself to produce your best work.
+-   **Seek Balance:** We expect that you'll actively work to find balance between the many demands in your life. This means budgeting adequate time to engage fully in our course but also budgeting time for adequate rest and sleep, exercise, and other actions that support your mental and physical health.
 
 ### Course Prerequisites
 
-UP 570: Neighborhood Analysis is open to students with graduate-level standing. The course assumes that you have previously taken [UP 517: Data Science for Planners](https://courses.illinois.edu/schedule/terms/UP/517) or have substantial experience with manipulating data in R.
+UP 570: Neighborhood Analysis is open to students with graduate-level standing. The course assumes that you have previously taken [UP 517: Data Science for Planners](https://courses.illinois.edu/schedule/terms/UP/517) or have substantial experience with manipulating data in R. Our first few course sessions will focus on ensuring that we are all familiar with some of the basic workflows and methods which we'll make use of over the course of the semester.
 
 Please *talk with me* if you have any questions regarding whether this course is right for you.
 
@@ -71,7 +76,8 @@ Put simply, don't cheat and give credit where credit is due.
 As part of our classroom and university community, you have an obligation to do the following:
 
 -   Attend all class sessions if you are feeling well.
--   If you feel ill, do not come to class. If you test positive or have an exposure that requires testing or quarantine, do not come to class.
+-   If you feel ill, do not come to class. 
+-   If you test positive for covid or have an exposure that requires testing or quarantine, do not come to class.
 -   Please be respectful of all members of our learning community and their decisions regarding health and safety precautions.
 
 ## Your Wellness
@@ -80,7 +86,7 @@ As part of our classroom and university community, you have an obligation to do 
 
 ### Learning R and Your Wellness
 
-As you have learned throughout your journey learning R, you will face challenges related to working with the software this semester. That's a given, and is an expected part of learning in this class. Part of the goal is to teach you how to understand the intentionality and logic behind the software so that you can anticipate where errors are likely to occur.
+Problem solving is a major part of being a coder - you will face challenges related to working with the software this semester. That's a given, and is an expected part of learning in this class. Part of the goal is to teach you how to understand the intentionality and logic behind the software so that you can anticipate where errors are likely to occur.
 
 ::: callout-tip
 ## Experiential Learning
