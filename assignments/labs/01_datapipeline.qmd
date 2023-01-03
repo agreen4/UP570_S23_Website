@@ -37,12 +37,7 @@ Our class will focus on developing data analysis and sharing pipelines that make
 -   Project
 -   Working Directory
 -   Workspace
-
-### Github
-
--   Commit
--   Local vs. Remote
--   Push / Pull
+-   Quarto Markdown
 
 Let's get going...
 
@@ -133,47 +128,46 @@ Later in the class, we'll introduce more powerful strategies like the [renv](htt
 
 Each project you create should have it's own directory which will be a folder with a descriptive file name. This root folder will contain a directory structure which allows you to organize your data and workflows. There's no standardized format which this directory structure has to take, however there are some useful principles that will help you stay organized.
 
-#### Project Organization Principles
+#### Project Organization Principles {#project-organization-principles}
 
-1. **Use subdirectories to stay organized.** While R doesn't care whether your project directory contains subdirectories, subdirectories are useful for keeping track of your files. As you build out increasingly complicated projects, you will likelly generate lots of data, metadata, scripts, and outputs. Subdirectories can help you to keep all of this information organized, and will make it easier for others to navigate your project.
+1.  **Use subdirectories to stay organized.** While R doesn't care whether your project directory contains subdirectories, subdirectories are useful for keeping track of your files. As you build out increasingly complicated projects, you will likelly generate lots of data, metadata, scripts, and outputs. Subdirectories can help you to keep all of this information organized, and will make it easier for others to navigate your project.
 
-2. **Keep raw and processed data separate.** We want to set up workflows that allow us to consistently be able to transition from raw data to processed data, to outputs (that will end up in our outputs folder). If our project relied upon locally stored datasets, raw data should be placed in a separate folder for raw data. After it exists, raw data should only be *read* - it shouldn't be *written to*. Depending upon the considerations of your workflow, you may want to create a separate folder for processed data - unlike your raw data folder, you may both read and write data to this folder.
+2.  **Keep raw and processed data separate.** We want to set up workflows that allow us to consistently be able to transition from raw data to processed data, to outputs (that will end up in our outputs folder). If our project relied upon locally stored datasets, raw data should be placed in a separate folder for raw data. After it exists, raw data should only be *read* - it shouldn't be *written to*. Depending upon the considerations of your workflow, you may want to create a separate folder for processed data - unlike your raw data folder, you may both read and write data to this folder.
 
-3. **Maintain a local copy of data documentation.** Whenever possible, download or include data documentation to go along with your raw data. This will be useful to refer to as you're working, and will also help others who make work on the project in the future. As you modify data and create your own datasets, you should also consider creating documentation for your working data. Again, this will help you or others in the future.
+3.  **Maintain a local copy of data documentation.** Whenever possible, download or include data documentation to go along with your raw data. This will be useful to refer to as you're working, and will also help others who make work on the project in the future. As you modify data and create your own datasets, you should also consider creating documentation for your working data. Again, this will help you or others in the future.
 
-4. **Outputs get their own subdirectory.** Outputs may include tables, graphics, or any other output created by your analysis. Depending upon the quantity of outputs, you may choose to add additional subdirectories to your output folder to help organize your outputs.
+4.  **Outputs get their own subdirectory.** Outputs may include tables, graphics, or any other output created by your analysis. Depending upon the quantity of outputs, you may choose to add additional subdirectories to your output folder to help organize your outputs.
 
-5. **Order your scripts.** In addition to creating a dedicated subdirectory for your scripts, consider naming them in such a way that they are ordered and follow your data workflow. You may also want to develop a master script that sequentially runs your other scripts. You can use `source()` in this master script to run other scripts.
+5.  **Order your scripts.** In addition to creating a dedicated subdirectory for your scripts, consider naming them in such a way that they are ordered and follow your data workflow. You may also want to develop a master script that sequentially runs your other scripts. You can use `source()` in this master script to run other scripts.
 
-6. **Quarto Markdown gets its own subdirectory.** Depending upon the complexity of your project, it may be useful to creata a directory for any Quarto Markdown documents you create.
+6.  **Quarto Markdown gets its own subdirectory.** Depending upon the complexity of your project, it may be useful to creata a directory for any Quarto Markdown documents you create.
 
 Your base project directory and structure will end up looking something like this:
 
-```
-Root
- |
- |_ data
- |   |_ data_raw
- |   |_ data_processed
- |
- |_ documentation
- |_ output
- |_ scripts
- |   |_ 01_master.r
- |   |_ 02_get_data.r
- |   |_ 03_plots.r
- |_ quarto
+    Root
+     |
+     |_ data
+     |   |_ data_raw
+     |   |_ data_processed
+     |
+     |_ documentation
+     |_ output
+     |_ scripts
+     |   |_ 01_master.r
+     |   |_ 02_get_data.r
+     |   |_ 03_plots.r
+     |_ quarto
 
-```
 Again, there's no standardized format which your directory structure has to take. Your structure may also change depending upon the specific considerations and workflows involved for a given project. Over time, you'll develop a default folder structure that makes sense for how you tend to work.
 
-:::{.important}
+::: important
 When we assess your work in UP 570, we will be looking for evidence that you are making effective use of project directory structures. Unless we state so, there's no required directory structure format, however, we want to see you applying principles of good directory management in your work.
 :::
 
 #### Project Organization Workflows
 
 After we create our project directory and create a r project file, we can programmatically create our directory structure using the `dir.create()` command. For example:
+
 ```{r}
 #| eval: false
 #| error: false
@@ -205,6 +199,7 @@ lapply(project_dirs, dir.create)
 ```
 
 #### Script Headers and Structure
+
 While a lot of our coding can be done directly in Quarto Markdown documents, you'll also want to use scripts to store code and develop workflows that may eventually be represented as output in your Quarto document. Script headers can help to organize the work we do in scripts, and can help when we get ready to share our work with others or pick up work on files we have not looked at in a while.
 
 Taking a few extra minutes to develop a nice script header will be beneficial in the future - your future self, your collaborators, and others who use your code will appreciate it!
@@ -252,15 +247,15 @@ function2 <- function(input1, input2) {
 
 The different elements here help record who coded the script, what it is designed to do, and provides a common place to set options, load packages, and define functions. Although these components could occur anywhere in the script before they are called upon, includig them in the header helps track what's going on in the script.
 
-While you could easily type out each element of your header every time that you develop a new script, you can also save your script as a *code snippet* within RStudio, which will allow you to easily insert the header template into new scripts you create. 
+While you could easily type out each element of your header every time that you develop a new script, you can also save your script as a *code snippet* within RStudio, which will allow you to easily insert the header template into new scripts you create.
 
-:::{.aside}
+::: aside
 This code snippet trick is paraphrased from the description provided by [Dr. Timothy S. Farewell](https://timfarewell.co.uk/my-r-script-header-template/).
 :::
 
-1. In RStudio, go to Tools -> Global Options -> Code -> Snippets -> Edit Snippets. This will bring up a block of code - scroll to the bottom.
+1.  In RStudio, go to Tools -\> Global Options -\> Code -\> Snippets -\> Edit Snippets. This will bring up a block of code - scroll to the bottom.
 
-2. Modify the below code header template to include your information and then copy / paste this into the snippets code block.
+2.  Modify the below code header template to include your information and then copy / paste this into the snippets code block.
 
 ```{r}
 #| eval: false
@@ -290,26 +285,27 @@ snippet header
 	# Define functions
 ```
 
-![](01_datapipeline/15_snippet.png)
-3. Save and close the window.
+![](01_datapipeline/15_snippet.png) 3. Save and close the window.
 
 You have now added this snippet to your library. When you start a new script, simply type "header" and press tab and RStudio will fill in your header template.
 
-:::{.aside}
+::: aside
 Snippets are handy - you may soon identify other common bits of code that you use frequently that you want to make snippets out of.
 :::
 
 #### Naming Files
+
 As mentioned in the [Project Organization Principles](#project-organization-principles) section, it's important to spend a little time thinking about conventions for your filenames. Some useful principles:
 
-1. Avoid using special characters (for instance, \\ / : * ? " < > |) in file names.
-2. Do not use spaces in filenames. You may use an underscore (e.g. map_census_tracts.png) to help with readability.
-3. If you choose to use dates as part of your filename, order them yyy-mm-dd (e.g. 20230102 would be January 2, 2023). If you have multiple versions of the file from different dates, this ensures that your files will be properly ordered by the date.
+1.  Avoid using special characters (for instance, \\ / : \* ? " \< \> \|) in file names.
+2.  Do not use spaces in filenames. You may use an underscore (e.g. map_census_tracts.png) to help with readability.
+3.  If you choose to use dates as part of your filename, order them yyy-mm-dd (e.g. 20230102 would be January 2, 2023). If you have multiple versions of the file from different dates, this ensures that your files will be properly ordered by the date.
 
-:::{.aside}
+::: aside
 This date format (yyy-mm-dd) conforms to [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates).
 :::
-4. When creating ordered lists for file names (ordered by number) use at least two digits (e.g. "01_Main", "02_Download", "03_Map"). This will keep your files in order once you get past 10. 
+
+4.  When creating ordered lists for file names (ordered by number) use at least two digits (e.g. "01_Main", "02_Download", "03_Map"). This will keep your files in order once you get past 10.
 
 ## Workflow 2: Working in Quarto
 
@@ -328,7 +324,6 @@ Quarto makes use of a modified version of Markdown syntax. The [Quarto website](
 ```{=html}
 <iframe width="780" height="500" src="https://quarto.org/docs/authoring/markdown-basics.html" title="Quarto Formatting"></iframe>
 ```
-
 You should familiarize yourself with how to format text, how to use section headings, and how to link files and insert references to other files.
 
 ### Adding References
@@ -337,7 +332,7 @@ Quarto can help you either manage references in very sinple ways or more complex
 
 #### Footnotes
 
-We oftentimes use footnotes as an easy way to convey references or links to details or important information that does not need to be in our main body of text. Quarto allows you to create both footnotes and long notes. Footnotes are typically short and take up only a line or two. Long notes are longer and may contain multiple paragraphs. 
+We oftentimes use footnotes as an easy way to convey references or links to details or important information that does not need to be in our main body of text. Quarto allows you to create both footnotes and long notes. Footnotes are typically short and take up only a line or two. Long notes are longer and may contain multiple paragraphs.
 
 ``` markdown
   
@@ -354,34 +349,33 @@ Here is some text with a longnote.[^longnote]
   This text is also part of the long note - the indent signals that it remains part of the note.
   
 And this text would be part of the next paragraph that's outside of the note because it is not indented.
-
 ```
 
 Here is some text with a footnote[^1]
 
-Here is also some text with an inline footnote.^[Here is the text associated with the inline footnote - this may be easier to track because it is in line with the text.]
-
-Here is some text with a longnote[^longnote]
-
 [^1]: And here is the footnote that accompanies that text in the footnotes section.
 
-[^longnote]: And here is a longnote that takes up multiple lines. You can experiment in your text to see whether a footnote or longnote will serve you better for a given situation.
+Here is also some text with an inline footnote.[^2]
+
+[^2]: Here is the text associated with the inline footnote - this may be easier to track because it is in line with the text.
+
+Here is some text with a longnote[^3]
+
+[^3]: And here is a longnote that takes up multiple lines. You can experiment in your text to see whether a footnote or longnote will serve you better for a given situation.
 
     This text is also part of the long note - the indent signals that it remains part of the note. You might include code snippets, images, or other items as part of your note.
-    
-    ```
-    Creating footnotes is easy^[So long as you remember the correct syntax.]
-    ```
-    This text would also be part of your long note.
-    
-And this text would be part of the next paragraph that's outside of the note because it is not indented.
 
+        Creating footnotes is easy^[So long as you remember the correct syntax.]
+
+    This text would also be part of your long note.
+
+And this text would be part of the next paragraph that's outside of the note because it is not indented.
 
 #### Asides
 
 You can also add asides to documents which places a note in line with text in the margin.
 
-:::{.aside}
+::: aside
 For a very effective example of asides, see Kieran Healy's book [*Data Visualization: A Practical Introduction*](https://socviz.co/gettingstarted.html#work-in-plain-text-using-rmarkdown).
 :::
 
@@ -390,7 +384,8 @@ For a very effective example of asides, see Kieran Healy's book [*Data Visualiza
 Here is an aside placed in line with text in the margin.
 :::
 ```
-:::{.aside}
+
+::: aside
 Here is an aside placed in line with text in the margin.
 :::
 
@@ -398,13 +393,13 @@ Here is an aside placed in line with text in the margin.
 
 For longer or more advanced documents, you may wish to rely upon Quarto's suppot for using and managing references with BibTex, a standard reference format. This allows you to add references to your document and then create in line citations and a formatted bibliography to accompany your writing.
 
-In order to create a bibliography that is associated with a document, you'll need three files: 
+In order to create a bibliography that is associated with a document, you'll need three files:
 
-1. A main file written in Quarto Markdown (.qmd). This file will be formatted to include citation references.
+1.  A main file written in Quarto Markdown (.qmd). This file will be formatted to include citation references.
 
-2. A bibliographic data source, typically a Bibtex (.bibtex) file.
+2.  A bibliographic data source, typically a Bibtex (.bibtex) file.
 
-3. A `csl` file - this specifies the format for your bibliography. You can find and include different csl files to produce a bibliography using different reference styles.
+3.  A `csl` file - this specifies the format for your bibliography. You can find and include different csl files to produce a bibliography using different reference styles.
 
 ##### Step 1: Create a bibliography file.
 
@@ -425,22 +420,19 @@ bibliography: references.bib
 
 Like most other reference management systems, you can define what reference syle your references will be rendered as, and change this as needed. The [Citation Style Language (CSL) project](https://citationstyles.org) defines a common language and structure for styles. These are stored in `.csl` files which you will associate with your document. You can find and download .csl files in a range of formats from the CSL Project's [repository](https://github.com/citation-style-language/styles).
 
-:::{.aside}
+::: aside
 You can also find and download csl files in Zotero's [style repository](https://www.zotero.org/styles). If you hover over a style format, it provides examples of what a citation will look like in your redered document.
 :::
 
-For the sake of example, we'll format our document using American Psychological Association (APA) format. We'll search the CSL Project's repository to find an appropriate APA style .csl file. Once you find the appropriate file, then  download the file and place it in the same directory as our .bib file.
+For the sake of example, we'll format our document using American Psychological Association (APA) format. We'll search the CSL Project's repository to find an appropriate APA style .csl file. Once you find the appropriate file, then download the file and place it in the same directory as our .bib file.
 
-
-![](01_datapipeline/16_csl.png)
-Click on the .csl style format you want to use. You'll then be taken to a page that includes the specific file's contents.
+![](01_datapipeline/16_csl.png) Click on the .csl style format you want to use. You'll then be taken to a page that includes the specific file's contents.
 
 ![](01_datapipeline/17_csl_file.png)
 
 From here, you can right click on the button that says "raw" and download the .csl file.
 
-![](01_datapipeline/18_csl_download.png)
-Note that before you move this file from your download folder to the folder where your .bib file is located, you may need to alter the file extension to indicate that this is a .csl file. Once you have done this, move it to the folder where your .bib file is located and then add a csl reference to your YAML header.
+![](01_datapipeline/18_csl_download.png) Note that before you move this file from your download folder to the folder where your .bib file is located, you may need to alter the file extension to indicate that this is a .csl file. Once you have done this, move it to the folder where your .bib file is located and then add a csl reference to your YAML header.
 
 ```{yaml}
 ---
@@ -454,8 +446,7 @@ csl: apa-6th-edition.csl
 
 You're now set up to add references to your document. You can add references in lots of different ways. If you're searching for references using a service like Google Scholar, under the "cite" options for a given reference, you'll see a URL to download the BibTeX citation associated with that reference.
 
-![](01_datapipeline/19_cite_google.png)
-Click on BibTeX and the citation contents will show:
+![](01_datapipeline/19_cite_google.png) Click on BibTeX and the citation contents will show:
 
 ![](01_datapipeline/20_bibtex_cite.png)
 
@@ -473,13 +464,13 @@ You can then cite this reference while you write by referring to it as follows:
 
 Note that the actual reference corresponds to the first clause in the bibtex reference.
 
-:::{.aside} 
+::: aside
 You can change the reference name if you'd like to something you'll remember as you cite.
 :::
 
-You can paste more references into the same references.bib file and cite them as well. 
+You can paste more references into the same references.bib file and cite them as well.
 
-:::{.aside}
+::: aside
 You can find more details on formatting citations on the [Quarto website](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations).
 :::
 
@@ -489,7 +480,7 @@ Online tools like [Citation Machine](https://www.citationmachine.net/bibtex/cite
 
 Quarto will automatically place your references at the end of your document (or wherever your style definition file calls for references to be placed). You can also explicitly tell Quarto where to place your references by creating a div as follows:
 
-``` {markdown}
+```{markdown}
 
 ## References
 
@@ -500,19 +491,21 @@ Quarto will automatically place your references at the end of your document (or 
 You should end up with a formatted reference section at the end of your document.
 
 ![](01_datapipeline/22_bibliography.png)
+
 ### Reference Considerations
 
 It's ultimately up to you how you manage and generate references within your documents. If you have a document with very few references, footnotes and/or endnotes may be an appropriate strategy. A more complex document with many references may be better managed using BibTeX. You can also use another reference management system and then export citations in BibTeX format which can then be added to your Quarto Markdown document.
 
-## Sharing
+## Lab Evaluation
 
-One of the major goals of our class is to develop workflows that allow us to easily share and disseminate our work - we'll rely upon elements of the Quarto Markdown ecosystem to help us accomplish this.
+In evaluating your lab submission, we'll be paying attention to the following:
 
-### Sharing via Quarto Pub
+1. Implementing best practices in root directory structure, file naming, and organization.
+2. Formatting of a script file including the implementation of a header.
+3. Formatting of the Quarto Markdown document to refer to analytic output and which uses formatting features to structure the document.
+4. A brief but appropriate description of population change in Chicago Community Areas.
+5. Implementation of a bibliography using the MLA format in your Quarto Markdown file.
 
-
-https://quarto.org/docs/publishing/quarto-pub.html
-
-### Sharing via Github
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
 
 ## References
