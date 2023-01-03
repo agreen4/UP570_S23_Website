@@ -41,6 +41,10 @@ Our class will focus on developing data analysis and sharing pipelines that make
 
 Let's get going...
 
+## Github Lab Repository
+
+If you have not already done so, follow [this link](https://classroom.github.com/a/TzkeNAie) to accept the lab Github Classroom assignment repository.
+
 ## Workflow 1: Set up a New Project
 
 The first workflow we need to develop is proper project setup in R. In our next lab, we'll add some more complexity to this project setup by incorporating version control and sharing, but we'll start by getting a handle on projects that reside on our local computer. Let's start with a quick review of file system and structure, and then transition into the nuts and bolds of project setup.
