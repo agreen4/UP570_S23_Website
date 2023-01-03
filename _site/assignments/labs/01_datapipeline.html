@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Neighborhood Analysis - Building a Data Pipeline</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Neighborhood Analysis</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus/index.html">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule/index.html">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../assignments/index.html">
+ <span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../howto/index.html">
+ <span class="menu-text">How To</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/index.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://up570s23.slack.com/"><i class="bi bi-slack" role="img" aria-label="Slack">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core Concepts</a>
+  <ul>
+  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and Rstudio</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
+  </ul></li>
+  <li><a href="#workflow-1-set-up-a-new-project" id="toc-workflow-1-set-up-a-new-project" class="nav-link" data-scroll-target="#workflow-1-set-up-a-new-project">Workflow 1: Set up a New Project</a>
+  <ul>
+  <li><a href="#file-system-and-structure" id="toc-file-system-and-structure" class="nav-link" data-scroll-target="#file-system-and-structure">File System and Structure</a></li>
+  <li><a href="#project-setup" id="toc-project-setup" class="nav-link" data-scroll-target="#project-setup">Project Setup</a>
+  <ul class="collapse">
+  <li><a href="#project-organization-principles" id="toc-project-organization-principles" class="nav-link" data-scroll-target="#project-organization-principles">Project Organization Principles</a></li>
+  <li><a href="#project-organization-workflows" id="toc-project-organization-workflows" class="nav-link" data-scroll-target="#project-organization-workflows">Project Organization Workflows</a></li>
+  <li><a href="#script-headers-and-structure" id="toc-script-headers-and-structure" class="nav-link" data-scroll-target="#script-headers-and-structure">Script Headers and Structure</a></li>
+  <li><a href="#naming-files" id="toc-naming-files" class="nav-link" data-scroll-target="#naming-files">Naming Files</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#working-in-quarto" id="toc-working-in-quarto" class="nav-link" data-scroll-target="#working-in-quarto">Working in Quarto</a>
+  <ul>
+  <li><a href="#formatting-your-documents" id="toc-formatting-your-documents" class="nav-link" data-scroll-target="#formatting-your-documents">Formatting Your Documents</a></li>
+  <li><a href="#adding-references" id="toc-adding-references" class="nav-link" data-scroll-target="#adding-references">Adding References</a>
+  <ul class="collapse">
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
+  <li><a href="#asides" id="toc-asides" class="nav-link" data-scroll-target="#asides">Asides</a></li>
+  <li><a href="#citations-and-bibliographies" id="toc-citations-and-bibliographies" class="nav-link" data-scroll-target="#citations-and-bibliographies">Citations and Bibliographies</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sharing" id="toc-sharing" class="nav-link" data-scroll-target="#sharing">Sharing</a>
+  <ul>
+  <li><a href="#sharing-via-quarto-pub" id="toc-sharing-via-quarto-pub" class="nav-link" data-scroll-target="#sharing-via-quarto-pub">Sharing via Quarto Pub</a></li>
+  <li><a href="#sharing-via-github" id="toc-sharing-via-github" class="nav-link" data-scroll-target="#sharing-via-github">Sharing via Github</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Building a Data Pipeline</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i></button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this lab, we’ll explore some of the basic workflows which we’ll use over the course of the semester to package and share analysis. A primary principle of our class is that our analysis be <em>reproducible</em> by others - this is an important prnciple both for supporting the <em>validity</em> of our arguments, and also <em>accountability</em> to those neighborhoods and communities we are analyzing and to the broader audience who may use our work in their deliberation or who might adapt our workflows to address similar questions in their areas of focus.</p>
+<p>Our class will focus on developing data analysis and sharing pipelines that make use of R and RStudio’s core functions. We’ll gain familiarity with RStudio’s Quarto format which allows for the integration of plain text, code, and code output in the same documents and which is focused on easily translating text and code into multiple output formats. We’ll also become more familiar with Github, which we’ll use as a tool to share code and analysis.</p>
+</section>
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals</h2>
+<ul>
+<li>Become familiar with core programmatic ways to manipulate files in R and RStudio.</li>
+<li>Become familiar with the core features and outputs related to Quarto.</li>
+<li>Set up your computer so that RStudio can communicate with your Github account.</li>
+</ul>
+</section>
+<section id="core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="core-concepts">Core Concepts</h2>
+<section id="r-and-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="r-and-rstudio">R and Rstudio</h3>
+<ul>
+<li>Project</li>
+<li>Working Directory</li>
+<li>Workspace</li>
+</ul>
+</section>
+<section id="github" class="level3">
+<h3 class="anchored" data-anchor-id="github">Github</h3>
+<ul>
+<li>Commit</li>
+<li>Local vs.&nbsp;Remote</li>
+<li>Push / Pull</li>
+</ul>
+<p>Let’s get going…</p>
+</section>
+</section>
+<section id="workflow-1-set-up-a-new-project" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="workflow-1-set-up-a-new-project">Workflow 1: Set up a New Project</h2>
+<p>The first workflow we need to develop is proper project setup in R. In our next lab, we’ll add some more complexity to this project setup by incorporating version control and sharing, but we’ll start by getting a handle on projects that reside on our local computer. Let’s start with a quick review of file system and structure, and then transition into the nuts and bolds of project setup.</p>
+<section id="file-system-and-structure" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="file-system-and-structure">File System and Structure</h3>
+<div class="column-page-inset-left page-columns page-full">
+<p>When you started learning R and RStudio, you likely struggled a bit with some of the core concepts related to how R views your computer’s file system and where it looks for files and stores work. There’s nothing to complex about what R is doing, but as computers have become better at making sensible decisions for us, it can be easy to lose track of some of the basics of how we need to set up file structures that help us to actively manage our workflows and outputs.</p>
+<p>There are a few basics which we need to have down. The first is a gentle reminder about how computer file systems work. Back when I was a kid in the early 1980s, the primary way we interacted with computers was at the command line. When you started a computer, you might be greeted with something that looks like the terminal tab in your RStudio session:</p>
+<p><img src="01_datapipeline/01_Terminal.png" class="img-fluid"> From here, you’d type commands to either navigate between directories, list files in a directory, or execute files. For instance, we can use <code>ls</code> to list all the files in my home directory: <img src="01_datapipeline/02_Terminal_ls.png" class="img-fluid"></p>
+<p>And then take a look at the results: <img src="01_datapipeline/03_Terminal_ls_results.png" class="img-fluid"></p>
+<p>Which is the equivalent of looking at what files are in my computer’s home directory in a graphical user interface: <img src="01_datapipeline/04_Terminal_finder.png" class="img-fluid"></p>
+<p>While for the most part we wont be bothered with accessing our file system this way, it’s useful to understand what’s going on with the pathnames that are shown. Whether you’re used to working with Mac, PC, or Linux operating systems, the approach to file systems is sufficiently similar to talk about them all together.</p>
+<p>Most modern operating systems operate using <em>relative</em> pathnames which allow us to be more efficient in referencing where files are located in our computer. The path that you saw above on my computer points to the “home directory” which is the base directory associated with my user account on the computer. My home director is situated however within other directories that are part of the operating system and that are ultimately on a hard disk drive.</p>
+<p><img src="01_datapipeline/05_HD.png" class="img-fluid"> So why is all of this important? This underscores the rationale for and utility of relative paths in our filesystem. My mac computer’s home directory is <code>Machinsosh HD/Users/andrewgreenlee/</code> which means that rather than having to type out all of that content, I can just start instructions to paths beloww that directory. For instance, let’s navigate to my desktop folder: <img src="01_datapipeline/06_Desktop.png" class="img-fluid"></p>
+<p>Which is the same as navigating from the root folder of our hard drive to the desktop folder: <img src="01_datapipeline/07_Desktop_manual.png" class="img-fluid"></p>
+<p>This certainly makes things more convenient for navigating files in Terminal and in our file system. It has a much deeper utulity when we are thinking about reproducible data analysis. Let’s explore in more detail.</p>
+<section id="directory-structure-and-r" class="level3">
+<h3 class="anchored" data-anchor-id="directory-structure-and-r">Directory Structure and R</h3>
+<p>Oftentimes when people begin learning in R and RStudio, they simply open the program and start typing commands. This works well up until the point when one needs to get data into or out of R. In general, R is agnostic about where to look for files - if you open RStudio without specifying where to look for files, it assumes you want to work out of your home directory (the <code>getwd()</code> command returns the current working directory R is using): <img src="01_datapipeline/08_getwd.png" class="img-fluid"></p>
+<p>We typically do not want to work out of our home directory, but would like to set another directory to work out of. When new R users start to work in R, many are taught to use <code>setwd()</code> to explicitly set a directory to work out of. This will work, and sets a “home” directory for the particular work you are doing.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"Desktop/andrew-home/neighborhood_types/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>For the sake of illustration, let’s say we wnat to open a dataset containing a list of community area definitions for Chicago:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"CommAreas.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We create a script in our working directory that sets the directory, reads the file, and then shows the file to us.</p>
+<p>What happens when you move your working folder to another computer or share it? If you explicitly set your working directory, it won’t be able to access that directory which is at a path that doesn’t exist on your other computer:</p>
+<p><img src="01_datapipeline/09_wd_error.png" class="img-fluid"> R Projects help us to address this problem. Projects add a file to the folder we wish to set as our home directory for our project which establishes where R will look for files.</p>
+<p>In the right top corner of your RStudio window, you’ll note a blue cube which leads to a project management menu:</p>
+<p><img src="01_datapipeline/10_project.png" class="img-fluid"> If you click “New Project”, a dialog box will open up which allows you to specify project options:</p>
+<p><img src="01_datapipeline/11_project_dialog.png" class="img-fluid"></p>
+<p>You have options here - you can either create a new project in a new folder, use an existing folder which you’ve already created, or check a project out from Github or another vesion control system. Since we already have a directory we’ve been working out of, we can use the existing directory dialog, and then set the directory where our script and data are located.</p>
+<p><img src="01_datapipeline/12_project_sel.png" class="img-fluid"></p>
+<p>From here, so long as we open our work by clicking on the project file, we’ll be taken into the project which will remember what the “home” directory is for our work. <img src="01_datapipeline/13_project_dir.png" class="img-fluid"></p>
+<p>The benefit of this approach is that if we move our project directory to another computer and open our project, R understands that the folder with the project file reflects the <em>relative</em> path to where we will find the other files referenced in our project. This means that if we share our working folder with others, they can reproduce what we did so long as all files are contained within that project directory.</p>
+<p>Project files represent mileposts that set the relative path at which RStudio will look for files within our particular project. This is useful for creating a project file structure within which we can create reproducible and easily shareable analysis. You should be in the habit of starting each new analysis you do by setting up a new work folder with a new project file.</p>
+</section>
+<section id="projects-vs.-workspaces" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="projects-vs.-workspaces">Projects vs.&nbsp;Workspaces</h3>
+<p>Each time you close your RStudio session, you will be faced with a temptation - RStudio will ask whether you want to save your workspace.</p>
+<p><img src="01_datapipeline/14_workspace.png" class="img-fluid"></p>
+<p>What’s the difference between a script, a project, and a workspace? A script contains the code which tells R what you want it to do. Script commands are run in the console in the order they are written. You want to get in the habit of saving your script files often. Your project file tells R the path to look for files and folders at. This sets a relative path for your work in that project. A workspace file saves the exact image of what’s going on when you close out of RStudio - that may include loaded datasets, functions, and objects.</p>
+<p>You have likely been tempted to save your workspace when you are closing your R session. While tempting, I encourage you <strong>not</strong> to get in the habit of saving your workspace. This runs counter to most other interactions you’ve had with computers - saving documents, video games, or survey responses. Saving your workspace can lead to bad habits with regards to reproducibility. You want to allow your scripts to serve as a repository for all steps that go from your raw data to your analysis and outputs. Unless your script has time or computationally intensive steps, your scripts and computer can re-run your workflow to return to the point that you left off when you last worked on the project.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Later in the class, we’ll introduce more powerful strategies like the <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> and <a href="https://books.ropensci.org/targets/">targets</a> packages which can help to manage your workflows and their dependencies.</p>
+</div></div></section>
+</div>
+</section>
+<section id="project-setup" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="project-setup">Project Setup</h3>
+<p>Each project you create should have it’s own directory which will be a folder with a descriptive file name. This root folder will contain a directory structure which allows you to organize your data and workflows. There’s no standardized format which this directory structure has to take, however there are some useful principles that will help you stay organized.</p>
+<section id="project-organization-principles" class="level4">
+<h4 class="anchored" data-anchor-id="project-organization-principles">Project Organization Principles</h4>
+<ol type="1">
+<li><p><strong>Use subdirectories to stay organized.</strong> While R doesn’t care whether your project directory contains subdirectories, subdirectories are useful for keeping track of your files. As you build out increasingly complicated projects, you will likelly generate lots of data, metadata, scripts, and outputs. Subdirectories can help you to keep all of this information organized, and will make it easier for others to navigate your project.</p></li>
+<li><p><strong>Keep raw and processed data separate.</strong> We want to set up workflows that allow us to consistently be able to transition from raw data to processed data, to outputs (that will end up in our outputs folder). If our project relied upon locally stored datasets, raw data should be placed in a separate folder for raw data. After it exists, raw data should only be <em>read</em> - it shouldn’t be <em>written to</em>. Depending upon the considerations of your workflow, you may want to create a separate folder for processed data - unlike your raw data folder, you may both read and write data to this folder.</p></li>
+<li><p><strong>Maintain a local copy of data documentation.</strong> Whenever possible, download or include data documentation to go along with your raw data. This will be useful to refer to as you’re working, and will also help others who make work on the project in the future. As you modify data and create your own datasets, you should also consider creating documentation for your working data. Again, this will help you or others in the future.</p></li>
+<li><p><strong>Outputs get their own subdirectory.</strong> Outputs may include tables, graphics, or any other output created by your analysis. Depending upon the quantity of outputs, you may choose to add additional subdirectories to your output folder to help organize your outputs.</p></li>
+<li><p><strong>Order your scripts.</strong> In addition to creating a dedicated subdirectory for your scripts, consider naming them in such a way that they are ordered and follow your data workflow. You may also want to develop a master script that sequentially runs your other scripts. You can use <code>source()</code> in this master script to run other scripts.</p></li>
+<li><p><strong>Quarto Markdown gets its own subdirectory.</strong> Depending upon the complexity of your project, it may be useful to creata a directory for any Quarto Markdown documents you create.</p></li>
+</ol>
+<p>Your base project directory and structure will end up looking something like this:</p>
+<pre><code>Root
+ |
+ |_ data
+ |   |_ data_raw
+ |   |_ data_processed
+ |
+ |_ documentation
+ |_ output
+ |_ scripts
+ |   |_ 01_master.r
+ |   |_ 02_get_data.r
+ |   |_ 03_plots.r
+ |_ quarto
+</code></pre>
+<p>Again, there’s no standardized format which your directory structure has to take. Your structure may also change depending upon the specific considerations and workflows involved for a given project. Over time, you’ll develop a default folder structure that makes sense for how you tend to work.</p>
+<div class="important">
+<p>When we assess your work in UP 570, we will be looking for evidence that you are making effective use of project directory structures. Unless we state so, there’s no required directory structure format, however, we want to see you applying principles of good directory management in your work.</p>
+</div>
+</section>
+<section id="project-organization-workflows" class="level4">
+<h4 class="anchored" data-anchor-id="project-organization-workflows">Project Organization Workflows</h4>
+<p>After we create our project directory and create a r project file, we can programmatically create our directory structure using the <code>dir.create()</code> command. For example:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create project subdirectories</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"data"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"data/data_raw"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"data/data_processed"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"documentation"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"output"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"scripts"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"quarto"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We could also save ourselves repetition in our code using the base R <code>lapply()</code> syntax. We create a list with our project directory names and assign that into an object. We then feel <code>lapply()</code> the list along with the function we wish to apply to each element of that list - in this case, <code>dir.create()</code>:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create project subdirectories</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>project_dirs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"data"</span>, <span class="st">"data/data_raw"</span>, <span class="st">"data/data_processed"</span>, <span class="st">"documentation"</span>, <span class="st">"output"</span>, <span class="st">"scripts"</span>, <span class="st">"quarto"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(project_dirs, dir.create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="script-headers-and-structure" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="script-headers-and-structure">Script Headers and Structure</h4>
+<p>While a lot of our coding can be done directly in Quarto Markdown documents, you’ll also want to use scripts to store code and develop workflows that may eventually be represented as output in your Quarto document. Script headers can help to organize the work we do in scripts, and can help when we get ready to share our work with others or pick up work on files we have not looked at in a while.</p>
+<p>Taking a few extra minutes to develop a nice script header will be beneficial in the future - your future self, your collaborators, and others who use your code will appreciate it!</p>
+<p>Like so many other R things, there’s no standardized example of what a script header needs to include, howevver, here’s a basic header template to start with:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Title: [Insert script title here]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: [Your name]</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Email: [Your email address]</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: [Insert date here]</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Script Name: [Script Name]</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Description: [Insert a brief description of the script and its purpose]</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Notes: [Insert any process notes or potential revision plans here]</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the working environment</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(library1)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(library2)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set global options</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">option1 =</span> value1, <span class="at">option2 =</span> value2)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Define functions</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>function1 <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2) {</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function code goes here</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>function2 <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2) {</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function code goes here</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Main script</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co"># End of script</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The different elements here help record who coded the script, what it is designed to do, and provides a common place to set options, load packages, and define functions. Although these components could occur anywhere in the script before they are called upon, includig them in the header helps track what’s going on in the script.</p>
+<p>While you could easily type out each element of your header every time that you develop a new script, you can also save your script as a <em>code snippet</em> within RStudio, which will allow you to easily insert the header template into new scripts you create.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This code snippet trick is paraphrased from the description provided by <a href="https://timfarewell.co.uk/my-r-script-header-template/">Dr.&nbsp;Timothy S. Farewell</a>.</p>
+</div></div><ol type="1">
+<li><p>In RStudio, go to Tools -&gt; Global Options -&gt; Code -&gt; Snippets -&gt; Edit Snippets. This will bring up a block of code - scroll to the bottom.</p></li>
+<li><p>Modify the below code header template to include your information and then copy / paste this into the snippets code block.</p></li>
+</ol>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>snippet header</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Title: </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Author:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Email:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Date:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Script Name:</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Description:</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Notes:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Working Environment Setup</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load required libraries</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    load_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"sf"</span>) <span class="co"># Add more packages here as needed</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lapply</span>(load_packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set global options</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define functions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><img src="01_datapipeline/15_snippet.png" class="img-fluid"> 3. Save and close the window.</p>
+<p>You have now added this snippet to your library. When you start a new script, simply type “header” and press tab and RStudio will fill in your header template.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Snippets are handy - you may soon identify other common bits of code that you use frequently that you want to make snippets out of.</p>
+</div></div></section>
+<section id="naming-files" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="naming-files">Naming Files</h4>
+<p>As mentioned in the <a href="#project-organization-principles">Project Organization Principles</a> section, it’s important to spend a little time thinking about conventions for your filenames. Some useful principles:</p>
+<ol type="1">
+<li>Avoid using special characters (for instance, \ / : * ? ” &lt; &gt; |) in file names.</li>
+<li>Do not use spaces in filenames. You may use an underscore (e.g.&nbsp;map_census_tracts.png) to help with readability.</li>
+<li>If you choose to use dates as part of your filename, order them yyy-mm-dd (e.g.&nbsp;20230102 would be January 2, 2023). If you have multiple versions of the file from different dates, this ensures that your files will be properly ordered by the date.</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This date format (yyy-mm-dd) conforms to <a href="https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates">ISO 8601 format</a>.</p>
+</div></div><ol start="4" type="1">
+<li>When creating ordered lists for file names (ordered by number) use at least two digits (e.g.&nbsp;“01_Main”, “02_Download”, “03_Map”). This will keep your files in order once you get past 10.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="working-in-quarto" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="working-in-quarto">Working in Quarto</h2>
+<p>Quarto is a tool built into RStudio which allows you to create a variety of documents that can integrate plain text and code. It’s utility comes both in it’s ability to translate plain text into a variety of well-formatted outputs, but also due to the ease with which we can use this format to share code, analysis, and writing with others. Most of your written assignments in class will be produced in Quarto, therefore, you’ll want to become familiar with the basic syntax and logic.</p>
+<p>Quarto’s plain text formatting is handled using <a href="https://www.markdownguide.org/getting-started/">Markdown syntax</a> which is designed to be simple, easily interpreted as text with formatting in place, and readable on most computers. An increasing number of note systems and word processors have adopted Markdown as their language.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Some examples include <a href="https://bear.app">Bear</a>, <a href="https://obsidian.md">Obsidian</a>, <a href="https://www.notion.so">Notion</a>, <a href="https://ulysses.app">Ulysses</a>. Mentions are not endorsements.</p>
+</div></div><section id="formatting-your-documents" class="level3">
+<h3 class="anchored" data-anchor-id="formatting-your-documents">Formatting Your Documents</h3>
+<p>Quarto makes use of a modified version of Markdown syntax. The <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto website</a> maintains excellent documentation regarding basic markdown formatting options as well as Quarto-specific formatting options:</p>
+<iframe width="780" height="500" src="https://quarto.org/docs/authoring/markdown-basics.html" title="Quarto Formatting"></iframe>
+<p>You should familiarize yourself with how to format text, how to use section headings, and how to link files and insert references to other files.</p>
+</section>
+<section id="adding-references" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="adding-references">Adding References</h3>
+<p>Quarto can help you either manage references in very sinple ways or more complex ways. You can either add references directly to your text as either footnotes or endnotes.</p>
+<section id="footnotes" class="level4">
+<h4 class="anchored" data-anchor-id="footnotes">Footnotes</h4>
+<p>We oftentimes use footnotes as an easy way to convey references or links to details or important information that does not need to be in our main body of text. Quarto allows you to create both footnotes and long notes. Footnotes are typically short and take up only a line or two. Long notes are longer and may contain multiple paragraphs.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Here is some text with a footnote.<span class="ot">[^1]</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>And here is the footnote that accompanies that text in the footnotes section.</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>Here is also some text with an inline footnote.^<span class="co">[</span><span class="ot">Here is the text associated with the inline footnote - this may be easier to track because it is in line with the text.</span><span class="co">]</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>Here is some text with a longnote.<span class="ot">[^longnote]</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="ot">[^longnote]: </span>And here is a longnote that takes up multiple lines. You can experiment in your text to see whether a footnote or longnote will serve you better for a given situation.</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  This text is also part of the long note - the indent signals that it remains part of the note.</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>And this text would be part of the next paragraph that's outside of the note because it is not indented.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is some text with a footnote<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Here is also some text with an inline footnote.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Here is some text with a longnote<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>And this text would be part of the next paragraph that’s outside of the note because it is not indented.</p>
+</section>
+<section id="asides" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="asides">Asides</h4>
+<p>You can also add asides to documents which places a note in line with text in the margin.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>For a very effective example of asides, see Kieran Healy’s book <a href="https://socviz.co/gettingstarted.html#work-in-plain-text-using-rmarkdown"><em>Data Visualization: A Practical Introduction</em></a>.</p>
+</div></div><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Here is an aside placed in line with text in the margin.</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Here is an aside placed in line with text in the margin.</p>
+</div></div></section>
+<section id="citations-and-bibliographies" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="citations-and-bibliographies">Citations and Bibliographies</h4>
+<p>For longer or more advanced documents, you may wish to rely upon Quarto’s suppot for using and managing references with BibTex, a standard reference format. This allows you to add references to your document and then create in line citations and a formatted bibliography to accompany your writing.</p>
+<p>In order to create a bibliography that is associated with a document, you’ll need three files:</p>
+<ol type="1">
+<li><p>A main file written in Quarto Markdown (.qmd). This file will be formatted to include citation references.</p></li>
+<li><p>A bibliographic data source, typically a Bibtex (.bibtex) file.</p></li>
+<li><p>A <code>csl</code> file - this specifies the format for your bibliography. You can find and include different csl files to produce a bibliography using different reference styles.</p></li>
+</ol>
+<section id="step-1-create-a-bibliography-file." class="level5">
+<h5 class="anchored" data-anchor-id="step-1-create-a-bibliography-file.">Step 1: Create a bibliography file.</h5>
+<p>Using a text editor, create a plain text file that will contain your bibliographic references. In this case, we’ll create a text file called “references.bib”. Note that this file should end in <code>.bib</code> to signify that it is a bibliographic reference file.</p>
+</section>
+<section id="step-2-refer-to-the-bibliography-file-in-your-yaml-header" class="level5">
+<h5 class="anchored" data-anchor-id="step-2-refer-to-the-bibliography-file-in-your-yaml-header">Step 2: Refer to the bibliography file in your YAML Header</h5>
+<p>Next, in your Quarto Markdown document, you’ll add a line to your YAML header that refers to the location and name of your bibliography file.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Neighborhood Analysis: Place Selection Memorandum"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="step-3-define-a-citation-style" class="level5 page-columns page-full">
+<h5 class="anchored" data-anchor-id="step-3-define-a-citation-style">Step 3: Define a citation style</h5>
+<p>Like most other reference management systems, you can define what reference syle your references will be rendered as, and change this as needed. The <a href="https://citationstyles.org">Citation Style Language (CSL) project</a> defines a common language and structure for styles. These are stored in <code>.csl</code> files which you will associate with your document. You can find and download .csl files in a range of formats from the CSL Project’s <a href="https://github.com/citation-style-language/styles">repository</a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>You can also find and download csl files in Zotero’s <a href="https://www.zotero.org/styles">style repository</a>. If you hover over a style format, it provides examples of what a citation will look like in your redered document.</p>
+</div></div><p>For the sake of example, we’ll format our document using American Psychological Association (APA) format. We’ll search the CSL Project’s repository to find an appropriate APA style .csl file. Once you find the appropriate file, then download the file and place it in the same directory as our .bib file.</p>
+<p><img src="01_datapipeline/16_csl.png" class="img-fluid"> Click on the .csl style format you want to use. You’ll then be taken to a page that includes the specific file’s contents.</p>
+<p><img src="01_datapipeline/17_csl_file.png" class="img-fluid"></p>
+<p>From here, you can right click on the button that says “raw” and download the .csl file.</p>
+<p><img src="01_datapipeline/18_csl_download.png" class="img-fluid"> Note that before you move this file from your download folder to the folder where your .bib file is located, you may need to alter the file extension to indicate that this is a .csl file. Once you have done this, move it to the folder where your .bib file is located and then add a csl reference to your YAML header.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Neighborhood Analysis: Place Selection Memorandum"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> apa-6th-edition.csl</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="step-4-add-references-to-your-document" class="level5 page-columns page-full">
+<h5 class="anchored" data-anchor-id="step-4-add-references-to-your-document">Step 4: Add references to your document</h5>
+<p>You’re now set up to add references to your document. You can add references in lots of different ways. If you’re searching for references using a service like Google Scholar, under the “cite” options for a given reference, you’ll see a URL to download the BibTeX citation associated with that reference.</p>
+<p><img src="01_datapipeline/19_cite_google.png" class="img-fluid"> Click on BibTeX and the citation contents will show:</p>
+<p><img src="01_datapipeline/20_bibtex_cite.png" class="img-fluid"></p>
+<p>Copy this text, and paste it into your bibliographic reference file (in our example, references.bib).</p>
+<p><img src="01_datapipeline/21_references.png" class="img-fluid"></p>
+<p>You can then cite this reference while you write by referring to it as follows:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@healy2018data</span><span class="co">]</span> provides useful examples for leveraging GGPlot to create data visualization.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><span class="citation" data-cites="healy2018data">(<a href="#ref-healy2018data" role="doc-biblioref">Healy, 2018</a>)</span> provides useful examples for leveraging GGPlot to create data visualization.</p>
+<p>Note that the actual reference corresponds to the first clause in the bibtex reference.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>You can change the reference name if you’d like to something you’ll remember as you cite.</p>
+</div></div><p>You can paste more references into the same references.bib file and cite them as well.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>You can find more details on formatting citations on the <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations">Quarto website</a>.</p>
+</div></div><p>Online tools like <a href="https://www.citationmachine.net/bibtex/cite-a-website">Citation Machine</a> can help you to build references for a range of online sources. <span class="citation" data-cites="feder">(<a href="#ref-feder" role="doc-biblioref">Feder, n.d.</a>)</span> takes a little while to get used to, but these tools can help you to build out an effective citation workflow.</p>
+</section>
+<section id="step-5-place-your-bibliography" class="level5">
+<h5 class="anchored" data-anchor-id="step-5-place-your-bibliography">Step 5: Place your bibliography</h5>
+<p>Quarto will automatically place your references at the end of your document (or wherever your style definition file calls for references to be placed). You can also explicitly tell Quarto where to place your references by creating a div as follows:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>You should end up with a formatted reference section at the end of your document.</p>
+<p><img src="01_datapipeline/22_bibliography.png" class="img-fluid"> ### Reference Considerations</p>
+<p>It’s ultimately up to you how you manage and generate references within your documents. If you have a document with very few references, footnotes and/or endnotes may be an appropriate strategy. A more complex document with many references may be better managed using BibTeX. You can also use another reference management system and then export citations in BibTeX format which can then be added to your Quarto Markdown document.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="sharing" class="level2">
+<h2 class="anchored" data-anchor-id="sharing">Sharing</h2>
+<p>One of the major goals of our class is to develop workflows that allow us to easily share and disseminate our work - we’ll rely upon elements of the Quarto Markdown ecosystem to help us accomplish this.</p>
+<section id="sharing-via-quarto-pub" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-via-quarto-pub">Sharing via Quarto Pub</h3>
+<p>https://quarto.org/docs/publishing/quarto-pub.html</p>
+</section>
+<section id="sharing-via-github" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-via-github">Sharing via Github</h3>
+</section>
+</section>
+<section id="references" class="level2">
+
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-feder" class="csl-entry" role="doc-biblioentry">
+Feder, A. (n.d.). Bibtex. Retrieved from <a href="http://www.bibtex.org/">http://www.bibtex.org/</a>
+</div>
+<div id="ref-healy2018data" class="csl-entry" role="doc-biblioentry">
+Healy, K. (2018). <em>Data visualization: A practical introduction</em>. Princeton University Press.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>And here is the footnote that accompanies that text in the footnotes section.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Here is the text associated with the inline footnote - this may be easier to track because it is in line with the text.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>And here is a longnote that takes up multiple lines. You can experiment in your text to see whether a footnote or longnote will serve you better for a given situation.</p>
+<p>This text is also part of the long note - the indent signals that it remains part of the note. You might include code snippets, images, or other items as part of your note.</p>
+<pre><code>Creating footnotes is easy^[So long as you remember the correct syntax.]</code></pre>
+<p>This text would also be part of your long note.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Building a Data Pipeline"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="an">sidebar:</span><span class="co"> false</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 4</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> 01_datapipeline/references.bib</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> 01_datapipeline/apa-6th-edition.csl</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: none</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="an">fig-responsive:</span><span class="co"> true</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>In this lab, we'll explore some of the basic workflows which we'll use over the course of the semester to package and share analysis. A primary principle of our class is that our analysis be *reproducible* by others - this is an important prnciple both for supporting the *validity* of our arguments, and also *accountability* to those neighborhoods and communities we are analyzing and to the broader audience who may use our work in their deliberation or who might adapt our workflows to address similar questions in their areas of focus.</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>Our class will focus on developing data analysis and sharing pipelines that make use of R and RStudio's core functions. We'll gain familiarity with RStudio's Quarto format which allows for the integration of plain text, code, and code output in the same documents and which is focused on easily translating text and code into multiple output formats. We'll also become more familiar with Github, which we'll use as a tool to share code and analysis.</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Goals</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Become familiar with core programmatic ways to manipulate files in R and RStudio.</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Become familiar with the core features and outputs related to Quarto.</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Set up your computer so that RStudio can communicate with your Github account.</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core Concepts</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### R and Rstudio</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Project</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Working Directory</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Workspace</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Github</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Commit</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Local vs. Remote</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Push / Pull</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>Let's get going...</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow 1: Set up a New Project</span></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>The first workflow we need to develop is proper project setup in R. In our next lab, we'll add some more complexity to this project setup by incorporating version control and sharing, but we'll start by getting a handle on projects that reside on our local computer. Let's start with a quick review of file system and structure, and then transition into the nuts and bolds of project setup.</span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### File System and Structure</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>::: column-page-inset-left</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>When you started learning R and RStudio, you likely struggled a bit with some of the core concepts related to how R views your computer's file system and where it looks for files and stores work. There's nothing to complex about what R is doing, but as computers have become better at making sensible decisions for us, it can be easy to lose track of some of the basics of how we need to set up file structures that help us to actively manage our workflows and outputs.</span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>There are a few basics which we need to have down. The first is a gentle reminder about how computer file systems work. Back when I was a kid in the early 1980s, the primary way we interacted with computers was at the command line. When you started a computer, you might be greeted with something that looks like the terminal tab in your RStudio session:</span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/01_Terminal.png)</span> From here, you'd type commands to either navigate between directories, list files in a directory, or execute files. For instance, we can use <span class="in">`ls`</span> to list all the files in my home directory: <span class="al">![](01_datapipeline/02_Terminal_ls.png)</span></span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>And then take a look at the results: <span class="al">![](01_datapipeline/03_Terminal_ls_results.png)</span></span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>Which is the equivalent of looking at what files are in my computer's home directory in a graphical user interface: <span class="al">![](01_datapipeline/04_Terminal_finder.png)</span></span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a>While for the most part we wont be bothered with accessing our file system this way, it's useful to understand what's going on with the pathnames that are shown. Whether you're used to working with Mac, PC, or Linux operating systems, the approach to file systems is sufficiently similar to talk about them all together.</span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>Most modern operating systems operate using *relative* pathnames which allow us to be more efficient in referencing where files are located in our computer. The path that you saw above on my computer points to the "home directory" which is the base directory associated with my user account on the computer. My home director is situated however within other directories that are part of the operating system and that are ultimately on a hard disk drive.</span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/05_HD.png)</span> So why is all of this important? This underscores the rationale for and utility of relative paths in our filesystem. My mac computer's home directory is <span class="in">`Machinsosh HD/Users/andrewgreenlee/`</span> which means that rather than having to type out all of that content, I can just start instructions to paths beloww that directory. For instance, let's navigate to my desktop folder: <span class="al">![](01_datapipeline/06_Desktop.png)</span></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a>Which is the same as navigating from the root folder of our hard drive to the desktop folder: <span class="al">![](01_datapipeline/07_Desktop_manual.png)</span></span>
+<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a>This certainly makes things more convenient for navigating files in Terminal and in our file system. It has a much deeper utulity when we are thinking about reproducible data analysis. Let's explore in more detail.</span>
+<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-76"><a href="#cb15-76" aria-hidden="true" tabindex="-1"></a><span class="fu">### Directory Structure and R</span></span>
+<span id="cb15-77"><a href="#cb15-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-78"><a href="#cb15-78" aria-hidden="true" tabindex="-1"></a>Oftentimes when people begin learning in R and RStudio, they simply open the program and start typing commands. This works well up until the point when one needs to get data into or out of R. In general, R is agnostic about where to look for files - if you open RStudio without specifying where to look for files, it assumes you want to work out of your home directory (the <span class="in">`getwd()`</span> command returns the current working directory R is using): <span class="al">![](01_datapipeline/08_getwd.png)</span></span>
+<span id="cb15-79"><a href="#cb15-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-80"><a href="#cb15-80" aria-hidden="true" tabindex="-1"></a>We typically do not want to work out of our home directory, but would like to set another directory to work out of. When new R users start to work in R, many are taught to use <span class="in">`setwd()`</span> to explicitly set a directory to work out of. This will work, and sets a "home" directory for the particular work you are doing.</span>
+<span id="cb15-81"><a href="#cb15-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-84"><a href="#cb15-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-85"><a href="#cb15-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb15-86"><a href="#cb15-86" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"Desktop/andrew-home/neighborhood_types/"</span>)</span>
+<span id="cb15-87"><a href="#cb15-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-88"><a href="#cb15-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-89"><a href="#cb15-89" aria-hidden="true" tabindex="-1"></a>For the sake of illustration, let's say we wnat to open a dataset containing a list of community area definitions for Chicago:</span>
+<span id="cb15-90"><a href="#cb15-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-93"><a href="#cb15-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-94"><a href="#cb15-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb15-95"><a href="#cb15-95" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"CommAreas.csv"</span>)</span>
+<span id="cb15-96"><a href="#cb15-96" aria-hidden="true" tabindex="-1"></a>dataset</span>
+<span id="cb15-97"><a href="#cb15-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-98"><a href="#cb15-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a>We create a script in our working directory that sets the directory, reads the file, and then shows the file to us.</span>
+<span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a>What happens when you move your working folder to another computer or share it? If you explicitly set your working directory, it won't be able to access that directory which is at a path that doesn't exist on your other computer:</span>
+<span id="cb15-102"><a href="#cb15-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-103"><a href="#cb15-103" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/09_wd_error.png)</span> R Projects help us to address this problem. Projects add a file to the folder we wish to set as our home directory for our project which establishes where R will look for files.</span>
+<span id="cb15-104"><a href="#cb15-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a>In the right top corner of your RStudio window, you'll note a blue cube which leads to a project management menu:</span>
+<span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-107"><a href="#cb15-107" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/10_project.png)</span> If you click "New Project", a dialog box will open up which allows you to specify project options:</span>
+<span id="cb15-108"><a href="#cb15-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-109"><a href="#cb15-109" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/11_project_dialog.png)</span></span>
+<span id="cb15-110"><a href="#cb15-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-111"><a href="#cb15-111" aria-hidden="true" tabindex="-1"></a>You have options here - you can either create a new project in a new folder, use an existing folder which you've already created, or check a project out from Github or another vesion control system. Since we already have a directory we've been working out of, we can use the existing directory dialog, and then set the directory where our script and data are located.</span>
+<span id="cb15-112"><a href="#cb15-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-113"><a href="#cb15-113" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/12_project_sel.png)</span></span>
+<span id="cb15-114"><a href="#cb15-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-115"><a href="#cb15-115" aria-hidden="true" tabindex="-1"></a>From here, so long as we open our work by clicking on the project file, we'll be taken into the project which will remember what the "home" directory is for our work. <span class="al">![](01_datapipeline/13_project_dir.png)</span></span>
+<span id="cb15-116"><a href="#cb15-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-117"><a href="#cb15-117" aria-hidden="true" tabindex="-1"></a>The benefit of this approach is that if we move our project directory to another computer and open our project, R understands that the folder with the project file reflects the *relative* path to where we will find the other files referenced in our project. This means that if we share our working folder with others, they can reproduce what we did so long as all files are contained within that project directory.</span>
+<span id="cb15-118"><a href="#cb15-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-119"><a href="#cb15-119" aria-hidden="true" tabindex="-1"></a>Project files represent mileposts that set the relative path at which RStudio will look for files within our particular project. This is useful for creating a project file structure within which we can create reproducible and easily shareable analysis. You should be in the habit of starting each new analysis you do by setting up a new work folder with a new project file.</span>
+<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-121"><a href="#cb15-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### Projects vs. Workspaces</span></span>
+<span id="cb15-122"><a href="#cb15-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-123"><a href="#cb15-123" aria-hidden="true" tabindex="-1"></a>Each time you close your RStudio session, you will be faced with a temptation - RStudio will ask whether you want to save your workspace.</span>
+<span id="cb15-124"><a href="#cb15-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-125"><a href="#cb15-125" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/14_workspace.png)</span></span>
+<span id="cb15-126"><a href="#cb15-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-127"><a href="#cb15-127" aria-hidden="true" tabindex="-1"></a>What's the difference between a script, a project, and a workspace? A script contains the code which tells R what you want it to do. Script commands are run in the console in the order they are written. You want to get in the habit of saving your script files often. Your project file tells R the path to look for files and folders at. This sets a relative path for your work in that project. A workspace file saves the exact image of what's going on when you close out of RStudio - that may include loaded datasets, functions, and objects.</span>
+<span id="cb15-128"><a href="#cb15-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-129"><a href="#cb15-129" aria-hidden="true" tabindex="-1"></a>You have likely been tempted to save your workspace when you are closing your R session. While tempting, I encourage you **not** to get in the habit of saving your workspace. This runs counter to most other interactions you've had with computers - saving documents, video games, or survey responses. Saving your workspace can lead to bad habits with regards to reproducibility. You want to allow your scripts to serve as a repository for all steps that go from your raw data to your analysis and outputs. Unless your script has time or computationally intensive steps, your scripts and computer can re-run your workflow to return to the point that you left off when you last worked on the project.</span>
+<span id="cb15-130"><a href="#cb15-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-131"><a href="#cb15-131" aria-hidden="true" tabindex="-1"></a>::: aside</span>
+<span id="cb15-132"><a href="#cb15-132" aria-hidden="true" tabindex="-1"></a>Later in the class, we'll introduce more powerful strategies like the <span class="co">[</span><span class="ot">renv</span><span class="co">](https://rstudio.github.io/renv/articles/renv.html)</span> and <span class="co">[</span><span class="ot">targets</span><span class="co">](https://books.ropensci.org/targets/)</span> packages which can help to manage your workflows and their dependencies.</span>
+<span id="cb15-133"><a href="#cb15-133" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-134"><a href="#cb15-134" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-135"><a href="#cb15-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-136"><a href="#cb15-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project Setup</span></span>
+<span id="cb15-137"><a href="#cb15-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-138"><a href="#cb15-138" aria-hidden="true" tabindex="-1"></a>Each project you create should have it's own directory which will be a folder with a descriptive file name. This root folder will contain a directory structure which allows you to organize your data and workflows. There's no standardized format which this directory structure has to take, however there are some useful principles that will help you stay organized.</span>
+<span id="cb15-139"><a href="#cb15-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-140"><a href="#cb15-140" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Project Organization Principles</span></span>
+<span id="cb15-141"><a href="#cb15-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-142"><a href="#cb15-142" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Use subdirectories to stay organized.** While R doesn't care whether your project directory contains subdirectories, subdirectories are useful for keeping track of your files. As you build out increasingly complicated projects, you will likelly generate lots of data, metadata, scripts, and outputs. Subdirectories can help you to keep all of this information organized, and will make it easier for others to navigate your project.</span>
+<span id="cb15-143"><a href="#cb15-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-144"><a href="#cb15-144" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Keep raw and processed data separate.** We want to set up workflows that allow us to consistently be able to transition from raw data to processed data, to outputs (that will end up in our outputs folder). If our project relied upon locally stored datasets, raw data should be placed in a separate folder for raw data. After it exists, raw data should only be *read* - it shouldn't be *written to*. Depending upon the considerations of your workflow, you may want to create a separate folder for processed data - unlike your raw data folder, you may both read and write data to this folder.</span>
+<span id="cb15-145"><a href="#cb15-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-146"><a href="#cb15-146" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Maintain a local copy of data documentation.** Whenever possible, download or include data documentation to go along with your raw data. This will be useful to refer to as you're working, and will also help others who make work on the project in the future. As you modify data and create your own datasets, you should also consider creating documentation for your working data. Again, this will help you or others in the future.</span>
+<span id="cb15-147"><a href="#cb15-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-148"><a href="#cb15-148" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Outputs get their own subdirectory.** Outputs may include tables, graphics, or any other output created by your analysis. Depending upon the quantity of outputs, you may choose to add additional subdirectories to your output folder to help organize your outputs.</span>
+<span id="cb15-149"><a href="#cb15-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-150"><a href="#cb15-150" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Order your scripts.** In addition to creating a dedicated subdirectory for your scripts, consider naming them in such a way that they are ordered and follow your data workflow. You may also want to develop a master script that sequentially runs your other scripts. You can use <span class="in">`source()`</span> in this master script to run other scripts.</span>
+<span id="cb15-151"><a href="#cb15-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-152"><a href="#cb15-152" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Quarto Markdown gets its own subdirectory.** Depending upon the complexity of your project, it may be useful to creata a directory for any Quarto Markdown documents you create.</span>
+<span id="cb15-153"><a href="#cb15-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-154"><a href="#cb15-154" aria-hidden="true" tabindex="-1"></a>Your base project directory and structure will end up looking something like this:</span>
+<span id="cb15-155"><a href="#cb15-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-156"><a href="#cb15-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-157"><a href="#cb15-157" aria-hidden="true" tabindex="-1"></a><span class="in">Root</span></span>
+<span id="cb15-158"><a href="#cb15-158" aria-hidden="true" tabindex="-1"></a><span class="in"> |</span></span>
+<span id="cb15-159"><a href="#cb15-159" aria-hidden="true" tabindex="-1"></a><span class="in"> |_ data</span></span>
+<span id="cb15-160"><a href="#cb15-160" aria-hidden="true" tabindex="-1"></a><span class="in"> |   |_ data_raw</span></span>
+<span id="cb15-161"><a href="#cb15-161" aria-hidden="true" tabindex="-1"></a><span class="in"> |   |_ data_processed</span></span>
+<span id="cb15-162"><a href="#cb15-162" aria-hidden="true" tabindex="-1"></a><span class="in"> |</span></span>
+<span id="cb15-163"><a href="#cb15-163" aria-hidden="true" tabindex="-1"></a><span class="in"> |_ documentation</span></span>
+<span id="cb15-164"><a href="#cb15-164" aria-hidden="true" tabindex="-1"></a><span class="in"> |_ output</span></span>
+<span id="cb15-165"><a href="#cb15-165" aria-hidden="true" tabindex="-1"></a><span class="in"> |_ scripts</span></span>
+<span id="cb15-166"><a href="#cb15-166" aria-hidden="true" tabindex="-1"></a><span class="in"> |   |_ 01_master.r</span></span>
+<span id="cb15-167"><a href="#cb15-167" aria-hidden="true" tabindex="-1"></a><span class="in"> |   |_ 02_get_data.r</span></span>
+<span id="cb15-168"><a href="#cb15-168" aria-hidden="true" tabindex="-1"></a><span class="in"> |   |_ 03_plots.r</span></span>
+<span id="cb15-169"><a href="#cb15-169" aria-hidden="true" tabindex="-1"></a><span class="in"> |_ quarto</span></span>
+<span id="cb15-170"><a href="#cb15-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-171"><a href="#cb15-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-172"><a href="#cb15-172" aria-hidden="true" tabindex="-1"></a>Again, there's no standardized format which your directory structure has to take. Your structure may also change depending upon the specific considerations and workflows involved for a given project. Over time, you'll develop a default folder structure that makes sense for how you tend to work.</span>
+<span id="cb15-173"><a href="#cb15-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-174"><a href="#cb15-174" aria-hidden="true" tabindex="-1"></a>:::{.important}</span>
+<span id="cb15-175"><a href="#cb15-175" aria-hidden="true" tabindex="-1"></a>When we assess your work in UP 570, we will be looking for evidence that you are making effective use of project directory structures. Unless we state so, there's no required directory structure format, however, we want to see you applying principles of good directory management in your work.</span>
+<span id="cb15-176"><a href="#cb15-176" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-177"><a href="#cb15-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-178"><a href="#cb15-178" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Project Organization Workflows</span></span>
+<span id="cb15-179"><a href="#cb15-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-180"><a href="#cb15-180" aria-hidden="true" tabindex="-1"></a>After we create our project directory and create a r project file, we can programmatically create our directory structure using the <span class="in">`dir.create()`</span> command. For example:</span>
+<span id="cb15-183"><a href="#cb15-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-184"><a href="#cb15-184" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb15-185"><a href="#cb15-185" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb15-186"><a href="#cb15-186" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb15-187"><a href="#cb15-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-188"><a href="#cb15-188" aria-hidden="true" tabindex="-1"></a><span class="co"># Create project subdirectories</span></span>
+<span id="cb15-189"><a href="#cb15-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-190"><a href="#cb15-190" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"data"</span>)</span>
+<span id="cb15-191"><a href="#cb15-191" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"data/data_raw"</span>)</span>
+<span id="cb15-192"><a href="#cb15-192" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"data/data_processed"</span>)</span>
+<span id="cb15-193"><a href="#cb15-193" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"documentation"</span>)</span>
+<span id="cb15-194"><a href="#cb15-194" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"output"</span>)</span>
+<span id="cb15-195"><a href="#cb15-195" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"scripts"</span>)</span>
+<span id="cb15-196"><a href="#cb15-196" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"quarto"</span>)</span>
+<span id="cb15-197"><a href="#cb15-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-198"><a href="#cb15-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-199"><a href="#cb15-199" aria-hidden="true" tabindex="-1"></a>We could also save ourselves repetition in our code using the base R <span class="in">`lapply()`</span> syntax. We create a list with our project directory names and assign that into an object. We then feel <span class="in">`lapply()`</span> the list along with the function we wish to apply to each element of that list - in this case, <span class="in">`dir.create()`</span>:</span>
+<span id="cb15-200"><a href="#cb15-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-203"><a href="#cb15-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-204"><a href="#cb15-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb15-205"><a href="#cb15-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb15-206"><a href="#cb15-206" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb15-207"><a href="#cb15-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-208"><a href="#cb15-208" aria-hidden="true" tabindex="-1"></a><span class="co"># Create project subdirectories</span></span>
+<span id="cb15-209"><a href="#cb15-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-210"><a href="#cb15-210" aria-hidden="true" tabindex="-1"></a>project_dirs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"data"</span>, <span class="st">"data/data_raw"</span>, <span class="st">"data/data_processed"</span>, <span class="st">"documentation"</span>, <span class="st">"output"</span>, <span class="st">"scripts"</span>, <span class="st">"quarto"</span>)</span>
+<span id="cb15-211"><a href="#cb15-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-212"><a href="#cb15-212" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(project_dirs, dir.create)</span>
+<span id="cb15-213"><a href="#cb15-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-214"><a href="#cb15-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-215"><a href="#cb15-215" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Script Headers and Structure</span></span>
+<span id="cb15-216"><a href="#cb15-216" aria-hidden="true" tabindex="-1"></a>While a lot of our coding can be done directly in Quarto Markdown documents, you'll also want to use scripts to store code and develop workflows that may eventually be represented as output in your Quarto document. Script headers can help to organize the work we do in scripts, and can help when we get ready to share our work with others or pick up work on files we have not looked at in a while.</span>
+<span id="cb15-217"><a href="#cb15-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-218"><a href="#cb15-218" aria-hidden="true" tabindex="-1"></a>Taking a few extra minutes to develop a nice script header will be beneficial in the future - your future self, your collaborators, and others who use your code will appreciate it!</span>
+<span id="cb15-219"><a href="#cb15-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-220"><a href="#cb15-220" aria-hidden="true" tabindex="-1"></a>Like so many other R things, there's no standardized example of what a script header needs to include, howevver, here's a basic header template to start with:</span>
+<span id="cb15-221"><a href="#cb15-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-224"><a href="#cb15-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-225"><a href="#cb15-225" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb15-226"><a href="#cb15-226" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb15-227"><a href="#cb15-227" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb15-228"><a href="#cb15-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-229"><a href="#cb15-229" aria-hidden="true" tabindex="-1"></a><span class="co"># Title: [Insert script title here]</span></span>
+<span id="cb15-230"><a href="#cb15-230" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: [Your name]</span></span>
+<span id="cb15-231"><a href="#cb15-231" aria-hidden="true" tabindex="-1"></a><span class="co"># Email: [Your email address]</span></span>
+<span id="cb15-232"><a href="#cb15-232" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: [Insert date here]</span></span>
+<span id="cb15-233"><a href="#cb15-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-234"><a href="#cb15-234" aria-hidden="true" tabindex="-1"></a><span class="co"># Script Name: [Script Name]</span></span>
+<span id="cb15-235"><a href="#cb15-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-236"><a href="#cb15-236" aria-hidden="true" tabindex="-1"></a><span class="co"># Description: [Insert a brief description of the script and its purpose]</span></span>
+<span id="cb15-237"><a href="#cb15-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-238"><a href="#cb15-238" aria-hidden="true" tabindex="-1"></a><span class="co"># Notes: [Insert any process notes or potential revision plans here]</span></span>
+<span id="cb15-239"><a href="#cb15-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-240"><a href="#cb15-240" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the working environment</span></span>
+<span id="cb15-241"><a href="#cb15-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-242"><a href="#cb15-242" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb15-243"><a href="#cb15-243" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(library1)</span>
+<span id="cb15-244"><a href="#cb15-244" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(library2)</span>
+<span id="cb15-245"><a href="#cb15-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-246"><a href="#cb15-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Set global options</span></span>
+<span id="cb15-247"><a href="#cb15-247" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">option1 =</span> value1, <span class="at">option2 =</span> value2)</span>
+<span id="cb15-248"><a href="#cb15-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-249"><a href="#cb15-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Define functions</span></span>
+<span id="cb15-250"><a href="#cb15-250" aria-hidden="true" tabindex="-1"></a>function1 <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2) {</span>
+<span id="cb15-251"><a href="#cb15-251" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function code goes here</span></span>
+<span id="cb15-252"><a href="#cb15-252" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-253"><a href="#cb15-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-254"><a href="#cb15-254" aria-hidden="true" tabindex="-1"></a>function2 <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2) {</span>
+<span id="cb15-255"><a href="#cb15-255" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function code goes here</span></span>
+<span id="cb15-256"><a href="#cb15-256" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-257"><a href="#cb15-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-258"><a href="#cb15-258" aria-hidden="true" tabindex="-1"></a><span class="co"># Main script</span></span>
+<span id="cb15-259"><a href="#cb15-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-260"><a href="#cb15-260" aria-hidden="true" tabindex="-1"></a><span class="co"># End of script</span></span>
+<span id="cb15-261"><a href="#cb15-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-262"><a href="#cb15-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-263"><a href="#cb15-263" aria-hidden="true" tabindex="-1"></a>The different elements here help record who coded the script, what it is designed to do, and provides a common place to set options, load packages, and define functions. Although these components could occur anywhere in the script before they are called upon, includig them in the header helps track what's going on in the script.</span>
+<span id="cb15-264"><a href="#cb15-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-265"><a href="#cb15-265" aria-hidden="true" tabindex="-1"></a>While you could easily type out each element of your header every time that you develop a new script, you can also save your script as a *code snippet* within RStudio, which will allow you to easily insert the header template into new scripts you create. </span>
+<span id="cb15-266"><a href="#cb15-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-267"><a href="#cb15-267" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-268"><a href="#cb15-268" aria-hidden="true" tabindex="-1"></a>This code snippet trick is paraphrased from the description provided by <span class="co">[</span><span class="ot">Dr. Timothy S. Farewell</span><span class="co">](https://timfarewell.co.uk/my-r-script-header-template/)</span>.</span>
+<span id="cb15-269"><a href="#cb15-269" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-270"><a href="#cb15-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-271"><a href="#cb15-271" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>In RStudio, go to Tools -&gt; Global Options -&gt; Code -&gt; Snippets -&gt; Edit Snippets. This will bring up a block of code - scroll to the bottom.</span>
+<span id="cb15-272"><a href="#cb15-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-273"><a href="#cb15-273" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Modify the below code header template to include your information and then copy / paste this into the snippets code block.</span>
+<span id="cb15-274"><a href="#cb15-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-277"><a href="#cb15-277" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-278"><a href="#cb15-278" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb15-279"><a href="#cb15-279" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb15-280"><a href="#cb15-280" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb15-281"><a href="#cb15-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-282"><a href="#cb15-282" aria-hidden="true" tabindex="-1"></a>snippet header</span>
+<span id="cb15-283"><a href="#cb15-283" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Title: </span></span>
+<span id="cb15-284"><a href="#cb15-284" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Author:</span></span>
+<span id="cb15-285"><a href="#cb15-285" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Email:</span></span>
+<span id="cb15-286"><a href="#cb15-286" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Date:</span></span>
+<span id="cb15-287"><a href="#cb15-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-288"><a href="#cb15-288" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Script Name:</span></span>
+<span id="cb15-289"><a href="#cb15-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-290"><a href="#cb15-290" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Description:</span></span>
+<span id="cb15-291"><a href="#cb15-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-292"><a href="#cb15-292" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Notes:</span></span>
+<span id="cb15-293"><a href="#cb15-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-294"><a href="#cb15-294" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Working Environment Setup</span></span>
+<span id="cb15-295"><a href="#cb15-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-296"><a href="#cb15-296" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load required libraries</span></span>
+<span id="cb15-297"><a href="#cb15-297" aria-hidden="true" tabindex="-1"></a>    load_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"sf"</span>) <span class="co"># Add more packages here as needed</span></span>
+<span id="cb15-298"><a href="#cb15-298" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lapply</span>(load_packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-299"><a href="#cb15-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-300"><a href="#cb15-300" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set global options</span></span>
+<span id="cb15-301"><a href="#cb15-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-302"><a href="#cb15-302" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define functions</span></span>
+<span id="cb15-303"><a href="#cb15-303" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-304"><a href="#cb15-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-305"><a href="#cb15-305" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/15_snippet.png)</span></span>
+<span id="cb15-306"><a href="#cb15-306" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Save and close the window.</span>
+<span id="cb15-307"><a href="#cb15-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-308"><a href="#cb15-308" aria-hidden="true" tabindex="-1"></a>You have now added this snippet to your library. When you start a new script, simply type "header" and press tab and RStudio will fill in your header template.</span>
+<span id="cb15-309"><a href="#cb15-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-310"><a href="#cb15-310" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-311"><a href="#cb15-311" aria-hidden="true" tabindex="-1"></a>Snippets are handy - you may soon identify other common bits of code that you use frequently that you want to make snippets out of.</span>
+<span id="cb15-312"><a href="#cb15-312" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-313"><a href="#cb15-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-314"><a href="#cb15-314" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Naming Files</span></span>
+<span id="cb15-315"><a href="#cb15-315" aria-hidden="true" tabindex="-1"></a>As mentioned in the <span class="co">[</span><span class="ot">Project Organization Principles</span><span class="co">](#project-organization-principles)</span> section, it's important to spend a little time thinking about conventions for your filenames. Some useful principles:</span>
+<span id="cb15-316"><a href="#cb15-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-317"><a href="#cb15-317" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Avoid using special characters (for instance, <span class="sc">\\</span> / : * ? " &lt; &gt; |) in file names.</span>
+<span id="cb15-318"><a href="#cb15-318" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Do not use spaces in filenames. You may use an underscore (e.g. map_census_tracts.png) to help with readability.</span>
+<span id="cb15-319"><a href="#cb15-319" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If you choose to use dates as part of your filename, order them yyy-mm-dd (e.g. 20230102 would be January 2, 2023). If you have multiple versions of the file from different dates, this ensures that your files will be properly ordered by the date.</span>
+<span id="cb15-320"><a href="#cb15-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-321"><a href="#cb15-321" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-322"><a href="#cb15-322" aria-hidden="true" tabindex="-1"></a>This date format (yyy-mm-dd) conforms to <span class="co">[</span><span class="ot">ISO 8601 format</span><span class="co">](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates)</span>.</span>
+<span id="cb15-323"><a href="#cb15-323" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-324"><a href="#cb15-324" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>When creating ordered lists for file names (ordered by number) use at least two digits (e.g. "01_Main", "02_Download", "03_Map"). This will keep your files in order once you get past 10. </span>
+<span id="cb15-325"><a href="#cb15-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-326"><a href="#cb15-326" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working in Quarto</span></span>
+<span id="cb15-327"><a href="#cb15-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-328"><a href="#cb15-328" aria-hidden="true" tabindex="-1"></a>Quarto is a tool built into RStudio which allows you to create a variety of documents that can integrate plain text and code. It's utility comes both in it's ability to translate plain text into a variety of well-formatted outputs, but also due to the ease with which we can use this format to share code, analysis, and writing with others. Most of your written assignments in class will be produced in Quarto, therefore, you'll want to become familiar with the basic syntax and logic.</span>
+<span id="cb15-329"><a href="#cb15-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-330"><a href="#cb15-330" aria-hidden="true" tabindex="-1"></a>Quarto's plain text formatting is handled using <span class="co">[</span><span class="ot">Markdown syntax</span><span class="co">](https://www.markdownguide.org/getting-started/)</span> which is designed to be simple, easily interpreted as text with formatting in place, and readable on most computers. An increasing number of note systems and word processors have adopted Markdown as their language.</span>
+<span id="cb15-331"><a href="#cb15-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-332"><a href="#cb15-332" aria-hidden="true" tabindex="-1"></a>::: aside</span>
+<span id="cb15-333"><a href="#cb15-333" aria-hidden="true" tabindex="-1"></a>Some examples include <span class="co">[</span><span class="ot">Bear</span><span class="co">](https://bear.app)</span>, <span class="co">[</span><span class="ot">Obsidian</span><span class="co">](https://obsidian.md)</span>, <span class="co">[</span><span class="ot">Notion</span><span class="co">](https://www.notion.so)</span>, <span class="co">[</span><span class="ot">Ulysses</span><span class="co">](https://ulysses.app)</span>. Mentions are not endorsements.</span>
+<span id="cb15-334"><a href="#cb15-334" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-335"><a href="#cb15-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-336"><a href="#cb15-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### Formatting Your Documents</span></span>
+<span id="cb15-337"><a href="#cb15-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-338"><a href="#cb15-338" aria-hidden="true" tabindex="-1"></a>Quarto makes use of a modified version of Markdown syntax. The <span class="co">[</span><span class="ot">Quarto website</span><span class="co">](https://quarto.org/docs/authoring/markdown-basics.html)</span> maintains excellent documentation regarding basic markdown formatting options as well as Quarto-specific formatting options:</span>
+<span id="cb15-339"><a href="#cb15-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-340"><a href="#cb15-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb15-341"><a href="#cb15-341" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe width="780" height="500" src="https://quarto.org/docs/authoring/markdown-basics.html" title="Quarto Formatting"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb15-342"><a href="#cb15-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-343"><a href="#cb15-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-344"><a href="#cb15-344" aria-hidden="true" tabindex="-1"></a>You should familiarize yourself with how to format text, how to use section headings, and how to link files and insert references to other files.</span>
+<span id="cb15-345"><a href="#cb15-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-346"><a href="#cb15-346" aria-hidden="true" tabindex="-1"></a><span class="fu">### Adding References</span></span>
+<span id="cb15-347"><a href="#cb15-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-348"><a href="#cb15-348" aria-hidden="true" tabindex="-1"></a>Quarto can help you either manage references in very sinple ways or more complex ways. You can either add references directly to your text as either footnotes or endnotes.</span>
+<span id="cb15-349"><a href="#cb15-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-350"><a href="#cb15-350" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Footnotes</span></span>
+<span id="cb15-351"><a href="#cb15-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-352"><a href="#cb15-352" aria-hidden="true" tabindex="-1"></a>We oftentimes use footnotes as an easy way to convey references or links to details or important information that does not need to be in our main body of text. Quarto allows you to create both footnotes and long notes. Footnotes are typically short and take up only a line or two. Long notes are longer and may contain multiple paragraphs. </span>
+<span id="cb15-353"><a href="#cb15-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-354"><a href="#cb15-354" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-355"><a href="#cb15-355" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-356"><a href="#cb15-356" aria-hidden="true" tabindex="-1"></a>Here is some text with a footnote.<span class="ot">[^1]</span></span>
+<span id="cb15-357"><a href="#cb15-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-358"><a href="#cb15-358" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>And here is the footnote that accompanies that text in the footnotes section.</span>
+<span id="cb15-359"><a href="#cb15-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-360"><a href="#cb15-360" aria-hidden="true" tabindex="-1"></a>Here is also some text with an inline footnote.^<span class="co">[</span><span class="ot">Here is the text associated with the inline footnote - this may be easier to track because it is in line with the text.</span><span class="co">]</span></span>
+<span id="cb15-361"><a href="#cb15-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-362"><a href="#cb15-362" aria-hidden="true" tabindex="-1"></a>Here is some text with a longnote.<span class="ot">[^longnote]</span></span>
+<span id="cb15-363"><a href="#cb15-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-364"><a href="#cb15-364" aria-hidden="true" tabindex="-1"></a><span class="ot">[^longnote]: </span>And here is a longnote that takes up multiple lines. You can experiment in your text to see whether a footnote or longnote will serve you better for a given situation.</span>
+<span id="cb15-365"><a href="#cb15-365" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-366"><a href="#cb15-366" aria-hidden="true" tabindex="-1"></a>  This text is also part of the long note - the indent signals that it remains part of the note.</span>
+<span id="cb15-367"><a href="#cb15-367" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-368"><a href="#cb15-368" aria-hidden="true" tabindex="-1"></a>And this text would be part of the next paragraph that's outside of the note because it is not indented.</span>
+<span id="cb15-369"><a href="#cb15-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-370"><a href="#cb15-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-371"><a href="#cb15-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-372"><a href="#cb15-372" aria-hidden="true" tabindex="-1"></a>Here is some text with a footnote<span class="ot">[^1]</span></span>
+<span id="cb15-373"><a href="#cb15-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-374"><a href="#cb15-374" aria-hidden="true" tabindex="-1"></a>Here is also some text with an inline footnote.^<span class="co">[</span><span class="ot">Here is the text associated with the inline footnote - this may be easier to track because it is in line with the text.</span><span class="co">]</span></span>
+<span id="cb15-375"><a href="#cb15-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-376"><a href="#cb15-376" aria-hidden="true" tabindex="-1"></a>Here is some text with a longnote<span class="ot">[^longnote]</span></span>
+<span id="cb15-377"><a href="#cb15-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-378"><a href="#cb15-378" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>And here is the footnote that accompanies that text in the footnotes section.</span>
+<span id="cb15-379"><a href="#cb15-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-380"><a href="#cb15-380" aria-hidden="true" tabindex="-1"></a><span class="ot">[^longnote]: </span>And here is a longnote that takes up multiple lines. You can experiment in your text to see whether a footnote or longnote will serve you better for a given situation.</span>
+<span id="cb15-381"><a href="#cb15-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-382"><a href="#cb15-382" aria-hidden="true" tabindex="-1"></a><span class="in">    This text is also part of the long note - the indent signals that it remains part of the note. You might include code snippets, images, or other items as part of your note.</span></span>
+<span id="cb15-383"><a href="#cb15-383" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb15-384"><a href="#cb15-384" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
+<span id="cb15-385"><a href="#cb15-385" aria-hidden="true" tabindex="-1"></a><span class="in">    Creating footnotes is easy^[So long as you remember the correct syntax.]</span></span>
+<span id="cb15-386"><a href="#cb15-386" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
+<span id="cb15-387"><a href="#cb15-387" aria-hidden="true" tabindex="-1"></a><span class="in">    This text would also be part of your long note.</span></span>
+<span id="cb15-388"><a href="#cb15-388" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb15-389"><a href="#cb15-389" aria-hidden="true" tabindex="-1"></a>And this text would be part of the next paragraph that's outside of the note because it is not indented.</span>
+<span id="cb15-390"><a href="#cb15-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-391"><a href="#cb15-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-392"><a href="#cb15-392" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Asides</span></span>
+<span id="cb15-393"><a href="#cb15-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-394"><a href="#cb15-394" aria-hidden="true" tabindex="-1"></a>You can also add asides to documents which places a note in line with text in the margin.</span>
+<span id="cb15-395"><a href="#cb15-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-396"><a href="#cb15-396" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-397"><a href="#cb15-397" aria-hidden="true" tabindex="-1"></a>For a very effective example of asides, see Kieran Healy's book <span class="co">[</span><span class="ot">*Data Visualization: A Practical Introduction*</span><span class="co">](https://socviz.co/gettingstarted.html#work-in-plain-text-using-rmarkdown)</span>.</span>
+<span id="cb15-398"><a href="#cb15-398" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-399"><a href="#cb15-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-400"><a href="#cb15-400" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-401"><a href="#cb15-401" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-402"><a href="#cb15-402" aria-hidden="true" tabindex="-1"></a>Here is an aside placed in line with text in the margin.</span>
+<span id="cb15-403"><a href="#cb15-403" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-404"><a href="#cb15-404" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-405"><a href="#cb15-405" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-406"><a href="#cb15-406" aria-hidden="true" tabindex="-1"></a>Here is an aside placed in line with text in the margin.</span>
+<span id="cb15-407"><a href="#cb15-407" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-408"><a href="#cb15-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-409"><a href="#cb15-409" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Citations and Bibliographies</span></span>
+<span id="cb15-410"><a href="#cb15-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-411"><a href="#cb15-411" aria-hidden="true" tabindex="-1"></a>For longer or more advanced documents, you may wish to rely upon Quarto's suppot for using and managing references with BibTex, a standard reference format. This allows you to add references to your document and then create in line citations and a formatted bibliography to accompany your writing.</span>
+<span id="cb15-412"><a href="#cb15-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-413"><a href="#cb15-413" aria-hidden="true" tabindex="-1"></a>In order to create a bibliography that is associated with a document, you'll need three files: </span>
+<span id="cb15-414"><a href="#cb15-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-415"><a href="#cb15-415" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>A main file written in Quarto Markdown (.qmd). This file will be formatted to include citation references.</span>
+<span id="cb15-416"><a href="#cb15-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-417"><a href="#cb15-417" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>A bibliographic data source, typically a Bibtex (.bibtex) file.</span>
+<span id="cb15-418"><a href="#cb15-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-419"><a href="#cb15-419" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>A <span class="in">`csl`</span> file - this specifies the format for your bibliography. You can find and include different csl files to produce a bibliography using different reference styles.</span>
+<span id="cb15-420"><a href="#cb15-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-421"><a href="#cb15-421" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Step 1: Create a bibliography file.</span></span>
+<span id="cb15-422"><a href="#cb15-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-423"><a href="#cb15-423" aria-hidden="true" tabindex="-1"></a>Using a text editor, create a plain text file that will contain your bibliographic references. In this case, we'll create a text file called "references.bib". Note that this file should end in <span class="in">`.bib`</span> to signify that it is a bibliographic reference file.</span>
+<span id="cb15-424"><a href="#cb15-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-425"><a href="#cb15-425" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Step 2: Refer to the bibliography file in your YAML Header</span></span>
+<span id="cb15-426"><a href="#cb15-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-427"><a href="#cb15-427" aria-hidden="true" tabindex="-1"></a>Next, in your Quarto Markdown document, you'll add a line to your YAML header that refers to the location and name of your bibliography file.</span>
+<span id="cb15-428"><a href="#cb15-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-431"><a href="#cb15-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{yaml}</span></span>
+<span id="cb15-432"><a href="#cb15-432" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-433"><a href="#cb15-433" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Neighborhood Analysis: Place Selection Memorandum"</span></span>
+<span id="cb15-434"><a href="#cb15-434" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb15-435"><a href="#cb15-435" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-436"><a href="#cb15-436" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-437"><a href="#cb15-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-438"><a href="#cb15-438" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Step 3: Define a citation style</span></span>
+<span id="cb15-439"><a href="#cb15-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-440"><a href="#cb15-440" aria-hidden="true" tabindex="-1"></a>Like most other reference management systems, you can define what reference syle your references will be rendered as, and change this as needed. The <span class="co">[</span><span class="ot">Citation Style Language (CSL) project</span><span class="co">](https://citationstyles.org)</span> defines a common language and structure for styles. These are stored in <span class="in">`.csl`</span> files which you will associate with your document. You can find and download .csl files in a range of formats from the CSL Project's <span class="co">[</span><span class="ot">repository</span><span class="co">](https://github.com/citation-style-language/styles)</span>.</span>
+<span id="cb15-441"><a href="#cb15-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-442"><a href="#cb15-442" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-443"><a href="#cb15-443" aria-hidden="true" tabindex="-1"></a>You can also find and download csl files in Zotero's <span class="co">[</span><span class="ot">style repository</span><span class="co">](https://www.zotero.org/styles)</span>. If you hover over a style format, it provides examples of what a citation will look like in your redered document.</span>
+<span id="cb15-444"><a href="#cb15-444" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-445"><a href="#cb15-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-446"><a href="#cb15-446" aria-hidden="true" tabindex="-1"></a>For the sake of example, we'll format our document using American Psychological Association (APA) format. We'll search the CSL Project's repository to find an appropriate APA style .csl file. Once you find the appropriate file, then  download the file and place it in the same directory as our .bib file.</span>
+<span id="cb15-447"><a href="#cb15-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-448"><a href="#cb15-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-449"><a href="#cb15-449" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/16_csl.png)</span></span>
+<span id="cb15-450"><a href="#cb15-450" aria-hidden="true" tabindex="-1"></a>Click on the .csl style format you want to use. You'll then be taken to a page that includes the specific file's contents.</span>
+<span id="cb15-451"><a href="#cb15-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-452"><a href="#cb15-452" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/17_csl_file.png)</span></span>
+<span id="cb15-453"><a href="#cb15-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-454"><a href="#cb15-454" aria-hidden="true" tabindex="-1"></a>From here, you can right click on the button that says "raw" and download the .csl file.</span>
+<span id="cb15-455"><a href="#cb15-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-456"><a href="#cb15-456" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/18_csl_download.png)</span></span>
+<span id="cb15-457"><a href="#cb15-457" aria-hidden="true" tabindex="-1"></a>Note that before you move this file from your download folder to the folder where your .bib file is located, you may need to alter the file extension to indicate that this is a .csl file. Once you have done this, move it to the folder where your .bib file is located and then add a csl reference to your YAML header.</span>
+<span id="cb15-458"><a href="#cb15-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-461"><a href="#cb15-461" aria-hidden="true" tabindex="-1"></a><span class="in">```{yaml}</span></span>
+<span id="cb15-462"><a href="#cb15-462" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-463"><a href="#cb15-463" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Neighborhood Analysis: Place Selection Memorandum"</span></span>
+<span id="cb15-464"><a href="#cb15-464" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb15-465"><a href="#cb15-465" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> apa-6th-edition.csl</span></span>
+<span id="cb15-466"><a href="#cb15-466" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-467"><a href="#cb15-467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-468"><a href="#cb15-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-469"><a href="#cb15-469" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Step 4: Add references to your document</span></span>
+<span id="cb15-470"><a href="#cb15-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-471"><a href="#cb15-471" aria-hidden="true" tabindex="-1"></a>You're now set up to add references to your document. You can add references in lots of different ways. If you're searching for references using a service like Google Scholar, under the "cite" options for a given reference, you'll see a URL to download the BibTeX citation associated with that reference.</span>
+<span id="cb15-472"><a href="#cb15-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-473"><a href="#cb15-473" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/19_cite_google.png)</span></span>
+<span id="cb15-474"><a href="#cb15-474" aria-hidden="true" tabindex="-1"></a>Click on BibTeX and the citation contents will show:</span>
+<span id="cb15-475"><a href="#cb15-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-476"><a href="#cb15-476" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/20_bibtex_cite.png)</span></span>
+<span id="cb15-477"><a href="#cb15-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-478"><a href="#cb15-478" aria-hidden="true" tabindex="-1"></a>Copy this text, and paste it into your bibliographic reference file (in our example, references.bib).</span>
+<span id="cb15-479"><a href="#cb15-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-480"><a href="#cb15-480" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_datapipeline/21_references.png)</span></span>
+<span id="cb15-481"><a href="#cb15-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-482"><a href="#cb15-482" aria-hidden="true" tabindex="-1"></a>You can then cite this reference while you write by referring to it as follows:</span>
+<span id="cb15-483"><a href="#cb15-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-486"><a href="#cb15-486" aria-hidden="true" tabindex="-1"></a><span class="in">```{markdown}</span></span>
+<span id="cb15-487"><a href="#cb15-487" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@healy2018data</span><span class="co">]</span> provides useful examples for leveraging GGPlot to create data visualization.</span>
+<span id="cb15-488"><a href="#cb15-488" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-489"><a href="#cb15-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-490"><a href="#cb15-490" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@healy2018data</span><span class="co">]</span> provides useful examples for leveraging GGPlot to create data visualization.</span>
+<span id="cb15-491"><a href="#cb15-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-492"><a href="#cb15-492" aria-hidden="true" tabindex="-1"></a>Note that the actual reference corresponds to the first clause in the bibtex reference.</span>
+<span id="cb15-493"><a href="#cb15-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-494"><a href="#cb15-494" aria-hidden="true" tabindex="-1"></a>:::{.aside} </span>
+<span id="cb15-495"><a href="#cb15-495" aria-hidden="true" tabindex="-1"></a>You can change the reference name if you'd like to something you'll remember as you cite.</span>
+<span id="cb15-496"><a href="#cb15-496" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-497"><a href="#cb15-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-498"><a href="#cb15-498" aria-hidden="true" tabindex="-1"></a>You can paste more references into the same references.bib file and cite them as well. </span>
+<span id="cb15-499"><a href="#cb15-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-500"><a href="#cb15-500" aria-hidden="true" tabindex="-1"></a>:::{.aside}</span>
+<span id="cb15-501"><a href="#cb15-501" aria-hidden="true" tabindex="-1"></a>You can find more details on formatting citations on the <span class="co">[</span><span class="ot">Quarto website</span><span class="co">](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations)</span>.</span>
+<span id="cb15-502"><a href="#cb15-502" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-503"><a href="#cb15-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-504"><a href="#cb15-504" aria-hidden="true" tabindex="-1"></a>Online tools like <span class="co">[</span><span class="ot">Citation Machine</span><span class="co">](https://www.citationmachine.net/bibtex/cite-a-website)</span> can help you to build references for a range of online sources. <span class="co">[</span><span class="ot">@feder</span><span class="co">]</span> takes a little while to get used to, but these tools can help you to build out an effective citation workflow.</span>
+<span id="cb15-505"><a href="#cb15-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-506"><a href="#cb15-506" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Step 5: Place your bibliography</span></span>
+<span id="cb15-507"><a href="#cb15-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-508"><a href="#cb15-508" aria-hidden="true" tabindex="-1"></a>Quarto will automatically place your references at the end of your document (or wherever your style definition file calls for references to be placed). You can also explicitly tell Quarto where to place your references by creating a div as follows:</span>
+<span id="cb15-509"><a href="#cb15-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-510"><a href="#cb15-510" aria-hidden="true" tabindex="-1"></a><span class="in">``` {markdown}</span></span>
+<span id="cb15-511"><a href="#cb15-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-512"><a href="#cb15-512" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb15-513"><a href="#cb15-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-514"><a href="#cb15-514" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb15-515"><a href="#cb15-515" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-516"><a href="#cb15-516" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-517"><a href="#cb15-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-518"><a href="#cb15-518" aria-hidden="true" tabindex="-1"></a><span class="in">You should end up with a formatted reference section at the end of your document.</span></span>
+<span id="cb15-519"><a href="#cb15-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-520"><a href="#cb15-520" aria-hidden="true" tabindex="-1"></a><span class="in">![](01_datapipeline/22_bibliography.png)</span></span>
+<span id="cb15-521"><a href="#cb15-521" aria-hidden="true" tabindex="-1"></a><span class="in">### Reference Considerations</span></span>
+<span id="cb15-522"><a href="#cb15-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-523"><a href="#cb15-523" aria-hidden="true" tabindex="-1"></a><span class="in">It's ultimately up to you how you manage and generate references within your documents. If you have a document with very few references, footnotes and/or endnotes may be an appropriate strategy. A more complex document with many references may be better managed using BibTeX. You can also use another reference management system and then export citations in BibTeX format which can then be added to your Quarto Markdown document.</span></span>
+<span id="cb15-524"><a href="#cb15-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-525"><a href="#cb15-525" aria-hidden="true" tabindex="-1"></a><span class="in">## Sharing</span></span>
+<span id="cb15-526"><a href="#cb15-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-527"><a href="#cb15-527" aria-hidden="true" tabindex="-1"></a><span class="in">One of the major goals of our class is to develop workflows that allow us to easily share and disseminate our work - we'll rely upon elements of the Quarto Markdown ecosystem to help us accomplish this.</span></span>
+<span id="cb15-528"><a href="#cb15-528" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-529"><a href="#cb15-529" aria-hidden="true" tabindex="-1"></a><span class="in">### Sharing via Quarto Pub</span></span>
+<span id="cb15-530"><a href="#cb15-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-531"><a href="#cb15-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-532"><a href="#cb15-532" aria-hidden="true" tabindex="-1"></a><span class="in">https://quarto.org/docs/publishing/quarto-pub.html</span></span>
+<span id="cb15-533"><a href="#cb15-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-534"><a href="#cb15-534" aria-hidden="true" tabindex="-1"></a><span class="in">### Sharing via Github</span></span>
+<span id="cb15-535"><a href="#cb15-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-536"><a href="#cb15-536" aria-hidden="true" tabindex="-1"></a><span class="in">## References</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Content <i class="fa-regular fa-copyright" aria-label="copyright"></i> Andrew J. Greenlee</div>   
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a> <br> Website Code on <a href="https://github.com/agreen4/UP570_S23_Website">Github <i class="fa-brands fa-github" aria-label="github"></i></a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

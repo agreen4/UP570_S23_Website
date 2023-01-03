@@ -83,6 +83,7 @@ website:
         - section: "Labs"
           contents:     
             - text: "Building a Data Pipeline"
+              file: assignments/labs/01_datapipeline.qmd
             - text: "Sharing Your Work"
             - text: "Describing Places"
             - text: "Population and the Census"
@@ -136,7 +137,6 @@ format:
   html:
     theme:
       light: [flatly, custom.scss]
-      dark: [darkly, custom.scss]
     css: 
       - styles.css
     toc: true
