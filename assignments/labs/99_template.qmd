@@ -1,0 +1,49 @@
+---
+title: "Sharing Your Work"
+sidebar: false
+toc: true
+toc-depth: 4
+page-layout: full
+bibliography: ../references.bib
+csl: ../apa-6th-edition.csl
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+fig-responsive: true
+editor: visual
+---
+
+## Introduction
+
+## Goals
+
+-   Set up your computer so that RStudio can communicate with your Github account.
+
+## Core Concepts
+
+### R and Rstudio
+
+-   \[concepts here\]
+
+Let's get going...
+
+## Github Lab Repository
+
+If you have not already done so, follow [this link](https://classroom.github.com/a/TzkeNAie) to accept the lab Github Classroom assignment repository.
+
+## Workflow 1: Set up a New Project
+
+## Workflow 2: Working in Quarto
+
+## Lab Evaluation
+
+In evaluating your lab submission, we'll be paying attention to the following:
+
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
+
+## References

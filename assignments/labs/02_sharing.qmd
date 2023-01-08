@@ -1,0 +1,194 @@
+---
+title: "Sharing Your Work"
+sidebar: false
+toc: true
+toc-depth: 4
+page-layout: full
+bibliography: ../references.bib
+csl: ../apa-6th-edition.csl
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+fig-align: default
+fig-responsive: true
+editor: visual
+---
+
+## Introduction
+
+This lab focuses on getting your computer set up to communicate with Github and to introduce several workflows for publicly sharing your work. We will use these workflows throughout the course to share work and record feedback. Github represents a standard industry tool for code version control, collaborative development, debugging, and documentation.
+
+While code version control isn't directly a focal point within practices of neighborhood analysis, we leverage it as a strategy to achieve one of our course goals. As we have discussed in our introductory framing to the course, transparency is an important principle of accountability within data analysis. Version control systems allow us to track changes in our code over time. These systems can help to facilitate accountability by making code accessible and easy to share. Version control systems also opens up the opportunities for collaboration, especially around the debugging of code.
+
+:::{.grid}
+:::{.g-col-4}
+![](https://octodex.github.com/images/codercat.jpg)
+:::
+:::{.g-col-8}
+For those people who have not used these systems before, there's some core concepts to master. Once you do, integrating these systems into your workflow will become much easier. By the end of the class, you will have a lot of experience leveraging these tools as part of your workflows.
+
+Version control systems like Github are also well integrated with several other tools that make it really easy to quickly and effectively share analysis via the internet. Again, this form of sharing is not integral to neighborhood analysis, but it does help us achieve a course goal focused on acessibility of analysis. While print and paper documents still rightfully have their place in our workflows, increasingly, our work is shared and consumed digitally. Being able to produce documents that are publicly accessible via the internet, therefore, becomes an important workflow for us to master.
+:::
+:::
+
+
+
+
+
+
+## Goals
+
+-   Set up your computer so that RStudio can communicate with Github.
+-   Learn several workflows for translating Quarto documents into simple websites.
+-   Submit your previous lab via Github.
+
+## Core Concepts
+
+### R and Rstudio
+
+-   Terminal
+
+### Github
+
+- Push
+- Pull
+- Pull request
+- Repository
+
+Let's get going...
+
+## Github Lab Repository
+
+Link to the Github lab repository. Please accept the Github Classroom assignment repository link for [Lab 2: Sharing your Work](https://classroom.github.com/a/zTBqDivk).
+
+## Configure Your Computer to Talk to Github
+
+Our first task is to configure your computer to talk to Github. This assumes that you already have a Github account set up, but that you have not linked this account to your local computer. A great resource that takes you step by step through Github workflows is Jenny Bryan's [Happy Git and GitHub for the useR](https://happygitwithr.com/big-picture.html). The recommended configuration below paraphrases the options found on that site.
+
+Let's get started!
+
+### Register a Github Account
+
+Github is an implementation of Git, which is a version control system designed to help you keep track of files (especially code) which are likely to be updated often. GitHub has some features similar to Dropbox or Box, but with far more emphasis on versioning your work and tracking changes. Within our class, we’ll use GitHub as a location where you’ll store work outputs which you will receive feedback. 
+
+:::{.grid}
+:::{.g-col-8}
+Let’s get this set up:
+
+1. If you do not already have a GitHub account, go to GitHub.com and then click on Sign Up to create a new account. You will make a username (see some sage [username advice here](https://happygitwithr.com/github-acct.html)), enter your email address, and password, and then hit create account. I recommend using your UIUC email address for this step if you’re creating a new account (for my rationale, see the next step).
+
+2. GitHub offers some services for free which you can access with your basic account, however, as a student at an educational institution, you can register with [GitHub for Education](https://education.github.com) to receive enhanced benefits and services. You will be asked to verify your association with an academic institution, which you can do by entering your [netid]@illinois.edu email address and taking a picture of your I-Card.
+:::
+:::{.g-col-4}
+![](https://octodex.github.com/images/bouncercat.png)
+:::
+:::
+
+
+
+
+### Configure Your Local Machine to Talk to GitHub
+
+You can upload files directly to a GitHub repository in the GitHub web interface, but as you create more complex files and file structures, that’s not going to be a feasible way to manage your work. That strategy also overlooks most of the features of what GitHub is at its core - a version control system.
+
+![](https://octodex.github.com/images/collabocats.jpg){width=50% fig-align="center"}
+
+We might want to version our work for several reasons:
+
+- To keep track of changes we’ve made, so that we can track when code works and when we’ve broken it
+- To be able to share code with collaborators and work on the same files at the same time and then reconcile and combine work all together
+- To be able to share code and data publicly with others
+
+All three of these rationales are important motivations within the context of our class. There are two strategies which you may want to try to integrate GitHub into your R workflow.
+
+RStudio has GitHub functionality built right in, which is very handy for integrating version control into your R workflow. Assuming you’ve already got R and RStudio installed on your system and have already set up a GitHub account, start here:
+
+1. [Check to see](https://happygitwithr.com/install-git.html#git-already-installed) if Git is installed on your computer, and if it isnt, [Install Git](https://happygitwithr.com/install-git.html#install-git).
+2. [Associate git](https://happygitwithr.com/hello-git.html) on your computer with your GitHub account.
+3. [Install a Git client](https://happygitwithr.com/git-client.html#recommended-git-clients) like GitHub Desktop.
+4. [Connect to GitHub](https://happygitwithr.com/push-pull-github.html)
+5. [Connect RStudio to GitHub](https://happygitwithr.com/rstudio-git-github.html)
+6. [Get Started](https://happygitwithr.com/usage-intro.html) using GitHub integrated with R. This video shows you how to communicate with your Github repository using RStudio:
+
+<div style="max-width:720px"><div style="position:relative;padding-bottom:60.972222222222%"><iframe id="kmsembed-1_q0g92uhw" width="720" height="439" src="https://mediaspace.illinois.edu/embed/secure/iframe/entryId/1_q0g92uhw/uiConfId/26883701" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
+
+
+We will ease our way into using Github, and will also devote some time to troubleshooting in class. I promise, it’s going to make sense soon!
+
+![](https://octodex.github.com/images/femalecodertocat.png){width=40% fig-align="center"}
+
+## Communicating with GitHub from Rstudio.
+
+Although this lab is formally introducing GitHub's functionality as part of our class, you have already gotten some experience interacting manually with GitHub as you needed to download a repository in order to complete your first lab. From here on out, you can use RStudio to communicate directly with GitHub so that pushing and pulling repositories can all happen within your RStudio session. By the end of this lab, you will have gained some experience pushing and pulling files (specifically your lab files). From here on out in class, we will assume that you will use GitHub to submit your code for review. Instructions will be clearly posted with both lab and homework assignments.
+
+With those things in mind, let's think about how we communicate with Github from RStudio.
+
+*MORE HERE*
+
+## Publish using Quarto Pub
+
+[Quarto Pub](https://quartopub.com) is a free service that allows you to quickly publish Quarto documents. Quarto Pub represents one of the easiest ways to publish documents.
+
+:::{.panel-tabset}
+
+## 1. Create Account
+In order to use Quarto Pub, you'll need to create an account. Visit [https://quartopub.com](https://quartopub.com) and create an account. I chose to use my GitHub username, but you can create an account with any name you wish (please keep in mind that the account name will become part of the URL which others will see).
+
+![](02_sharing/01_quartopub.png){width=80%}
+
+## 2. Preview
+It's a good idea to preview your document before publishing it to see how it will look in a web browser. Render your document so that you can see what the final document will look like online.
+
+## 3. Publish
+While we are using Quarto within RStudio, Quarto can also be run at the command line to render a range of document types. We will briefly use the command line in order to publish out document to Quarto Pub.
+
+In your RStudio session, click on the terminal tab and type:
+
+:::{.callout-note icon=false}
+## Terminal
+`quarto publish quarto-pub`
+:::
+
+Put in plain language we are asking Quarto `quarto` to publish our document `publish` via Quarto Pub `quarto-pub`.
+
+![](02_sharing/02_quarto_publish.png){width=80%}
+
+## 4. Options
+You may be prompted to log in to your Quarto Pub account on the internet before proceeding. Depeding upon the name of your document, you may also need to provide a shorter name (you will be prompted in the terminal window if that is the case). Quarto will then publish the document and will open a window that takes you to your published document.
+
+![](02_sharing/03_rename.png){width=80%}
+
+## 5. Finished!
+You can then examine your published document at the URL that's generated for you. For example: [https://agreen4.quarto.pub/cca/](https://agreen4.quarto.pub/cca/)
+
+<iframe src="https://agreen4.quarto.pub/cca/" width="100%" height="300"></iframe>
+
+In the future if you need to update the document, you can run the publish step again.
+:::
+
+## Publish using Github and Netlify
+
+Quarto Pub represents a really fast and easy option for creating and sharing Quarto documents. We'll also learn another more involved strategy which you may choose to employ. This involves pushing published code and HTML content that represents a publishable document or website to Github and then linking this repository to a web hosting service like Netlify which will then publish the site for you. 
+
+This strategy can be useful in that you end up with two deliverables - your code base and associated HTML files on GitHub and a website hosted by Netlify. Our course website - the very website you are reading right now - is published using this pipeline. The webpages are each a Quarto Markdown file. The files are pushed to a Github repository. Netlify links to this repository and when new updates are pushed to Github, Netlify "refreshes" the website, typically within a minute or less of the push being complete.
+
+If you simply want a quick and easy way to share your work, Quarto Pub may be completely sufficient. If you want more advanced web hosting options and configurability (like domain management), Netlify may be a more appropriate solution. We will learn both strategies, and you should take the time to become comfortable using either strategy.
+
+** More Here**
+
+## Lab Evaluation
+
+In evaluating your lab submission, we'll be paying attention to the following:
+
+1. Successfully create and publish a quarto page via Quarto Pub.
+
+2. Successfully create a publish a quarto page based upon your first lab assignment via GitHub and Netlify.
+
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
+
+## References

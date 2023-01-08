@@ -85,6 +85,7 @@ website:
             - text: "Building a Data Pipeline"
               file: assignments/labs/01_datapipeline.qmd
             - text: "Sharing Your Work"
+              file: assignments/labs/02_sharing.qmd
             - text: "Describing Places"
             - text: "Population and the Census"
             - text: "Population Projections"
