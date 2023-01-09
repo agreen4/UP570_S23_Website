@@ -113,6 +113,10 @@ website:
               file: howto/index.qmd
             - text: "Set Up R and RStudio"
               file: howto/setupr.qmd
+        - section: "Communicate Your Analysis"
+          contents:
+            - text: "Planning and Writing By The Numbers"
+              file: howto/PWBTN/PWBTN.qmd
         - section: "Code Base"
           contents:
         - section: "Share Your Work"

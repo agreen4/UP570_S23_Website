@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Neighborhood Analysis - Communicating Quantitative Information</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Neighborhood Analysis</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus/index.html">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule/index.html">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../assignments/index.html">
+ <span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../howto/index.html">
+ <span class="menu-text">How To</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/index.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://up570s23.slack.com/"><i class="bi bi-slack" role="img" aria-label="Slack">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-communication-strategies" id="toc-basic-communication-strategies" class="nav-link active" data-scroll-target="#basic-communication-strategies">Basic Communication Strategies</a>
+  <ul class="collapse">
+  <li><a href="#memo-format" id="toc-memo-format" class="nav-link" data-scroll-target="#memo-format">Memo Format</a></li>
+  <li><a href="#short-report-format" id="toc-short-report-format" class="nav-link" data-scroll-target="#short-report-format">Short Report Format</a></li>
+  <li><a href="#do-not-include-title-page" id="toc-do-not-include-title-page" class="nav-link" data-scroll-target="#do-not-include-title-page">Do Not Include Title Page</a></li>
+  <li><a href="#avoid-headers-and-footers-in-memos" id="toc-avoid-headers-and-footers-in-memos" class="nav-link" data-scroll-target="#avoid-headers-and-footers-in-memos">Avoid Headers and Footers in Memos</a></li>
+  <li><a href="#no-conclusion-needed" id="toc-no-conclusion-needed" class="nav-link" data-scroll-target="#no-conclusion-needed">No Conclusion Needed</a></li>
+  <li><a href="#notes-and-citations" id="toc-notes-and-citations" class="nav-link" data-scroll-target="#notes-and-citations">Notes and Citations</a></li>
+  <li><a href="#formatting-considerations-for-printing" id="toc-formatting-considerations-for-printing" class="nav-link" data-scroll-target="#formatting-considerations-for-printing">Formatting Considerations for Printing</a></li>
+  </ul></li>
+  <li><a href="#style" id="toc-style" class="nav-link" data-scroll-target="#style">Style</a>
+  <ul class="collapse">
+  <li><a href="#awkward-sentence-construction" id="toc-awkward-sentence-construction" class="nav-link" data-scroll-target="#awkward-sentence-construction">Awkward Sentence Construction</a></li>
+  <li><a href="#write-directly" id="toc-write-directly" class="nav-link" data-scroll-target="#write-directly">Write Directly</a></li>
+  <li><a href="#avoid-excessive-use-of-jargon" id="toc-avoid-excessive-use-of-jargon" class="nav-link" data-scroll-target="#avoid-excessive-use-of-jargon">Avoid Excessive Use of Jargon</a></li>
+  <li><a href="#avoid-passive-voice" id="toc-avoid-passive-voice" class="nav-link" data-scroll-target="#avoid-passive-voice">Avoid Passive Voice</a></li>
+  <li><a href="#use-active-headings-and-subheadings" id="toc-use-active-headings-and-subheadings" class="nav-link" data-scroll-target="#use-active-headings-and-subheadings">Use Active Headings and Subheadings</a></li>
+  <li><a href="#avoid-unnecessary-equivocation" id="toc-avoid-unnecessary-equivocation" class="nav-link" data-scroll-target="#avoid-unnecessary-equivocation">Avoid Unnecessary Equivocation</a></li>
+  <li><a href="#in-memos-dont-stay-what-youre-going-to-say" id="toc-in-memos-dont-stay-what-youre-going-to-say" class="nav-link" data-scroll-target="#in-memos-dont-stay-what-youre-going-to-say">In Memos, Don’t Stay What You’re Going to Say</a></li>
+  <li><a href="#places-dont-have-agency" id="toc-places-dont-have-agency" class="nav-link" data-scroll-target="#places-dont-have-agency">Places Don’t Have Agency</a></li>
+  <li><a href="#discuss-findings-not-exhibits" id="toc-discuss-findings-not-exhibits" class="nav-link" data-scroll-target="#discuss-findings-not-exhibits">Discuss Findings, Not Exhibits</a></li>
+  </ul></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <ul class="collapse">
+  <li><a href="#print-and-proof" id="toc-print-and-proof" class="nav-link" data-scroll-target="#print-and-proof">Print and Proof</a></li>
+  <li><a href="#define-acronyms-on-first-use" id="toc-define-acronyms-on-first-use" class="nav-link" data-scroll-target="#define-acronyms-on-first-use">Define Acronyms on First Use</a></li>
+  <li><a href="#write-out-numbers-less-than-11" id="toc-write-out-numbers-less-than-11" class="nav-link" data-scroll-target="#write-out-numbers-less-than-11">Write out Numbers Less than 11</a></li>
+  <li><a href="#spell-out-numbers-starting-sentences" id="toc-spell-out-numbers-starting-sentences" class="nav-link" data-scroll-target="#spell-out-numbers-starting-sentences">Spell out Numbers Starting Sentences</a></li>
+  <li><a href="#watch-your-capitalization" id="toc-watch-your-capitalization" class="nav-link" data-scroll-target="#watch-your-capitalization">Watch Your Capitalization</a></li>
+  <li><a href="#no-apostrophe-on-dates" id="toc-no-apostrophe-on-dates" class="nav-link" data-scroll-target="#no-apostrophe-on-dates">No Apostrophe on Dates</a></li>
+  <li><a href="#data-are-plural" id="toc-data-are-plural" class="nav-link" data-scroll-target="#data-are-plural">Data are Plural</a></li>
+  <li><a href="#use-proper-note-punctuation" id="toc-use-proper-note-punctuation" class="nav-link" data-scroll-target="#use-proper-note-punctuation">Use Proper Note Punctuation</a></li>
+  <li><a href="#complete-sentences-in-notes" id="toc-complete-sentences-in-notes" class="nav-link" data-scroll-target="#complete-sentences-in-notes">Complete Sentences in Notes</a></li>
+  <li><a href="#punctuation-inside-quotes" id="toc-punctuation-inside-quotes" class="nav-link" data-scroll-target="#punctuation-inside-quotes">Punctuation Inside Quotes</a></li>
+  <li><a href="#write-out-percent" id="toc-write-out-percent" class="nav-link" data-scroll-target="#write-out-percent">Write out Percent</a></li>
+  <li><a href="#use-arabic-numbers-for-notes" id="toc-use-arabic-numbers-for-notes" class="nav-link" data-scroll-target="#use-arabic-numbers-for-notes">Use Arabic Numbers for Notes</a></li>
+  <li><a href="#citing-the-url-is-not-enough" id="toc-citing-the-url-is-not-enough" class="nav-link" data-scroll-target="#citing-the-url-is-not-enough">Citing the URL is Not Enough</a></li>
+  <li><a href="#avoid-ampersand-in-text" id="toc-avoid-ampersand-in-text" class="nav-link" data-scroll-target="#avoid-ampersand-in-text">Avoid Ampersand (&amp;) in Text</a></li>
+  </ul></li>
+  <li><a href="#numbers" id="toc-numbers" class="nav-link" data-scroll-target="#numbers">Numbers</a>
+  <ul class="collapse">
+  <li><a href="#interpret-quantities-by-comparison" id="toc-interpret-quantities-by-comparison" class="nav-link" data-scroll-target="#interpret-quantities-by-comparison">Interpret Quantities by Comparison</a></li>
+  <li><a href="#explain-regional-geography" id="toc-explain-regional-geography" class="nav-link" data-scroll-target="#explain-regional-geography">Explain Regional Geography</a></li>
+  <li><a href="#significant-digits" id="toc-significant-digits" class="nav-link" data-scroll-target="#significant-digits">Significant Digits</a></li>
+  <li><a href="#only-include-exhibits-you-reference-in-text" id="toc-only-include-exhibits-you-reference-in-text" class="nav-link" data-scroll-target="#only-include-exhibits-you-reference-in-text">Only Include Exhibits You Reference in Text</a></li>
+  <li><a href="#report-the-quantity" id="toc-report-the-quantity" class="nav-link" data-scroll-target="#report-the-quantity">Report the Quantity</a></li>
+  <li><a href="#emphasize-significant-findings" id="toc-emphasize-significant-findings" class="nav-link" data-scroll-target="#emphasize-significant-findings">Emphasize Significant Findings</a></li>
+  <li><a href="#percent-versus-percentage-points" id="toc-percent-versus-percentage-points" class="nav-link" data-scroll-target="#percent-versus-percentage-points">Percent versus Percentage Points</a></li>
+  <li><a href="#refer-to-exhibits-in-text" id="toc-refer-to-exhibits-in-text" class="nav-link" data-scroll-target="#refer-to-exhibits-in-text">Refer to Exhibits in Text</a></li>
+  </ul></li>
+  <li><a href="#tables-figures-and-graphics" id="toc-tables-figures-and-graphics" class="nav-link" data-scroll-target="#tables-figures-and-graphics">Tables, Figures and Graphics</a>
+  <ul class="collapse">
+  <li><a href="#make-em-so-they-stand-alone" id="toc-make-em-so-they-stand-alone" class="nav-link" data-scroll-target="#make-em-so-they-stand-alone">Make ’Em so they Stand Alone</a></li>
+  <li><a href="#avoid-use-of-grids-in-tables" id="toc-avoid-use-of-grids-in-tables" class="nav-link" data-scroll-target="#avoid-use-of-grids-in-tables">Avoid Use of Grids in Tables</a></li>
+  <li><a href="#decimal-justify-data-columns" id="toc-decimal-justify-data-columns" class="nav-link" data-scroll-target="#decimal-justify-data-columns">Decimal Justify Data Columns</a></li>
+  <li><a href="#use-descriptive-column-labels-in-tables" id="toc-use-descriptive-column-labels-in-tables" class="nav-link" data-scroll-target="#use-descriptive-column-labels-in-tables">Use Descriptive Column Labels in Tables</a></li>
+  <li><a href="#use-label-hierarchies-in-tables" id="toc-use-label-hierarchies-in-tables" class="nav-link" data-scroll-target="#use-label-hierarchies-in-tables">Use Label Hierarchies in Tables</a></li>
+  <li><a href="#indicate-source-on-figures-and-tables" id="toc-indicate-source-on-figures-and-tables" class="nav-link" data-scroll-target="#indicate-source-on-figures-and-tables">Indicate Source on Figures and Tables</a></li>
+  <li><a href="#use-detailed-sources" id="toc-use-detailed-sources" class="nav-link" data-scroll-target="#use-detailed-sources">Use Detailed Sources</a></li>
+  <li><a href="#pie-chart-no-thanks" id="toc-pie-chart-no-thanks" class="nav-link" data-scroll-target="#pie-chart-no-thanks">Pie Chart? No Thanks</a></li>
+  <li><a href="#shun-3-d" id="toc-shun-3-d" class="nav-link" data-scroll-target="#shun-3-d">Shun 3-D</a></li>
+  <li><a href="#call-tables-tables-and-figures-figures" id="toc-call-tables-tables-and-figures-figures" class="nav-link" data-scroll-target="#call-tables-tables-and-figures-figures">Call Tables “Tables” and Figures “Figures”</a></li>
+  <li><a href="#sequence-tables-and-figures-in-order-in-the-text" id="toc-sequence-tables-and-figures-in-order-in-the-text" class="nav-link" data-scroll-target="#sequence-tables-and-figures-in-order-in-the-text">Sequence Tables and Figures in Order in the Text</a></li>
+  <li><a href="#use-commas-for-numbers" id="toc-use-commas-for-numbers" class="nav-link" data-scroll-target="#use-commas-for-numbers">Use Commas for Numbers</a></li>
+  <li><a href="#avoid-grids-on-figures" id="toc-avoid-grids-on-figures" class="nav-link" data-scroll-target="#avoid-grids-on-figures">Avoid Grids on Figures</a></li>
+  <li><a href="#dont-rely-on-color" id="toc-dont-rely-on-color" class="nav-link" data-scroll-target="#dont-rely-on-color">Don’t Rely on Color</a></li>
+  <li><a href="#report-numbers-in-000s" id="toc-report-numbers-in-000s" class="nav-link" data-scroll-target="#report-numbers-in-000s">Report Numbers in 000s</a></li>
+  <li><a href="#no-superfluous-material" id="toc-no-superfluous-material" class="nav-link" data-scroll-target="#no-superfluous-material">No Superfluous Material</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Communicating Quantitative Information</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This document draws heavily from Dr.&nbsp;Ed. Feser’s Professional Writing by the Numbers: For Planners and Policy Analysts, Version 4.0 (2006). Updated content focuses on digital-first communication strategies.</p>
+<section id="basic-communication-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="basic-communication-strategies">Basic Communication Strategies</h2>
+<section id="memo-format" class="level3">
+<h3 class="anchored" data-anchor-id="memo-format">Memo Format</h3>
+<p>Memos are often used by urban planners to share information within their agency or with other planners and local government officials. Memos tend to be concise documents that may contain either requested information for staff or recommendations on how to debate or take action around a particular policy issue. Memos are built around clear and concise writing with a logical structure, clear illustrations and visualizations, proper formatting and spelling.</p>
+<p>Memos start with a heading that includes the name of the memo author, name of the intended recipient, date, and a descriptive subject heading:</p>
+<p><strong>Memorandum</strong><br>
+<br>
+<strong>To:</strong> Janet Jacobs, Planning Director<br>
+<strong>From:</strong> Mae Q. Plannington, Planner 1<br>
+<strong>Date:</strong> October 7, 2022<br>
+<strong>Subject:</strong> Recommendation on Zoning Change for Holloway Parcel</p>
+<p>A memo is typically written in response to something. The first paragraph of the memo should describe what the memo is responding to, and should summarize what the writer of the memo has done to prepare the response. The first paragraph should also summarize any key findings or recommendations.</p>
+<p>Information within a memo should be organized in a logical fashion. Section headings with descriptive titles help your audience find particular information more easily.</p>
+<p>General information should be presented first followed by more detailed information. As you support information with evidence, you should follow the same progression of general to specific.</p>
+<p>Memos should conclude with a summary statement that encapsulates the key findings which you have come up with. If you are providing recommendations in your memo, this is also an appropriate place to re-state your recommendations, and provide instructions for how your memo recipient should follow up.</p>
+<p>Because a memo is designed to be a concise document, you may have important additional information which would be useful to share, but which does not fit within the scope of the memorandum. Such items can be included in an appendix or attachment to the memo, and should be referenced as appropriate within the memo (e.g.&nbsp;“See the attached document for the property surveyor’s description of the Holloway parcel”).</p>
+</section>
+<section id="short-report-format" class="level3">
+<h3 class="anchored" data-anchor-id="short-report-format">Short Report Format</h3>
+<p>Present your analysis in the format of a short report or “data brief.”</p>
+</section>
+<section id="do-not-include-title-page" class="level3">
+<h3 class="anchored" data-anchor-id="do-not-include-title-page">Do Not Include Title Page</h3>
+<p>Title pages have their place in academic papers and larger, formal technical reports. However, they are inappropriate for memos and short data or policy briefs. Keep it simple.</p>
+</section>
+<section id="avoid-headers-and-footers-in-memos" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-headers-and-footers-in-memos">Avoid Headers and Footers in Memos</h3>
+<p>Running footers and headers also have their place for certain types of documents, but not for memos.</p>
+</section>
+<section id="no-conclusion-needed" class="level3">
+<h3 class="anchored" data-anchor-id="no-conclusion-needed">No Conclusion Needed</h3>
+<p>In other contexts, you have likely been taught to include both introductions and conclusions as ways to help transition in and out of different sections. The memo format is more direct, and does not require the use of opening and closing paragraphs. State you case and let it go at that.</p>
+</section>
+<section id="notes-and-citations" class="level3">
+<h3 class="anchored" data-anchor-id="notes-and-citations">Notes and Citations</h3>
+<section id="use-notes-for-technical-explanations" class="level4">
+<h4 class="anchored" data-anchor-id="use-notes-for-technical-explanations">Use Notes for Technical Explanations</h4>
+<p>Footnotes or endnotes are best for stating brief technical explanations for methods and data. Reports may require a longer methodological appendix, but this is typically not appropriate for a memorandum.</p>
+</section>
+<section id="use-notes-for-citations" class="level4">
+<h4 class="anchored" data-anchor-id="use-notes-for-citations">Use Notes for Citations</h4>
+<p>Use an endnote or footnote to cite sources for memos and report briefs. Bibliographies or “Works Cited” lists are appropriate for longer reports or academic papers.</p>
+</section>
+<section id="combine-data-source-citations" class="level4">
+<h4 class="anchored" data-anchor-id="combine-data-source-citations">Combine Data Source Citations</h4>
+<p>It makes good sense to use endnotes or footnotes to discuss data used in an analysis in a memo or report brief. But you do not necessarily need to use a separate note for each data source or series. Instead, combine them by introducing one note early in the document. Something like: “The data used in this analysis are from the U.S. Census Bureau’s 2020 5-year American Community Survey and 2020 Census Household Pulse Survey”.</p>
+</section>
+</section>
+<section id="formatting-considerations-for-printing" class="level3">
+<h3 class="anchored" data-anchor-id="formatting-considerations-for-printing">Formatting Considerations for Printing</h3>
+<p>Increasingly, memos and other routine planning communications are communicated digitally, however, it is important to prepare documents that will be legible when printed. In most circumstances, formatting considerations for printing will also apply to documents intended to be communicated digitally.</p>
+<section id="left-justify-text" class="level4">
+<h4 class="anchored" data-anchor-id="left-justify-text">Left Justify Text</h4>
+<p>Use left justification for text, and not full justification.</p>
+</section>
+<section id="include-page-numbers" class="level4">
+<h4 class="anchored" data-anchor-id="include-page-numbers">Include Page Numbers</h4>
+<p>Include page numbers in the bottom center or bottom right of your page.</p>
+</section>
+<section id="one-inch-margins" class="level4">
+<h4 class="anchored" data-anchor-id="one-inch-margins">One Inch Margins</h4>
+<p>Use one inch margins on the left, right, top and bottom, including on all pages with tables and figures.</p>
+</section>
+<section id="twelve-point-font" class="level4">
+<h4 class="anchored" data-anchor-id="twelve-point-font">Twelve point font</h4>
+<p>Use a twelve point font, preferably something like Times for your text. You can use a ten point font for footnotes and endnotes. No text should be smaller than ten points.</p>
+</section>
+</section>
+</section>
+<section id="style" class="level2">
+<h2 class="anchored" data-anchor-id="style">Style</h2>
+<section id="awkward-sentence-construction" class="level3">
+<h3 class="anchored" data-anchor-id="awkward-sentence-construction">Awkward Sentence Construction</h3>
+<p>A catch-all category for a painful-to-read but not necessarily grammatically incorrect sentence. Sentence may be an affront to good writing style. Admittedly, professors often put AWK in places where they know something is amiss, but not being writing instructors, they’re not sure technically how to explain what is wrong. Bottom line: the sentence doesn’t work. Proofread yourself and then have someone else read to ensure clarity.</p>
+</section>
+<section id="write-directly" class="level3">
+<h3 class="anchored" data-anchor-id="write-directly">Write Directly</h3>
+<p>Don’t mince words: come out and say it. Instead of “The BLS and BEA data show that employment in the microchip industry is very small,” write “Employment in the microchip industry is very small.” Or, instead of “It is very important to note that data disclosure rules preclude reporting employment for all sectors,” write “Data disclosure rules preclude. . .”</p>
+</section>
+<section id="avoid-excessive-use-of-jargon" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-excessive-use-of-jargon">Avoid Excessive Use of Jargon</h3>
+<p>Avoid the planner’s pitfall: too much use of all those fancy planning terms and acronyms. It’s not impressive or erudite, just boring.</p>
+</section>
+<section id="avoid-passive-voice" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-passive-voice">Avoid Passive Voice</h3>
+<p>The extensive use of passive voice may be the single most common reason why a majority of sane individuals would rather walk on hot coals than read a technical document. Doesn’t “The region’s population growth dramatically outpaced the nation’s over the study period” sound better than “Using population data, it was found that the region grew much faster than the US over the study period”?</p>
+<p>Another example: replace “A three-part analysis will be conducted in this paper” with “This paper will present a three-part analysis” or “In this paper, I will conduct a three-part analysis.” Reject passivity. Be active.</p>
+</section>
+<section id="use-active-headings-and-subheadings" class="level3">
+<h3 class="anchored" data-anchor-id="use-active-headings-and-subheadings">Use Active Headings and Subheadings</h3>
+<p>Use headings and subheadings to help organize your findings and discussion. In addition, keep ’em active and efficient. Instead of “Location Quotient Analysis” as a sub-heading, try a short title that conveys findings, e.g., “Region Specialized in Manufacturing and Services.” Headings and subheadings should never extend beyond one line of text.</p>
+</section>
+<section id="avoid-unnecessary-equivocation" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-unnecessary-equivocation">Avoid Unnecessary Equivocation</h3>
+<p>Sometimes it makes sense to offer caveats or otherwise “hedge your bets” when discussing a finding. However, don’t overdo it. Population growth doesn’t “seem fast.” It either is or is not fast, relative to something else (which you should be comparing it to). A location quotient indicates whether a region is or is not specialized in a given industry; it does not indicate that the region “seems specialized” or “may be specialized.” On the other hand, location quotients do not say much beyond specialization (you would not damn the torpedoes and argue, on the basis of a manufacturing LQ above 1.2, that the region is “highly competitive” in manufacturing).</p>
+<p>If you find yourself making equivocations, it’s worthwhile to revisit the evidence you’ve provided to make a point to ensure you’re making the strongest argument possible. Communicate that argument confidently, and provide appropriate caveats when necessary.</p>
+</section>
+<section id="in-memos-dont-stay-what-youre-going-to-say" class="level3">
+<h3 class="anchored" data-anchor-id="in-memos-dont-stay-what-youre-going-to-say">In Memos, Don’t Stay What You’re Going to Say</h3>
+<p>In academic papers or longer reports it often makes sense to provide a roadmap to the document (e.g., “This report begins by summarizing major trends in population. It then. . .”). The adage that you should “say what you are going to say, say it, then say what you said” doesn’t apply for short policy and analysis pieces. Just get on with the analysis and findings. Strong organization and active headings will help your reader infer how you’ll make your points.</p>
+</section>
+<section id="places-dont-have-agency" class="level3">
+<h3 class="anchored" data-anchor-id="places-dont-have-agency">Places Don’t Have Agency</h3>
+<p>In discussing social, economic, and demographic trends for neighborhoods, cities and regions, avoid implying that places have “agency.” Example:</p>
+<p>El Paso shifted its population mix in response to major changes in Federal immigration policy.</p>
+<p>In this case, El Paso as a collective, is being treated as an actor when it is actually simply a place with a collection of actors (people, households, businesses, organizations) who are reacting to the federal policy change in various ways.</p>
+<p>It would be more accurate to say something like this:</p>
+<p>El Paso’s population mix shifted in response to major changes in Federal immigration policy.</p>
+<p>There may be cases when implying the place is an actor makes sense, for instance when you are discussing a community-wide strategy or policy.</p>
+</section>
+<section id="discuss-findings-not-exhibits" class="level3">
+<h3 class="anchored" data-anchor-id="discuss-findings-not-exhibits">Discuss Findings, Not Exhibits</h3>
+<p>People don’t want to read about figures and tables. They want to read about trends that matter from your analysis. Avoid discussing exhibits. Instead, discuss findings, referring to figures and tables as supporting evidence.</p>
+<p><strong>No:</strong> “Figure 1 shows that poverty in center city neighborhoods in Cleveland is increasing.”</p>
+<p><strong>Yes:</strong> “Poverty in center city Cleveland is increasing (see Table 1).”</p>
+</section>
+</section>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<section id="print-and-proof" class="level3">
+<h3 class="anchored" data-anchor-id="print-and-proof">Print and Proof</h3>
+<p>We increasingly have an imperative to produce, edit, and disseminate our work using a completely electronic workflow. This has its benefits, but you need to develop a workflow that allows you to edit your draft with diligence. Printing and proofing a document by hand can often catch errors that would otherwise become lost in digital copy - such mistakes often reveal themselves in embarrassingly stark relief once disseminated.</p>
+</section>
+<section id="define-acronyms-on-first-use" class="level3">
+<h3 class="anchored" data-anchor-id="define-acronyms-on-first-use">Define Acronyms on First Use</h3>
+<p>The first time you use an acronym (e.g., HUD), spell it out, followed by the acronym in parentheses. “Data are from the U.S. Department of Housing and Urban Development (HUD).” Then use the acronym to your heart’s content.</p>
+</section>
+<section id="write-out-numbers-less-than-11" class="level3">
+<h3 class="anchored" data-anchor-id="write-out-numbers-less-than-11">Write out Numbers Less than 11</h3>
+<p>Although sometimes the convention is that numbers one through ninety-nine should be spelled out. Numerals should be used for rates, percentages and other “data” indicators. Thus we would write “there are eight counties in the MSA,” but “the region grew by 8 percent.”</p>
+</section>
+<section id="spell-out-numbers-starting-sentences" class="level3">
+<h3 class="anchored" data-anchor-id="spell-out-numbers-starting-sentences">Spell out Numbers Starting Sentences</h3>
+<p>Any number that begins a sentence (or a bullet point) should be spelled out.</p>
+</section>
+<section id="watch-your-capitalization" class="level3">
+<h3 class="anchored" data-anchor-id="watch-your-capitalization">Watch Your Capitalization</h3>
+<p>No need to capitalize industries, occupations, or other sectoral-type categories. Do not over-capitalize. Note that when referring to a single county, write “Tehama County.” But writing about multiple counties, it is “Tehama and Shasta counties.” Also: the “City of New York” but the “cities of Palo Alto and San Jose.”</p>
+</section>
+<section id="no-apostrophe-on-dates" class="level3">
+<h3 class="anchored" data-anchor-id="no-apostrophe-on-dates">No Apostrophe on Dates</h3>
+<p>When referring to decades (e.g., 1990s), do not use an apostrophe.</p>
+</section>
+<section id="data-are-plural" class="level3">
+<h3 class="anchored" data-anchor-id="data-are-plural">Data are Plural</h3>
+<p><strong>No:</strong> “The data is hard to find.”</p>
+<p><strong>Yes:</strong> “The data are hard to find.”</p>
+</section>
+<section id="use-proper-note-punctuation" class="level3">
+<h3 class="anchored" data-anchor-id="use-proper-note-punctuation">Use Proper Note Punctuation</h3>
+<p>Note numbers are best placed at the end of a sentence outside the punctuation.</p>
+<p><strong>Yes:</strong> This is a sentence that requires a citation.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><strong>No:</strong> This is a sentence that requires a citation<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+</section>
+<section id="complete-sentences-in-notes" class="level3">
+<h3 class="anchored" data-anchor-id="complete-sentences-in-notes">Complete Sentences in Notes</h3>
+<p>Footnotes and endnotes should be complete sentences. Complete sentences have punctuation at the end.</p>
+</section>
+<section id="punctuation-inside-quotes" class="level3">
+<h3 class="anchored" data-anchor-id="punctuation-inside-quotes">Punctuation Inside Quotes</h3>
+<p>Punctuation generally goes inside quotes.</p>
+<p><strong>Yes:</strong> “Run, Tom, run,” said Jane.</p>
+<p><strong>No:</strong> “Down, Spot, down”, said Percival, Dick’s little-known cousin from Topeka.</p>
+</section>
+<section id="write-out-percent" class="level3">
+<h3 class="anchored" data-anchor-id="write-out-percent">Write out Percent</h3>
+<p>One of the few times the “less ink is better” rule is violated. Write “8 percent,” not “8%.” It’s less distracting to the eye.</p>
+</section>
+<section id="use-arabic-numbers-for-notes" class="level3">
+<h3 class="anchored" data-anchor-id="use-arabic-numbers-for-notes">Use Arabic Numbers for Notes</h3>
+<p>Microsoft Word often defaults to the use of Roman numerals for notes and endnotes (i, ii, iii. . .). Change this option and use Arabic numerals. More efficient.</p>
+</section>
+<section id="citing-the-url-is-not-enough" class="level3">
+<h3 class="anchored" data-anchor-id="citing-the-url-is-not-enough">Citing the URL is Not Enough</h3>
+<p>In the Internet age it has become distressingly common practice to cite only the URL for online documents. But consider this: if you quoted Tolstoy’s War and Peace using a copy you checked out from the New York Public Library, you would not cite the library as the source. The same principle applies to the Internet. For web sites, which are inherently Internet-based, you should list the name of the cite and then the URL. For documents accessed online, you should cite in the usual way (author, date, title, etc.) and then include the URL. Note that you are not obligated to list the URL for freestanding documents if you include the complete citation otherwise.</p>
+</section>
+<section id="avoid-ampersand-in-text" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-ampersand-in-text">Avoid Ampersand (&amp;) in Text</h3>
+<p>The symbol “&amp;”, known as the ampersand, should not be used in your text write-up. It is ok to use it for labels in tables and figures.</p>
+</section>
+</section>
+<section id="numbers" class="level2">
+<h2 class="anchored" data-anchor-id="numbers">Numbers</h2>
+<section id="interpret-quantities-by-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="interpret-quantities-by-comparison">Interpret Quantities by Comparison</h3>
+<p>Do not just report growth rates, quantities and other indicators for individual places. They are hard to interpret by themselves. For example, to back up a claim that your region has faced substantial population growth in the last decade, contrast its growth rate with the national average growth rate.</p>
+</section>
+<section id="explain-regional-geography" class="level3">
+<h3 class="anchored" data-anchor-id="explain-regional-geography">Explain Regional Geography</h3>
+<p>The first time you mention your region, explain–either in the text or in a note–what its geographic composition is (e.g., its counties).</p>
+</section>
+<section id="significant-digits" class="level3">
+<h3 class="anchored" data-anchor-id="significant-digits">Significant Digits</h3>
+<p>Use numbers with levels of precision that match the realistic precision in the underlying data. Should a location quotient be expressed as 1.709? No.&nbsp;Round to the nearest tenth (1.7). Percentage growth rates for subnational areas are also usually best expressed with one decimal place. Shares can be converted to percentages and expressed to one decimal place to make them more readable.</p>
+</section>
+<section id="only-include-exhibits-you-reference-in-text" class="level3">
+<h3 class="anchored" data-anchor-id="only-include-exhibits-you-reference-in-text">Only Include Exhibits You Reference in Text</h3>
+<p>No table, figure, chart or line drawing should be included in the report or report appendix unless it is referenced somewhere in the text discussion. That reference may be very brief (“see Table 4”), but it has to be there (it could also be in an endnote or footnote). Think of it this way: if it wasn’t important enough for you to mention it, why did you include it?</p>
+</section>
+<section id="report-the-quantity" class="level3">
+<h3 class="anchored" data-anchor-id="report-the-quantity">Report the Quantity</h3>
+<p>Sometimes it is easy to forget to report the variable levels when we are analyzing variable trends. For example, it is common in analyses of wage trends (“wages are on the up and up”) to find nary a mention of wage levels. As a reader, you are left wondering “wages are going up, but are they high or low?” It is better to ground an analysis of changes in a given variable with a mention of the levels of the variable. So “The current annual average wage in River City for production workers is $27,500. That is up 12 percent in real terms since 1997. By contrast, the average production worker wage nationwide increased by 16.5 percent. . .”</p>
+</section>
+<section id="emphasize-significant-findings" class="level3">
+<h3 class="anchored" data-anchor-id="emphasize-significant-findings">Emphasize Significant Findings</h3>
+<p>When analyzing data we are looking for the most significant findings and often a “story” that helps explain those findings. In descriptive analysis, significance is often first assessed not in a statistical sense, but by looking for high and low values or major changes. But not all high/low values or large changes are necessarily important from a policy or planning point of view. Be careful to think through the potential implications of a finding before discussing it. Ask yourself: “So what?” If you can’t think of an answer, leave it out. (Example: “Since 1990, River City’s unemployment rate has registered below the U.S. rate in every quarter except IIQ 1996 and IVQ 1998” might be better stated as “River City’s unemployment rate has registered below the U.S. rate in 54 of the last 56 quarters.” A subtle change but the reader is not left asking: “Hmm, I wonder if I’m supposed to know why it was higher in those two periods?”</p>
+</section>
+<section id="percent-versus-percentage-points" class="level3">
+<h3 class="anchored" data-anchor-id="percent-versus-percentage-points">Percent versus Percentage Points</h3>
+<p>Let’s say you’re comparing the U.S. unemployment rate of 5.0 percent to the Peoria unemployment rate of 4.0 percent. Is the Peoria rate 1 percent lower than the national rate? No.&nbsp;It is 1 percentage point lower. A Peoria rate 1 percent lower than the national average would be 4.95 percent.</p>
+</section>
+<section id="refer-to-exhibits-in-text" class="level3">
+<h3 class="anchored" data-anchor-id="refer-to-exhibits-in-text">Refer to Exhibits in Text</h3>
+<p>Refer to your figures and tables directly in your text. Example: “Table 2 reports employment growth figures for the 1995 to 2003 period.” Or: “Employment growth was particularly strong in the retail and construction sectors (see Table 4).” If you are going to send readers to a table in a parenthetical phrase (like the last example), be sure to include the word “see.” So, you would not write: “Employment growth was particularly strong in the retail and construction sectors (Table 4).”</p>
+</section>
+</section>
+<section id="tables-figures-and-graphics" class="level2">
+<h2 class="anchored" data-anchor-id="tables-figures-and-graphics">Tables, Figures and Graphics</h2>
+<section id="make-em-so-they-stand-alone" class="level3">
+<h3 class="anchored" data-anchor-id="make-em-so-they-stand-alone">Make ’Em so they Stand Alone</h3>
+<p>Figures, graphs and tables should be constructed so that they can stand alone (as much as feasible). That is, someone could pick up and read the table without the accompanying text and get the gist of what it is trying to say. It goes without saying that sources of all data and calculations should be clearly indicated.</p>
+</section>
+<section id="avoid-use-of-grids-in-tables" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-use-of-grids-in-tables">Avoid Use of Grids in Tables</h3>
+<p>There is almost never any reason to include gridlines on a data table. Putting a line below the column headings and one below the last row of data, followed by the data source, is usually the best approach.</p>
+</section>
+<section id="decimal-justify-data-columns" class="level3">
+<h3 class="anchored" data-anchor-id="decimal-justify-data-columns">Decimal Justify Data Columns</h3>
+<p>Line up columns of numbers in tables on their explicit or implicit decimal points. Do not center justify numeric data.</p>
+</section>
+<section id="use-descriptive-column-labels-in-tables" class="level3">
+<h3 class="anchored" data-anchor-id="use-descriptive-column-labels-in-tables">Use Descriptive Column Labels in Tables</h3>
+<p>Remember the golden rule in table and figure construction: make it stand alone. That means column headings that someone can understand without reading the report body. Sometimes this is hard to do efficiently (headings can get too long). In such cases an alternative is to use short-hand headings but explain what they mean in a footnote to the table.</p>
+</section>
+<section id="use-label-hierarchies-in-tables" class="level3">
+<h3 class="anchored" data-anchor-id="use-label-hierarchies-in-tables">Use Label Hierarchies in Tables</h3>
+<p>A good way to make tables more efficient is to use hierarchical labeling of columns. In the table below, employment and payroll data for Illinois were available in 2003. But national and regional data were available only for 2001. The table efficiently reports the 2003 Illinois numbers along with national and Midwest growth rates for 1990-2001 and location quotients for 2001. A note at the bottom of the table should clarify how the Midwest is defined as well as what the reference area is for the location quotient.</p>
+<p><img src="table_header.png" class="img-fluid"></p>
+</section>
+<section id="indicate-source-on-figures-and-tables" class="level3">
+<h3 class="anchored" data-anchor-id="indicate-source-on-figures-and-tables">Indicate Source on Figures and Tables</h3>
+<p>Data sources should be indicated clearly on all figures and tables.</p>
+</section>
+<section id="use-detailed-sources" class="level3">
+<h3 class="anchored" data-anchor-id="use-detailed-sources">Use Detailed Sources</h3>
+<p>For some series simply listing the data provider agency is not enough. For example, BLS reports several employment series. Therefore, list the series within BLS (or other) that you are using. For example, Regional Economic Information System, US Bureau of Economic Analysis, or Covered Wages and Employment, US Bureau of Labor Statistics.</p>
+</section>
+<section id="pie-chart-no-thanks" class="level3">
+<h3 class="anchored" data-anchor-id="pie-chart-no-thanks">Pie Chart? No Thanks</h3>
+<p>While seductive to the eye, pie charts are far less interpretable than a simple bar chart. Go for conveying your findings clearly, not spicing up your document with spurious graphical devices.</p>
+</section>
+<section id="shun-3-d" class="level3">
+<h3 class="anchored" data-anchor-id="shun-3-d">Shun 3-D</h3>
+<p>Three dimensional bar charts and other graphics generally should be avoided. They usually compromise proper interpretation of the findings. Keep it simple: no 3-D.</p>
+</section>
+<section id="call-tables-tables-and-figures-figures" class="level3">
+<h3 class="anchored" data-anchor-id="call-tables-tables-and-figures-figures">Call Tables “Tables” and Figures “Figures”</h3>
+<p>By convention, tables are called “tables” and graphics such as data charts or line drawings are called “figures.” Sometimes people use the word “exhibit” to label a line drawing. Avoid use of the terms “chart” and “graphic” for labels (e.g., Chart 1, Graphic 1). Also, never call a table a figure or a figure a table. Note that exhibit labels are generally capitalized: “Population trends for River City are summarized in Table 4.”</p>
+</section>
+<section id="sequence-tables-and-figures-in-order-in-the-text" class="level3">
+<h3 class="anchored" data-anchor-id="sequence-tables-and-figures-in-order-in-the-text">Sequence Tables and Figures in Order in the Text</h3>
+<p>If you have three tables, do not discuss Table 1, then Table 3, then Table 2. If the results in Table 3 are mentioned prior to those in Table 2, renumber the tables. Same for figures or any other exhibit.</p>
+</section>
+<section id="use-commas-for-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="use-commas-for-numbers">Use Commas for Numbers</h3>
+<p>In data tables, include commas in the number formatting to denote significant digits. So: $47,500 instead of $47500.</p>
+</section>
+<section id="avoid-grids-on-figures" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-grids-on-figures">Avoid Grids on Figures</h3>
+<p>Many graphical packages default settings include gridlines on charts. Most charts are simple enough not to need them to be clearly interpreted. Get rid of the clutter and save some ink!</p>
+</section>
+<section id="dont-rely-on-color" class="level3">
+<h3 class="anchored" data-anchor-id="dont-rely-on-color">Don’t Rely on Color</h3>
+<p>Remember that your best intents for people to view your document in color may be foiled - some individuals may print documents in grayscale, and others may be colorblind and unable to perceive all colors. That means your document should not depend on color to convey its findings. An example of depending on color would be to use red text in your tables to indicate negative values or any color to highlight interesting trends.</p>
+</section>
+<section id="report-numbers-in-000s" class="level3">
+<h3 class="anchored" data-anchor-id="report-numbers-in-000s">Report Numbers in 000s</h3>
+<p>It is ok to report very large numbers in thousands or even millions in tables if the precision in the original units is unnecessary. It is probably not critical in most cases for people to know that the US population changed by 1,456,789 over a given period (1.46 million will probably suffice). For small areas, such as counties and regions, reporting the original units is usually preferred except for large number variables (e.g., total dollar income).</p>
+</section>
+<section id="no-superfluous-material" class="level3">
+<h3 class="anchored" data-anchor-id="no-superfluous-material">No Superfluous Material</h3>
+<p>Avoid the practice of tacking on government documents or tables to your reports as “general points of information.” The idea in most professional writing is to convey maximum information with minimum material; tossing in nonessential material from secondary sources defeats that aim.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Here’s the citation<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A citation though the note number is incorrectly placed<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Content <i class="fa-regular fa-copyright" aria-label="copyright"></i> Andrew J. Greenlee</div>   
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a> <br> Website Code on <a href="https://github.com/agreen4/UP570_S23_Website">Github <i class="fa-brands fa-github" aria-label="github"></i></a></div>
+  </div>
+</footer>
+
+
+
+</body></html>
