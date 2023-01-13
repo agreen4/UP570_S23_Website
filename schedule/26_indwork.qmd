@@ -1,0 +1,22 @@
+---
+title: "Independent Work and Advising"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Session Description
+
+This week is devoted to individual advising and independent work. There are no course sessions scheduled for today or Thursday. You should use this time to continue working, to take stock of your progress towards your course contract, and to solidify plans for your final project.
+
+## Before Class
+
+Professor Greenlee has availability for office hours appointments. If you have not already scheduled an appointment and wish to, please [sign up](%7B%7B%3C%20var%20instructor.calendly%20%3E%7D%7D).
+
+## Reflect
+
+## Slides
+
+## Resources for Further Exploration

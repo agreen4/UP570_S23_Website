@@ -1,0 +1,20 @@
+---
+title: "Population and the Census"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Session Description
+
+In this session, we will work on our lab focused on exploring population and the census.
+
+## Before Class
+
+## Reflect
+
+## Slides
+
+## Resources for Further Exploration

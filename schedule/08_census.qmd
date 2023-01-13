@@ -1,0 +1,30 @@
+---
+title: "Population and the Census"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Session Description
+
+In this session, we will talk about how planners measure basic dimensions of population and change in population at the neighborhood level. We'll introduce this week's lab, which focuses on working with basic data on population characteristics.
+
+## Before Class
+
+Klosterman 2
+
+Please register for a U.S. Census Bureau API Key
+
+Please download the lab files. We will be working in the same lab notebook on Thursday.
+
+## Reflect
+
+-   What types of characteristics might be well-represented within Census data? What characteristics are harder to measure or represent?
+
+-   As we've discussed in class, the census is a dynamic and evolving survey, and the questions we ask are a valuable window into the social questions and issues at a given time. What questions do you think we should be asking in this current moment? How well are they reflected in the census (as you know it)?
+
+## Slides
+
+## Resources for Further Exploration

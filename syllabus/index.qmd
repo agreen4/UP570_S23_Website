@@ -7,6 +7,8 @@ smooth-scroll: true
 
 Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester.
 
+Hi Ouafa!
+
 ## Course Overview and Objectives
 
 This course teaches techniques for analyzing the demographic, economic, physical, and social conditions that exist at the neighborhood and local government scale. While our focus will be on analyzing current conditions, we will also learn how to tell stories about neighborhood change, and will learn how to project and forecast future trends. We will learn how to describe community characteristics with small area census data, work with local administrative data, and will think about how our analysis of quantitative data fit with other forms of data and engagement to fill in gaps in knowledge.
@@ -28,11 +30,14 @@ Unless otherwise noted, please plan on bringing to class a computer that will ru
 ### What to Expect from Your Instructors
 
 -   **Office Hours and Availability:** We are available to speak one on one - you can book appointments with us via our Calendly pages:
-    -   [Andrew Greenlee]({{< var instructor.calendly_url >}})
-    -   [Ouafa Benkraouda]({{< var ta.calendly_url >}})
-    
+
+    -   [Andrew Greenlee](%7B%7B%3C%20var%20instructor.calendly_url%20%3E%7D%7D)
+    -   [Ouafa Benkraouda](%7B%7B%3C%20var%20ta.calendly_url%20%3E%7D%7D)
+
     Of course, we are happy to chat either before or after class if we are available.
+
 -   **Email:** The easiest way to communicate with me outside of class is via [email](mailto:%7B%7B%3C%20var%20instructor.email%20%3E%7D%7D). I try to respond to emails sent during the week within 24 hours. Emails sent over the weekend will receive a response within 48 hours. If you don't hear from me after that amount of time, it's okay to nudge me to respond.
+
 -   **Troubleshooting:** Plan on using our class [Slack channel](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D), email, and office hours to get help with troubleshooting problems as they arise in your work. The [Resources](/resources) page provides thoughts and resources for troubleshooting. I also encourage you to work with others in the class to troubleshoot problems - it is highly likely that others in the class have encountered similar problems, and this also allows us to create a repository of our problems and responses.
 
 ### What We Expect From You
@@ -84,28 +89,28 @@ Put simply, don't cheat and give credit where credit is due.
 As part of our classroom and university community, you have an obligation to do the following:
 
 -   Attend all class sessions if you are feeling well.
--   If you feel ill, do not come to class. 
+-   If you feel ill, do not come to class.
 -   If you test positive for covid or have an exposure that requires testing or quarantine, do not come to class.
 -   Please be respectful of all members of our learning community and their decisions regarding health and safety precautions.
 
 ### Accomodations for Students with Disabilities
 
-If you need accommodations for any sort of disability, please make an office hours appointment so we can discuss your needs and ways I can support your learning. To ensure that disability-related concerns are properly addressed, students who require assistance to participate in this class should contact [Disability Resources and Educational Services (DRES)](https://www.disability.illinois.edu). DRES provides students with academic accommodations, access, and support services. To contact DRES you may visit 1207 S. Oak St., Champaign, call 333-4603 (V/TDD), or e-mail [disability@illinois.edu](mailto: disability@illinois.edu).
+If you need accommodations for any sort of disability, please make an office hours appointment so we can discuss your needs and ways I can support your learning. To ensure that disability-related concerns are properly addressed, students who require assistance to participate in this class should contact [Disability Resources and Educational Services (DRES)](https://www.disability.illinois.edu). DRES provides students with academic accommodations, access, and support services. To contact DRES you may visit 1207 S. Oak St., Champaign, call 333-4603 (V/TDD), or e-mail [disability\@illinois.edu](mailto:%20disability@illinois.edu).
 
 ### Sexual Misconduct Reporting Obligation
 
-The University of Illinois is committed to combating sexual misconduct. Faculty and staff members are required to report any instances of sexual misconduct to the University’s Title IX and Disability Office. In turn, an individual with the Title IX and Disability Office will provide information about rights and options, including accommodations, support services, the campus disciplinary process, and law enforcement options. 
+The University of Illinois is committed to combating sexual misconduct. Faculty and staff members are required to report any instances of sexual misconduct to the University's Title IX and Disability Office. In turn, an individual with the Title IX and Disability Office will provide information about rights and options, including accommodations, support services, the campus disciplinary process, and law enforcement options.
 
 A list of the designated University employees who, as counselors, confidential advisors, and medical professionals, do not have this reporting responsibility and can maintain confidentiality, can be found [here](wecare.illinois.edu/resources/students/#confidential). Other information about resources and reporting is available at [wecare.illinois.edu](wecare.illinois.edu).
 
 ### Mental Health
 
-The University of Illinois offers a variety of confidential services including individual and group counseling, crisis intervention, psychiatric services, and specialized screenings which are covered through the Student Health Fee. If you or someone you know experiences mental health concerns, please contact or visit any of the University’s resources provided below. Getting help is a smart and courageous thing to do for yourself and for those who care about you. 
+The University of Illinois offers a variety of confidential services including individual and group counseling, crisis intervention, psychiatric services, and specialized screenings which are covered through the Student Health Fee. If you or someone you know experiences mental health concerns, please contact or visit any of the University's resources provided below. Getting help is a smart and courageous thing to do for yourself and for those who care about you.
 
--  [Counseling Center](https://counselingcenter.illinois.edu/): (217) 333-3704
--  [McKinley Health Center](https://mckinley.illinois.edu): (217) 333-2700 
--  [988 Suicide and Crisis Lifeline](https://988lifeline.org/?utm_source=google&utm_medium=web&utm_campaign=onebox): (800) 273-8255 
-- [Rosecrance Crisis Line](https://rosecrance.org/central-illinois/) (217) 359-4141
+-   [Counseling Center](https://counselingcenter.illinois.edu/): (217) 333-3704
+-   [McKinley Health Center](https://mckinley.illinois.edu): (217) 333-2700
+-   [988 Suicide and Crisis Lifeline](https://988lifeline.org/?utm_source=google&utm_medium=web&utm_campaign=onebox): (800) 273-8255
+-   [Rosecrance Crisis Line](https://rosecrance.org/central-illinois/) (217) 359-4141
 
 If you are in immediate danger, call 911.
 

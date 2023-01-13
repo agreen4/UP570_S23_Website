@@ -137,7 +137,7 @@
     "href": "syllabus/index.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester."
+    "text": "Welcome to Neighborhood Analysis! We are excited to teach and learn with you this semester.\nHi Ouafa!"
   },
   {
     "objectID": "syllabus/index.html#course-overview-and-objectives",
@@ -936,5 +936,733 @@
     "title": "Communicating Quantitative Information",
     "section": "Tables, Figures and Graphics",
     "text": "Tables, Figures and Graphics\n\nMake ’Em so they Stand Alone\nFigures, graphs and tables should be constructed so that they can stand alone (as much as feasible). That is, someone could pick up and read the table without the accompanying text and get the gist of what it is trying to say. It goes without saying that sources of all data and calculations should be clearly indicated.\n\n\nAvoid Use of Grids in Tables\nThere is almost never any reason to include gridlines on a data table. Putting a line below the column headings and one below the last row of data, followed by the data source, is usually the best approach.\n\n\nDecimal Justify Data Columns\nLine up columns of numbers in tables on their explicit or implicit decimal points. Do not center justify numeric data.\n\n\nUse Descriptive Column Labels in Tables\nRemember the golden rule in table and figure construction: make it stand alone. That means column headings that someone can understand without reading the report body. Sometimes this is hard to do efficiently (headings can get too long). In such cases an alternative is to use short-hand headings but explain what they mean in a footnote to the table.\n\n\nUse Label Hierarchies in Tables\nA good way to make tables more efficient is to use hierarchical labeling of columns. In the table below, employment and payroll data for Illinois were available in 2003. But national and regional data were available only for 2001. The table efficiently reports the 2003 Illinois numbers along with national and Midwest growth rates for 1990-2001 and location quotients for 2001. A note at the bottom of the table should clarify how the Midwest is defined as well as what the reference area is for the location quotient.\n\n\n\nIndicate Source on Figures and Tables\nData sources should be indicated clearly on all figures and tables.\n\n\nUse Detailed Sources\nFor some series simply listing the data provider agency is not enough. For example, BLS reports several employment series. Therefore, list the series within BLS (or other) that you are using. For example, Regional Economic Information System, US Bureau of Economic Analysis, or Covered Wages and Employment, US Bureau of Labor Statistics.\n\n\nPie Chart? No Thanks\nWhile seductive to the eye, pie charts are far less interpretable than a simple bar chart. Go for conveying your findings clearly, not spicing up your document with spurious graphical devices.\n\n\nShun 3-D\nThree dimensional bar charts and other graphics generally should be avoided. They usually compromise proper interpretation of the findings. Keep it simple: no 3-D.\n\n\nCall Tables “Tables” and Figures “Figures”\nBy convention, tables are called “tables” and graphics such as data charts or line drawings are called “figures.” Sometimes people use the word “exhibit” to label a line drawing. Avoid use of the terms “chart” and “graphic” for labels (e.g., Chart 1, Graphic 1). Also, never call a table a figure or a figure a table. Note that exhibit labels are generally capitalized: “Population trends for River City are summarized in Table 4.”\n\n\nSequence Tables and Figures in Order in the Text\nIf you have three tables, do not discuss Table 1, then Table 3, then Table 2. If the results in Table 3 are mentioned prior to those in Table 2, renumber the tables. Same for figures or any other exhibit.\n\n\nUse Commas for Numbers\nIn data tables, include commas in the number formatting to denote significant digits. So: $47,500 instead of $47500.\n\n\nAvoid Grids on Figures\nMany graphical packages default settings include gridlines on charts. Most charts are simple enough not to need them to be clearly interpreted. Get rid of the clutter and save some ink!\n\n\nDon’t Rely on Color\nRemember that your best intents for people to view your document in color may be foiled - some individuals may print documents in grayscale, and others may be colorblind and unable to perceive all colors. That means your document should not depend on color to convey its findings. An example of depending on color would be to use red text in your tables to indicate negative values or any color to highlight interesting trends.\n\n\nReport Numbers in 000s\nIt is ok to report very large numbers in thousands or even millions in tables if the precision in the original units is unnecessary. It is probably not critical in most cases for people to know that the US population changed by 1,456,789 over a given period (1.46 million will probably suffice). For small areas, such as counties and regions, reporting the original units is usually preferred except for large number variables (e.g., total dollar income).\n\n\nNo Superfluous Material\nAvoid the practice of tacking on government documents or tables to your reports as “general points of information.” The idea in most professional writing is to convey maximum information with minimum material; tossing in nonessential material from secondary sources defeats that aim."
+  },
+  {
+    "objectID": "schedule/09_census.html",
+    "href": "schedule/09_census.html",
+    "title": "Population and the Census",
+    "section": "",
+    "text": "In this session, we will work on our lab focused on exploring population and the census."
+  },
+  {
+    "objectID": "schedule/09_census.html#before-class",
+    "href": "schedule/09_census.html#before-class",
+    "title": "Population and the Census",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/09_census.html#reflect",
+    "href": "schedule/09_census.html#reflect",
+    "title": "Population and the Census",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/09_census.html#slides",
+    "href": "schedule/09_census.html#slides",
+    "title": "Population and the Census",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/09_census.html#resources-for-further-exploration",
+    "href": "schedule/09_census.html#resources-for-further-exploration",
+    "title": "Population and the Census",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/04_sharing.html#before-class",
+    "href": "schedule/04_sharing.html#before-class",
+    "title": "Sharing Your Work",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/04_sharing.html#reflect",
+    "href": "schedule/04_sharing.html#reflect",
+    "title": "Sharing Your Work",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/04_sharing.html#slides",
+    "href": "schedule/04_sharing.html#slides",
+    "title": "Sharing Your Work",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/04_sharing.html#resources-for-further-exploration",
+    "href": "schedule/04_sharing.html#resources-for-further-exploration",
+    "title": "Sharing Your Work",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/05_permit.html#before-class",
+    "href": "schedule/05_permit.html#before-class",
+    "title": "NAME",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/05_permit.html#reflect",
+    "href": "schedule/05_permit.html#reflect",
+    "title": "NAME",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/05_permit.html#slides",
+    "href": "schedule/05_permit.html#slides",
+    "title": "NAME",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/05_permit.html#resources-for-further-exploration",
+    "href": "schedule/05_permit.html#resources-for-further-exploration",
+    "title": "NAME",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/06_places.html#before-class",
+    "href": "schedule/06_places.html#before-class",
+    "title": "Describing Places",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/06_places.html#reflect",
+    "href": "schedule/06_places.html#reflect",
+    "title": "Describing Places",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/06_places.html#slides",
+    "href": "schedule/06_places.html#slides",
+    "title": "Describing Places",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/06_places.html#resources-for-further-exploration",
+    "href": "schedule/06_places.html#resources-for-further-exploration",
+    "title": "Describing Places",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/07_places.html#before-class",
+    "href": "schedule/07_places.html#before-class",
+    "title": "Describing Places",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/07_places.html#reflect",
+    "href": "schedule/07_places.html#reflect",
+    "title": "Describing Places",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/07_places.html#slides",
+    "href": "schedule/07_places.html#slides",
+    "title": "Describing Places",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/07_places.html#resources-for-further-exploration",
+    "href": "schedule/07_places.html#resources-for-further-exploration",
+    "title": "Describing Places",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/08_census.html",
+    "href": "schedule/08_census.html",
+    "title": "Population and the Census",
+    "section": "",
+    "text": "In this session, we will talk about how planners measure basic dimensions of population and change in population at the neighborhood level. We’ll introduce this week’s lab, which focuses on working with basic data on population characteristics."
+  },
+  {
+    "objectID": "schedule/08_census.html#before-class",
+    "href": "schedule/08_census.html#before-class",
+    "title": "Population and the Census",
+    "section": "Before Class",
+    "text": "Before Class\nKlosterman 2\nPlease register for a U.S. Census Bureau API Key\nPlease download the lab files. We will be working in the same lab notebook on Thursday."
+  },
+  {
+    "objectID": "schedule/08_census.html#reflect",
+    "href": "schedule/08_census.html#reflect",
+    "title": "Population and the Census",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhat types of characteristics might be well-represented within Census data? What characteristics are harder to measure or represent?\nAs we’ve discussed in class, the census is a dynamic and evolving survey, and the questions we ask are a valuable window into the social questions and issues at a given time. What questions do you think we should be asking in this current moment? How well are they reflected in the census (as you know it)?"
+  },
+  {
+    "objectID": "schedule/08_census.html#slides",
+    "href": "schedule/08_census.html#slides",
+    "title": "Population and the Census",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/08_census.html#resources-for-further-exploration",
+    "href": "schedule/08_census.html#resources-for-further-exploration",
+    "title": "Population and the Census",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/10_projections.html#before-class",
+    "href": "schedule/10_projections.html#before-class",
+    "title": "Population Projections",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/10_projections.html#reflect",
+    "href": "schedule/10_projections.html#reflect",
+    "title": "Population Projections",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/10_projections.html#slides",
+    "href": "schedule/10_projections.html#slides",
+    "title": "Population Projections",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/10_projections.html#resources-for-further-exploration",
+    "href": "schedule/10_projections.html#resources-for-further-exploration",
+    "title": "Population Projections",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/11_projections.html#before-class",
+    "href": "schedule/11_projections.html#before-class",
+    "title": "Population Projections",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/11_projections.html#reflect",
+    "href": "schedule/11_projections.html#reflect",
+    "title": "Population Projections",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/11_projections.html#slides",
+    "href": "schedule/11_projections.html#slides",
+    "title": "Population Projections",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/11_projections.html#resources-for-further-exploration",
+    "href": "schedule/11_projections.html#resources-for-further-exploration",
+    "title": "Population Projections",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/12_segregation.html",
+    "href": "schedule/12_segregation.html",
+    "title": "Segregation",
+    "section": "",
+    "text": "This week, we will begin a conversation about the nature of residential segregation, and the common ways in which it is measured."
+  },
+  {
+    "objectID": "schedule/12_segregation.html#before-class",
+    "href": "schedule/12_segregation.html#before-class",
+    "title": "Segregation",
+    "section": "Before Class",
+    "text": "Before Class\nCunningham, Mary K., and Augrey Droesch. Neighborhood Quality and Racial Segregation. The Urban Institute\nU.S. Bureau of the Census: Measures of Residential Segregation\nPlease download the lab files. We will be working in the same lab notebook on Thursday."
+  },
+  {
+    "objectID": "schedule/12_segregation.html#reflect",
+    "href": "schedule/12_segregation.html#reflect",
+    "title": "Segregation",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhy, in your opinion, does segregation remain an enduring characteristic for most American cities, despite efforts to address it?\nHow can visualization of segregation (and its consequences) make a difference?\nWhat can segregation measures capture well? What aspects of segregation are more challenging to measure?"
+  },
+  {
+    "objectID": "schedule/12_segregation.html#slides",
+    "href": "schedule/12_segregation.html#slides",
+    "title": "Segregation",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/12_segregation.html#resources-for-further-exploration",
+    "href": "schedule/12_segregation.html#resources-for-further-exploration",
+    "title": "Segregation",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/13_segregation.html",
+    "href": "schedule/13_segregation.html",
+    "title": "Segregation",
+    "section": "",
+    "text": "In this session, we will begin to work on a lab focused on measures of residential segregation."
+  },
+  {
+    "objectID": "schedule/13_segregation.html#before-class",
+    "href": "schedule/13_segregation.html#before-class",
+    "title": "Segregation",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/13_segregation.html#reflect",
+    "href": "schedule/13_segregation.html#reflect",
+    "title": "Segregation",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/13_segregation.html#slides",
+    "href": "schedule/13_segregation.html#slides",
+    "title": "Segregation",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/13_segregation.html#resources-for-further-exploration",
+    "href": "schedule/13_segregation.html#resources-for-further-exploration",
+    "title": "Segregation",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/14_neighborhood.html",
+    "href": "schedule/14_neighborhood.html",
+    "title": "Neighborhood Change",
+    "section": "",
+    "text": "In this session, we’ll begin exploring the measurement of neighborhood change as well as underlying theories of transition."
+  },
+  {
+    "objectID": "schedule/14_neighborhood.html#before-class",
+    "href": "schedule/14_neighborhood.html#before-class",
+    "title": "Neighborhood Change",
+    "section": "Before Class",
+    "text": "Before Class\nWBEZ: There Goes the Neighborhood\nWho Can Live in Chicago?: A Tale of Three Cities\nThe Socioeconomic Change of Chicago’s Community Areas (1970-2010)\nPlease download our Lab Files - we will begin these today and will continue on Thursday."
+  },
+  {
+    "objectID": "schedule/14_neighborhood.html#reflect",
+    "href": "schedule/14_neighborhood.html#reflect",
+    "title": "Neighborhood Change",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhat role should planners take in managing neighborhood change?\nHow do planners balance changes across multiple neighborhoods?"
+  },
+  {
+    "objectID": "schedule/14_neighborhood.html#slides",
+    "href": "schedule/14_neighborhood.html#slides",
+    "title": "Neighborhood Change",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/14_neighborhood.html#resources-for-further-exploration",
+    "href": "schedule/14_neighborhood.html#resources-for-further-exploration",
+    "title": "Neighborhood Change",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration\nThe Three Cities Within Toronto: Income Polarization Amongst Toronto’s Neighbourhoods, 1970-2005"
+  },
+  {
+    "objectID": "schedule/15_neighborhood.html#before-class",
+    "href": "schedule/15_neighborhood.html#before-class",
+    "title": "Neighborhood Change",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/15_neighborhood.html#reflect",
+    "href": "schedule/15_neighborhood.html#reflect",
+    "title": "Neighborhood Change",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/15_neighborhood.html#slides",
+    "href": "schedule/15_neighborhood.html#slides",
+    "title": "Neighborhood Change",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/15_neighborhood.html#resources-for-further-exploration",
+    "href": "schedule/15_neighborhood.html#resources-for-further-exploration",
+    "title": "Neighborhood Change",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/16_opportunity.html",
+    "href": "schedule/16_opportunity.html",
+    "title": "Place Opportunity",
+    "section": "",
+    "text": "In this session, we’ll begin to examine opportunity analysis and mapping, which is a strategy used to compare multiple measures of sociodemographic wellbeing to create a single measure of how supportive a place is for economic and social mobility. Opportunity mapping in various forms has been used to craft legal remedies to discrimination and segregation, to design policy interventions, and as a source of information for planning and the allocation of resources.\nYour readings for today provide a) a contemporary overview of opportunity mapping, and b) a conceptual overview of the application of opportunity mapping by one of it’s originators, john powell.\nIn addition to our discussion of opportunity mapping, we’ll also take a few moments to check in on your final assignment progress, your detailed project description, and more generally about how things are going with the class."
+  },
+  {
+    "objectID": "schedule/16_opportunity.html#before-class",
+    "href": "schedule/16_opportunity.html#before-class",
+    "title": "Place Opportunity",
+    "section": "Before Class",
+    "text": "Before Class\nStromberg, Brian. (2016). Opportunity Mapping. National Housing Conference\npowell, john. (2005). Remedial Phase Expert Report of john powell in Thompson v. HUD\nDownload and review this week’s lab files."
+  },
+  {
+    "objectID": "schedule/16_opportunity.html#reflect",
+    "href": "schedule/16_opportunity.html#reflect",
+    "title": "Place Opportunity",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhat does place opportunity mean to you? What makes a place more (or less) opportune?\nAre there some universal dimensions of place opportunity? Some that are more specific to certain population groups?\nWhat types of practices support opportunity mapping? How can we use the outputs from opportunity mapping exercises for deliberation and policy decision-making?"
+  },
+  {
+    "objectID": "schedule/16_opportunity.html#slides",
+    "href": "schedule/16_opportunity.html#slides",
+    "title": "Place Opportunity",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/16_opportunity.html#resources-for-further-exploration",
+    "href": "schedule/16_opportunity.html#resources-for-further-exploration",
+    "title": "Place Opportunity",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/17_opportunity.html#before-class",
+    "href": "schedule/17_opportunity.html#before-class",
+    "title": "Place Opportunity",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/17_opportunity.html#reflect",
+    "href": "schedule/17_opportunity.html#reflect",
+    "title": "Place Opportunity",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/17_opportunity.html#slides",
+    "href": "schedule/17_opportunity.html#slides",
+    "title": "Place Opportunity",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/17_opportunity.html#resources-for-further-exploration",
+    "href": "schedule/17_opportunity.html#resources-for-further-exploration",
+    "title": "Place Opportunity",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/22_fieldobs.html",
+    "href": "schedule/22_fieldobs.html",
+    "title": "Field Observations",
+    "section": "",
+    "text": "So far, we have started to learn how to tell stories about places using existing indicators. With so many available sources of existing information, it can be easy to experience a disconnect between the values of those indicators and the complexity of what they represent. To think more about what grounds our analysis as planners, we will go explore a neighborhood in person and then think through elements of the stories that may help us describe that place through indicators.\nWe are going to spend this class session doing field observation of the West Urbana neighborhood which we read about during the first week of class. This neighborhood is designated as an American Planning Association Great Place in America. We will meet at Carle Park in Urbana at the intersection of Carle and Indiana streets. We will not meet in CIF for this session.\nCome prepared to spend the course session exploring the neighborhood. We will use the insights you gather during this course session to inform Thursday’s lab assignment."
+  },
+  {
+    "objectID": "schedule/22_fieldobs.html#before-class",
+    "href": "schedule/22_fieldobs.html#before-class",
+    "title": "Field Observations",
+    "section": "Before Class",
+    "text": "Before Class\n\nWrite a short reflection on your pre-existing impressions of the West Urbana neighborhood. Some of you may be very familiar, and others may not at all. Reflect based upon what you know or have heard.\nWear comfortable clothes, and be prepared to be outside for the duration of our course session.\nYou may wish to bring a notebook with you as well as a phone or camera to document your observations."
+  },
+  {
+    "objectID": "schedule/22_fieldobs.html#during-class",
+    "href": "schedule/22_fieldobs.html#during-class",
+    "title": "Field Observations",
+    "section": "During Class",
+    "text": "During Class\nWe will split up into small groups in order to observe elements of the West Urbana Neighborhood (group assignments are below). Working in groups of four or five, you will each be responsible for focusing on one element of observation (you may double up in an area of your choice if you have five in your group):\n\nInfrastructure and Environment\nEconomy and Housing\nHealth and Wellbeing\nSense of Place\n\nObservation 1: In your group, spend 20 minutes walking around the neighborhood, taking in and observing your specific element. Then take 5-10 minutes to write down your overall impressions and any questions you have after this brief exploration.\nObservation 2: As a group, pick a block to systematically analyze. Spend 20 minutes observing your specific element as it is reflected on your block. You may want to take pictures, sketch a map, or use other methods to record what you observe.\nObservation 3: Spend the remaining 30 minutes comparing notes with your other group members. Record a list of shared questions you have about the block and portions of the neighborhood that you explored. Reflect as a group upon what you were able to observe.\nAt the end of our class time you can leave. Please bring your individual and shared reflections and observational materials to Thursday’s lab session."
+  },
+  {
+    "objectID": "schedule/22_fieldobs.html#reflect",
+    "href": "schedule/22_fieldobs.html#reflect",
+    "title": "Field Observations",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/22_fieldobs.html#slides",
+    "href": "schedule/22_fieldobs.html#slides",
+    "title": "Field Observations",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/22_fieldobs.html#resources-for-further-exploration",
+    "href": "schedule/22_fieldobs.html#resources-for-further-exploration",
+    "title": "Field Observations",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration\n[Urban Institute: Observation(https://www.urban.org/research/data-methods/data-collection/observation)\nParticipant Observation and the Development of Urban Neighborhood Policy"
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html",
+    "href": "schedule/23_fieldobs.html",
+    "title": "Field Observations",
+    "section": "",
+    "text": "On Tuesday, you spent time walking and observing portions of the West Urbana neighborhood. Now that you have a shared frame of reference, you will work collectively with your group members to think about how to tell a story of the neighborhood. The challenge of this exercise is to think about how to systematically describe a neighborhood after your observations of a part of it, and to think about how to leverage and organize information to focus your description."
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html#session-goals",
+    "href": "schedule/23_fieldobs.html#session-goals",
+    "title": "Field Observations",
+    "section": "Session Goals",
+    "text": "Session Goals\n\nCollaboratively build a story about the West Urbana neighborhood that leverages both your direct observation and existing indicators.\nReflect upon the tactical and design choices you have made in telling your story."
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html#before-class",
+    "href": "schedule/23_fieldobs.html#before-class",
+    "title": "Field Observations",
+    "section": "Before Class",
+    "text": "Before Class\n\nReview your notes and observational materials from your neighborhood field visit."
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html#during-class",
+    "href": "schedule/23_fieldobs.html#during-class",
+    "title": "Field Observations",
+    "section": "During Class",
+    "text": "During Class\nWork collaboratively with your group members to develop a short memorandum describing the West Urbana neighborhood. Your memo should draw off of your field observations, but should also include demographic summaries coming from census data or other sources of secondary data (please start with the same selected census indicators we have worked with for the past few weeks).\nYour report should describe the following:\n\nNeighborhood character, identity, and assets - integrating both primary and secondary data, describe the character, identity, and assets of the neighborhood, addressing (at a minimum) your areas of focus.\n\nInfrastructure and Environment\nEconomy and Housing\nHealth and Wellbeing\nSense of Place\n\nInformation Gaps - based upon your description above, what information gaps exist? What types of information would you like to have to better convey what you observed on the ground in the West Urbana neighborhood?\nProposed Strategy for Systematic Examination - based upon your assessment of information gaps, how do you propose collecting that information, and how would you integrate it into your report?\nReflection - as a group, reflect upon some of the challenges you faced in systematically observing elements of the neighborhood, linking those observations with existing data or information, and conveying that story in a memorandum."
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html#after-class",
+    "href": "schedule/23_fieldobs.html#after-class",
+    "title": "Field Observations",
+    "section": "After Class",
+    "text": "After Class\n\nPlease submit one memorandum as an R notebook and associated files.\nPlease add to your initial reflection on what you knew about the neighborhood before you visited your thoughts on what you know now and what you experienced in attempting to systematically observe the neighborhood and communicate its qualities. Combine these materials into a single notebook file and push these to the appropriate folder in your group’s GitHub repository."
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html#slides",
+    "href": "schedule/23_fieldobs.html#slides",
+    "title": "Field Observations",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/23_fieldobs.html#resources-for-further-exploration",
+    "href": "schedule/23_fieldobs.html#resources-for-further-exploration",
+    "title": "Field Observations",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/24_peerrev.html",
+    "href": "schedule/24_peerrev.html",
+    "title": "Final Project Peer Review",
+    "section": "",
+    "text": "As we approach the end of the semester, the remainder of our time together will focus on strengthening your final projects. By this point, you should have most of the constituent pieces for this final project as reflected within the memos you’ve produced over the course of the semester. Your task is to now translate these pieces into a coherent and polished final report.\nOne valuable form of support we’ve used over the course of the semester is peer review. Today’s session and our next session will focus on working in small groups to introduce your final projects, set work goals for this week, and then use peer review as a way to further develop and improve some of those components of your final report.\nIn this session, we’ll set the context for peer review of each others’ work. You will split into small groups and spend time introducing your final projects to each other. At the end of this course session, you will share with your peer review team an analytic component which you’d like their feedback on. During our Thursday session, they will provide direct written feedback, and you will have time to incorporate some of this feedback into your work and make adjustments and refinements during class time."
+  },
+  {
+    "objectID": "schedule/24_peerrev.html#before-class",
+    "href": "schedule/24_peerrev.html#before-class",
+    "title": "Final Project Peer Review",
+    "section": "Before Class",
+    "text": "Before Class\n\nThink about the main message you wish to convey in your policy report - can you encapsulate that message in a declarative sentence or two?\nThink about one critical component of your final project - this could be a key figure, key analytic concept, key measure, or key outcome. Come prepared to share what this is with your peer review partners.\nThink about key visual or analytic elements you can share with your peer reviewers to offer them context on your project. Come prepared to share this in class."
+  },
+  {
+    "objectID": "schedule/24_peerrev.html#during-class",
+    "href": "schedule/24_peerrev.html#during-class",
+    "title": "Final Project Peer Review",
+    "section": "During Class",
+    "text": "During Class\nYou should develop written feedback to share on your peer review team members’ work, and should be prepared to receive feedback on your own work. Please also come prepared to start incorporating that feedback into your work products.\nYour feedback for each of your teammates should build upon the following prompts:\n\nBased upon what you heard in your sharing time, what’s the main message or point of their final project?\nWho do you see as the target audience for their report?\nWhat insights will this work provide?\n\nThinking about the work component they shared with you…\n\nWhat works well about this component?\nWhat do you think could be improved about this component?\nWhat questions do you have after reviewing this component?"
+  },
+  {
+    "objectID": "schedule/24_peerrev.html#reflect",
+    "href": "schedule/24_peerrev.html#reflect",
+    "title": "Final Project Peer Review",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/24_peerrev.html#slides",
+    "href": "schedule/24_peerrev.html#slides",
+    "title": "Final Project Peer Review",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/24_peerrev.html#resources-for-further-exploration",
+    "href": "schedule/24_peerrev.html#resources-for-further-exploration",
+    "title": "Final Project Peer Review",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/25_finalpresent.html#before-class",
+    "href": "schedule/25_finalpresent.html#before-class",
+    "title": "NAME",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/25_finalpresent.html#reflect",
+    "href": "schedule/25_finalpresent.html#reflect",
+    "title": "NAME",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/25_finalpresent.html#slides",
+    "href": "schedule/25_finalpresent.html#slides",
+    "title": "NAME",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/25_finalpresent.html#resources-for-further-exploration",
+    "href": "schedule/25_finalpresent.html#resources-for-further-exploration",
+    "title": "NAME",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/26_indwork.html",
+    "href": "schedule/26_indwork.html",
+    "title": "Independent Work and Advising",
+    "section": "",
+    "text": "This week is devoted to individual advising and independent work. There are no course sessions scheduled for today or Thursday. You should use this time to continue working, to take stock of your progress towards your course contract, and to solidify plans for your final project."
+  },
+  {
+    "objectID": "schedule/26_indwork.html#before-class",
+    "href": "schedule/26_indwork.html#before-class",
+    "title": "Independent Work and Advising",
+    "section": "Before Class",
+    "text": "Before Class\nProfessor Greenlee has availability for office hours appointments. If you have not already scheduled an appointment and wish to, please sign up."
+  },
+  {
+    "objectID": "schedule/26_indwork.html#reflect",
+    "href": "schedule/26_indwork.html#reflect",
+    "title": "Independent Work and Advising",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/26_indwork.html#slides",
+    "href": "schedule/26_indwork.html#slides",
+    "title": "Independent Work and Advising",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/26_indwork.html#resources-for-further-exploration",
+    "href": "schedule/26_indwork.html#resources-for-further-exploration",
+    "title": "Independent Work and Advising",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/27_indwork.html",
+    "href": "schedule/27_indwork.html",
+    "title": "Independent Work and Advising",
+    "section": "",
+    "text": "This week is devoted to individual advising and independent work. There are no course sessions scheduled for today. You should use this time to continue working, to take stock of your progress towards your course contract, and to solidify plans for your final project."
+  },
+  {
+    "objectID": "schedule/27_indwork.html#before-class",
+    "href": "schedule/27_indwork.html#before-class",
+    "title": "Independent Work and Advising",
+    "section": "Before Class",
+    "text": "Before Class\nProfessor Greenlee has availability for office hours appointments. If you have not already scheduled an appointment and wish to, please sign up."
+  },
+  {
+    "objectID": "schedule/27_indwork.html#reflect",
+    "href": "schedule/27_indwork.html#reflect",
+    "title": "Independent Work and Advising",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/27_indwork.html#slides",
+    "href": "schedule/27_indwork.html#slides",
+    "title": "Independent Work and Advising",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/27_indwork.html#resources-for-further-exploration",
+    "href": "schedule/27_indwork.html#resources-for-further-exploration",
+    "title": "Independent Work and Advising",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/28_finalpresent.html#before-class",
+    "href": "schedule/28_finalpresent.html#before-class",
+    "title": "Final Presentations",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/28_finalpresent.html#reflect",
+    "href": "schedule/28_finalpresent.html#reflect",
+    "title": "Final Presentations",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/28_finalpresent.html#slides",
+    "href": "schedule/28_finalpresent.html#slides",
+    "title": "Final Presentations",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/28_finalpresent.html#resources-for-further-exploration",
+    "href": "schedule/28_finalpresent.html#resources-for-further-exploration",
+    "title": "Final Presentations",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/29_finalpresent.html",
+    "href": "schedule/29_finalpresent.html",
+    "title": "Final Presentations",
+    "section": "",
+    "text": "You made it! This is the final session for Neighborhood Analysis. We will discuss what we have covered over the course of the semester, as well as some next steps in your journey as neighborhood analysts.\nSome questions to seed our discussion:\n\nAre there things that you wish we covered over the course of the semester that we didn't?\nAre there ways that Professor Greenlee could have better supported learning (individually and collectively) over the course of the semester?\nWas there sufficient balance between technical and non-technical content?\nWere labs and other supporting materials clear? Were there resources or content you wish you had to support your independent learning using this format?"
+  },
+  {
+    "objectID": "schedule/29_finalpresent.html#before-class",
+    "href": "schedule/29_finalpresent.html#before-class",
+    "title": "Final Presentations",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/29_finalpresent.html#reflect",
+    "href": "schedule/29_finalpresent.html#reflect",
+    "title": "Final Presentations",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/29_finalpresent.html#slides",
+    "href": "schedule/29_finalpresent.html#slides",
+    "title": "Final Presentations",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/29_finalpresent.html#resources-for-further-exploration",
+    "href": "schedule/29_finalpresent.html#resources-for-further-exploration",
+    "title": "Final Presentations",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
   }
 ]

@@ -45,36 +45,59 @@ website:
             - text: "2. What is a Neighborhood?"
               file: schedule/02_neighborhood.qmd
             - text: "3. Building a Data Pipeline"
+              file: schedule/03_datapipeline.qmd
             - text: "4. Sharing Your Work"
+              file: schedule/04_sharing.qmd
             - text: "5. Learner's Permit"
+              file: schedule/05_permit.qmd
             - text: "6. Describing Places"
+              file: schedule/06_places.qmd
             - text: "7. Describing Places"
+              file: schedule/07_places.qmd
         - section: "Strategies for Analysis"
           contents:
             - text: "8. Population and the Census"
+              file: schedule/08_census.qmd
             - text: "9. Population and the Census"
+              file: schedule/09_census.qmd
             - text: "10. Population Projections"
+              file: schedule/10_projections.qmd
             - text: "11. Population Projections"
+              file: schedule/11_projections.qmd
             - text: "12. Segregation"
+              file: schedule/12_segregation.qmd
             - text: "13. Segregation"
+              file: schedule/13_segregation.qmd
             - text: "14. Neighborhood Change"
+              file: schedule/14_neighborhood.qmd
             - text: "15. Neighborhood Change"
+              file: schedule/15_neighborhood.qmd
             - text: "16. Place Opportunity"
+              file: schedule/16_opportunity.qmd
             - text: "17. Place Opportunity"
+              file: schedule/17_opportunity.qmd
             - text: "18. TBD"
             - text: "19. TBD"
             - text: "20. TBD"
             - text: "21. TBD"
             - text: "22. Field Observation"
+              file: schedule/22_fieldobs.qmd
             - text: "23. Field Observation"
+              file: schedule/23_fieldobs.qmd
         - section: "Course Wrap-Up"
           contents:
             - text: "24. Final Project Peer Review"
+              file: schedule/24_peerrev.qmd
             - text: "25. Final Presentations"
+              file: schedule/25_finalpresent.qmd
             - text: "26. Independent Work and Advising"
+              file: schedule/26_indwork.qmd
             - text: "27. Independent Work and Advising"
+              file: schedule/27_indwork.qmd
             - text: "28. Final Presentations"
+              file: schedule/28_finalpresent.qmd
             - text: "29. Final Presentations"
+              file: schedule/29_finalpresent.qmd
     - title: "Assignments"
       contents:
         - section: "Overview"
