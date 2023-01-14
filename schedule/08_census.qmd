@@ -13,11 +13,7 @@ In this session, we will talk about how planners measure basic dimensions of pop
 
 ## Before Class
 
-Klosterman 2
-
-Please register for a U.S. Census Bureau API Key
-
-Please download the lab files. We will be working in the same lab notebook on Thursday.
+Klosterman 2 \[{{< fa file >}}\](https://uofi.box.com/s/2ki78jbm88y09j41zozqrfjc0wmva372).
 
 ## Reflect
 

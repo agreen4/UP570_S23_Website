@@ -9,7 +9,15 @@ editor: visual
 
 ## Session Description
 
+Much of our analysis is oriented towards the past and present, but what about the future? This week, we will learn the basic techniques involved in population projections. We'll explore several common techniques for projections and discuss some of the reasons why projecting population at the neighborhood level can be challenging.
+
 ## Before Class
+
+Klosterman 3 \[{{< fa file >}}\](https://uofi.box.com/s/19oupi56mhe3qujndxtdk1tvoo21o02f)
+
+Klosterman 4 \[{{< fa file >}}\](https://uofi.box.com/s/icsp7g6ecuwb5lxl1iewxjqz30pavw6o)
+
+Klosterman 5 \[{{< fa file >}}\](https://uofi.box.com/s/ugdt8fx7y568wq7uhgaa8oad5fqtsu9b)
 
 ## Reflect
 

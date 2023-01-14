@@ -15,22 +15,13 @@ In this session, we'll explore some of the basic workflow which we'll use over t
 
 Download the Quarto Workbook associated with our Nuts and Bolts work.
 
-Confirm that you are familiar with the following packages and functions which we will make use of during this session - if you are not familiar read the documentation and bring questions to our session.
-
-| Package    | Function         |
-|------------|------------------|
-| Tidyverse  | `|>`             |
-| Tidyverse  | `select()`        |
-| Tidyverse  | `filter()`        |
-| Tidyverse  | `group_by()`        |
-| Tidycensus | `get_acs()`        |
-| Tidycensus | `get_decennial()`  |
-| Tidycensus | `load_variables()` |
-| sf         |                  |
+D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 1 \[{{< fa file >}}\](https://uofi.box.com/s/nefe8mbag1cc2ixazyz2a3dp2v0bvl3t), Chapter 2 \[{{< fa file >}}\](https://uofi.box.com/s/uos1v89e93gbduyig8h7ky79q0vf4p9w)
 
 ## Reflect
 
-What are the types of common tasks in your workflows that you think would benefit from a data pipeline?
+-   What are the types of common tasks in your workflows that you think would benefit from a data pipeline?
+
+-   How do we hold ourselves accountable for our analysis?
 
 ## Slides
 

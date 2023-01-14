@@ -9,25 +9,25 @@ editor: visual
 
 ## Session Description
 
-In this session, we’ll begin to examine opportunity analysis and mapping, which is a strategy used to compare multiple measures of sociodemographic wellbeing to create a single measure of how supportive a place is for economic and social mobility. Opportunity mapping in various forms has been used to craft legal remedies to discrimination and segregation, to design policy interventions, and as a source of information for planning and the allocation of resources.
+In this session, we'll begin to examine opportunity analysis and mapping, which is a strategy used to compare multiple measures of sociodemographic wellbeing to create a single measure of how supportive a place is for economic and social mobility. Opportunity mapping in various forms has been used to craft legal remedies to discrimination and segregation, to design policy interventions, and as a source of information for planning and the allocation of resources.
 
-Your readings for today provide a) a contemporary overview of opportunity mapping, and b) a conceptual overview of the application of opportunity mapping by one of it’s originators, john powell.
+Your readings for today provide a) a contemporary overview of opportunity mapping, and b) a conceptual overview of the application of opportunity mapping by one of it's originators, john powell.
 
-In addition to our discussion of opportunity mapping, we’ll also take a few moments to check in on your final assignment progress, your detailed project description, and more generally about how things are going with the class.
+In addition to our discussion of opportunity mapping, we'll also take a few moments to check in on your final assignment progress, your detailed project description, and more generally about how things are going with the class.
 
 ## Before Class
 
-Stromberg, Brian. (2016). Opportunity Mapping. National Housing Conference
+Stromberg, Brian. (2016). Opportunity Mapping. National Housing Conference. \[{{< fa file >}}\](https://uofi.box.com/s/4vb4oxiahv766yo3h32s8v6ya40nqep7)
 
-powell, john. (2005). Remedial Phase Expert Report of john powell in Thompson v. HUD
+powell, john. (2005). Remedial Phase Expert Report of john powell in Thompson v. HUD. \[{{< fa file >}}\](https://uofi.box.com/s/e6bqy75i2v81bmrdbavs8ct579ojnezp)
 
-Download and review this week’s lab files.
+Balachandran, Sowmya, and Andrew Greenlee. (2022). *Examining Spatial Opportunity for Local Action: From Theory to Practice*. Journal of Planning Education and Research. \[{{< fa file >}}\](https://uofi.box.com/s/vc4krsnh41qshsmjxb903x0l4xoo5h5z)
 
 ## Reflect
 
-- What does place opportunity mean to you? What makes a place more (or less) opportune?
-- Are there some universal dimensions of place opportunity? Some that are more specific to certain population groups?
-- What types of practices support opportunity mapping? How can we use the outputs from opportunity mapping exercises for deliberation and policy decision-making?
+-   What does place opportunity mean to you? What makes a place more (or less) opportune?
+-   Are there some universal dimensions of place opportunity? Some that are more specific to certain population groups?
+-   What types of practices support opportunity mapping? How can we use the outputs from opportunity mapping exercises for deliberation and policy decision-making?
 
 ## Slides
 

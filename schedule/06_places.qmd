@@ -9,9 +9,18 @@ editor: visual
 
 ## Session Description
 
+In this session, we'll spend time talking about how to describe places, as well as some frameworks for making place comparisons.
+
 ## Before Class
 
+D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 5 \[{{< fa file >}}\](https://uofi.box.com/s/8pfpb8mgzfmqve2goo4oehm0s0gdgsra), Chapter 6 \[{{< fa file >}}\](https://uofi.box.com/s/emfzi13q82lpipsgbc0antmrxm4994f8), Chapter 7 \[{{< fa file >}}\](https://uofi.box.com/s/713yeczrs3ekh2k86je46vixep8d9d0e)
+
+Lynch, Kevin. (1960). *The Image of the City*. Chapter 3 \[{{< fa file >}}\](https://uofi.box.com/s/khfdu0cbm2aj1xb5ktkdrplih1jrwnb2).
+
 ## Reflect
+
+-   We intuitively tell lots of stories about places. What are some of the most evocative tropes you can think of that could apply to places? What makes for a good story about place?
+-   What are some of the benefits and challenges of making place comparisons? How does this feel from the perspective of an analyst? What dangers or challenges does the analyst face when telling comparative stories to others?
 
 ## Slides
 

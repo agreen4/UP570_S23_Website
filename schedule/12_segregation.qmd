@@ -13,17 +13,15 @@ This week, we will begin a conversation about the nature of residential segregat
 
 ## Before Class
 
-Cunningham, Mary K., and Augrey Droesch. Neighborhood Quality and Racial Segregation. The Urban Institute
+Cunningham, Mary K., and Augrey Droesch. Neighborhood Quality and Racial Segregation. The Urban Institute. \[{{< fa file >}}\](https://uofi.box.com/s/9dmkb0e246n1rffgk8bfuf3day9ozwhq)
 
-U.S. Bureau of the Census: Measures of Residential Segregation
-
-Please download the lab files. We will be working in the same lab notebook on Thursday.
+U.S. Bureau of the Census: Measures of Residential Segregation \[{{< fa file >}}\](https://uofi.box.com/s/weeykwkb6xp630w167xf3oupcdj0hgpm)
 
 ## Reflect
 
-- Why, in your opinion, does segregation remain an enduring characteristic for most American cities, despite efforts to address it?
-- How can visualization of segregation (and its consequences) make a difference?
-- What can segregation measures capture well? What aspects of segregation are more challenging to measure?
+-   Why, in your opinion, does segregation remain an enduring characteristic for most American cities, despite efforts to address it?
+-   How can visualization of segregation (and its consequences) make a difference?
+-   What can segregation measures capture well? What aspects of segregation are more challenging to measure?
 
 ## Slides
 

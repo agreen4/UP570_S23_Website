@@ -13,6 +13,8 @@ In this session, we will work on our lab focused on exploring population and the
 
 ## Before Class
 
+Please [register](https://api.census.gov/data/key_signup.html) for a U.S. Census Bureau API Key
+
 ## Reflect
 
 ## Slides

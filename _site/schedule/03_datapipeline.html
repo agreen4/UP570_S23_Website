@@ -66,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule/index.html">
+    <a class="nav-link active" href="../schedule/index.html" aria-current="page">
  <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
@@ -116,10 +116,206 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Building a Data Pipeline</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Schedule Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/index.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Course Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/01_introduction.html" class="sidebar-item-text sidebar-link">1. Course Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/02_neighborhood.html" class="sidebar-item-text sidebar-link">2. What is a Neighborhood?</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/03_datapipeline.html" class="sidebar-item-text sidebar-link active">3. Building a Data Pipeline</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/04_sharing.html" class="sidebar-item-text sidebar-link">4. Sharing Your Work</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/05_permit.html" class="sidebar-item-text sidebar-link">5. Learner’s Permit</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/06_places.html" class="sidebar-item-text sidebar-link">6. Describing Places</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/07_places.html" class="sidebar-item-text sidebar-link">7. Describing Places</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Strategies for Analysis</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/08_census.html" class="sidebar-item-text sidebar-link">8. Population and the Census</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/09_census.html" class="sidebar-item-text sidebar-link">9. Population and the Census</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/10_projections.html" class="sidebar-item-text sidebar-link">10. Population Projections</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/11_projections.html" class="sidebar-item-text sidebar-link">11. Population Projections</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/12_segregation.html" class="sidebar-item-text sidebar-link">12. Segregation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/13_segregation.html" class="sidebar-item-text sidebar-link">13. Segregation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/14_neighborhood.html" class="sidebar-item-text sidebar-link">14. Neighborhood Change</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/15_neighborhood.html" class="sidebar-item-text sidebar-link">15. Neighborhood Change</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/16_opportunity.html" class="sidebar-item-text sidebar-link">16. Place Opportunity</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/17_opportunity.html" class="sidebar-item-text sidebar-link">17. Place Opportunity</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  18. TBD
+  </li>
+          <li class="sidebar-item">
+  19. TBD
+  </li>
+          <li class="sidebar-item">
+  20. TBD
+  </li>
+          <li class="sidebar-item">
+  21. TBD
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/22_fieldobs.html" class="sidebar-item-text sidebar-link">22. Field Observation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/23_fieldobs.html" class="sidebar-item-text sidebar-link">23. Field Observation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Course Wrap-Up</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/24_peerrev.html" class="sidebar-item-text sidebar-link">24. Final Project Peer Review</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/25_finalpresent.html" class="sidebar-item-text sidebar-link">25. Final Presentations</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/26_indwork.html" class="sidebar-item-text sidebar-link">26. Independent Work and Advising</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/27_indwork.html" class="sidebar-item-text sidebar-link">27. Independent Work and Advising</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/28_finalpresent.html" class="sidebar-item-text sidebar-link">28. Final Presentations</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/29_finalpresent.html" class="sidebar-item-text sidebar-link">29. Final Presentations</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -135,11 +331,11 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Building a Data Pipeline</h1>
+<h1 class="title d-none d-lg-block">Building a Data Pipeline</h1>
 </div>
 
 
@@ -161,53 +357,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="before-class" class="level2">
 <h2 class="anchored" data-anchor-id="before-class">Before Class</h2>
 <p>Download the Quarto Workbook associated with our Nuts and Bolts work.</p>
-<p>Confirm that you are familiar with the following packages and functions which we will make use of during this session - if you are not familiar read the documentation and bring questions to our session.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Package</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Tidyverse</td>
-<td><code>|&gt;</code></td>
-</tr>
-<tr class="even">
-<td>Tidyverse</td>
-<td><code>select()</code></td>
-</tr>
-<tr class="odd">
-<td>Tidyverse</td>
-<td><code>filter()</code></td>
-</tr>
-<tr class="even">
-<td>Tidyverse</td>
-<td><code>group_by()</code></td>
-</tr>
-<tr class="odd">
-<td>Tidycensus</td>
-<td><code>get_acs()</code></td>
-</tr>
-<tr class="even">
-<td>Tidycensus</td>
-<td><code>get_decennial()</code></td>
-</tr>
-<tr class="odd">
-<td>Tidycensus</td>
-<td><code>load_variables()</code></td>
-</tr>
-<tr class="even">
-<td>sf</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>D’Ignazio, Catherine, and Lauren F. Klein. (2020). <em>Data Feminism</em>. MIT Press. Chapter 1 [<i class="fa-solid fa-file" aria-label="file"></i>](https://uofi.box.com/s/nefe8mbag1cc2ixazyz2a3dp2v0bvl3t), Chapter 2 [<i class="fa-solid fa-file" aria-label="file"></i>](https://uofi.box.com/s/uos1v89e93gbduyig8h7ky79q0vf4p9w)</p>
 </section>
 <section id="reflect" class="level2">
 <h2 class="anchored" data-anchor-id="reflect">Reflect</h2>
-<p>What are the types of common tasks in your workflows that you think would benefit from a data pipeline?</p>
+<ul>
+<li><p>What are the types of common tasks in your workflows that you think would benefit from a data pipeline?</p></li>
+<li><p>How do we hold ourselves accountable for our analysis?</p></li>
+</ul>
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>

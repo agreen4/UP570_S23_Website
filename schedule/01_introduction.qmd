@@ -9,21 +9,20 @@ editor: visual
 
 ## Session Description
 
-Welcome to UP 570: Neighborhood Analysis! This session serves as our introduction to the class and an opportunity to start exploring how we will work together over the course of the semester. We will introduce ourselves and discuss how we will learn together over the course of the semester. We'll also think through two foundational questions:
+Welcome to UP 570: Neighborhood Analysis! This session serves as our introduction to the class and an opportunity to start exploring how we will work together over the course of the semester. We will introduce ourselves and discuss how we will learn together. We'll also think through two foundational questions:
 
 1.  What is a neighborhood?
 2.  Why do neighborhoods matter?
 
 ## Before Class
 
--   Bookmark this website so you can access it easily.
+-   Bookmark this website [https://up570s23.netlify.app](https://up570s23.netlify.app) so you can access it easily.
 -   Join our course [Slack Channel](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D)
 -   Read the [course syllabus](../syllabus/index.qmd) and bring questions with you.
 -   Complete the course [introductory survey](%7B%7B%3C%20var%20course.survey%20%3E%7D%7D).
 -   Join the Data Science in Planning (DSIP) Listserv (dsip-durp-l\@lists.illinois.edu) where members of our community can share opportunities things of interest.
     -   In the subject line of your email, type in: subscribe dsip-durp-l\@lists.illinois.edu Firstname Name (replace your own first name and name).
     -   Leave the message body blank.
--   Configure R and RStudio for our class.
 
 ## Reflect
 

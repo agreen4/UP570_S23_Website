@@ -221,14 +221,14 @@
     "href": "schedule/01_introduction.html",
     "title": "Course Introduction",
     "section": "",
-    "text": "Welcome to UP 570: Neighborhood Analysis! This session serves as our introduction to the class and an opportunity to start exploring how we will work together over the course of the semester. We will introduce ourselves and discuss how we will learn together over the course of the semester. We’ll also think through two foundational questions:\n\nWhat is a neighborhood?\nWhy do neighborhoods matter?"
+    "text": "Welcome to UP 570: Neighborhood Analysis! This session serves as our introduction to the class and an opportunity to start exploring how we will work together over the course of the semester. We will introduce ourselves and discuss how we will learn together. We’ll also think through two foundational questions:\n\nWhat is a neighborhood?\nWhy do neighborhoods matter?"
   },
   {
     "objectID": "schedule/01_introduction.html#before-class",
     "href": "schedule/01_introduction.html#before-class",
     "title": "Course Introduction",
     "section": "Before Class",
-    "text": "Before Class\n\nBookmark this website so you can access it easily.\nJoin our course Slack Channel\nRead the course syllabus and bring questions with you.\nComplete the course introductory survey.\nJoin the Data Science in Planning (DSIP) Listserv (dsip-durp-l@lists.illinois.edu) where members of our community can share opportunities things of interest.\n\nIn the subject line of your email, type in: subscribe dsip-durp-l@lists.illinois.edu Firstname Name (replace your own first name and name).\nLeave the message body blank.\n\nConfigure R and RStudio for our class."
+    "text": "Before Class\n\nBookmark this website https://up570s23.netlify.app so you can access it easily.\nJoin our course Slack Channel\nRead the course syllabus and bring questions with you.\nComplete the course introductory survey.\nJoin the Data Science in Planning (DSIP) Listserv (dsip-durp-l@lists.illinois.edu) where members of our community can share opportunities things of interest.\n\nIn the subject line of your email, type in: subscribe dsip-durp-l@lists.illinois.edu Firstname Name (replace your own first name and name).\nLeave the message body blank."
   },
   {
     "objectID": "schedule/01_introduction.html#reflect",
@@ -270,7 +270,7 @@
     "href": "schedule/02_neighborhood.html#before-class",
     "title": "What is a Neighborhood?",
     "section": "Before Class",
-    "text": "Before Class\nYour readings for today provide insight into some of the working definitions for value judgments regarding the qualities of neighborhoods and why planners have found these qualities to be of importance to measure and understand.\n\n\n\n\n\n\nImportant\n\n\n\nYou must be logged in to your UIUC Box.com account in order to access these readings. This is to respect the copyright of the authors on a publicly accessible website.\n\n\nTalen, Emily, Sunny Menozzi, and Chloe Schaefer. (2015). What is a “Great Neighborhood”? An Analysis of APA’s Top-Rated Places. Journal of the American Planning Association, 81(2): 121-141.\nRohe, William. (2009). From Local to Global: One Hundred Years of Neighborhood Planning. Journal of the American Planning Association 75(2): 209-230"
+    "text": "Before Class\nYour readings for today provide insight into some of the working definitions for value judgments regarding the qualities of neighborhoods and why planners have found these qualities to be of importance to measure and understand.\n\n\n\n\n\n\nImportant\n\n\n\nYou must be logged in to your UIUC Box.com account in order to access these readings. This is to respect the copyright of the authors on a publicly accessible website.\n\n\nTalen, Emily, Sunny Menozzi, and Chloe Schaefer. (2015). What is a “Great Neighborhood”? An Analysis of APA’s Top-Rated Places. Journal of the American Planning Association, 81(2): 121-141. \nRohe, William. (2009). From Local to Global: One Hundred Years of Neighborhood Planning. Journal of the American Planning Association 75(2): 209-230."
   },
   {
     "objectID": "schedule/02_neighborhood.html#reflect",
@@ -515,14 +515,14 @@
     "href": "schedule/03_datapipeline.html#before-class",
     "title": "Building a Data Pipeline",
     "section": "Before Class",
-    "text": "Before Class\nDownload the Quarto Workbook associated with our Nuts and Bolts work.\nConfirm that you are familiar with the following packages and functions which we will make use of during this session - if you are not familiar read the documentation and bring questions to our session.\n\n\n\nPackage\nFunction\n\n\n\n\nTidyverse\n|>\n\n\nTidyverse\nselect()\n\n\nTidyverse\nfilter()\n\n\nTidyverse\ngroup_by()\n\n\nTidycensus\nget_acs()\n\n\nTidycensus\nget_decennial()\n\n\nTidycensus\nload_variables()\n\n\nsf"
+    "text": "Before Class\nDownload the Quarto Workbook associated with our Nuts and Bolts work.\nD’Ignazio, Catherine, and Lauren F. Klein. (2020). Data Feminism. MIT Press. Chapter 1 [](https://uofi.box.com/s/nefe8mbag1cc2ixazyz2a3dp2v0bvl3t), Chapter 2 [](https://uofi.box.com/s/uos1v89e93gbduyig8h7ky79q0vf4p9w)"
   },
   {
     "objectID": "schedule/03_datapipeline.html#reflect",
     "href": "schedule/03_datapipeline.html#reflect",
     "title": "Building a Data Pipeline",
     "section": "Reflect",
-    "text": "Reflect\nWhat are the types of common tasks in your workflows that you think would benefit from a data pipeline?"
+    "text": "Reflect\n\nWhat are the types of common tasks in your workflows that you think would benefit from a data pipeline?\nHow do we hold ourselves accountable for our analysis?"
   },
   {
     "objectID": "schedule/03_datapipeline.html#slides",
@@ -949,7 +949,7 @@
     "href": "schedule/09_census.html#before-class",
     "title": "Population and the Census",
     "section": "Before Class",
-    "text": "Before Class"
+    "text": "Before Class\nPlease register for a U.S. Census Bureau API Key"
   },
   {
     "objectID": "schedule/09_census.html#reflect",
@@ -984,7 +984,7 @@
     "href": "schedule/04_sharing.html#reflect",
     "title": "Sharing Your Work",
     "section": "Reflect",
-    "text": "Reflect"
+    "text": "Reflect\nD’Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 3 [](https://uofi.box.com/s/4p66af2stm2pd2veikjps3xjvqorinmt), Chapter 4 [](https://uofi.box.com/s/eycxovs3yyi6qlauvzldesimg7d1zzjg)"
   },
   {
     "objectID": "schedule/04_sharing.html#slides",
@@ -1033,14 +1033,14 @@
     "href": "schedule/06_places.html#before-class",
     "title": "Describing Places",
     "section": "Before Class",
-    "text": "Before Class"
+    "text": "Before Class\nD’Ignazio, Catherine, and Lauren F. Klein. (2020). Data Feminism. MIT Press. Chapter 5 [](https://uofi.box.com/s/8pfpb8mgzfmqve2goo4oehm0s0gdgsra), Chapter 6 [](https://uofi.box.com/s/emfzi13q82lpipsgbc0antmrxm4994f8), Chapter 7 [](https://uofi.box.com/s/713yeczrs3ekh2k86je46vixep8d9d0e)\nLynch, Kevin. (1960). The Image of the City. Chapter 3 [](https://uofi.box.com/s/khfdu0cbm2aj1xb5ktkdrplih1jrwnb2)."
   },
   {
     "objectID": "schedule/06_places.html#reflect",
     "href": "schedule/06_places.html#reflect",
     "title": "Describing Places",
     "section": "Reflect",
-    "text": "Reflect"
+    "text": "Reflect\n\nWe intuitively tell lots of stories about places. What are some of the most evocative tropes you can think of that could apply to places? What makes for a good story about place?\nWhat are some of the benefits and challenges of making place comparisons? How does this feel from the perspective of an analyst? What dangers or challenges does the analyst face when telling comparative stories to others?"
   },
   {
     "objectID": "schedule/06_places.html#slides",
@@ -1096,7 +1096,7 @@
     "href": "schedule/08_census.html#before-class",
     "title": "Population and the Census",
     "section": "Before Class",
-    "text": "Before Class\nKlosterman 2\nPlease register for a U.S. Census Bureau API Key\nPlease download the lab files. We will be working in the same lab notebook on Thursday."
+    "text": "Before Class\nKlosterman 2 [](https://uofi.box.com/s/2ki78jbm88y09j41zozqrfjc0wmva372)."
   },
   {
     "objectID": "schedule/08_census.html#reflect",
@@ -1124,7 +1124,7 @@
     "href": "schedule/10_projections.html#before-class",
     "title": "Population Projections",
     "section": "Before Class",
-    "text": "Before Class"
+    "text": "Before Class\nKlosterman 3 [](https://uofi.box.com/s/19oupi56mhe3qujndxtdk1tvoo21o02f)\nKlosterman 4 [](https://uofi.box.com/s/icsp7g6ecuwb5lxl1iewxjqz30pavw6o)\nKlosterman 5 [](https://uofi.box.com/s/ugdt8fx7y568wq7uhgaa8oad5fqtsu9b)"
   },
   {
     "objectID": "schedule/10_projections.html#reflect",
@@ -1152,7 +1152,7 @@
     "href": "schedule/11_projections.html#before-class",
     "title": "Population Projections",
     "section": "Before Class",
-    "text": "Before Class"
+    "text": "Before Class\nPendall, Rolf. (2018). The Cost of Segregation: Population and Household Projections in the Chicago Commuting Zone and Implications for Economic and Racial Segregation. Urban Institute. [](https://uofi.box.com/s/lhwaz7kbk4s1y1prxu6bq22orzxbncpl)"
   },
   {
     "objectID": "schedule/11_projections.html#reflect",
@@ -1187,7 +1187,7 @@
     "href": "schedule/12_segregation.html#before-class",
     "title": "Segregation",
     "section": "Before Class",
-    "text": "Before Class\nCunningham, Mary K., and Augrey Droesch. Neighborhood Quality and Racial Segregation. The Urban Institute\nU.S. Bureau of the Census: Measures of Residential Segregation\nPlease download the lab files. We will be working in the same lab notebook on Thursday."
+    "text": "Before Class\nCunningham, Mary K., and Augrey Droesch. Neighborhood Quality and Racial Segregation. The Urban Institute. [](https://uofi.box.com/s/9dmkb0e246n1rffgk8bfuf3day9ozwhq)\nU.S. Bureau of the Census: Measures of Residential Segregation [](https://uofi.box.com/s/weeykwkb6xp630w167xf3oupcdj0hgpm)"
   },
   {
     "objectID": "schedule/12_segregation.html#reflect",
@@ -1257,7 +1257,7 @@
     "href": "schedule/14_neighborhood.html#before-class",
     "title": "Neighborhood Change",
     "section": "Before Class",
-    "text": "Before Class\nWBEZ: There Goes the Neighborhood\nWho Can Live in Chicago?: A Tale of Three Cities\nThe Socioeconomic Change of Chicago’s Community Areas (1970-2010)\nPlease download our Lab Files - we will begin these today and will continue on Thursday."
+    "text": "Before Class\nWBEZ: There Goes the Neighborhood\nWho Can Live in Chicago?: A Tale of Three Cities\nThe Socioeconomic Change of Chicago’s Community Areas (1970-2010)"
   },
   {
     "objectID": "schedule/14_neighborhood.html#reflect",
@@ -1320,7 +1320,7 @@
     "href": "schedule/16_opportunity.html#before-class",
     "title": "Place Opportunity",
     "section": "Before Class",
-    "text": "Before Class\nStromberg, Brian. (2016). Opportunity Mapping. National Housing Conference\npowell, john. (2005). Remedial Phase Expert Report of john powell in Thompson v. HUD\nDownload and review this week’s lab files."
+    "text": "Before Class\nStromberg, Brian. (2016). Opportunity Mapping. National Housing Conference. [](https://uofi.box.com/s/4vb4oxiahv766yo3h32s8v6ya40nqep7)\npowell, john. (2005). Remedial Phase Expert Report of john powell in Thompson v. HUD. [](https://uofi.box.com/s/e6bqy75i2v81bmrdbavs8ct579ojnezp)\nBalachandran, Sowmya, and Andrew Greenlee. (2022). Examining Spatial Opportunity for Local Action: From Theory to Practice. Journal of Planning Education and Research. [](https://uofi.box.com/s/vc4krsnh41qshsmjxb903x0l4xoo5h5z)"
   },
   {
     "objectID": "schedule/16_opportunity.html#reflect",
@@ -1662,6 +1662,132 @@
     "objectID": "schedule/29_finalpresent.html#resources-for-further-exploration",
     "href": "schedule/29_finalpresent.html#resources-for-further-exploration",
     "title": "Final Presentations",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/06_places.html",
+    "href": "schedule/06_places.html",
+    "title": "Describing Places",
+    "section": "",
+    "text": "In this session, we’ll spend time talking about how to describe places, as well as some frameworks for making place comparisons."
+  },
+  {
+    "objectID": "schedule/10_projections.html",
+    "href": "schedule/10_projections.html",
+    "title": "Population Projections",
+    "section": "",
+    "text": "Much of our analysis is oriented towards the past and present, but what about the future? This week, we will learn the basic techniques involved in population projections. We’ll explore several common techniques for projections and discuss some of the reasons why projecting population at the neighborhood level can be challenging."
+  },
+  {
+    "objectID": "schedule/18_transequity.html#before-class",
+    "href": "schedule/18_transequity.html#before-class",
+    "title": "Transit Equity",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/18_transequity.html#reflect",
+    "href": "schedule/18_transequity.html#reflect",
+    "title": "Transit Equity",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/18_transequity.html#slides",
+    "href": "schedule/18_transequity.html#slides",
+    "title": "Transit Equity",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/18_transequity.html#resources-for-further-exploration",
+    "href": "schedule/18_transequity.html#resources-for-further-exploration",
+    "title": "Transit Equity",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/19_transequity.html#before-class",
+    "href": "schedule/19_transequity.html#before-class",
+    "title": "Transit Equity",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/19_transequity.html#reflect",
+    "href": "schedule/19_transequity.html#reflect",
+    "title": "Transit Equity",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/19_transequity.html#slides",
+    "href": "schedule/19_transequity.html#slides",
+    "title": "Transit Equity",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/19_transequity.html#resources-for-further-exploration",
+    "href": "schedule/19_transequity.html#resources-for-further-exploration",
+    "title": "Transit Equity",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/20_healthequity.html#before-class",
+    "href": "schedule/20_healthequity.html#before-class",
+    "title": "Health Equity",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/20_healthequity.html#reflect",
+    "href": "schedule/20_healthequity.html#reflect",
+    "title": "Health Equity",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/20_healthequity.html#slides",
+    "href": "schedule/20_healthequity.html#slides",
+    "title": "Health Equity",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/20_healthequity.html#resources-for-further-exploration",
+    "href": "schedule/20_healthequity.html#resources-for-further-exploration",
+    "title": "Health Equity",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/21_healthequity.html#before-class",
+    "href": "schedule/21_healthequity.html#before-class",
+    "title": "Health Equity",
+    "section": "Before Class",
+    "text": "Before Class"
+  },
+  {
+    "objectID": "schedule/21_healthequity.html#reflect",
+    "href": "schedule/21_healthequity.html#reflect",
+    "title": "Health Equity",
+    "section": "Reflect",
+    "text": "Reflect"
+  },
+  {
+    "objectID": "schedule/21_healthequity.html#slides",
+    "href": "schedule/21_healthequity.html#slides",
+    "title": "Health Equity",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "schedule/21_healthequity.html#resources-for-further-exploration",
+    "href": "schedule/21_healthequity.html#resources-for-further-exploration",
+    "title": "Health Equity",
     "section": "Resources for Further Exploration",
     "text": "Resources for Further Exploration"
   }

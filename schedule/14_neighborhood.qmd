@@ -9,7 +9,7 @@ editor: visual
 
 ## Session Description
 
-In this session, we’ll begin exploring the measurement of neighborhood change as well as underlying theories of transition.
+In this session, we'll begin exploring the measurement of neighborhood change as well as underlying theories of transition.
 
 ## Before Class
 
@@ -17,17 +17,15 @@ WBEZ: [There Goes the Neighborhood](https://interactive.wbez.org/gentrification/
 
 [Who Can Live in Chicago?: A Tale of Three Cities](https://voorheescenter.uic.edu/who-can-live-in-chicago/)
 
-[The Socioeconomic Change of Chicago’s Community Areas (1970-2010)](https://voorheescenter.red.uic.edu/wp-content/uploads/sites/122/2017/10/Voorhees-Center-Gentrification-Index-Oct-14.pdf)
-
-Please download our Lab Files - we will begin these today and will continue on Thursday.
+[The Socioeconomic Change of Chicago's Community Areas (1970-2010)](https://voorheescenter.red.uic.edu/wp-content/uploads/sites/122/2017/10/Voorhees-Center-Gentrification-Index-Oct-14.pdf)
 
 ## Reflect
 
-- What role should planners take in managing neighborhood change?
-- How do planners balance changes across multiple neighborhoods?
+-   What role should planners take in managing neighborhood change?
+-   How do planners balance changes across multiple neighborhoods?
 
 ## Slides
 
 ## Resources for Further Exploration
 
-[The Three Cities Within Toronto: Income Polarization Amongst Toronto’s Neighbourhoods, 1970-2005](http://www.urbancentre.utoronto.ca/pdfs/curp/tnrn/Three-Cities-Within-Toronto-2010-Final.pdf)
+[The Three Cities Within Toronto: Income Polarization Amongst Toronto's Neighbourhoods, 1970-2005](http://www.urbancentre.utoronto.ca/pdfs/curp/tnrn/Three-Cities-Within-Toronto-2010-Final.pdf)
