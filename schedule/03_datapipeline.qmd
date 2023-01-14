@@ -15,7 +15,7 @@ In this session, we'll explore some of the basic workflow which we'll use over t
 
 Download the Quarto Workbook associated with our Nuts and Bolts work.
 
-D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 1 \[{{< fa file >}}\](https://uofi.box.com/s/nefe8mbag1cc2ixazyz2a3dp2v0bvl3t), Chapter 2 \[{{< fa file >}}\](https://uofi.box.com/s/uos1v89e93gbduyig8h7ky79q0vf4p9w)
+D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 1 [{{< fa file >}}](https://uofi.box.com/s/nefe8mbag1cc2ixazyz2a3dp2v0bvl3t), Chapter 2 [{{< fa file >}}](https://uofi.box.com/s/uos1v89e93gbduyig8h7ky79q0vf4p9w)
 
 ## Reflect
 
