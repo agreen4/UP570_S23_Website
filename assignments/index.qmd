@@ -48,11 +48,11 @@ end
 
 ### Learn
 
-On a weekly basis, we'll incorporate new tools and analytic strategies into our repertoire. We'll devote some time most weeks in class to working through lab examples in class that help to illustrate how tools work and how to apply them. Labs are designed to be a low-stakes opportunity to learn.
+On a weekly basis, we'll incorporate new tools and analytic strategies into our repertoire. We'll devote some time most weeks in class to working through lab examples in class that help to illustrate how tools work and how to apply them. Labs are designed to be a low-stakes opportunity to learn. We will spend 80 minutes of class time on working collectively on labs. You are expected to devote an additional 2 to 3 hours of effort outside of class on your labs on a weekly basis.
 
 ### Apply
 
-You'll apply what you've learned over the course of the semester to the analysis of a place of your choosing. At the beginning of the semester, you will identify a place, and start to examine the relevant policy issues that motivate your analysis. You will then apply course tools and concepts to your place and will communicate your findings in a series of memos.
+You'll apply what you've learned over the course of the semester to the analysis of a place of your choosing. At the beginning of the semester, you will identify a place, and start to examine the relevant policy issues that motivate your analysis. You will then apply course tools and concepts to your place and will communicate your findings in a series of memos. You are expected to devote approximately 10 hours of effort outside of class to each apply component (Ph.D. students are likely to devote more time to their literature review and drafting).
 
 ### Communicate
 
@@ -64,25 +64,25 @@ Consistent contributions in class, thoughtful engagement with course material, a
 
 ## Evaluation
 
-### Assignment Weights
+### Evaluation Components
 
-+-------------+------------------------------+------------------------------+--------------+
-| Strategy    | Master's Students            | Ph.D. Students               | Grade Weight |
-+=============+==============================+==============================+==============+
-| Learn       | Labs                         | Labs                         | 10 percent   |
-+-------------+------------------------------+------------------------------+--------------+
-| Apply       | Place Selection Memo         | Paper Proposal               | 40 percent   |
-|             |                              |                              |              |
-|             | Place Background Memo        | Paper Outline                |              |
-|             |                              |                              |              |
-|             | Population Memo              | Paper Draft                  |              |
-|             |                              |                              |              |
-|             | Policy Memo                  |                              |              |
-+-------------+------------------------------+------------------------------+--------------+
-| Communicate | Final Report                 | Term Paper                   | 40 percent   |
-+-------------+------------------------------+------------------------------+--------------+
-| Engage      | Participation and Engagement | Participation and Engagement | 10 percent   |
-+-------------+------------------------------+------------------------------+--------------+
++-------------+------------------------------+------------------------------+
+| Strategy    | Master's Students            | Ph.D. Students               |
++=============+==============================+==============================+
+| Learn       | Labs                         | Labs                         |
++-------------+------------------------------+------------------------------+
+| Apply       | Place Selection Memo         | Paper Proposal               |
+|             |                              |                              |
+|             | Place Background Memo        | Paper Outline                |
+|             |                              |                              |
+|             | Population Memo              | Paper Draft                  |
+|             |                              |                              |
+|             | Policy Memo                  |                              |
++-------------+------------------------------+------------------------------+
+| Communicate | Final Report                 | Term Paper                   |
++-------------+------------------------------+------------------------------+
+| Engage      | Participation and Engagement | Participation and Engagement |
++-------------+------------------------------+------------------------------+
 
 ### Ph.D. Students
 
@@ -90,40 +90,34 @@ Doctoral students may elect to either satisfy course requirements laid out for M
 
 Doctoral students should speak with me during weeks 1 or 2 if you wish to pursue this option so we can develop an appropriate research proposal, timeline, and outputs.
 
-## Grading
+## Assessment
 
-### Grading Policy
+Most of the methods classes you have probably taken have focused on grading you on your skill at reproducing specific outcomes. Our pedagogy in this class is that while it is possible to measure these outcomes, what is more important to assess is the process of learning as well as the effort you put into that process. Here's some more detail on our thinking:
 
-This course requires your engagement both within and outside of the classroom. Grading criteria include contribution to the course environment, quality of writing, and depth of analysis. Your work will be graded on a 100-point scale:
+1.  A unitary assessment of performance in a 500-level class is not likely to serve students well. Each of you has proven time and time again in other classes that you can reproduce certain expected outcomes. The challenge in this class will focus on assessing your effort and learning process as opposed to the reproduction of outcomes. 
 
-+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Grade | Points | Description                                                                                                                                                                               |
-+=======+========+===========================================================================================================================================================================================+
-| A+    | 97-100 | Outstanding work, ready for dissemination. Demonstrates mastery of course concepts and skills, clear communication, and appropriate use of analytical methods.                            |
-|       |        |                                                                                                                                                                                           |
-| A     | 93-96  |                                                                                                                                                                                           |
-|       |        |                                                                                                                                                                                           |
-| A-    | 90-92  |                                                                                                                                                                                           |
-+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| B+    | 87-89  | Good work, that meets expectations. Work needs minor revision address minor communication or technical errors in order to be ready for dissemination                                      |
-|       |        |                                                                                                                                                                                           |
-| B     | 83-86  |                                                                                                                                                                                           |
-|       |        |                                                                                                                                                                                           |
-| B-    | 80-82  |                                                                                                                                                                                           |
-+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| C+    | 77-79  | Work needs major revision to writing or analysis due to technical errors, not ready for dissemination.                                                                                    |
-|       |        |                                                                                                                                                                                           |
-| C     | 73-77  |                                                                                                                                                                                           |
-|       |        |                                                                                                                                                                                           |
-| C-    | 70-72  |                                                                                                                                                                                           |
-+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| D+    | 67-69  | Work does not meet course expectations for graduate-level work. Reflects lack of understanding or conceptualization of work, major technical errors, and requires significant rethinking. |
-|       |        |                                                                                                                                                                                           |
-| D     | 60-66  |                                                                                                                                                                                           |
-+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| F     | 0-59   | Work does not meet minimum expectations, effort, or understanding.                                                                                                                        |
-+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+2.  Implementing a contract-based assessment approach mirrors course goals regarding our understanding and practice around the power of data, particularly with regards to public deliberation, decision-making, and governance. Dealing differently with power around evaluation in our classroom mirrors how we might deal differently with power and power relationships in professional practice.
 
-### Attendance Policy
+3.  There is increasing evidence in higher education settings that unitary grading measures tend to hamper individual learning, and have the potential to be biased towards certain types of students. Put simply, obsessing about grades in advanced coursework is counter-productive to deep learning. This course adheres to the pedagogy that when given more control and ownership over the terms of evaluation, a student is more likely to embrace the challenges presented to them within the classroom, and are more likely to take ownership of their work (see, for instance [Elbow](https://scholarworks.umass.edu/cgi/viewcontent.cgi?article=1002&context=eng_faculty_pubs "https://scholarworks.umass.edu/cgi/viewcontent.cgi?article=1002&context=eng_faculty_pubs") and [Inoue](https://wac.colostate.edu/books/perspectives/labor/ "https://wac.colostate.edu/books/perspectives/labor/")).
 
-The learning environment in this class depends upon your engagement and participation. Full participation is expected for course sessions. For each course session that you are absent from (excluding excused absences), 2 percent will be deducted from your *final course grade*. Excused absences will be granted on a case-by-case basis for extenuating circumstances such as illness or work-related travel, but must be approved by me prior to the course session which you are absent from.
+### Contract Expectation Summary
+
+Each of you begins the semester with an "A" in the class. You may alter your grade based upon the choices you make regarding the following accountability expectations: 
+
+| **Grade** | **Absences** | **Late** | **Missed** | **Ignored** |
+|-----------|--------------|----------|------------|-------------|
+| **A**     | 3            | 1        | 0          | 0           |
+| **B**     | 3            | 2        | 1          | 0           |
+| **C**     | 4            | 2        | 1          | 1           |
+| **D**     | 5            | 3        | 2          | 1           |
+| **F**     | 6            | 4        | 3          | 1           |
+
+-   **Absences** indicate the number of times you are absent from class. Additional excused absences may be allowed due to documented extenuating circumstances.
+
+-   **Late Assignments** are assignments submitted after a due date but within 48 hours of the due date.
+
+-   **Missed Assignments** are assignments submitted more than 48 hours after the due date.
+
+-   **Ignored Assignments** are assignments that are not submitted by the last day of class (excluding your final assignment). Ignored assignments are a more serious breach of contract than missed assignments as they reflect contracted work which you have not completed.
+
+Please note that assessment of these contracted standards are based upon *what you do*. The contracted grade does assess of the *quality* of your work. You will reflect upon and will receive direct feedback on the quality of your work as part of the assignment review process. Note that we reserve the right to adjust grades based upon exceptionally strong or weak engagement within the class. We will provide sufficient feedback over the course of the semester so that your final grade in the class should not be a surprise based upon *what you do* and *how you reflect upon* your learning over the course of the semester.

@@ -1,0 +1,62 @@
+---
+title: "Ph.D. Term Assignment"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Introduction
+
+Ph.D. students in UP 570 have the option of either completing the series of assignments which Master's degree students complete, or may opt to complete a term assignment that is focused on conducting research in an area of your choice that incorporates some of the principles, tools, and strategies from the class. The goal is to produce a complete draft of a scholarly article suitable for publication in a peer reviewed journal by the end of the semester.
+
+## Outputs
+
+### Paper Proposal
+
+Prepare a 3-4 page paper proposal that describes the research question, rationale, and approach which you propose taking over the course of the semester. Your proposal should highlight and review 5-10 relevant key sources (at a minimum), should articulate a clear rationale for the methods you intend to use, should describe any specific skills or methods which you propose developing or applying over the course of the semester, and should describe the overall analytic outputs and prospective audience for your work. Your proposal should also describe several candidate publication venues (journals) for which you might submit your article to.
+
+**Due Date:** February 3
+
+Paper Proposal Repository [{{< fa arrow-up-right-from-square >}}]()
+
+### Paper Outline
+
+Prepare an annotated paper outline that fleshes out the structure of your paper including a complete written introduction, summary of the argument(s) you intend to make in your literature review, research question(s), a written summary of your methods, and a proposed structure for your results, discussion, and conclusion. The detail you invest in this outline will help us to provide feedback to help you as you develop your paper draft. In your outline, indicate the prospective journal you plan to submit your final paper to and ensure that your outline conforms to the structure of articles submitted to that journal.
+
+**Due Date:** March 3
+
+Paper Outline Repository [{{< fa arrow-up-right-from-square >}}]()
+
+### Paper Draft
+
+Prepare a complete first draft of your paper that includes an introduction, literature review, research questions, methods section, results, discussion, and conclusion (again, conforming to the accepted structure of articles in the journal you are submitting to).
+
+**Due Date:** April 14
+
+Paper Draft Repository [{{< fa arrow-up-right-from-square >}}]()
+
+### Final Paper
+
+Prepare a polished draft of your paper incorporating feedback from your previous draft. Separate from your main document, include 1-2 page summary that is suitable for a non-technical non-academic audience that summarizes key takeaways.
+
+**Due Date:** May 10
+
+Final Paper Repository [{{< fa arrow-up-right-from-square >}}]()
+
+## Submission Instructions
+
+When you are ready to begin work on each assignment component, please accept the following GitHub Classroom assignments (one for each component). Upload your document, reflection and any associated files. Due to GitHub's file size limitations, you may need to store large files (datasets, etc.) on Box and reference them separately.
+
+### Assignment Reflection
+
+In the repository you downloaded for your assignment, you will find a separate reflection document. Please respond to the following prompts in that document and submit along with your assignment repository.
+
+1.  Highlight one or two things you are especially proud of regarding your submission. This could be a particular element within the assignment or could be part of your process (e.g. time management, applying new techniques, etc.).
+
+2.  If you were to start this assignment over again, what are one or two things that you might do differently?
+
+3.  Are there any aspects or areas in your submission where you would like us to focus our feedback?
+
+4.  On a scale of 1 to 10, please rate how ready you feel this work is for sharing with a public audience (where 1 is not at all ready to be shared and 10 is polished and ready for public dissemination).

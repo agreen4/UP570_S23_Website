@@ -51,4 +51,16 @@ The objective is to provide a clear portrait of the demographic characteristics 
 
 ## Submission Instructions
 
-Upload your memorandum R notebook to the appropriate folder in your class GitHub repository.
+Save your memorandum as a Quarto markdown document and upload to the appropriate folder in your class GitHub repository.
+
+### Assignment Reflection
+
+In the repository you downloaded for your assignment, you will find a separate reflection document. Please respond to the following prompts in that document and submit along with your assignment repository.
+
+1.  Highlight one or two things you are especially proud of regarding your submission. This could be a particular element within the assignment or could be part of your process (e.g. time management, applying new techniques, etc.).
+
+2.  If you were to start this assignment over again, what are one or two things that you might do differently?
+
+3.  Are there any aspects or areas in your submission where you would like us to focus our feedback?
+
+4.  On a scale of 1 to 10, please rate how ready you feel this work is for sharing with a public audience (where 1 is not at all ready to be shared and 10 is polished and ready for public dissemination).

@@ -127,6 +127,8 @@ website:
               file: assignments/04_policy.qmd
             - text: "Term Assignment"
               file: assignments/05_term.qmd
+            - text: "Ph.D. Term Assignment"
+              file: assignments/06_phd.qmd
               
     - title: "How To"
       contents:
