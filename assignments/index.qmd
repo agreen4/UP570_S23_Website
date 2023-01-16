@@ -50,6 +50,8 @@ end
 
 On a weekly basis, we'll incorporate new tools and analytic strategies into our repertoire. We'll devote some time most weeks in class to working through lab examples in class that help to illustrate how tools work and how to apply them. Labs are designed to be a low-stakes opportunity to learn. We will spend 80 minutes of class time on working collectively on labs. You are expected to devote an additional 2 to 3 hours of effort outside of class on your labs on a weekly basis.
 
+**A Pedagogic Note on Labs:** Our philosophy on labs is that the goal is not simply to get to the "correct" answer (if there is any). The primary goal of labs is to learn how to integrate new tools and approaches to analysis through creative problem-solving. We provide time to work on labs in class, and a suggested time allocation for labs because we understand that problem solving happens at different paces. Labs provide detailed glimpses as tools and strategies, and then ask you to apply them independently. This independent application should help you identify how these techniques may be useful to you as you develop your own *applications* (see the apply section below). You may at times grow overwhelmed with the detail or types of problems you encounter in labs. Trust us that you're learning regardless of whether you breeze through these labs or struggle through early steps. We simply ask that you apply yourselves, reach out to us and each other for assistance, and that you proudly turn in the work you have accomplished after meeting the recommended time allotments for each lab.
+
 ### Apply
 
 You'll apply what you've learned over the course of the semester to the analysis of a place of your choosing. At the beginning of the semester, you will identify a place, and start to examine the relevant policy issues that motivate your analysis. You will then apply course tools and concepts to your place and will communicate your findings in a series of memos. You are expected to devote approximately 10 hours of effort outside of class to each apply component (Ph.D. students are likely to devote more time to their literature review and drafting).
@@ -66,23 +68,23 @@ Consistent contributions in class, thoughtful engagement with course material, a
 
 ### Evaluation Components
 
-+-------------+------------------------------+------------------------------+
-| Strategy    | Master's Students            | Ph.D. Students               |
-+=============+==============================+==============================+
-| Learn       | Labs                         | Labs                         |
-+-------------+------------------------------+------------------------------+
-| Apply       | Place Selection Memo         | Paper Proposal               |
-|             |                              |                              |
-|             | Place Background Memo        | Paper Outline                |
-|             |                              |                              |
-|             | Population Memo              | Paper Draft                  |
-|             |                              |                              |
-|             | Policy Memo                  |                              |
-+-------------+------------------------------+------------------------------+
-| Communicate | Final Report                 | Term Paper                   |
-+-------------+------------------------------+------------------------------+
-| Engage      | Participation and Engagement | Participation and Engagement |
-+-------------+------------------------------+------------------------------+
++---------------+------------------------------+------------------------------+
+| Strategy      | Master's Students            | Ph.D. Students               |
++===============+==============================+==============================+
+| Learn         | Labs                         | Labs                         |
++---------------+------------------------------+------------------------------+
+| Apply         | Place Selection Memo         | Paper Proposal               |
+|               |                              |                              |
+|               | Place Background Memo        | Paper Outline                |
+|               |                              |                              |
+|               | Population Memo              | Paper Draft                  |
+|               |                              |                              |
+|               | Policy Memo                  |                              |
++---------------+------------------------------+------------------------------+
+| Communicate   | Final Report                 | Term Paper                   |
++---------------+------------------------------+------------------------------+
+| Engage        | Participation and Engagement | Participation and Engagement |
++---------------+------------------------------+------------------------------+
 
 ### Ph.D. Students
 
