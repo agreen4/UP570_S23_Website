@@ -115,6 +115,8 @@ website:
             - text: "Segregation"
             - text: "Neighborhood Change"
             - text: "Place Opportunity"
+            - text: "Transportation Equity"
+            - text: "Neighborhood Health Equity"
         - section: "Assignments"
           contents:
             - text: "Place Selection Memorandum"
