@@ -298,7 +298,7 @@
     "href": "assignments/index.html",
     "title": "Assignments Overview",
     "section": "",
-    "text": "flowchart LR\n\nsubgraph Learn\nAA[Data Pipeline]\nAB[Sharing Your Work]\nAC[Learner's Permit]\nAD[Describing Places]\nAE[Population]\nAF[Projections]\nAG[Segregation]\nAH[Neighborhood Change]\nAI[Place Opportunity]\nend\n\nsubgraph Apply\n\nAA --> B[Place Selection]\nAB --> B\nAC --> C\nAD --> C[Place Background]\nAE --> D[Population]\nAF --> D\nAG --> E[Policy]\nAH --> E\nAI --> E\nend\n\nsubgraph Communicate\n  direction LR\nB --> F{Final Report}\nC --> F\nD --> F\nE --> F\nF --> G[Document or Website]\nF --> H[Presentation]\nend"
+    "text": "flowchart LR\n\nsubgraph Learn\nAA[Data Pipeline]\nAB[Sharing Your Work]\nAC[Learner's Permit]\nAD[Describing Places]\nAE[Population]\nAF[Projections]\nAG[Segregation]\nAH[Neighborhood Change]\nAI[Place Opportunity]\nAJ[Transportation Equity]\nAK[Neighborhood Health Equity]\nend\n\nsubgraph Apply\n\nAA --> B[Place Selection]\nAB --> B\nAC --> C\nAD --> C[Place Background]\nAE --> D[Population]\nAF --> D\nAG --> E[Policy]\nAH --> E\nAI --> E\nAJ --> E\nAK --> E\nend\n\nsubgraph Communicate\n  direction LR\nB --> F{Final Report}\nC --> F\nD --> F\nE --> F\nF --> G[Document or Website]\nF --> H[Presentation]\nend"
   },
   {
     "objectID": "assignments/index.html#apply",

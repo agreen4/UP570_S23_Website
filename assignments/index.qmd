@@ -20,6 +20,8 @@ AF[Projections]
 AG[Segregation]
 AH[Neighborhood Change]
 AI[Place Opportunity]
+AJ[Transportation Equity]
+AK[Neighborhood Health Equity]
 end
 
 subgraph Apply
@@ -33,6 +35,8 @@ AF --> D
 AG --> E[Policy]
 AH --> E
 AI --> E
+AJ --> E
+AK --> E
 end
 
 subgraph Communicate
