@@ -39,3 +39,5 @@ Welcome to UP 570: Neighborhood Analysis! This session serves as our introductio
 <iframe class="slide-deck" src="../slides/S1 Course Introduction/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
 ```
 ## Resources for Further Exploration
+
+Comprehensive Development Plan for Champaign - Urbana (1950) [{{< fa link >}}](https://cityofchampaign.sharepoint.com/City%20Documents%20Internal/WordPress%20Media%20Files/Planning%20and%20Development%20Department/Long%20Range%20Planning/Development%20Plan%20Champaign%20Urbana%201950.pdf?ga=1)
