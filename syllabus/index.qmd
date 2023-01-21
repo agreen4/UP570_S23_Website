@@ -64,6 +64,17 @@ For those students who need to miss class due to a religious observance, please 
 
 For more information on attendance policy as described in the University of Illinois Student Code, please see Sections [1-501](https://studentcode.illinois.edu/article1/part5/1-501/) and [1-502](https://studentcode.illinois.edu/article1/part5/1-502/).
 
+### A Note on AI Tools
+
+Artificial intelligence tools like [Chat GPT](https://openai.com/blog/chatgpt/) have quickly made waves with their ability to produce text, code, and explanations from natural language prompts. I encourage (and at times may even expect) you to integrate such tools into your problem solving strategies and workflow, especially with regards to coding in our class. These tools must, however, be used with care and with understanding around how they synthesize and produce information. A few words of guidance:
+
+1. Assume that any code produced will require additional tweaking or troubleshooting to be implemented effectively in your workflow.
+2. Assume any facts or figures produced are incorrect.
+3. Use these tools to help you break through coding or analysis challenges, not for writing up your narrative or findings.
+4. While you do not need to reference Chat GPT or other similar tools in your narrative or references, please indicate in any methods statements that these tools were employed. Please also reflect upon your application of these tools in your assignment submission reflections.
+
+These tools are still emerging and are likely to evolve further, even over the course of the class. Let's keep a running dialog about how you're employing these tools, what some of the challenges are, and how you may want to integrate such technology into your workflows.
+
 ## Honor Code
 
 The [Illinois Student Code](https://studentcode.illinois.edu) states: "It is the responsibility of the student to refrain from infractions of academic integrity, from conduct that may lead to suspicion of such infractions, and from conduct that aids others in such infractions." Note that you are subject to the Honor Code, as well as procedures for addressing violations to the Code, regardless of whether you have read it and understand it. According to the Code, "ignorance is no excuse."
