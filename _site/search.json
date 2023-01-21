@@ -508,21 +508,21 @@
     "href": "schedule/03_datapipeline.html",
     "title": "Building a Data Pipeline",
     "section": "",
-    "text": "In this session, we’ll explore some of the basic workflow which we’ll use over the course of the semester to package and share analysis. We’ll develop familiarity with Quarto, and basic operations in Github so that you are able to share code and analysis over the course of the semester."
+    "text": "In this session, we’ll explore some of the basic workflow which we’ll use over the course of the semester to package and share analysis. We’ll develop familiarity with Quarto, and basic operations in Github so that you are able to share code and analysis over the course of the semester.\nLab 1 Link"
   },
   {
     "objectID": "schedule/03_datapipeline.html#before-class",
     "href": "schedule/03_datapipeline.html#before-class",
     "title": "Building a Data Pipeline",
     "section": "Before Class",
-    "text": "Before Class\nDownload the Quarto Workbook associated with our Nuts and Bolts work.\nD’Ignazio, Catherine, and Lauren F. Klein. (2020). Data Feminism. MIT Press. Chapter 1 , Chapter 2"
+    "text": "Before Class\nEnsure that your computer has the latest stable versions of R and RStudio installed.\nAccept the GitHub invitation to our Lab 1 repository and download the repository to your local computer (we will set up more advanced tools for interacting with GitHub in our next lab session.\nD’Ignazio, Catherine, and Lauren F. Klein. (2020). Data Feminism. MIT Press. Chapter 1 , Chapter 2"
   },
   {
     "objectID": "schedule/03_datapipeline.html#reflect",
     "href": "schedule/03_datapipeline.html#reflect",
     "title": "Building a Data Pipeline",
     "section": "Reflect",
-    "text": "Reflect\n\nWhat are the types of common tasks in your workflows that you think would benefit from a data pipeline?\nHow do we hold ourselves accountable for our analysis?"
+    "text": "Reflect\n\nWorkflows\n\nWhat are the types of common tasks in your workflows that you think would benefit from a data pipeline?\nHow do we hold ourselves accountable for our analysis?\n\n\n\nReadings\n\nWhose interests and goals do you seek to represent through your work?\nHow does Collins’ matrix of domination (structural, disciplinary, hegemonic, interpersonal) interact with acts of data-driven storytelling?\nWhat missing datasets (akin to the Library of Missing Datasets) have you observed?1\nWhat’s an analysis for which you’d like to reconstruct in ways that challenge the power manifested?"
   },
   {
     "objectID": "schedule/03_datapipeline.html#slides",

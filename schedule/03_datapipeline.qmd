@@ -11,17 +11,33 @@ editor: visual
 
 In this session, we'll explore some of the basic workflow which we'll use over the course of the semester to package and share analysis. We'll develop familiarity with Quarto, and basic operations in Github so that you are able to share code and analysis over the course of the semester.
 
+[Lab 1 Link](../assignments/labs/01_datapipeline.qmd)
+
 ## Before Class
 
-Download the Quarto Workbook associated with our Nuts and Bolts work.
+Ensure that your computer has the latest stable versions of [R](https://cran.rstudio.com) and [RStudio](https://posit.co/download/rstudio-desktop/) installed.
+
+Accept the [GitHub invitation](https://classroom.github.com/a/TzkeNAie) to our Lab 1 repository and download the repository to your local computer (we will set up more advanced tools for interacting with GitHub in our next lab session.
 
 D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 1 [{{< fa file >}}](https://uofi.box.com/s/nefe8mbag1cc2ixazyz2a3dp2v0bvl3t), Chapter 2 [{{< fa file >}}](https://uofi.box.com/s/uos1v89e93gbduyig8h7ky79q0vf4p9w)
 
 ## Reflect
 
+### Workflows
+
 -   What are the types of common tasks in your workflows that you think would benefit from a data pipeline?
 
 -   How do we hold ourselves accountable for our analysis?
+
+### Readings
+
+- Whose interests and goals do you seek to represent through your work?
+
+- How does Collins' matrix of domination (structural, disciplinary, hegemonic, interpersonal) interact with acts of data-driven storytelling?
+
+- What missing datasets (akin to the [Library of Missing Datasets](https://mimionuoha.com/the-library-of-missing-datasets)) have you observed?^[At the beginning of our session, we'll catalog some of these datasets - it may help to write down some of your thoughts to share.]
+
+- What's an analysis for which you'd like to reconstruct in ways that challenge the power manifested?
 
 ## Slides
 
