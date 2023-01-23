@@ -22,10 +22,10 @@ Welcome to UP 570: Neighborhood Analysis! This session serves as our introductio
 -   Complete the course [introductory survey](%7B%7B%3C%20var%20course.survey%20%3E%7D%7D).
 -   Join the Data Science in Planning (DSIP) Listserv (dsip-durp-l\@lists.illinois.edu) where members of our community can share opportunities things of interest.
     -   Choose the address with which you want to subscribe to the list - you should choose an address you can check frequently.
-    -   Send a message to [sympa@lists.illinois.edu](mailto:sympa@lists.illinois.edu) from the address you want to subscribe to the list.
-    - In the subject line of your message, type in subscribe dsip-durp-l Firstname Name (replace Firstname and Name with your preferred first name and last name).
+    -   Send a message to [sympa\@lists.illinois.edu](mailto:sympa@lists.illinois.edu) from the address you want to subscribe to the list.
+    -   In the subject line of your message, type in subscribe dsip-durp-l Firstname Name (replace Firstname and Name with your preferred first name and last name).
     -   Leave the message body blank.
-    - After this you will recieve a message telling you whether your request was accepted or not.
+    -   After this you will recieve a message telling you whether your request was accepted or not.
 
 ## Reflect
 

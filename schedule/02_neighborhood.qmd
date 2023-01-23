@@ -31,6 +31,10 @@ Rohe, William. (2009). From Local to Global: One Hundred Years of Neighborhood P
 
 ## Slides
 
+```{=html}
+<iframe class="slide-deck" src="../slides/S2 What is a neighborhood/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
+
 ## Resources for Further Exploration
 
 Dahir, James. (1947). [The Neighborhood Unit Plan: Its Spread and Acceptance](https://www.russellsage.org/sites/default/files/Neighborhood-Unit-Plan.pdf). New York: The Russell Sage Foundation.
