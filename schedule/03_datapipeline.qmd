@@ -31,13 +31,15 @@ D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. C
 
 ### Readings
 
-- Whose interests and goals do you seek to represent through your work?
+-   Whose interests and goals do you seek to represent through your work?
 
-- How does Collins' matrix of domination (structural, disciplinary, hegemonic, interpersonal) interact with acts of data-driven storytelling?
+-   How does Collins' matrix of domination (structural, disciplinary, hegemonic, interpersonal) interact with acts of data-driven storytelling?
 
-- What missing datasets (akin to the [Library of Missing Datasets](https://mimionuoha.com/the-library-of-missing-datasets)) have you observed?^[At the beginning of our session, we'll catalog some of these datasets - it may help to write down some of your thoughts to share.]
+-   What missing datasets (akin to the [Library of Missing Datasets](https://mimionuoha.com/the-library-of-missing-datasets)) have you observed?[^1]
 
-- What's an analysis for which you'd like to reconstruct in ways that challenge the power manifested?
+-   What's an analysis for which you'd like to reconstruct in ways that challenge the power manifested?
+
+[^1]: At the beginning of our session, we'll catalog some of these datasets - it may help to write down some of your thoughts to share.
 
 ## Slides
 

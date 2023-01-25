@@ -9,7 +9,13 @@ editor: visual
 
 ## Session Description
 
+This session builds upon the work on your last lab. In that lab, you worked on developing several workflows that will support your work over the course of the semester. Coming into this lab, you should have a formatted Quarto markdown document. In this session, we'll talk about strategies for sharing that work, will configure your computer to communicate with GitHub, and will create your first publicly facing websites.
+
 ## Before Class
+
+1. Be prepared to access the formatted Quarto notebook you worked on in the last lab that contains your analysis of Chicago community areas.
+
+2. Be prepared to access your Lab 1 reflection.
 
 ## Reflect
 
