@@ -109,6 +109,8 @@ website:
               file: assignments/labs/01_datapipeline.qmd
             - text: "Sharing Your Work"
               file: assignments/labs/02_sharing.qmd
+            - text: "Earning Your Learner's Permit"
+              file: assignments/labs/03_permit.qmd
             - text: "Describing Places"
             - text: "Population and the Census"
             - text: "Population Projections"

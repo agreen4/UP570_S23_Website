@@ -1,0 +1,72 @@
+---
+title: "Earning Your Learner's Permit"
+sidebar: false
+toc: true
+toc-depth: 4
+page-layout: full
+bibliography: ../references.bib
+csl: ../apa-6th-edition.csl
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+fig-responsive: true
+editor: visual
+---
+
+## Introduction
+
+UP 570 assumes that you have a basic familiarity with core principles of data manipulation in R. As we move forward with our class, we will continue to add knowledge of new packages, tools, and data within R.
+
+This R Learner's Permit is designed to assess your knowledge of the core elements of the R language and software. The goal is to provide you and the instructional team with a better sense of your core knowledge of basic data manipulation that will form the basis for more advanced techniques we'll learn over the course of the semester.
+
+Do not worry if some of the tasks remain challenging or if you are unable to complete them- a goal of the class is to continue adding complexity and opportunities to repeat tasks to reinforce your familiarity and comfort with their use.
+
+## Goals
+
+-   Get your hands dirty with what is likely an unfamiliar source of "real world" data.
+- Learn more about your familiarity with basic `dplyr` data manipulation strategies.
+- Learn more about your familiarity with basic data visualization using `ggplot2`.
+
+## Core Concepts
+
+### R and Rstudio
+
+- `dim()`
+- `summary()`
+- `group_by()`
+- `summarise()`
+- `left_join`
+
+Let's get going...
+
+## Github Lab Repository
+
+If you have not already done so, follow [this link](https://classroom.github.com/a/vnAmHOqZ) to accept the lab Github Classroom assignment repository.
+
+## Instructions
+
+Follow the instructions contained within the GitHub lab repository. Most instructions ask you to add or fill in code chunks. Others ask you to provide a written interpretation in the notebook portion of the document.
+
+Complete as many items as you can. If you run into trouble completing an item, add comments to your code or in the notebook describing where you are running into problems, and what you think the next step might be to solving the problem you're having.
+
+Complete as many items as you can and then push your work to the appropriate repository on Github.
+
+## Lab Evaluation
+
+In evaluating your lab submission, we'll be paying attention to the following:
+
+1. Your code and the way in which you're approaching problem solving.
+
+2. Your written analysis of how you are approaching problem solving in the lab.
+
+3. Your written analysis and interpretation of the lab materials.
+
+
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class. It is okay to touch base with others as you work through the lab, however, please indicate where you are running into challenges with problem solving so we can factor this into our instruction.
+
+## References

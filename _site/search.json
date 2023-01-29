@@ -1832,5 +1832,54 @@
     "title": "Earning your Learner’s Permit",
     "section": "",
     "text": "In this lab session, you’ll do some initial work on “real world” data to earn your UP 570 Learner’s Permit. This session marks out transition from setting up some basic workflows to focusing on data analysis techniques and applications. This lab is designed to help us learn more about your familiarity and proficiency with basic data manipulation using common dplyr functions.\nYour goal is to use our lab session plus an additional 3-4 hours to work through lab prompts. Address the prompts if you can. If you can’t, provide written descriptions about what you’re trying to do, pointers about how you’ve tried to address the problems, and insights into where you’re getting stuck. To repeat, the overall goal isn’t to complete the lab, but rather to share your process and insights. This will help us to refine future labs and instructions based upon the collective knowledge and understanding of the class."
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html",
+    "href": "assignments/labs/03_permit.html",
+    "title": "Earning Your Learner’s Permit",
+    "section": "",
+    "text": "UP 570 assumes that you have a basic familiarity with core principles of data manipulation in R. As we move forward with our class, we will continue to add knowledge of new packages, tools, and data within R.\nThis R Learner’s Permit is designed to assess your knowledge of the core elements of the R language and software. The goal is to provide you and the instructional team with a better sense of your core knowledge of basic data manipulation that will form the basis for more advanced techniques we’ll learn over the course of the semester.\nDo not worry if some of the tasks remain challenging or if you are unable to complete them- a goal of the class is to continue adding complexity and opportunities to repeat tasks to reinforce your familiarity and comfort with their use."
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html#goals",
+    "href": "assignments/labs/03_permit.html#goals",
+    "title": "Earning Your Learner’s Permit",
+    "section": "Goals",
+    "text": "Goals\n\nGet your hands dirty with what is likely an unfamiliar source of “real world” data.\nLearn more about your familiarity with basic dplyr data manipulation strategies.\nLearn more about your familiarity with basic data visualization using ggplot2."
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html#core-concepts",
+    "href": "assignments/labs/03_permit.html#core-concepts",
+    "title": "Earning Your Learner’s Permit",
+    "section": "Core Concepts",
+    "text": "Core Concepts\n\nR and Rstudio\n\ndim()\nsummary()\ngroup_by()\nsummarise()\nleft_join\n\nLet’s get going…"
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html#github-lab-repository",
+    "href": "assignments/labs/03_permit.html#github-lab-repository",
+    "title": "Earning Your Learner’s Permit",
+    "section": "Github Lab Repository",
+    "text": "Github Lab Repository\nIf you have not already done so, follow this link to accept the lab Github Classroom assignment repository."
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html#instructions",
+    "href": "assignments/labs/03_permit.html#instructions",
+    "title": "Earning Your Learner’s Permit",
+    "section": "Instructions",
+    "text": "Instructions\nFollow the instructions contained within the GitHub lab repository. Most instructions ask you to add or fill in code chunks. Others ask you to provide a written interpretation in the notebook portion of the document.\nComplete as many items as you can. If you run into trouble completing an item, add comments to your code or in the notebook describing where you are running into problems, and what you think the next step might be to solving the problem you’re having.\nComplete as many items as you can and then push your work to the appropriate repository on Github."
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html#lab-evaluation",
+    "href": "assignments/labs/03_permit.html#lab-evaluation",
+    "title": "Earning Your Learner’s Permit",
+    "section": "Lab Evaluation",
+    "text": "Lab Evaluation\nIn evaluating your lab submission, we’ll be paying attention to the following:\n\nYour code and the way in which you’re approaching problem solving.\nYour written analysis of how you are approaching problem solving in the lab.\nYour written analysis and interpretation of the lab materials.\n\nAs you get into the lab, please feel welcome to ask us questions, and please share where you’re struggling with us and with others in the class. It is okay to touch base with others as you work through the lab, however, please indicate where you are running into challenges with problem solving so we can factor this into our instruction."
+  },
+  {
+    "objectID": "assignments/labs/03_permit.html#references",
+    "href": "assignments/labs/03_permit.html#references",
+    "title": "Earning Your Learner’s Permit",
+    "section": "References",
+    "text": "References"
   }
 ]
