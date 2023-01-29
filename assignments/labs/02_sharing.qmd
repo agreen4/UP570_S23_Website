@@ -231,7 +231,7 @@ You can then examine your published document at the URL that's generated for you
 In the future if you need to update the document, you can run the publish step again.
 :::
 
-## Publish using Github and Netlify
+## Publish using GitHub and Netlify
 
 Quarto Pub represents a really fast and easy option for creating and sharing Quarto documents. We'll also learn another more involved strategy which you may choose to employ. This involves pushing published code and HTML content that represents a publishable document or website to Github and then linking this repository to a web hosting service like Netlify which will then publish the site for you.
 

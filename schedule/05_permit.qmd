@@ -1,5 +1,5 @@
 ---
-title: "NAME"
+title: "Earning your Learner's Permit"
 sidebar: true
 toc: true
 page-layout: full
@@ -9,10 +9,20 @@ editor: visual
 
 ## Session Description
 
+In this lab session, you'll do some initial work on "real world" data to earn your UP 570 Learner's Permit. This session marks out transition from setting up some basic workflows to focusing on data analysis techniques and applications. This lab is designed to help us learn more about your familiarity and proficiency with basic data manipulation using common `dplyr` functions.
+
+Your goal is to use our lab session plus an additional 3-4 hours to work through lab prompts. Address the prompts if you can. If you can't, provide written descriptions about what you're trying to do, pointers about how you've tried to address the problems, and insights into where you're getting stuck. To repeat, the overall goal isn't to complete the lab, but rather to share your process and insights. This will help us to refine future labs and instructions based upon the collective knowledge and understanding of the class.
+
 ## Before Class
+
+1.  Take a look at these instructions.
+2.  Accept the lab repository, link to Github, and create a local version of the repository.
+3.  Come to class with any initial questions you have about the Learner's Permit of what you're being asked.
 
 ## Reflect
 
-## Slides
-
 ## Resources for Further Exploration
+
+New York City Code Violations [{{< fa link >}}](https://www.nyc.gov/site/buildings/safety/dob-violations.page)
+
+New York City PLUTO Data [{{< fa link >}}](https://www.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page)

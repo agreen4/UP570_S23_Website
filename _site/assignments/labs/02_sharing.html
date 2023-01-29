@@ -205,11 +205,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#communicating-with-github-from-rstudio." id="toc-communicating-with-github-from-rstudio." class="nav-link" data-scroll-target="#communicating-with-github-from-rstudio.">Communicating with GitHub from Rstudio.</a>
   <ul>
   <li><a href="#basic-workflows" id="toc-basic-workflows" class="nav-link" data-scroll-target="#basic-workflows">Basic Workflows</a></li>
-  <li><a href="#reviewing-common-operations" id="toc-reviewing-common-operations" class="nav-link" data-scroll-target="#reviewing-common-operations">Reviewing Common Operations</a></li>
-  <li><a href="#setting-up-a-local-repository-from-an-existing-github-repository" id="toc-setting-up-a-local-repository-from-an-existing-github-repository" class="nav-link" data-scroll-target="#setting-up-a-local-repository-from-an-existing-github-repository">Setting up a Local Repository from an Existing GitHub Repository</a></li>
+  <li><a href="#reviewing-common-operations" id="toc-reviewing-common-operations" class="nav-link" data-scroll-target="#reviewing-common-operations">Reviewing Common Operations</a>
+  <ul class="collapse">
+  <li><a href="#local-vs.-remote" id="toc-local-vs.-remote" class="nav-link" data-scroll-target="#local-vs.-remote">Local vs.&nbsp;Remote</a></li>
+  <li><a href="#push-vs.-pull" id="toc-push-vs.-pull" class="nav-link" data-scroll-target="#push-vs.-pull">Push vs.&nbsp;Pull</a></li>
+  <li><a href="#commit" id="toc-commit" class="nav-link" data-scroll-target="#commit">Commit</a></li>
+  </ul></li>
+  <li><a href="#common-operations" id="toc-common-operations" class="nav-link" data-scroll-target="#common-operations">Common Operations</a></li>
+  <li><a href="#workflow---setting-up-a-local-repository-from-an-existing-github-repository" id="toc-workflow---setting-up-a-local-repository-from-an-existing-github-repository" class="nav-link" data-scroll-target="#workflow---setting-up-a-local-repository-from-an-existing-github-repository">Workflow - Setting up a Local Repository from an Existing GitHub Repository</a></li>
   </ul></li>
   <li><a href="#publish-using-quarto-pub" id="toc-publish-using-quarto-pub" class="nav-link" data-scroll-target="#publish-using-quarto-pub">Publish using Quarto Pub</a></li>
-  <li><a href="#publish-using-github-and-netlify" id="toc-publish-using-github-and-netlify" class="nav-link" data-scroll-target="#publish-using-github-and-netlify">Publish using Github and Netlify</a></li>
+  <li><a href="#publish-using-github-and-netlify" id="toc-publish-using-github-and-netlify" class="nav-link" data-scroll-target="#publish-using-github-and-netlify">Publish using GitHub and Netlify</a>
+  <ul>
+  <li><a href="#what-is-netlify" id="toc-what-is-netlify" class="nav-link" data-scroll-target="#what-is-netlify">What is Netlify?</a></li>
+  </ul></li>
   <li><a href="#lab-evaluation" id="toc-lab-evaluation" class="nav-link" data-scroll-target="#lab-evaluation">Lab Evaluation</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -356,17 +365,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption class="figure-caption">Image by Allison Horst from https://allisonhorst.com</figcaption><p></p>
 </figure>
 </div>
+<section id="local-vs.-remote" class="level4">
+<h4 class="anchored" data-anchor-id="local-vs.-remote">Local vs.&nbsp;Remote</h4>
 <p><em>Local</em> vs <em>Remote</em>: Let’s start with the basic distinction between local and remote versions of our work. <em>Local</em> versions are contained on the hard drive of the computer we are working on. <em>Remote</em> versions are in the cloud, in this case, on GitHub’s servers. We will typically work on editing data locally, and will then <em>push</em> our modifications to be integrated into the remote version.</p>
+</section>
+<section id="push-vs.-pull" class="level4">
+<h4 class="anchored" data-anchor-id="push-vs.-pull">Push vs.&nbsp;Pull</h4>
 <p><em>Push</em> vs <em>Pull</em>: To understand this, it’s useful to think about what’s happening from the perspective of your local computer. We <em>pull</em> a version of the repository from the remote repository to our local computer. We <em>push</em> a version of the repository from our local computer to the remote repository.</p>
+</section>
+<section id="commit" class="level4">
+<h4 class="anchored" data-anchor-id="commit">Commit</h4>
 <p><em>Commit</em>: As we make changes to our local repository, GitHub is comparing these changes to the prior version of our repository. When we <em>commit</em> changes, we are essentially asking GitHub to create a markerpost that we could return to in the future. We even label our commits with a brief descriptive note so we can remember what that marker represents. Note that when you commit changes locally, they are not automatically <em>pushed</em> to your remote repository - you have to do that as an extra step. You can, for instance, make multiple local commits to a local repository and then push them to your remote repository.</p>
-<p>Commits help to keep us organized. While your commits do not have to be linear or follow any particular order within your data and analysis workflow, they can help you track contributions to what has been done. <img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/7a5f458a-3d63-4e46-8a09-c417e52587ea.png?h=488d2d9a4159f82cdf851a70182e52e6" class="img-fluid" alt="Image by Allison Horst from https://allisonhorst.com"></p>
+<p>Commits help to keep us organized. While your commits do not have to be linear or follow any particular order within your data and analysis workflow, they can help you track contributions to what has been done.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/7a5f458a-3d63-4e46-8a09-c417e52587ea.png?h=488d2d9a4159f82cdf851a70182e52e6" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Image by Allison Horst from https://allisonhorst.com</figcaption><p></p>
+</figure>
+</div>
 <p>Commits serve as failsafe points - we can always revert or rewind our code to where we made commits if we need to debug or if something goes wrong. <img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/78587c8b-fa99-4c94-bce2-026cf4e588b5.png?h=dbb1a78f096f524380f5f3eb70fa6d7b" class="img-fluid" alt="Image by Allison Horst from https://allisonhorst.com"></p>
 </section>
-<section id="setting-up-a-local-repository-from-an-existing-github-repository" class="level3">
-<h3 class="anchored" data-anchor-id="setting-up-a-local-repository-from-an-existing-github-repository">Setting up a Local Repository from an Existing GitHub Repository</h3>
+</section>
+<section id="common-operations" class="level3">
+<h3 class="anchored" data-anchor-id="common-operations">Common Operations</h3>
+<p>So how do we put these pieces together?</p>
+<ol type="1">
+<li><p>If we already have a remote repository with code or a file structure in it, we create a connection to that remote repository and create a local repository by pulling it from GitHub.</p></li>
+<li><p>We then make changes to the repository - this might be in RStudio, or we might add, move, or delete things manually.</p></li>
+<li><p>When we get to a point where we want to create a failsafe point in our code, we commit the changes we made (and add a plain text description of what our commit contains).</p></li>
+<li><p>We push our commit to our remote version where it will become to version of record (GitHub is tracking the changes we made, so if we need to revert to our previous commit, we could).</p></li>
+<li><p>Just to be safe, after we push our commits, we may want to pull from the remote server again just to confirm that the version on our local machine is up to date.</p></li>
+</ol>
+<p>From there, we can continue making changes until we are ready to make another commit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51566506-f87b-465b-934b-c0707b8636e0.jpeg?h=9047491d74cdcd6267bd3afcb52a4878" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Image by Allison Horst from https://allisonhorst.com</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="workflow---setting-up-a-local-repository-from-an-existing-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="workflow---setting-up-a-local-repository-from-an-existing-github-repository">Workflow - Setting up a Local Repository from an Existing GitHub Repository</h3>
 <p>For interaction with our labs (which are already generated repositories on GitHub), you’ll want to follow the instructions for “<a href="https://happygitwithr.com/existing-github-first.html#existing-github-first">Existing Project, GitHub First</a>” on the Happy with Git and GitHub for the useR site. The site presents multiple ways to do this. I suggest starting with <a href="https://happygitwithr.com/existing-github-first.html#rstudio-ide-1">16.2.2</a> where the instructions walk through using the RStudioIDE to connect to an existing remote GitHub repository.</p>
 <p>For all UP 570 labs and assignments, existing repositories are provided for you (when you click the lab URL to accept the repository, a user-specific version is created for you from a master copy stored on GitHub). You can then connect to this repository in RStudio, create a <em>local copy</em> on your computer, modify that local repository by making changes, adding data and writing, as well as proejct documentation. You can then <em>stage</em> the changes you’ve made, <em>commit</em> your changes locally, and <em>push</em> your changes to the remote repository on GitHub.</p>
-<p><em>MORE HERE</em></p>
 </section>
 </section>
 <section id="publish-using-quarto-pub" class="level2">
@@ -415,11 +456,17 @@ Terminal
 </div>
 </section>
 <section id="publish-using-github-and-netlify" class="level2">
-<h2 class="anchored" data-anchor-id="publish-using-github-and-netlify">Publish using Github and Netlify</h2>
+<h2 class="anchored" data-anchor-id="publish-using-github-and-netlify">Publish using GitHub and Netlify</h2>
 <p>Quarto Pub represents a really fast and easy option for creating and sharing Quarto documents. We’ll also learn another more involved strategy which you may choose to employ. This involves pushing published code and HTML content that represents a publishable document or website to Github and then linking this repository to a web hosting service like Netlify which will then publish the site for you.</p>
 <p>This strategy can be useful in that you end up with two deliverables - your code base and associated HTML files on GitHub and a website hosted by Netlify. Our course website - the very website you are reading right now - is published using this pipeline. The webpages are each a Quarto Markdown file. The files are pushed to a Github repository. Netlify links to this repository and when new updates are pushed to Github, Netlify “refreshes” the website, typically within a minute or less of the push being complete.</p>
-<p>If you simply want a quick and easy way to share your work, Quarto Pub may be completely sufficient. If you want more advanced web hosting options and configurability (like domain management), Netlify may be a more appropriate solution. We will learn both strategies, and you should take the time to become comfortable using either strategy.</p>
-<p><strong>MORE HERE</strong></p>
+<p>If you simply want a quick and easy way to share your work, Quarto Pub may be completely sufficient! If you want more advanced web hosting options and configurability (like domain management), Netlify may be a more appropriate solution. We will learn both strategies, and you should take the time to become comfortable using either strategy.</p>
+<section id="what-is-netlify" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-netlify">What is Netlify?</h3>
+<p><a href="https://netlify.app">Netlify</a> is a web development platform that automates the building a serving of websites. While certain aspects of the Netlify platform are monetized, the types of basic elements which we can use to create and serve a website are available for free.</p>
+<p>When we grant Netlify access to a GitHub repository, it looks for files that can be rendered as html and then serves those at a unique URL. When we commit and push updates to that repository, Netlify updates the files that are being served to the internet.</p>
+<p>Quarto Markdown can produce outputs in a variety of formats including html. Netlify is built around looking for html files in our GitHub repository. Typically, when we render Quarto Markdown as HTML locally, it will create a _site file in our root folder. That folder has all of the content that we want Netlify to serve on the internet.</p>
+<p>With these things in mind, let’s try getting our lab files on Netlify!</p>
+</section>
 </section>
 <section id="lab-evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="lab-evaluation">Lab Evaluation</h2>
@@ -764,98 +811,127 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="al">![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/efae32ce-863f-4773-852c-4335e3ce4709_rw_3840.png?h=c54a2e5af240ec6e1332e2dcacbd7f33)</span>{fig-alt="Cartoon showing paths between local and remote git repositories."}</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>*Local* vs *Remote*: Let's start with the basic distinction between local and remote versions of our work. *Local* versions are contained on the hard drive of the computer we are working on. *Remote* versions are in the cloud, in this case, on GitHub's servers. We will typically work on editing data locally, and will then *push* our modifications to be integrated into the remote version.</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Local vs. Remote</span></span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>*Push* vs *Pull*: To understand this, it's useful to think about what's happening from the perspective of your local computer. We *pull* a version of the repository from the remote repository to our local computer. We *push* a version of the repository from our local computer to the remote repository.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>*Local* vs *Remote*: Let's start with the basic distinction between local and remote versions of our work. *Local* versions are contained on the hard drive of the computer we are working on. *Remote* versions are in the cloud, in this case, on GitHub's servers. We will typically work on editing data locally, and will then *push* our modifications to be integrated into the remote version.</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>*Commit*: As we make changes to our local repository, GitHub is comparing these changes to the prior version of our repository. When we *commit* changes, we are essentially asking GitHub to create a markerpost that we could return to in the future. We even label our commits with a brief descriptive note so we can remember what that marker represents. Note that when you commit changes locally, they are not automatically *pushed* to your remote repository - you have to do that as an extra step. You can, for instance, make multiple local commits to a local repository and then push them to your remote repository.</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Push vs. Pull</span></span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>Commits help to keep us organized. While your commits do not have to be linear or follow any particular order within your data and analysis workflow, they can help you track contributions to what has been done.</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="al">![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/7a5f458a-3d63-4e46-8a09-c417e52587ea.png?h=488d2d9a4159f82cdf851a70182e52e6)</span></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>Commits serve as failsafe points - we can always revert or rewind our code to where we made commits if we need to debug or if something goes wrong.</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="al">![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/78587c8b-fa99-4c94-bce2-026cf4e588b5.png?h=dbb1a78f096f524380f5f3eb70fa6d7b)</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>*Push* vs *Pull*: To understand this, it's useful to think about what's happening from the perspective of your local computer. We *pull* a version of the repository from the remote repository to our local computer. We *push* a version of the repository from our local computer to the remote repository.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Commit</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>*Commit*: As we make changes to our local repository, GitHub is comparing these changes to the prior version of our repository. When we *commit* changes, we are essentially asking GitHub to create a markerpost that we could return to in the future. We even label our commits with a brief descriptive note so we can remember what that marker represents. Note that when you commit changes locally, they are not automatically *pushed* to your remote repository - you have to do that as an extra step. You can, for instance, make multiple local commits to a local repository and then push them to your remote repository.</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting up a Local Repository from an Existing GitHub Repository</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Commits help to keep us organized. While your commits do not have to be linear or follow any particular order within your data and analysis workflow, they can help you track contributions to what has been done.</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>For interaction with our labs (which are already generated repositories on GitHub), you'll want to follow the instructions for "<span class="co">[</span><span class="ot">Existing Project, GitHub First</span><span class="co">](https://happygitwithr.com/existing-github-first.html#existing-github-first)</span>"</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a> on the Happy with Git and GitHub for the useR site. The site presents multiple ways to do this. I suggest starting with <span class="co">[</span><span class="ot">16.2.2</span><span class="co">](https://happygitwithr.com/existing-github-first.html#rstudio-ide-1)</span> where the instructions walk through using the RStudioIDE to connect to an existing remote GitHub repository. </span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>For all UP 570 labs and assignments, existing repositories are provided for you (when you click the lab URL to accept the repository, a user-specific version is created for you from a master copy stored on GitHub). You can then connect to this repository in RStudio, create a *local copy* on your computer, modify that local repository by making changes, adding data and writing, as well as proejct documentation. You can then *stage* the changes you've made, *commit* your changes locally, and *push* your changes to the remote repository on GitHub.</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="al">![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/7a5f458a-3d63-4e46-8a09-c417e52587ea.png?h=488d2d9a4159f82cdf851a70182e52e6)</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Commits serve as failsafe points - we can always revert or rewind our code to where we made commits if we need to debug or if something goes wrong.</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="al">![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/78587c8b-fa99-4c94-bce2-026cf4e588b5.png?h=dbb1a78f096f524380f5f3eb70fa6d7b)</span></span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>*MORE HERE*</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="fu">### Common Operations</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>So how do we put these pieces together?</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publish using Quarto Pub</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>If we already have a remote repository with code or a file structure in it, we create a connection to that remote repository and create a local repository by pulling it from GitHub.</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Quarto Pub</span><span class="co">](https://quartopub.com)</span> is a free service that allows you to quickly publish Quarto documents. Quarto Pub represents one of the easiest ways to publish documents.</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>We then make changes to the repository - this might be in RStudio, or we might add, move, or delete things manually.</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Create Account</span></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>In order to use Quarto Pub, you'll need to create an account. Visit <span class="ot">&lt;https://quartopub.com&gt;</span> and create an account. I chose to use my GitHub username, but you can create an account with any name you wish (please keep in mind that the account name will become part of the URL which others will see).</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_sharing/01_quartopub.png)</span>{width="80%"}</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Preview</span></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>It's a good idea to preview your document before publishing it to see how it will look in a web browser. Render your document so that you can see what the final document will look like online.</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Publish</span></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>While we are using Quarto within RStudio, Quarto can also be run at the command line to render a range of document types. We will briefly use the command line in order to publish out document to Quarto Pub.</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>When we get to a point where we want to create a failsafe point in our code, we commit the changes we made (and add a plain text description of what our commit contains).</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>We push our commit to our remote version where it will become to version of record (GitHub is tracking the changes we made, so if we need to revert to our previous commit, we could).</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Just to be safe, after we push our commits, we may want to pull from the remote server again just to confirm that the version on our local machine is up to date.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>From there, we can continue making changes until we are ready to make another commit.</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="al">![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51566506-f87b-465b-934b-c0707b8636e0.jpeg?h=9047491d74cdcd6267bd3afcb52a4878)</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="fu">### Workflow - Setting up a Local Repository from an Existing GitHub Repository</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>For interaction with our labs (which are already generated repositories on GitHub), you'll want to follow the instructions for "<span class="co">[</span><span class="ot">Existing Project, GitHub First</span><span class="co">](https://happygitwithr.com/existing-github-first.html#existing-github-first)</span>"</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a> on the Happy with Git and GitHub for the useR site. The site presents multiple ways to do this. I suggest starting with <span class="co">[</span><span class="ot">16.2.2</span><span class="co">](https://happygitwithr.com/existing-github-first.html#rstudio-ide-1)</span> where the instructions walk through using the RStudioIDE to connect to an existing remote GitHub repository. </span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>In your RStudio session, click on the terminal tab and type:</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>For all UP 570 labs and assignments, existing repositories are provided for you (when you click the lab URL to accept the repository, a user-specific version is created for you from a master copy stored on GitHub). You can then connect to this repository in RStudio, create a *local copy* on your computer, modify that local repository by making changes, adding data and writing, as well as proejct documentation. You can then *stage* the changes you've made, *commit* your changes locally, and *push* your changes to the remote repository on GitHub.</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false"}</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Terminal</span></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="in">`quarto publish quarto-pub`</span></span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>Put in plain language we are asking Quarto <span class="in">`quarto`</span> to publish our document <span class="in">`publish`</span> via Quarto Pub <span class="in">`quarto-pub`</span>.</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_sharing/02_quarto_publish.png)</span>{width="80%"}</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Options</span></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>You may be prompted to log in to your Quarto Pub account on the internet before proceeding. Depeding upon the name of your document, you may also need to provide a shorter name (you will be prompted in the terminal window if that is the case). Quarto will then publish the document and will open a window that takes you to your published document.</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_sharing/03_rename.png)</span>{width="80%"}</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Finished!</span></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>You can then examine your published document at the URL that's generated for you. For example: <span class="ot">&lt;https://agreen4.quarto.pub/cca/&gt;</span></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;iframe</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://agreen4.quarto.pub/cca/"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"100%"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/iframe&gt;</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publish using Quarto Pub</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Quarto Pub</span><span class="co">](https://quartopub.com)</span> is a free service that allows you to quickly publish Quarto documents. Quarto Pub represents one of the easiest ways to publish documents.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Create Account</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>In order to use Quarto Pub, you'll need to create an account. Visit <span class="ot">&lt;https://quartopub.com&gt;</span> and create an account. I chose to use my GitHub username, but you can create an account with any name you wish (please keep in mind that the account name will become part of the URL which others will see).</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_sharing/01_quartopub.png)</span>{width="80%"}</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Preview</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>It's a good idea to preview your document before publishing it to see how it will look in a web browser. Render your document so that you can see what the final document will look like online.</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Publish</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>While we are using Quarto within RStudio, Quarto can also be run at the command line to render a range of document types. We will briefly use the command line in order to publish out document to Quarto Pub.</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>In your RStudio session, click on the terminal tab and type:</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false"}</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Terminal</span></span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>In the future if you need to update the document, you can run the publish step again.</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="in">`quarto publish quarto-pub`</span></span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publish using Github and Netlify</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>Put in plain language we are asking Quarto <span class="in">`quarto`</span> to publish our document <span class="in">`publish`</span> via Quarto Pub <span class="in">`quarto-pub`</span>.</span>
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>Quarto Pub represents a really fast and easy option for creating and sharing Quarto documents. We'll also learn another more involved strategy which you may choose to employ. This involves pushing published code and HTML content that represents a publishable document or website to Github and then linking this repository to a web hosting service like Netlify which will then publish the site for you.</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_sharing/02_quarto_publish.png)</span>{width="80%"}</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>This strategy can be useful in that you end up with two deliverables - your code base and associated HTML files on GitHub and a website hosted by Netlify. Our course website - the very website you are reading right now - is published using this pipeline. The webpages are each a Quarto Markdown file. The files are pushed to a Github repository. Netlify links to this repository and when new updates are pushed to Github, Netlify "refreshes" the website, typically within a minute or less of the push being complete.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Options</span></span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>If you simply want a quick and easy way to share your work, Quarto Pub may be completely sufficient. If you want more advanced web hosting options and configurability (like domain management), Netlify may be a more appropriate solution. We will learn both strategies, and you should take the time to become comfortable using either strategy.</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>You may be prompted to log in to your Quarto Pub account on the internet before proceeding. Depeding upon the name of your document, you may also need to provide a shorter name (you will be prompted in the terminal window if that is the case). Quarto will then publish the document and will open a window that takes you to your published document.</span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>**MORE HERE**</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_sharing/03_rename.png)</span>{width="80%"}</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lab Evaluation</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Finished!</span></span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>In evaluating your lab submission, we'll be paying attention to the following:</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>You can then examine your published document at the URL that's generated for you. For example: <span class="ot">&lt;https://agreen4.quarto.pub/cca/&gt;</span></span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Successfully create and publish a quarto page via Quarto Pub.</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;iframe</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://agreen4.quarto.pub/cca/"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"100%"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Successfully create a publish a quarto page based upon your first lab assignment via GitHub and Netlify.</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/iframe&gt;</span></span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>In the future if you need to update the document, you can run the publish step again.</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publish using GitHub and Netlify</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>Quarto Pub represents a really fast and easy option for creating and sharing Quarto documents. We'll also learn another more involved strategy which you may choose to employ. This involves pushing published code and HTML content that represents a publishable document or website to Github and then linking this repository to a web hosting service like Netlify which will then publish the site for you.</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>This strategy can be useful in that you end up with two deliverables - your code base and associated HTML files on GitHub and a website hosted by Netlify. Our course website - the very website you are reading right now - is published using this pipeline. The webpages are each a Quarto Markdown file. The files are pushed to a Github repository. Netlify links to this repository and when new updates are pushed to Github, Netlify "refreshes" the website, typically within a minute or less of the push being complete.</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>If you simply want a quick and easy way to share your work, Quarto Pub may be completely sufficient! If you want more advanced web hosting options and configurability (like domain management), Netlify may be a more appropriate solution. We will learn both strategies, and you should take the time to become comfortable using either strategy.</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="fu">### What is Netlify?</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Netlify</span><span class="co">](https://netlify.app)</span> is a web development platform that automates the building a serving of websites. While certain aspects of the Netlify platform are monetized, the types of basic elements which we can use to create and serve a website are available for free. </span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>When we grant Netlify access to a GitHub repository, it looks for files that can be rendered as html and then serves those at a unique URL. When we commit and push updates to that repository, Netlify updates the files that are being served to the internet.</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>Quarto Markdown can produce outputs in a variety of formats including html. Netlify is built around looking for html files in our GitHub repository. Typically, when we render Quarto Markdown as HTML locally, it will create a _site file in our root folder. That folder has all of the content that we want Netlify to serve on the internet.</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>With these things in mind, let's try getting our lab files on Netlify!</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lab Evaluation</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>In evaluating your lab submission, we'll be paying attention to the following:</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Successfully create and publish a quarto page via Quarto Pub.</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Successfully create a publish a quarto page based upon your first lab assignment via GitHub and Netlify.</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
