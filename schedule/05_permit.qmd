@@ -16,10 +16,16 @@ Your goal is to use our lab session plus an additional 3-4 hours to work through
 ## Before Class
 
 1.  Take a look at these instructions.
-2.  Accept the lab repository, link to Github, and create a local version of the repository.
+2.  [Accept the lab repository](https://classroom.github.com/a/vnAmHOqZ), link to Github, and create a local version of the repository.
 3.  Come to class with any initial questions you have about the Learner's Permit of what you're being asked.
 
 ## Reflect
+
+1. How do you typically approach exploring unfamiliar data? What types of questions help you find a direction?
+
+2. What kinds of stories might data on code violations help us tell?
+
+3. What types of information are missing from these datasets? What questions come up as you complete your labs?
 
 ## Resources for Further Exploration
 
