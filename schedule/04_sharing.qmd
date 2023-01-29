@@ -13,13 +13,23 @@ This session builds upon the work on your last lab. In that lab, you worked on d
 
 ## Before Class
 
-1. Be prepared to access the formatted Quarto notebook you worked on in the last lab that contains your analysis of Chicago community areas.
+1. Read through the entire [lab background description](../assignments/labs/02_sharing.qmd) before approaching lab tasks.
 
-2. Be prepared to access your Lab 1 reflection.
+2. Be prepared to access the formatted Quarto notebook you worked on in the last lab that contains your analysis of Chicago community areas.
+
+3. Be prepared to access your Lab 1 reflection.
+
+D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 3 [{{< fa file >}}](https://uofi.box.com/s/4p66af2stm2pd2veikjps3xjvqorinmt), Chapter 4 [{{< fa file >}}](https://uofi.box.com/s/eycxovs3yyi6qlauvzldesimg7d1zzjg)
 
 ## Reflect
 
-D'Ignazio, Catherine, and Lauren F. Klein. (2020). *Data Feminism*. MIT Press. Chapter 3 [{{< fa file >}}](https://uofi.box.com/s/4p66af2stm2pd2veikjps3xjvqorinmt), Chapter 4 [{{< fa file >}}](https://uofi.box.com/s/eycxovs3yyi6qlauvzldesimg7d1zzjg)
+1. How can planners and others engaging directly in public policy discourse and debate leverage emotion in their analysis in ways that generate meaning and connection without manipulating or leading towards particular conclusions?
+
+2. What does the rhetorics of design look like today? How do we reclaim the rhetorical roots of data analysis amidst the proliferation of technocal approaches and (overly) abundant data?
+
+3. Is there such thing a "neutral" data analysis?
+
+4. Can you think of classification systems that may have unintended consequences or biases in data that you've used for urban analysis in the past?
 
 ## Slides
 
