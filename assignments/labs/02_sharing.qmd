@@ -155,22 +155,21 @@ Commits help to keep us organized. While your commits do not have to be linear o
 
 ![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/7a5f458a-3d63-4e46-8a09-c417e52587ea.png?h=488d2d9a4159f82cdf851a70182e52e6)
 
-Commits serve as failsafe points - we can always revert or rewind our code to where we made commits if we need to debug or if something goes wrong.
-![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/78587c8b-fa99-4c94-bce2-026cf4e588b5.png?h=dbb1a78f096f524380f5f3eb70fa6d7b)
+Commits serve as failsafe points - we can always revert or rewind our code to where we made commits if we need to debug or if something goes wrong. ![Image by Allison Horst from https://allisonhorst.com](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/78587c8b-fa99-4c94-bce2-026cf4e588b5.png?h=dbb1a78f096f524380f5f3eb70fa6d7b)
 
 ### Common Operations
 
 So how do we put these pieces together?
 
-1. If we already have a remote repository with code or a file structure in it, we create a connection to that remote repository and create a local repository by pulling it from GitHub.
+1.  If we already have a remote repository with code or a file structure in it, we create a connection to that remote repository and create a local repository by pulling it from GitHub.
 
-2. We then make changes to the repository - this might be in RStudio, or we might add, move, or delete things manually.
+2.  We then make changes to the repository - this might be in RStudio, or we might add, move, or delete things manually.
 
-3. When we get to a point where we want to create a failsafe point in our code, we commit the changes we made (and add a plain text description of what our commit contains).
+3.  When we get to a point where we want to create a failsafe point in our code, we commit the changes we made (and add a plain text description of what our commit contains).
 
-4. We push our commit to our remote version where it will become to version of record (GitHub is tracking the changes we made, so if we need to revert to our previous commit, we could).
+4.  We push our commit to our remote version where it will become to version of record (GitHub is tracking the changes we made, so if we need to revert to our previous commit, we could).
 
-5. Just to be safe, after we push our commits, we may want to pull from the remote server again just to confirm that the version on our local machine is up to date.
+5.  Just to be safe, after we push our commits, we may want to pull from the remote server again just to confirm that the version on our local machine is up to date.
 
 From there, we can continue making changes until we are ready to make another commit.
 
@@ -178,8 +177,7 @@ From there, we can continue making changes until we are ready to make another co
 
 ### Workflow - Setting up a Local Repository from an Existing GitHub Repository
 
-For interaction with our labs (which are already generated repositories on GitHub), you'll want to follow the instructions for "[Existing Project, GitHub First](https://happygitwithr.com/existing-github-first.html#existing-github-first)"
- on the Happy with Git and GitHub for the useR site. The site presents multiple ways to do this. I suggest starting with [16.2.2](https://happygitwithr.com/existing-github-first.html#rstudio-ide-1) where the instructions walk through using the RStudioIDE to connect to an existing remote GitHub repository. 
+For interaction with our labs (which are already generated repositories on GitHub), you'll want to follow the instructions for "[Existing Project, GitHub First](https://happygitwithr.com/existing-github-first.html#existing-github-first)" on the Happy with Git and GitHub for the useR site. The site presents multiple ways to do this. I suggest starting with [16.2.2](https://happygitwithr.com/existing-github-first.html#rstudio-ide-1) where the instructions walk through using the RStudioIDE to connect to an existing remote GitHub repository.
 
 For all UP 570 labs and assignments, existing repositories are provided for you (when you click the lab URL to accept the repository, a user-specific version is created for you from a master copy stored on GitHub). You can then connect to this repository in RStudio, create a *local copy* on your computer, modify that local repository by making changes, adding data and writing, as well as proejct documentation. You can then *stage* the changes you've made, *commit* your changes locally, and *push* your changes to the remote repository on GitHub.
 
@@ -241,13 +239,54 @@ If you simply want a quick and easy way to share your work, Quarto Pub may be co
 
 ### What is Netlify?
 
-[Netlify](https://netlify.app) is a web development platform that automates the building a serving of websites. While certain aspects of the Netlify platform are monetized, the types of basic elements which we can use to create and serve a website are available for free. 
+[Netlify](https://netlify.app) is a web development platform that automates the building a serving of websites. While certain aspects of the Netlify platform are monetized, the types of basic elements which we can use to create and serve a website are available for free.
 
 When we grant Netlify access to a GitHub repository, it looks for files that can be rendered as html and then serves those at a unique URL. When we commit and push updates to that repository, Netlify updates the files that are being served to the internet.
 
-Quarto Markdown can produce outputs in a variety of formats including html. Netlify is built around looking for html files in our GitHub repository. Typically, when we render Quarto Markdown as HTML locally, it will create a _site file in our root folder. That folder has all of the content that we want Netlify to serve on the internet.
+Quarto Markdown can produce outputs in a variety of formats including html. Netlify is built around looking for html files in our GitHub repository. Typically, when we render Quarto Markdown as HTML locally, it will create a \_site file in our root folder. That folder has all of the content that we want Netlify to serve on the internet.
 
 With these things in mind, let's try getting our lab files on Netlify!
+
+## Setting Up our Project
+
+We have to make two tweaks to our project in order to get them to work properly with Netlify.
+
+### Add a \_quarto.yml file
+
+All Quarto websites require a special YAML file to tell them how to render. In a text editor of your choice, create a new file called \_quarto.yml and save it in the project root directory.
+
+Inside the \_quarto.yml file, include the following:
+
+    project:
+      type: website
+
+Now when you render your project, it should include a folder called "_site" which contains a self-contained version of the elements of your document. You can explore the many other options to style your site [here](https://quarto.org/docs/websites/#config-file).
+
+### Rename our document index.qmd
+
+Every website needs a homepage. By default, the name of this page is "index.html". Netlify will always start serving from this page. Rename your Quarto document "index.qmd" and then render this to produce the associated html files.
+
+### Push to Github
+
+Push your entire repository including the _site folder to Github.
+
+### Open Netlify
+
+Navigate to Netlify's website. If you haven't already done so, create a new account (you can log in and link this directly to your existing GitHub account).
+
+Once you have an account, navigate to Sites and click "New Site".
+
+Netlify will ask you if you want to create a site from an existing GitHub repository, which you do! Navigate to the repository that contains the lab files and _site folder you want to serve and select this repository.
+
+:::{.callout-important}
+There's one setting we need to modify in order to get this to work properly! Under Build settings, there's a blank area called Publish directory. In this box, you need to point Netlify to _site as your specified publish directory - this is where Netlify will look for updated files to publish.
+:::
+
+After you do this, click ok. Netlify will build your site (this may take a few minutes) and share a url with you. When you click on it, you should see a live version of your website.
+
+### Notes
+
+This approach is a little more complex, but it does offer you a lot of flexibility to create sites for production. You will likely want to start off using Quarto pub, but as you progress in the complexity of your analysis, you may want to spend more time experienting with Netlify as a web deployment platform.
 
 ## Lab Evaluation
 
