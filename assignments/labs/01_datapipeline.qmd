@@ -20,6 +20,8 @@ editor: visual
 
 ## Introduction
 
+Render on save test!\
+
 In this lab, we'll explore some of the basic workflows which we'll use over the course of the semester to package and share analysis. A primary principle of our class is that our analysis be *reproducible* by others - this is an important prnciple both for supporting the *validity* of our arguments, and also *accountability* to those neighborhoods and communities we are analyzing and to the broader audience who may use our work in their deliberation or who might adapt our workflows to address similar questions in their areas of focus.
 
 Our class will focus on developing data analysis and sharing pipelines that make use of R and RStudio's core functions. We'll gain familiarity with RStudio's Quarto format which allows for the integration of plain text, code, and code output in the same documents and which is focused on easily translating text and code into multiple output formats. We'll also become more familiar with Github, which we'll use as a tool to share code and analysis.
