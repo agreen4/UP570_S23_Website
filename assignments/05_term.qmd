@@ -43,7 +43,7 @@ The actual structure of your report is up to you, and will likely vary depending
 
 ## Submission Instructions
 
-Upload your final project document and associated files to the appropriate folder in your class GitHub repository.
+Follow [this link](https://classroom.github.com/a/WmummQSM) to accept the lab Github Classroom assignment repository. Save your memorandum as a Quarto markdown document and upload along with your post-assignment reflection to GitHub.
 
 ### Assignment Reflection
 

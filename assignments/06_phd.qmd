@@ -19,7 +19,7 @@ Prepare a 3-4 page paper proposal that describes the research question, rational
 
 **Due Date:** February 3
 
-Paper Proposal Repository [{{< fa arrow-up-right-from-square >}}]()
+Paper Proposal Repository [{{< fa arrow-up-right-from-square >}}](https://classroom.github.com/a/p021nyCl)
 
 ### Paper Outline
 
@@ -27,7 +27,7 @@ Prepare an annotated paper outline that fleshes out the structure of your paper 
 
 **Due Date:** March 3
 
-Paper Outline Repository [{{< fa arrow-up-right-from-square >}}]()
+Paper Outline Repository [{{< fa arrow-up-right-from-square >}}](https://classroom.github.com/a/fzEcUS-s)
 
 ### Paper Draft
 
@@ -35,7 +35,7 @@ Prepare a complete first draft of your paper that includes an introduction, lite
 
 **Due Date:** April 14
 
-Paper Draft Repository [{{< fa arrow-up-right-from-square >}}]()
+Paper Draft Repository [{{< fa arrow-up-right-from-square >}}](https://classroom.github.com/a/nk4OCp01)
 
 ### Final Paper
 
@@ -43,7 +43,7 @@ Prepare a polished draft of your paper incorporating feedback from your previous
 
 **Due Date:** May 10
 
-Final Paper Repository [{{< fa arrow-up-right-from-square >}}]()
+Final Paper Repository [{{< fa arrow-up-right-from-square >}}](https://classroom.github.com/a/CboxpJbK)
 
 ## Submission Instructions
 

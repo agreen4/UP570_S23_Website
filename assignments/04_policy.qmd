@@ -29,7 +29,7 @@ In your prior memorandums you developed a preliminary narrative around your plac
 
 ## Submission Instructions
 
-Save your memorandum as a Quarto markdown document and upload to the appropriate folder in your class GitHub repository.
+Follow [this link](https://classroom.github.com/a/bk5EAieS) to accept the lab Github Classroom assignment repository. Save your memorandum as a Quarto markdown document and upload along with your post-assignment reflection to GitHub.
 
 ### Assignment Reflection
 
