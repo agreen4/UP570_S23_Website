@@ -9,10 +9,16 @@ editor: visual
 
 ## Session Description
 
+Today's lab session focuses on the basic description of places. In your prior labs, you have developed basic workflows for communicating using principles of reproducible data analysis. Today's lab asks you to apply those skills to basic description of place characteristics.
+
+To add depth to our example, we will explore not only basic place descriptions, but will also think about how these descriptions might change in relation to an applied policy problem.
+
 ## Before Class
 
-## Reflect
+Accept the [GitHub Classroom invitation](https://classroom.github.com/a/f9phgn1X) to our lab repository and use RStudio to pull the repository to your local computer.
 
-## Slides
+Read our lab background so you are prepared to start working through the lab repository notebook.
+
+## Reflect
 
 ## Resources for Further Exploration
