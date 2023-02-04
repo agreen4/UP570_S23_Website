@@ -9,7 +9,9 @@ editor: visual
 
 ## Session Description
 
-In this session, we'll spend time talking about how to describe places, as well as some frameworks for making place comparisons.
+In this session, we'll spend time talking about how to describe places, as well as some frameworks for making place comparisons. We will think about how the types of stories we tell about places connect with typical arguments and tropes which guide place description and analysis within urban planning and policy settings.
+
+In addition to our discussion of places, we'll debrief your two labs from last week and introduce this week's lab.
 
 ## Before Class
 
@@ -21,7 +23,22 @@ Lynch, Kevin. (1960). *The Image of the City*. Chapter 3 [{{< fa file >}}](https
 
 -   We intuitively tell lots of stories about places. What are some of the most evocative tropes you can think of that could apply to places? What makes for a good story about place?
 -   What are some of the benefits and challenges of making place comparisons? How does this feel from the perspective of an analyst? What dangers or challenges does the analyst face when telling comparative stories to others?
+-   Your readings from *Data Feminism* discuss embracing pluralism in data storytelling. What might this look like in the context of describing systems of neighborhoods?
 
 ## Slides
 
 ## Resources for Further Exploration
+
+Anti-Eviction Mapping Project [{{< fa link >}}](https://antievictionmap.com)
+
+Eviction Lab Methodology [{{< fa link >}}](https://evictionlab.org/eviction-tracking/methods/)
+
+Bloomberg: What's Really Warming the World [{{< fa link >}}](https://www.bloomberg.com/graphics/2015-whats-warming-the-world/)
+
+Design Justice Project [{{< fa link >}}](https://www.media.mit.edu/projects/design-justice-auditing/overview/)
+
+Global Atlas of Environmental Justice [{{< fa link >}}](https://ejatlas.org)
+
+Five Thirty Eight: Kidnapping of Girls in Nigeria Is Part of a Worsening Problem [{{< fa link >}}](https://fivethirtyeight.com/features/nigeria-kidnapping/)
+
+Memorandum on Transparency and Open Government [{{< fa link >}}](https://www.archives.gov/files/cui/documents/2009-WH-memo-on-transparency-and-open-government.pdf)
