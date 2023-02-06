@@ -27,6 +27,10 @@ Lynch, Kevin. (1960). *The Image of the City*. Chapter 3 [{{< fa file >}}](https
 
 ## Slides
 
+```{=html}
+<iframe class="slide-deck" src="../slides/S6 Describing Places/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
+
 ## Resources for Further Exploration
 
 Anti-Eviction Mapping Project [{{< fa link >}}](https://antievictionmap.com)

@@ -1,0 +1,350 @@
+---
+title: "Describing Places"
+sidebar: false
+toc: true
+toc-depth: 4
+page-layout: full
+bibliography: ../references.bib
+csl: ../apa-6th-edition.csl
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+fig-responsive: true
+editor: visual
+---
+
+## Introduction
+
+In this lab, we'll learn some techniques for creating publication-quality summary tables while working to tell policy-relevant stories about places. 
+
+In addition to thinking about the basics of how we describe places, we will perform a basic policy analysis of the location of federal Opportunity Zones. This analysis will help illustrate how we can strategically build layers of stories. We'll add some basic information about all census tracts so that we can describe the differences between ineligible, eligible but not designated, and eligible and designated census tracts.
+
+## Goals
+
+-   Set up your computer so that RStudio can communicate with your Github account.
+
+## Core Concepts
+
+This lab asks you to practice some basic data manipulation and management skills using the dplyr package. 
+
+- Introduce several commonly used demographic indicators from the census 
+- Introduce how to join datasets together based upon a common field 
+- Introduce how to recode and classify data based upon one or more characteristics
+
+Let's get going...
+
+## Github Lab Repository
+
+If you have not already done so, follow [this link](https://classroom.github.com/a/f9phgn1X) to accept the lab Github Classroom assignment repository.
+
+## Principles of Tidy Data
+
+In the book [*R for Data Science*](https://r4ds.had.co.nz/tidy-data.html), Hadley Wickam describes three principles for tidy data:
+
+1. Each variable must have its own column
+2. Each observation must have its own row
+3. Each value must have its own cell
+
+![](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+Much of the data we work with in the context of basic planning and policy analysis applications already conforms to this format (or is easily transformed into this format). This makes packages like `tidyverse` particularly useful for the common types of data manipulation that we perform.
+
+While we'll occasionally use base r coding over the course of the semester, for the most part, we'll rely upon the `tidyverse` suite to help us. Let's explore some basic command syntax.
+
+### Load Example Data
+
+We're going to work with a dataset that describes those census tracts that were designated as [Opportunity Zones](https://www.irs.gov/credits-deductions/businesses/opportunity-zones) as part of the federal [Tax Cuts and Jobs Act](https://www.congress.gov/bill/115th-congress/house-bill/1). These incentives are designed to spur investment in low-income and undercapitalized cities, by providing investors with tax incentives to invest capital in these locations. 
+
+The specific dataset which we'll work with was developed by the Urban Institute, and adds to basic identification of designated census tracts some additional analysis of the characteristics of those places.
+
+### Loading Required Packages
+
+We're already learned how to use `install.packages()` and `library()` to (respectively) install and load packages that extend R and RStudio's functionality. As a reminder, `install.packages()` downloads the package from a central server and installs it on your computer. You only have to install a package once. Using `library()` loads that package for use in your current RStudio session. If you plan to use that package in a given analysis, you'll need to load it. To stay organized, you should load packages at the beginning of your script or markdown document. 
+
+:::{.aside}
+Note that to install the package, you need to treat the package name as a character vector `"tidyverse"`, but when you load it in your R session, it does not need to be treated as a character vector `tidyverse` because it is an object that R recognizes after it is installed.
+:::
+
+We are going to load the following packages:
+
+- `tidyverse` contains tools which we'll use to subset, filter, group, and summarize our data
+- `readxl` contains tools which will help us to read Excel files into R
+- `gt` contains tools for making nicely formatted tables.
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(readxl)
+library(gt)
+```
+
+The `read_xlsx()` command from the `readxl` package will read Microsoft Excel files into data tables. Let's start by loading the Urban Institute Opportunity Zone dataset:
+
+Let's read the Excel data and place it in an object called "ozs":
+```{r}
+ozs <- read_xlsx("04_describing/data/urbaninstitute_tractlevelozanalysis_update1242018.xlsx")
+```
+
+You can either do a Google search for [Readxl](https://readxl.tidyverse.org) to find documentation, or you can use R's built in documentation by typing `?readxl`
+
+As the documentation states, `readxl` imports excel files. Looking at the documentation, the `read_excel()` command will read a single excel sheet, or we can optionally select a sheet by name or number from an excel workbook with multiple sheets. In this case, the Urban Institute data is in a workbook with a single sheet, so we just need to tell R where the file is to load.
+
+### Describing Data
+
+One of the first steps that we should do when we load an unfamiliar dataset is to get to know it using some basic description commands.
+
+Let's use the `str()` command to analyze the dataset's structure:
+
+```{r}
+str(ozs)
+```
+We get a list where each row is a variable in the dataset. We also learn more about the format of the variable (e.g. character, numeric), the number of observations, and we see examples of the first few observations.
+
+Let's next use `summary()` to get a statistical summary of each variable:
+
+```{r}
+summary(ozs)
+```
+This gives us a statistical summary including distribution and central tendency statistics, as well as information on the number of values that are `NA`.
+
+A few things to note after your preliminary inspection:
+
+- These data are at the census tract level and include geographic identifiers including **geoid**, the combined, state-county-tract FIPS code, **state** the state name, and **county** the county name.
+- These data include a field named **Designated** which is 1 when an eligible tract was designated as an opportunity zone, and `NA` where the tract was not designated.
+- The dataset also includes some other tract-level demographic measures, as well as additional geographic flags (variables that take the value 0 or 1).
+
+## Query and Describe the Data
+
+The dataset we're looking at is for the entire United States. We can easily summarize characteristics of the entire dataset.
+
+## Recoding Values
+One of the characteristics tracked in the Urban Institute data is the median household income for each designated census tract. We might question whether there's a difference in the median household income for designated and not-designated but eligible census tracts. This may help us understand something about whether the most needy tracts were selected from those that are eligible. 
+
+How would we do this? Conceptually...
+
+- We need to split our data into designated and not designated census tracts, and then calculate the average of the median income separately for these tracts.
+- Before we do this, let's take care of one bit of housekeeping. The Urban Institute has coded the designated variable as either taking a value of 1 when designated or ```NA``` when not. Let's *recode* those NA values to equal 0 instead.
+- To recode, we need to select those values from the Designated column in the ozs data frame where the value is `NA` and overwrite them with a new value of 0.
+
+There's lots of ways we could do this:
+
+### Strategy 1 - Conditional Statement
+
+We could use a conditional statement `ifelse()` to specify that if a value is NA in the Designated column we change it to 0.
+
+```{r}
+ozs |> mutate(Designated = ifelse(is.na(Designated), 0, Designated))
+```
+In `dplyr` syntax, what we said here was *with reference to the ozs dataset* `ozs |>` let's alter the dataset `mutate()`. Let's alter the column named Designated `mutate(Designated = )`. Let's alter the column named Designated conditionally `mutate(Designated = ifelse())`. If the value of Designated is equal to `NA`, replace it with 0, otherwise keep the value present in the Designated observation `mutate(Designated = ifelse(is.na(Designated), 0, Designated))`.
+
+:::{.aside}
+Looking at this `ifelse()` statement, you might have been tempted to write something like `Designated == `NA`` which will not work. `is.na()` is the proper logical test to return whether a value is or is not `NA`.
+:::
+
+### Strategy 2: Use a Specialized Command
+
+We could use a specialized command such as `replace_na()` from the `tidyr` package to replace our `NA` values:
+
+```{r}
+ozs |> mutate(Designated = replace_na(Designated, 0))
+```
+Note that in `replace_na()` we are specifying the column we want to replace the NA value in as well as the value we want to replace NA with.
+
+### Strategy 3: Recode and Change Format
+
+Depending upon what we wanted to do with our Designated labels, we could simultaneously deal with recoding our NA values and relabeling the values for legibility. `case_when()` is useful for these more complex operations:
+
+```{r}
+ozs |> mutate(
+  Designated = case_when(
+    Designated == 1 ~"Designated",
+    is.na(Designated) ~"Not Designated"
+))
+```
+
+What's going on here? `case_when()` allows us to conditionally recode values. We specify the condition and then what to do when that condition is met. For instance, we specify the condition `Designated == 1` and then say when this condition is met, we want you to change that observation to Designated `~"Designated"`. We then say what to do if the value is `NA` - label it as "Not Designated".
+
+For the sake of legibility, let's use the third strategy on our dataset:
+
+```{r}
+ozs <- ozs |> mutate(
+  Designated = case_when(
+    Designated == 1 ~"Designated",
+    is.na(Designated) ~"Not Designated"
+))
+```
+
+And here's what our Designated column now looks like:
+
+```{r}
+#| echo: false
+
+ozs |> 
+  select(geoid, state, county, Designated) |> 
+  head() |> 
+  gt()
+```
+### Summarizing Data
+
+Now that we've recoded our designated column, let's do some description of the characteristics of designated and not designated places.
+
+Let's use a combination of `group_by()` and `summarise()` to produce a summary table showing the mean value for designated and not designated census tracts.
+
+```{r}
+ozs |> 
+  group_by(Designated) |> 
+  summarise(Income = mean(medhhincome2014_tract))
+```
+We getting a table back, but why did we get `NA` insted of numbers here? If you've ever used the average `mean()` command in R, you probably understand what's going on here. As a safety measure, when you average values, R will return NA if any value in that series is `NA`. If you're not expecting any `NA` values, this is good, becuase you'll quickly discover that there are unexpected `NA` values in your dataset. We might expect a few census tracts with missing income values coded as `NA`, so we will want to indicate `na.rm = TRUE` here so that R removes those NAs when calculating the mean.
+
+```{r}
+ozs |> 
+  group_by(Designated) |> 
+  summarise(Income = mean(medhhincome2014_tract, na.rm=TRUE))
+```
+Much better. We can see that that *on average*, the median household income for eligible designated census tracts is lower than that for eligible not designated census tracts. Since the Opportunity Zone legislation is designed to target distressed neighborhoods, this is a good sign that program targeting is focused on neighborhoods with greater need.
+
+We might want to add some additional information to our summary table. One useful piece of information would be the number of census tracts that are designated or not designated.
+
+```{r}
+ozs |> 
+  group_by(Designated) |> 
+  summarise(
+    Tracts = n(),
+    Income = mean(medhhincome2014_tract, na.rm=TRUE))
+```
+Within a `summarise()` statement, `n()` gives us a count of observations (rows) for each grouping. In this case, there are 8,762 census tracts designated as opportunity zones, and an additional 33,414 that were eligible based upon program criteria but not designated.
+
+We could easily add other summaries to our summary table for this dataset, or further modify.
+
+### Filtering Data
+
+Now that we have some sense for how we might produce basic summaries of our data, how can we query out (filter) observations by row? How, for instance, would you modify the above code to produce the same table for *counties* in *Illinois*?
+
+We can use a `filter()` statement to easily accomplish this. `filter()` allows us to specify one (or more) criteria for which we want to select rows from a larger dataset.
+
+Let's take a step back and filter our base dataset to focus on observations in Illinois.
+
+```{r}
+ozs |> filter(state == "Illinois")
+```
+Recall that the ozs dataset has 42,176 observations (rows). We filtered the data using the criteria that the value of state is equal to "Illinois", resulting in 1,659 observations (eligible census tracts in Illinois).
+
+From here, we can re-use our prior code to produce a summary table that is focused on Illinois.
+
+```{r}
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(Designated) |> 
+  summarise(
+    Tracts = n(),
+    Income = mean(medhhincome2014_tract, na.rm=TRUE))
+```
+Ok - but how do we summarise by county? We just need to add that as an additional grouping criteria in our `group_by()` statement:
+
+```{r}
+#| warning: false
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Tracts = n(),
+    Income = mean(medhhincome2014_tract, na.rm=TRUE))
+```
+We are basically saying, group by both county and designated and then summarize for each.
+
+With a few lines of code, we can produce very powerful and specific kinds of summaries for our data.
+
+### Pivoting Data
+
+Our summary is getting more nuanced. We've used `group_by()` and `summarise()` to sumamrise data based upon certain characteristics. We've summarized in such a way where for our Illinois counties, we have two observations for each county - one that summarises values for designated tracts in that county, and one that summarises values for not designated tracts.
+
+It might be useful for us to reshape our summary table so that there is one row for each county, with each row containing the summary value for both designated and not designated tracts.
+
+The two commands `pivot_wider()` and `pivot_longer()` are useful for reshaping our data. `pivot_wider()` essentially adds columns to a dataset by transitioning content from rows to columns. `pivot_longer()` does the opposite - it makes a dataset longer by transitioning columns to rows.
+
+In our case, let's use `pivot_wider()` to transition our Designated and Not Designated rows into columns.
+
+```{r}
+#| warning: false
+
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Tracts = n(),
+    Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income)
+```
+We start with our previous summary and pass two arguments to `pivot_wider()`. 
+
+We use `names_from` to specify the column in our dataset contining row values that we *want* to become new columns. In this case we'd expect that our Desginated column would result in the creation of two new columns - one where values are Designated and one where values are Not Designated.
+
+We use `values_from` to specify the column containing the values we want in our new columns, in this case, the average of tract income.
+
+One problem though - our tract count column is still present and these values are not reshaped. To simplify things, let's just get rid of this count so we can see what things look like:
+
+```{r}
+#| warning: false
+
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income)
+```
+Looking good! To make things a bit more informative, let's also show the difference in income between designated and not designated tracts:
+
+```{r}
+#| warning: false
+
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income) |> 
+  mutate(Difference = Designated - `Not Designated`)
+```
+One note here - in the last `mutate()` statement, you see that Not Designated has backticks around it. This is because there's a space between "Not" and "Designated" which will be treated as separate variable names. The backticks allow this to be referenced as a column. We could change the name to something like Not_Designated, but backticks will allow us to appropriately reference it as well.
+
+## Making Nice Tables
+
+```{r}
+
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income) |> 
+  mutate(Difference = Designated - `Not Designated`) |> 
+  gt()
+```
+```{r}
+
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income) |> 
+  mutate(Difference = Designated - `Not Designated`) |> 
+  ungroup() |> 
+  gt() |> 
+  fmt_currency(2:4, decimals = 0) |> 
+  cols_label(county = "County")
+  
+```
+
+
+
+
+## Lab Evaluation
+
+In evaluating your lab submission, we'll be paying attention to the following:
+
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
+
+## References
