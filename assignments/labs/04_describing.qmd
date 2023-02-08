@@ -20,7 +20,7 @@ editor: visual
 
 ## Introduction
 
-In this lab, we'll learn some techniques for creating publication-quality summary tables while working to tell policy-relevant stories about places. 
+In this lab, we'll learn some techniques for creating publication-quality summary tables while working to tell policy-relevant stories about places.
 
 In addition to thinking about the basics of how we describe places, we will perform a basic policy analysis of the location of federal Opportunity Zones. This analysis will help illustrate how we can strategically build layers of stories. We'll add some basic information about all census tracts so that we can describe the differences between ineligible, eligible but not designated, and eligible and designated census tracts.
 
@@ -30,11 +30,11 @@ In addition to thinking about the basics of how we describe places, we will perf
 
 ## Core Concepts
 
-This lab asks you to practice some basic data manipulation and management skills using the dplyr package. 
+This lab asks you to practice some basic data manipulation and management skills using the dplyr package.
 
-- Introduce several commonly used demographic indicators from the census 
-- Introduce how to join datasets together based upon a common field 
-- Introduce how to recode and classify data based upon one or more characteristics
+-   Introduce several commonly used demographic indicators from the census
+-   Introduce how to join datasets together based upon a common field
+-   Introduce how to recode and classify data based upon one or more characteristics
 
 Let's get going...
 
@@ -46,34 +46,33 @@ If you have not already done so, follow [this link](https://classroom.github.com
 
 In the book [*R for Data Science*](https://r4ds.had.co.nz/tidy-data.html), Hadley Wickam describes three principles for tidy data:
 
-1. Each variable must have its own column
-2. Each observation must have its own row
-3. Each value must have its own cell
+1.  Each variable must have its own column
+2.  Each observation must have its own row
+3.  Each value must have its own cell
 
-![](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
-Much of the data we work with in the context of basic planning and policy analysis applications already conforms to this format (or is easily transformed into this format). This makes packages like `tidyverse` particularly useful for the common types of data manipulation that we perform.
+![](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png) Much of the data we work with in the context of basic planning and policy analysis applications already conforms to this format (or is easily transformed into this format). This makes packages like `tidyverse` particularly useful for the common types of data manipulation that we perform.
 
 While we'll occasionally use base r coding over the course of the semester, for the most part, we'll rely upon the `tidyverse` suite to help us. Let's explore some basic command syntax.
 
 ### Load Example Data
 
-We're going to work with a dataset that describes those census tracts that were designated as [Opportunity Zones](https://www.irs.gov/credits-deductions/businesses/opportunity-zones) as part of the federal [Tax Cuts and Jobs Act](https://www.congress.gov/bill/115th-congress/house-bill/1). These incentives are designed to spur investment in low-income and undercapitalized cities, by providing investors with tax incentives to invest capital in these locations. 
+We're going to work with a dataset that describes those census tracts that were designated as [Opportunity Zones](https://www.irs.gov/credits-deductions/businesses/opportunity-zones) as part of the federal [Tax Cuts and Jobs Act](https://www.congress.gov/bill/115th-congress/house-bill/1). These incentives are designed to spur investment in low-income and undercapitalized cities, by providing investors with tax incentives to invest capital in these locations.
 
 The specific dataset which we'll work with was developed by the Urban Institute, and adds to basic identification of designated census tracts some additional analysis of the characteristics of those places.
 
 ### Loading Required Packages
 
-We're already learned how to use `install.packages()` and `library()` to (respectively) install and load packages that extend R and RStudio's functionality. As a reminder, `install.packages()` downloads the package from a central server and installs it on your computer. You only have to install a package once. Using `library()` loads that package for use in your current RStudio session. If you plan to use that package in a given analysis, you'll need to load it. To stay organized, you should load packages at the beginning of your script or markdown document. 
+We're already learned how to use `install.packages()` and `library()` to (respectively) install and load packages that extend R and RStudio's functionality. As a reminder, `install.packages()` downloads the package from a central server and installs it on your computer. You only have to install a package once. Using `library()` loads that package for use in your current RStudio session. If you plan to use that package in a given analysis, you'll need to load it. To stay organized, you should load packages at the beginning of your script or markdown document.
 
-:::{.aside}
+::: aside
 Note that to install the package, you need to treat the package name as a character vector `"tidyverse"`, but when you load it in your R session, it does not need to be treated as a character vector `tidyverse` because it is an object that R recognizes after it is installed.
 :::
 
 We are going to load the following packages:
 
-- `tidyverse` contains tools which we'll use to subset, filter, group, and summarize our data
-- `readxl` contains tools which will help us to read Excel files into R
-- `gt` contains tools for making nicely formatted tables.
+-   `tidyverse` contains tools which we'll use to subset, filter, group, and summarize our data
+-   `readxl` contains tools which will help us to read Excel files into R
+-   `gt` contains tools for making nicely formatted tables.
 
 ```{r}
 #| message: false
@@ -86,6 +85,7 @@ library(gt)
 The `read_xlsx()` command from the `readxl` package will read Microsoft Excel files into data tables. Let's start by loading the Urban Institute Opportunity Zone dataset:
 
 Let's read the Excel data and place it in an object called "ozs":
+
 ```{r}
 ozs <- read_xlsx("04_describing/data/urbaninstitute_tractlevelozanalysis_update1242018.xlsx")
 ```
@@ -103,6 +103,7 @@ Let's use the `str()` command to analyze the dataset's structure:
 ```{r}
 str(ozs)
 ```
+
 We get a list where each row is a variable in the dataset. We also learn more about the format of the variable (e.g. character, numeric), the number of observations, and we see examples of the first few observations.
 
 Let's next use `summary()` to get a statistical summary of each variable:
@@ -110,26 +111,28 @@ Let's next use `summary()` to get a statistical summary of each variable:
 ```{r}
 summary(ozs)
 ```
+
 This gives us a statistical summary including distribution and central tendency statistics, as well as information on the number of values that are `NA`.
 
 A few things to note after your preliminary inspection:
 
-- These data are at the census tract level and include geographic identifiers including **geoid**, the combined, state-county-tract FIPS code, **state** the state name, and **county** the county name.
-- These data include a field named **Designated** which is 1 when an eligible tract was designated as an opportunity zone, and `NA` where the tract was not designated.
-- The dataset also includes some other tract-level demographic measures, as well as additional geographic flags (variables that take the value 0 or 1).
+-   These data are at the census tract level and include geographic identifiers including **geoid**, the combined, state-county-tract FIPS code, **state** the state name, and **county** the county name.
+-   These data include a field named **Designated** which is 1 when an eligible tract was designated as an opportunity zone, and `NA` where the tract was not designated.
+-   The dataset also includes some other tract-level demographic measures, as well as additional geographic flags (variables that take the value 0 or 1).
 
 ## Query and Describe the Data
 
 The dataset we're looking at is for the entire United States. We can easily summarize characteristics of the entire dataset.
 
 ## Recoding Values
-One of the characteristics tracked in the Urban Institute data is the median household income for each designated census tract. We might question whether there's a difference in the median household income for designated and not-designated but eligible census tracts. This may help us understand something about whether the most needy tracts were selected from those that are eligible. 
+
+One of the characteristics tracked in the Urban Institute data is the median household income for each designated census tract. We might question whether there's a difference in the median household income for designated and not-designated but eligible census tracts. This may help us understand something about whether the most needy tracts were selected from those that are eligible.
 
 How would we do this? Conceptually...
 
-- We need to split our data into designated and not designated census tracts, and then calculate the average of the median income separately for these tracts.
-- Before we do this, let's take care of one bit of housekeeping. The Urban Institute has coded the designated variable as either taking a value of 1 when designated or ```NA``` when not. Let's *recode* those NA values to equal 0 instead.
-- To recode, we need to select those values from the Designated column in the ozs data frame where the value is `NA` and overwrite them with a new value of 0.
+-   We need to split our data into designated and not designated census tracts, and then calculate the average of the median income separately for these tracts.
+-   Before we do this, let's take care of one bit of housekeeping. The Urban Institute has coded the designated variable as either taking a value of 1 when designated or `NA` when not. Let's *recode* those NA values to equal 0 instead.
+-   To recode, we need to select those values from the Designated column in the ozs data frame where the value is `NA` and overwrite them with a new value of 0.
 
 There's lots of ways we could do this:
 
@@ -140,10 +143,11 @@ We could use a conditional statement `ifelse()` to specify that if a value is NA
 ```{r}
 ozs |> mutate(Designated = ifelse(is.na(Designated), 0, Designated))
 ```
+
 In `dplyr` syntax, what we said here was *with reference to the ozs dataset* `ozs |>` let's alter the dataset `mutate()`. Let's alter the column named Designated `mutate(Designated = )`. Let's alter the column named Designated conditionally `mutate(Designated = ifelse())`. If the value of Designated is equal to `NA`, replace it with 0, otherwise keep the value present in the Designated observation `mutate(Designated = ifelse(is.na(Designated), 0, Designated))`.
 
-:::{.aside}
-Looking at this `ifelse()` statement, you might have been tempted to write something like `Designated == `NA`` which will not work. `is.na()` is the proper logical test to return whether a value is or is not `NA`.
+::: aside
+Looking at this `ifelse()` statement, you might have been tempted to write something like `Designated ==`NA\``which will not work.`is.na()`is the proper logical test to return whether a value is or is not`NA\`.
 :::
 
 ### Strategy 2: Use a Specialized Command
@@ -153,6 +157,7 @@ We could use a specialized command such as `replace_na()` from the `tidyr` packa
 ```{r}
 ozs |> mutate(Designated = replace_na(Designated, 0))
 ```
+
 Note that in `replace_na()` we are specifying the column we want to replace the NA value in as well as the value we want to replace NA with.
 
 ### Strategy 3: Recode and Change Format
@@ -189,7 +194,8 @@ ozs |>
   head() |> 
   gt()
 ```
-### Summarizing Data
+
+## Summarizing Data
 
 Now that we've recoded our designated column, let's do some description of the characteristics of designated and not designated places.
 
@@ -200,6 +206,7 @@ ozs |>
   group_by(Designated) |> 
   summarise(Income = mean(medhhincome2014_tract))
 ```
+
 We getting a table back, but why did we get `NA` insted of numbers here? If you've ever used the average `mean()` command in R, you probably understand what's going on here. As a safety measure, when you average values, R will return NA if any value in that series is `NA`. If you're not expecting any `NA` values, this is good, becuase you'll quickly discover that there are unexpected `NA` values in your dataset. We might expect a few census tracts with missing income values coded as `NA`, so we will want to indicate `na.rm = TRUE` here so that R removes those NAs when calculating the mean.
 
 ```{r}
@@ -207,6 +214,7 @@ ozs |>
   group_by(Designated) |> 
   summarise(Income = mean(medhhincome2014_tract, na.rm=TRUE))
 ```
+
 Much better. We can see that that *on average*, the median household income for eligible designated census tracts is lower than that for eligible not designated census tracts. Since the Opportunity Zone legislation is designed to target distressed neighborhoods, this is a good sign that program targeting is focused on neighborhoods with greater need.
 
 We might want to add some additional information to our summary table. One useful piece of information would be the number of census tracts that are designated or not designated.
@@ -218,11 +226,12 @@ ozs |>
     Tracts = n(),
     Income = mean(medhhincome2014_tract, na.rm=TRUE))
 ```
+
 Within a `summarise()` statement, `n()` gives us a count of observations (rows) for each grouping. In this case, there are 8,762 census tracts designated as opportunity zones, and an additional 33,414 that were eligible based upon program criteria but not designated.
 
 We could easily add other summaries to our summary table for this dataset, or further modify.
 
-### Filtering Data
+## Filtering Data
 
 Now that we have some sense for how we might produce basic summaries of our data, how can we query out (filter) observations by row? How, for instance, would you modify the above code to produce the same table for *counties* in *Illinois*?
 
@@ -233,6 +242,7 @@ Let's take a step back and filter our base dataset to focus on observations in I
 ```{r}
 ozs |> filter(state == "Illinois")
 ```
+
 Recall that the ozs dataset has 42,176 observations (rows). We filtered the data using the criteria that the value of state is equal to "Illinois", resulting in 1,659 observations (eligible census tracts in Illinois).
 
 From here, we can re-use our prior code to produce a summary table that is focused on Illinois.
@@ -245,6 +255,7 @@ ozs |>
     Tracts = n(),
     Income = mean(medhhincome2014_tract, na.rm=TRUE))
 ```
+
 Ok - but how do we summarise by county? We just need to add that as an additional grouping criteria in our `group_by()` statement:
 
 ```{r}
@@ -256,11 +267,12 @@ ozs |>
     Tracts = n(),
     Income = mean(medhhincome2014_tract, na.rm=TRUE))
 ```
+
 We are basically saying, group by both county and designated and then summarize for each.
 
 With a few lines of code, we can produce very powerful and specific kinds of summaries for our data.
 
-### Pivoting Data
+## Pivoting Data
 
 Our summary is getting more nuanced. We've used `group_by()` and `summarise()` to sumamrise data based upon certain characteristics. We've summarized in such a way where for our Illinois counties, we have two observations for each county - one that summarises values for designated tracts in that county, and one that summarises values for not designated tracts.
 
@@ -280,7 +292,8 @@ ozs |>
     Tracts = n(),
     Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income)
 ```
-We start with our previous summary and pass two arguments to `pivot_wider()`. 
+
+We start with our previous summary and pass two arguments to `pivot_wider()`.
 
 We use `names_from` to specify the column in our dataset contining row values that we *want* to become new columns. In this case we'd expect that our Desginated column would result in the creation of two new columns - one where values are Designated and one where values are Not Designated.
 
@@ -297,6 +310,7 @@ ozs |>
   summarise(
     Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income)
 ```
+
 Looking good! To make things a bit more informative, let's also show the difference in income between designated and not designated tracts:
 
 ```{r}
@@ -309,11 +323,154 @@ ozs |>
     Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income) |> 
   mutate(Difference = Designated - `Not Designated`)
 ```
+
 One note here - in the last `mutate()` statement, you see that Not Designated has backticks around it. This is because there's a space between "Not" and "Designated" which will be treated as separate variable names. The backticks allow this to be referenced as a column. We could change the name to something like Not_Designated, but backticks will allow us to appropriately reference it as well.
+
+## Joining Tables
+
+Linking together the place data to the ozs data might would give us some additional context regarding opportunity zones. Remember that the opportunity zones data itemizes those census tracts that were *eligible* for designation with the Designated column denoting which eligible census tracts actually became opportunity zones. If we link together information for census tracts which were not eligible for designation, we could learn something about the differences between undesignated, eligible not designated, and eligible designated census tracts.
+
+In order to link together these two datasets, we need to learn about and apply *relational joins* to bring these two datasets together.
+
+### Joins Overview
+
+Joins are methods to merge two datasets based on common attributes. It's rare that one single dataset contains all of the information you wish to tell a story about, so it's important to understand how joins work.
+
+A Venn diagram of join types.
+
+![](04_describing/images/joins_venn.png)
+The `tidyverse` package which we've installed and loaded in the past can perform seven different types of relational joins. We'll discuss six of them briefly, but focus on four key types. Joins require us to have two tables with some type of common identifier column present in both that we can match records based on.
+
+### Join Types
+
+Let's assume we have two data frames named `x` and `y`, and we're trying to match a column called `key` in both datasets.
+
+-   `left_join()`: A left join returns every row in `x` and all the columns from `x` and `y`. If a value in the `key` column in `x` doesn't exist in `y`, the row will contain `NA` values for all the `y` columns. If there are multiple `key` matches, all the possible combinations will be returned.
+
+-   `right_join()`: This is similar to a left join, but returns every row in `y` instead.
+
+-   `inner_join()`: An inner join returns all the rows in `x` where there is an `key` match in `y`, and all the columns in `x` and `y`.
+
+-   `full_join()`: A full join returns all rows and all columns from `x` and `y`. If there isn't a match in the `x` `key` column, all `x` columns will return `NA`. (The same is true for `y`.)
+
+-   `semi_join()`: A semi-join returns the rows in `x` where there is an `key` match in `y`. It is different than an inner join in that it only returns the columns in `x` and doesn't duplicate rows if there are multiple matches in `y`.
+
+-   `anti_join()`: An anti-join returns the rows in `x` where there is not a matching `key` in `y`. It only returns the columns in `x`.
+
+You'll notice that only the first four joins---left, right, inner, and full---merge two datasets. Those are going to be the most valuable ones to learn. Here are a couple of additional illustrations to illustrate how joins work.
+
+![Join example 1](04_describing/images/Join_Types_2.png)
+![Join example 2](04_describing/images/Join_Types_3.jpeg)
+The basic general syntax for the joins is the same:
+
+`*_join(x, y, by = "key name")`
+
+`x` and `y` are self-explanatory. The `by` attribute is used to name the key, or the variable that the two datasets have in common. If you're lucky, they'll have the same name. If you're unlucky, you'll have to type a bit more: `by = c("name1" = "name2")`, assuming "name1" is the name of the key column in `x` and "name2" is the name of the key column in `y`.
+
+### Example
+
+Let's assume we have two data frames: `fruit_1` that contains some characteristics about fruit, and `fruit_2` that has some others. Here's how they're defined:
+
+```{r}
+#| include: false
+
+fruit_1 <- tribble(
+  ~fruit, ~color,
+  "apple", "red",
+  "orange", "orange",
+  "banana", "yellow",
+  "lime", "green"
+)
+
+fruit_2 <- tribble(
+  ~fruit, ~shape, ~price,
+  "orange", "round", 0.40,
+  "banana", "long", 0.30,
+  "lime", "oval", 0.25,
+  "durian", "spiky", 8.00 
+)
+```
+
+Note that the code above is just another syntax for creating tables as we did in the past.
+
+```{r}
+print(fruit_1)
+print(fruit_2)
+```
+
+What would be the result of a left join, right join, and inner join of `fruit_1` and `fruit 2`?
+
+Note the following:
+
+-   The **left join** includes all records from fruit_1, but excludes those measures from fruit_2 where there isn't a match in the fruit column (durian). Note that even though there's not shape and price information for apples in fruit_2, the rows are still included, but with NA where the data would be were it present.
+
+-   The **right join** includes all records from fruit_2 but excludes those columns from fruit_1 where there isn't a match in the fruit column. In this case, we're missing color information for durian fruit.
+
+-   The **inner join** includes only those records from fruit_1 and fruit_2 where there were matches in both datasets.
+
+The powerful thing about these joins is that they allow us to bring together data with different shapes and we can control which elements of the data are joined. Joins will become far more intuitive as you use them more.
+
+### Joining Together OZs and Place datasets
+
+Now that we have a sense for how joins work, let's combine our oz and place into one larger table. 
+
+```{r}
+place <- read_csv("04_describing/data/place_name.csv")
+
+place
+```
+If you take a look at both tables, you'll note that they have a field in common called geoid. This represents a unique code that is assigned to each census tract geography. Technically, this is a FIPS ([Federal Information Processing Standards](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips)) code. FIPS codes for tracts are hierarchical - the first two digits are unique to each state, the next three digits correspond to each county, and the remaining six digits are unique to each census tract in that county.
+
+Because each tract is labelled with corresponding FIPS codes, we can join the two datasets together based upon this common field. This will become a fairly common action for you that you will repeat over the course of this class.
+
+Next, we should think carefully about what kind of join we want. We know we have ozs data for a subset of census tracts in the U.S. and we have the place data for a more expansive set of tracts. If we want to preserve the more extensive data (including those rows that do not match up with oz- eligible tracts), what type of join should we use and how would we construct it?
+
+Just to make sure we get this correct, I'm going to provide you with the way to complete your first join on real data. We have one more issue to deal with here to successfully join our data together. Recall that join takes three arguments - two table objects to join together and at least one common field to complete the join based on. These columns are both labelled geoid, but one is capitalized and one is not. We'll need to tell our join function that these two columns with different names (different in that one is capitalized and one is not) should be joined to each other. We use the modified `by=c("GEOID" = "geoid")` to denote that GEOID in the place data should be joined to geoid in the ozs data. If the names were the same (say, both were GEOID), we could simply say `by="GEOID"` and this would work.
+
+Okay, with that out of the way, let's join our data together:
+
+```{r}
+dataset<-left_join(place, ozs, by=c("GEOID" = "geoid"))
+```
+
+Into a new object called dataset, we joined all rows from place and those records from ozs that matched. Records from place without a match in ozs will have NA where there could be data.
+
+Take a look at the data:
+
+```{r}
+View(dataset)
+```
+
+Start by looking at the number of rows in the data - 73,057 - the same number as in the place data - we have brought in all rows from the place data and have joined to in matching rows in the ozs data. It would be useful for us to start off by knowing how many rows fall into each of our three categories - ineligible for designated, eligible and undesignated, and eligible and designated. At this point, the `NA` values in the Designated column reflect ineligible, the 0's in that column reflect eligible but not designated, and the 1's represent eligible and designated.
+
+Use your new knowledge of dplyr's `group_by()` and `summarise()` to create a summary table based upon the three values that we expect the Designated column to take. You've learned that you could define what type of summary you'd like to produce in your `summarise()` statement. Let's use `n()` which counts the number of rows that meet each category specified in group_by():
+
+```{r}
+dataset %>% group_by(Designated) %>% summarise(n())
+```
+
+You should see that we have 31,841 rows (census tracts) that were ineligible for designation, an additional 33,391 that were eligible but not designated, and 7,825 that were eligible and designated. Excellent!
+
+What might you want to do next to be able to properly label the three categories that now exist for designated?
 
 ## Making Nice Tables
 
+As many of you have remarked in class, outputting "nice" tables is not R's default. There are several packages that can help to clean up tables and make them presentable. Let's learn how to use one such package, the `gt` package. Similar to how GGPlot describes a *grammar of graphics* for visualizations, gt similarly provides methods to shape elements of a table.
+
+### Table Components in GT
+
+In GT, there are numerous table components which you can format as you wish:
+
+![](https://gt.rstudio.com/reference/figures/gt_parts_of_a_table.svg)
+
+gt's [documentation](https://gt.rstudio.com) can help you become more familiar with these different components.
+
+### Making a First GT Table
+
+Let's start off by taking the Illinois data we were previously working on and styling the table using gt:
+
 ```{r}
+#| message: false
 
 ozs |> 
   filter(state == "Illinois") |> 
@@ -323,7 +480,15 @@ ozs |>
   mutate(Difference = Designated - `Not Designated`) |> 
   gt()
 ```
+
+We simply added `gt()` as a final command after producing a summary table.
+
+### Formatting Columns
+
+There's a range of formatting options we can take advantage of to style our table. most formatting options begin with `fmt_` which makes it fairly easy to search for the format type you're looking for. Let's format the "Designated", "Not Designated", and "Difference" columns as currency with no decimal places. While we're at it, let's rename the "county" column so "county" is capitalized:
+
 ```{r}
+#| warning: false
 
 ozs |> 
   filter(state == "Illinois") |> 
@@ -338,8 +503,34 @@ ozs |>
   
 ```
 
+Note that `cols_label` allows us to adjust column labels by supplying the variable name and then the desired name of the column.
 
+gt provides a [nice workflow example](https://gt.rstudio.com/articles/intro-creating-gt-tables.html) to show you step by step how you might apply formatting options to style a table. Also see the [reference guide](https://gt.rstudio.com/reference/index.html) for specific formats.
 
+### Saving a Table
+
+We can easily use code to insert a table into our document, but what if you want to save it out as a separate file? The `gtsave()` command allows you to save your formatted table in a variety of formats.
+
+```{r}
+#| message: false
+
+ozs |> 
+  filter(state == "Illinois") |> 
+  group_by(county, Designated) |> 
+  summarise(
+    Income = mean(medhhincome2014_tract, na.rm=TRUE)) |> pivot_wider(names_from = Designated, values_from = Income) |> 
+  mutate(Difference = Designated - `Not Designated`) |> 
+  ungroup() |> 
+  gt() |> 
+  fmt_currency(2:4, decimals = 0) |> 
+  cols_label(county = "County") |> 
+  gtsave("il_difference.png", "04_describing/output")
+  
+```
+
+And here's the actual table that was produced:
+
+![](04_describing/output/il_difference.png)
 
 ## Lab Evaluation
 
