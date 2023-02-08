@@ -112,6 +112,7 @@ website:
             - text: "Earning Your Learner's Permit"
               file: assignments/labs/03_permit.qmd
             - text: "Describing Places"
+              file: assignments/labs/04_describing.qmd
             - text: "Population and the Census"
             - text: "Population Projections"
             - text: "Segregation"
