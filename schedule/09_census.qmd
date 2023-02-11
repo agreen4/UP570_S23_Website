@@ -13,7 +13,11 @@ In this session, we will work on our lab focused on exploring population and the
 
 ## Before Class
 
-Please [register](https://api.census.gov/data/key_signup.html) for a U.S. Census Bureau API Key
+Accept the [GitHub Classroom invitation](https://classroom.github.com/a/-wEwOEtR) to our lab repository and use RStudio to pull the repository to your local computer.
+
+Read our [lab background](../assignments/labs/05_census.qmd) so you are prepared to start working through the lab repository notebook.
+
+If you do not already have one, please [register](https://api.census.gov/data/key_signup.html) for a U.S. Census Bureau API Key which we will need for the `tidycensus` package.
 
 ## Reflect
 

@@ -114,6 +114,7 @@ website:
             - text: "Describing Places"
               file: assignments/labs/04_describing.qmd
             - text: "Population and the Census"
+              file: assignments/labs/05_census.qmd
             - text: "Population Projections"
             - text: "Segregation"
             - text: "Neighborhood Change"
