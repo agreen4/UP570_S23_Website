@@ -24,3 +24,11 @@ Klosterman 2 [{{< fa file >}}](https://uofi.box.com/s/2ki78jbm88y09j41zozqrfjc0w
 ## Slides
 
 ## Resources for Further Exploration
+
+2020 Census Enumeration Form [{{< fa link >}}](https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/questionnaires-and-instructions/questionnaires/2020-informational-questionnaire.pdf)
+
+2020 Census Post Enumeration Survey Documentation [{{< fa link >}}](https://www.census.gov/programs-surveys/decennial-census/about/coverage-measurement/pes.html)
+
+Differential Privacy and the 2020 US Census [{{< fa link >}}](https://mit-serc.pubpub.org/pub/differential-privacy-2020-us-census/release/1)
+
+American Community Survey Sample Size [{{< fa link >}}](https://www.census.gov/acs/www/methodology/sample-size-and-data-quality/sample-size/)
