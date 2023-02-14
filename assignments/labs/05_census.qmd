@@ -20,7 +20,7 @@ editor: visual
 
 ## Introduction
 
-This lab is designed to introduce you to some of the  basic techniques for downloading data from the U.S. Census Bureau using R. Following elements from the Klosterman, et al. reading, we will replicate some of the tables present in that chapter.
+This lab is designed to introduce you to some of the basic techniques for downloading data from the U.S. Census Bureau using R. Following elements from the Klosterman, et al. reading, we will replicate some of the tables present in that chapter.
 
 We will also learn a new R package this week - the `tidycensus` package, which is designed to programmatically download and load census data directly into our R session.
 
@@ -60,15 +60,13 @@ Most casual users of Census data typically start by visiting the [data.census.go
 ```{=html}
 <iframe width="780" height="500" src="https://data.census.gov" title="data.census.gov"></iframe>
 ```
-
 For those users looking to download detailed demographic tables covering more than one geography, "Use Advanced Search" is best option (and the option that we will choose).
 
 The Advanced Search window includes a series of query selectors, or if you know the exact name or table number you are looking for, you can use the search dialog. Even if you know the table number, it makes sense to start off by selecting your survey and the geography at which you wish FactFinder to return results.
 
 The Census bureau tabulates demographic information for a [number of different geographic types](https://www2.census.gov/geo/pdfs/reference/geodiagram.pdf), some which are hierarchical, and some which aren't:
 
-![](05_census/images/WB_1_Geogs.png)
-The Klosterman chapter presents data for a city, and then compares it to its constituent county and region. This diagram tells us that cities (census places) are nested within (and contained by) states, which are nested within census divisions, and census regions which are all contained within the nation. Census places do not have any subgeographies, however, we may also use other sub county geography, especially census tracts and block groups to help us describe the characteristics of census places.
+![](05_census/images/WB_1_Geogs.png) The Klosterman chapter presents data for a city, and then compares it to its constituent county and region. This diagram tells us that cities (census places) are nested within (and contained by) states, which are nested within census divisions, and census regions which are all contained within the nation. Census places do not have any subgeographies, however, we may also use other sub county geography, especially census tracts and block groups to help us describe the characteristics of census places.
 
 The most common geographies used by planners are as follows:
 
@@ -87,9 +85,9 @@ Let's start by filtering to the 5-Year American Community Survey data (Browse Fi
 
 We now have 2 main choices - 1-Year estimates and 5-year estimates. What might the difference be between these two data products?
 
-- **1-Year Estimates** are based off of the survey sample collected within one year and reflect the characteristics of the population within that given year.
+-   **1-Year Estimates** are based off of the survey sample collected within one year and reflect the characteristics of the population within that given year.
 
-- **5-Year Estimates** are based off of a *pooled* survey sample collected over a 5-year period and reflect the characteristics of the population over those 5 years.
+-   **5-Year Estimates** are based off of a *pooled* survey sample collected over a 5-year period and reflect the characteristics of the population over those 5 years.
 
 The trade offs between the two samples are time specificity and certainty around the accuracy of the estimates. Particularly when we are looking at smaller geographies, this certainty question can become more of an issue. More on this later in our documentation.
 
@@ -97,14 +95,13 @@ For now, let's select 5 year estimates, and then select "Detailed Tables".
 
 ![](05_census/images/WB_3_Detailed.png)
 
-After adding this filter, add an additional filter under Years for 2021. 
+After adding this filter, add an additional filter under Years for 2021.
 
 ![](05_census/images/WB_4_DetailedYear.png)
 
 We might also want to add a geographic filter to indicate that the data we want is for census places.
 
-![](05_census/images/WB_5_GeogSelection.png)
-And then select all places in Illinois...
+![](05_census/images/WB_5_GeogSelection.png) And then select all places in Illinois...
 
 ![](05_census/images/WB_6_Places.png)
 
@@ -114,11 +111,9 @@ With these filters in place we can now search for the race table.
 
 We'll then get a list of tables matching our criteria. There are a lot of them! You will need to click "View All Tables" to see the entire list. Let's take a closer look at Table B02001: Race. We can click on it to view the table's contents.
 
-![](05_census/images/WB_8_B02001.png)
-This is useful - we can see the structure of the table. *Rows* contain information associated with racial identification groups, *columns* correspond to census places (cities and local governments). Observations include counts of the population that identify with each racial group.
+![](05_census/images/WB_8_B02001.png) This is useful - we can see the structure of the table. *Rows* contain information associated with racial identification groups, *columns* correspond to census places (cities and local governments). Observations include counts of the population that identify with each racial group.
 
-We could download this file and open it in a spreadsheet program.
-![](05_census/images/WB_9_B02001_Detail.png)
+We could download this file and open it in a spreadsheet program. ![](05_census/images/WB_9_B02001_Detail.png)
 
 We could download this file and open it in a spreadsheet program or R. If you download the .csv file, we'd need to do some reformatting to start using the data in any serious way.
 
@@ -148,16 +143,18 @@ There are two main functions in `tidycensus`:
 Let's start by loading a few packages that will help us with our work.
 
 ```{r}
-# Your Code Here
+#| message: false
+#| warning: false
 
 library(gt)
 library(tidyverse)
 library(tidycensus)
+
 ```
 
-Each time you run a `tidycensus` function, R constructs a request to the Census API for data. This call needs to include your API key to authenticate your access to the data.The first time you use `tidycensus` on a new computer or R installation, you'll need to set up your R environment to load your Census API key. You have two options - 
+Each time you run a `tidycensus` function, R constructs a request to the Census API for data. This call needs to include your API key to authenticate your access to the data.The first time you use `tidycensus` on a new computer or R installation, you'll need to set up your R environment to load your Census API key. You have two options -
 
-1. Manually set the API key for use in your R script each time you use tidycensus:
+1.  Manually set the API key for use in your R script each time you use tidycensus:
 
 ```{r}
 #| eval: false
@@ -167,7 +164,7 @@ census_api_key("936c96236b979ae522c6cf67edb51923dd391fb3")
 
 ```
 
-2. Store your API key locally on your computer so that it does not need to be loaded manually.
+2.  Store your API key locally on your computer so that it does not need to be loaded manually.
 
 ```{r}
 #| eval: false
@@ -204,7 +201,9 @@ Our call says create an object names "place_race_2021" and place into it the res
 Let's have a look at what was just downloaded:
 
 ```{r}
-place_race_2021 |> gt()
+place_race_2021 |> 
+  slice_head(n = 10) |> 
+  gt()
 ```
 
 Examining the place_race_2019 object, we have a table that includes 22 columns:
@@ -213,6 +212,8 @@ Examining the place_race_2019 object, we have a table that includes 22 columns:
 -   **NAME** the name of each census place
 -   **Estimates** estimates (in this case population estimates by race), with each column representing a *row* in the data table we pulled up on [data.census.gov](https://data.census.gov/cedsci/table?g=0400000US17.160000&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2017.B02001&y=2017&t=Race%20and%20Ethnicity&vintage=2017&hidePreview=true&cid=B01001A_001E).
 -   **Margin of Error** the margin of error associated with each estimate.
+
+Note in the above code that we use `slice_head()` to display only the first 10 rows of a table that actually has 1,466 rows.
 
 That wasn't *so* hard! There are several benefits of downloading census data this way: 1. Once we know what tables or variables we are looking for, we don't have to interact with data.census.gov very much (or at all). 2. R downloads the data and then it is immediately available for analysis as a formatted data frame. 3. We can easily modify existing calls to download data for other geographies.
 
@@ -224,7 +225,9 @@ Let's say we want to transition to looking at racial identification for counties
 
 county_race_2021<-get_acs(geography = "county", state = "IL", table = "B02001", year=2021, survey="acs5", output="wide")
 
-county_race_2021 |> gt()
+county_race_2021 |> 
+  slice_head(n = 10) |> 
+  gt()
 ```
 
 By making those few changes, you'll note that the newly downloaded data in county_race_2021 now includes names of counties in the `NAME` column, instead of places as in our first call. There are data for each of the 102 counties in Illinois.
@@ -246,7 +249,7 @@ Table B02001 which we've been looking at is *hierarchical*. The first *row* cont
 Table 2.1 in the Klosterman book presents racial identification for White Alone, Black Alone, Other, and Hispanic ethnicity. Putting aside for a minute the Hispanic ethnicity statistic, how would we download and construct analogous data for Champaign, Illinois? Let's think this through:
 
 | Indicator   | Row Number | Tidycensus Variable | Constructed Variable               |
-|-------------|------------|---------------------|------------------------------------|
+|---------------|---------------|---------------|----------------------------|
 | White Alone | 2          | B02001_002          | NA                                 |
 | Black Alone | 3          | B02001_003          | NA                                 |
 | Other       | ?          | NA                  | B02001_001-(B02001_002+B02001_003) |
@@ -265,22 +268,26 @@ Let's see this in practice:
 
 place_race_2021<-get_acs(geography = "place", state = "IL", variables = c("B02001_001", "B02001_002", "B02001_003"), year=2021, survey="acs5", output="wide")
 
-place_race_2021 |> gt()
+place_race_2021 |> 
+  slice_head(n = 10) |> 
+  gt()
 ```
 
-Note that our original place_race_2021 data frame had 22 variables. The one we downloaded with our updated call only has 8 variables. What's going on in `variables = c("B02001_001", "B02001_002", "B02001_003")`? The table is B02001, but then we also specify the *specific row* in the census data table, which actually gets represented as a column when downloaded here. 
+Note that our original place_race_2021 data frame had 22 variables. The one we downloaded with our updated call only has 8 variables. What's going on in `variables = c("B02001_001", "B02001_002", "B02001_003")`? The table is B02001, but then we also specify the *specific row* in the census data table, which actually gets represented as a column when downloaded here.
 
-- B02001_001 contains the total population estimate 
+-   B02001_001 contains the total population estimate
 
-- B02001_002 contains the white alone population 
+-   B02001_002 contains the white alone population
 
-- B02001_003 contains the total black alone population
+-   B02001_003 contains the total black alone population
 
 We could use the `tidyverse` command `mutate()` to create our other category and place into a new column in our dataset:
 
 ```{r}
 place_race_2021 |> 
-  mutate(p_other = B02001_001E-(B02001_002E + B02001_003E)) |> gt()
+  mutate(p_other = B02001_001E-(B02001_002E + B02001_003E)) |> 
+  slice_head(n = 10) |> 
+  gt()
 ```
 
 We might also want to rename our other two variables so that they are more readable, and might want to get rid of some of the other data we don't need:
@@ -289,8 +296,9 @@ We might also want to rename our other two variables so that they are more reada
 
 place_race_2021 |> 
   mutate(pop_other = B02001_001E-(B02001_002E + B02001_003E)) |>  
-  rename(Name = NAME, pop_tot = B02001_001E, pop_white = B02001_002E, pop_black = B02001_003E) |>  
+  rename(Name = NAME, pop_tot = B02001_001E, pop_white = B02001_002E, pop_black = B02001_003E) |> 
   select(Name, pop_tot, pop_white, pop_black, pop_other) |> 
+  slice_head(n = 10) |> 
   gt()
 ```
 
@@ -322,6 +330,7 @@ Some possible strategies:
 ```{r}
 place_race_2021 |>
   arrange(NAME) |> 
+  slice_head(n = 20) |> 
   gt()
 ```
 
@@ -330,6 +339,7 @@ If we wanted to sort this list in the opposite direction, we can use the `desc()
 ```{r}
 place_race_2021 |>
   arrange(desc(NAME)) |> 
+  slice_head(n = 20) |> 
   gt()
 ```
 
@@ -349,7 +359,7 @@ Let's look again at our cleaned up observations for Champaign:
 place_race_2021 |>  
   filter(NAME == "Champaign city, Illinois") |>  
   mutate(pop_other = B02001_001E-(B02001_002E + B02001_003E)) |> 
-  rename(Name = NAME, pop_tot = B02001_001E, pop_white = B02001_002E, pop_black = B02001_003E) |>  
+  rename(Name = NAME, pop_tot = B02001_001E, pop_white = B02001_002E, pop_black = B02001_003E) |> 
   select(Name, pop_tot, pop_white, pop_black, pop_other) |> 
   gt()
 ```
@@ -512,7 +522,7 @@ Also, did you catch how we combined information for Champaign, Ford, and Piatt c
 
 ```{r}
 #| eval: false
-#| 
+
 filter(NAME %in% c("Champaign County, Illinois", "Ford County, Illinois", "Piatt County, Illinois")) |>  
   summarise(B02001_001E = sum(B02001_001E),
             B02001_002E = sum(B02001_002E),
@@ -521,11 +531,11 @@ filter(NAME %in% c("Champaign County, Illinois", "Ford County, Illinois", "Piatt
   mutate(NAME = "Region")
 ```
 
-What's going on here? 
+What's going on here?
 
-- The `filter()` section filters the data to the three rows in the dataset where the NAME field is equal to Champaign, Ford, or Piatt county. 
+-   The `filter()` section filters the data to the three rows in the dataset where the NAME field is equal to Champaign, Ford, or Piatt county.
 
-- The `summarise()` section is a little different than what we've seen before. In the past we've used this with `group_by()` in order to develop summaries for groups. Because we don't have a `group_by()` clause here, R, summarizes *all* of the observations as one group. In this case, because we're dealing with count data, we simply sum up all of the observations in a summary table where I have named the columns with the same names as the raw data had.
+-   The `summarise()` section is a little different than what we've seen before. In the past we've used this with `group_by()` in order to develop summaries for groups. Because we don't have a `group_by()` clause here, R, summarizes *all* of the observations as one group. In this case, because we're dealing with count data, we simply sum up all of the observations in a summary table where I have named the columns with the same names as the raw data had.
 
 From there, we can re-use the code we had already created to process the place and county data. With these things done, we can add our region values into our race_2021 summary table:
 
@@ -544,9 +554,9 @@ This tutorial has walked you through the steps necessary to start making basic c
 
 In evaluating your lab submission, we'll be paying attention to the following:
 
-- Use of `dplyr` and `tidyverse` style formatting in your coding.
+-   Use of `dplyr` and `tidyverse` style formatting in your coding.
 
-- Refined table output formatting using tools such as `gt`.
+-   Refined table output formatting using tools such as `gt`.
 
 As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
 
