@@ -1,5 +1,5 @@
 ---
-title: "Population Projections"
+title: "Population And the Census Week 2"
 sidebar: true
 toc: true
 page-layout: full

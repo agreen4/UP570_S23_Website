@@ -26,7 +26,6 @@ Klosterman 2 [{{< fa file >}}](https://uofi.box.com/s/2ki78jbm88y09j41zozqrfjc0w
 ```{=html}
 <iframe class="slide-deck" src="../slides/S8 Census/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
 ```
-
 ## Resources for Further Exploration
 
 2020 Census Enumeration Form [{{< fa link >}}](https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/questionnaires-and-instructions/questionnaires/2020-informational-questionnaire.pdf)

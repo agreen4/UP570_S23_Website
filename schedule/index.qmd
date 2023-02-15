@@ -12,51 +12,51 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Course Introduction
 
 | Week   | Session   | Date       | Description                                                         |
-|-----------|-----------|-----------|----------------------------------------|
+|-------------|-------------|-------------|---------------------------------|
 | Week 1 | Session 1 | January 18 | [Course Introduction](01_introduction.qmd)                          |
 | Week 2 | Session 2 | January 23 | [What is a Neighborhood?](02_neighborhood.qmd)                      |
 | Week 2 | Session 3 | January 25 | [Building a Data Pipeline](03_datapipeline.qmd)                     |
-| Week 3 | Session 4 | January 30 | [Sharing Your Work](04_sharing.qmd)                                                   |
-| Week 3 | Session 5 | February 1 | [Earning your Learner's Permit](05_permit.qmd)                                       |
+| Week 3 | Session 4 | January 30 | [Sharing Your Work](04_sharing.qmd)                                 |
+| Week 3 | Session 5 | February 1 | [Earning your Learner's Permit](05_permit.qmd)                      |
 | Week 3 |           | February 3 | [Place Selection Memorandum](../assignments/01_place_selection.qmd) |
-| Week 4 | Session 6 | February 6 | [Describing Places](06_places.qmd)                                                   |
-| Week 4 | Session 7 | February 8 | [Describing Places](07_places.qmd)                                                   |
+| Week 4 | Session 6 | February 6 | [Describing Places](06_places.qmd)                                  |
+| Week 4 | Session 7 | February 8 | [Describing Places](07_places.qmd)                                  |
 
 ## Strategies for Analysis
 
 | Week    | Session    | Date        | Description                                                           |
-|-----------|-----------|-----------|----------------------------------------|
-| Week 5  | Session 8  | February 13 | [Population and the Census](08_census.qmd)                                             |
-| Week 5  | Session 9  | February 15 | [Population and the Census](09_census.qmd)                                             |
+|-------------|-------------|-------------|---------------------------------|
+| Week 5  | Session 8  | February 13 | [Population and the Census](08_census.qmd)                            |
+| Week 5  | Session 9  | February 15 | [Population and the Census](09_census.qmd)                            |
 | Week 5  |            | February 17 | [Place Background Memorandum](../assignments/02_place_background.qmd) |
-| Week 6  | Session 10 | February 20 | [Population Projections](10_projections.qmd)                                                |
-| Week 6  | Session 11 | February 22 | [Population Projections](11_projections.qmd)                                                |
-| Week 7  | Session 12 | February 27 | [Segregation](12_segregation.qmd)                                                           |
-| Week 7  | Session 13 | March 1     | [Segregation](13_segregation.qmd)                                                           |
+| Week 6  | Session 10 | February 20 | [Population and the Census](10_projections.qmd)                          |
+| Week 6  | Session 11 | February 22 | [Population and the Census](11_projections.qmd)                          |
+| Week 7  | Session 12 | February 27 | [Segregation](12_segregation.qmd)                                     |
+| Week 7  | Session 13 | March 1     | [Segregation](13_segregation.qmd)                                     |
 | Week 7  |            | March 3     | [Population Memorandum](../assignments/03_population.qmd)             |
-| Week 8  | Session 14 | March 6     | [Neighborhood Change](14_neighborhood.qmd)                                                   |
-| Week 8  | Session 15 | March 8     | [Neighborhood Change](15_neighborhood.qmd)                                                   |
+| Week 8  | Session 14 | March 6     | [Neighborhood Change](14_neighborhood.qmd)                            |
+| Week 8  | Session 15 | March 8     | [Neighborhood Change](15_neighborhood.qmd)                            |
 | Week 9  |            | March 13    | Spring Break                                                          |
 | Week 9  |            | March 15    | Spring Break                                                          |
-| Week 10 | Session 16 | March 20    | [Place Opportunity](16_opportunity.qmd)                                                     |
-| Week 10 | Session 17 | March 22    | [Place Opportunity](17_opportunity.qmd)                                                     |
+| Week 10 | Session 16 | March 20    | [Place Opportunity](16_opportunity.qmd)                               |
+| Week 10 | Session 17 | March 22    | [Place Opportunity](17_opportunity.qmd)                               |
 | Week 10 |            | March 24    | [Policy Memorandum](../assignments/04_policy.qmd)                     |
-| Week 11 | Session 18 | March 27    | [Transportation Equity](18_transequity.qmd)                                                 |
-| Week 11 | Session 19 | March 29    | [Transportation Equity](19_transequity.qmd)                                                 |
-| Week 12 | Session 20 | April 3     | [Neighborhood Health Equity](20_healthequity.qmd)                                            |
-| Week 12 | Session 21 | April 5     | [Neighborhood Health Equity](21_healthequity.qmd)                                            |
-| Week 13 | Session 22 | April 10    | [Field Observation](22_fieldobs.qmd)                                                     |
-| Week 13 | Session 23 | April 12    | [Field Observation](23_fieldobs.qmd)                                                     |
+| Week 11 | Session 18 | March 27    | [Transportation Equity](18_transequity.qmd)                           |
+| Week 11 | Session 19 | March 29    | [Transportation Equity](19_transequity.qmd)                           |
+| Week 12 | Session 20 | April 3     | [Neighborhood Health Equity](20_healthequity.qmd)                     |
+| Week 12 | Session 21 | April 5     | [Neighborhood Health Equity](21_healthequity.qmd)                     |
+| Week 13 | Session 22 | April 10    | [Field Observation](22_fieldobs.qmd)                                  |
+| Week 13 | Session 23 | April 12    | [Field Observation](23_fieldobs.qmd)                                  |
 | Week 13 |            | April 14    | [Final Assignment](../assignments/05_term.qmd) First Draft            |
 
 ## Course Wrap-Up
 
-| Week    | Session    | Date     | Description                                    |
-|------------|------------|------------|------------------------------------|
-| Week 14 | Session 24 | April 17 | [Final Project Peer Review](24_peerrev.qmd)                      |
-| Week 14 | Session 25 | April 19 | [Final Presentations](28_finalpresent.qmd)                            |
-| Week 15 | Session 26 | April 24 | [Independent Work and Advising](26_indwork.qmd)                  |
-| Week 15 | Session 27 | April 26 | [Independent Work and Advising](27_indwork.qmd)                  |
-| Week 16 | Session 28 | May 1    | [Final Presentations](28_finalpresent.qmd)                            |
-| Week 16 | Session 29 | May 3    | [Final Presentations](29_finalpresent.qmd)                            |
-| Week 17 |            | May 10   | [Final Assignment](../assignments/05_term.qmd) |
+| Week    | Session    | Date     | Description                                     |
+|--------------|--------------|--------------|-------------------------------|
+| Week 14 | Session 24 | April 17 | [Final Project Peer Review](24_peerrev.qmd)     |
+| Week 14 | Session 25 | April 19 | [Final Presentations](28_finalpresent.qmd)      |
+| Week 15 | Session 26 | April 24 | [Independent Work and Advising](26_indwork.qmd) |
+| Week 15 | Session 27 | April 26 | [Independent Work and Advising](27_indwork.qmd) |
+| Week 16 | Session 28 | May 1    | [Final Presentations](28_finalpresent.qmd)      |
+| Week 16 | Session 29 | May 3    | [Final Presentations](29_finalpresent.qmd)      |
+| Week 17 |            | May 10   | [Final Assignment](../assignments/05_term.qmd)  |
