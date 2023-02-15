@@ -47,7 +47,7 @@ Let's get going...
 
 ## Github Lab Repository
 
-If you have not already done so, follow [this link](https://classroom.github.com/a/TzkeNAie) to accept the lab Github Classroom assignment repository.
+If you have not already done so, follow [this link](https://classroom.github.com/a/-wEwOEtR) to accept the lab Github Classroom assignment repository.
 
 ## Accessing Census Data via American Fact Finder
 
