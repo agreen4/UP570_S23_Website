@@ -9,9 +9,11 @@ editor: visual
 
 ## Session Description
 
-Much of our analysis is oriented towards the past and present, but what about the future? This week, we will learn the basic techniques involved in population projections. We'll explore several common techniques for projections and discuss some of the reasons why projecting population at the neighborhood level can be challenging.
+Last week, we began learning about census data and some of the mechanics associated with two main data products - the Decennial Census and the American Community Survey. This week, we will think more about how these mechanics translate into our analytic workflows. In today's session, we'll spend some time interacting with census data and thinking about how we create workflows. This week's lab will then focus on more independent applications of this knowledge.
 
 ## Before Class
+
+This week's session was originally devoted to population projections. The following three chapters present an overview of the primary approaches. Please read these even though we will not engage them in depth this week.
 
 Klosterman 3 [{{< fa file >}}](https://uofi.box.com/s/19oupi56mhe3qujndxtdk1tvoo21o02f)
 
@@ -19,7 +21,569 @@ Klosterman 4 [{{< fa file >}}](https://uofi.box.com/s/icsp7g6ecuwb5lxl1iewxjqz30
 
 Klosterman 5 [{{< fa file >}}](https://uofi.box.com/s/ugdt8fx7y568wq7uhgaa8oad5fqtsu9b)
 
-## Reflect
+Here was our original session description for this week:
+
+Much of our analysis is oriented towards the past and present, but what about the future? This week, we will learn the basic techniques involved in population projections. We'll explore several common techniques for projections and discuss some of the reasons why projecting population at the neighborhood level can be challenging.
+
+## Interact
+
+Last week, we began exploring analytic workflows using the tidycensus package. Let's continue to explore workflows, thinking about how we can integrate spatial data visualization.
+
+We'll need the gt, sf, tidycensus, tidyverse, and tigris packages to help us out.
+
+```{r}
+#| include: false
+
+load_packages <- c("gt", "tidycensus", "tidyverse", "tigris", "sf")
+lapply(load_packages, library, character.only = TRUE)
+rm(load_packages)
+```
+
+### Building Census Geographies
+
+We are going to focus on analyzing population by race for New York City. We need to start by defining our geography for the city. The Tigris package can help us download census geometries directly from the census servers. We could also as tidycensus to download census geographies when we pull data, but let's download geographies separately for now so that we can refine them before adding other data.
+
+Let's start by downloading census tract boundaries for New York City's Boroughs. Having a borough map handy provides a good reminder of the city's geography:
+
+![](https://www.worldatlas.com/r/w960-q80/upload/c6/23/73/shutterstock-152208935.jpg) The city consists of five boroughs, each of which is its own county (this is atypical, but it's a New York thing).
+
++-----------------------+-----------------------+----------------------+
+| FIPS Code             | County Name           | Borough Name         |
++=======================+=======================+======================+
+| 36047                 | Kings County          | Brooklyn             |
++-----------------------+-----------------------+----------------------+
+| 36005                 | Bronx County          | Bronx                |
++-----------------------+-----------------------+----------------------+
+| 36081                 | Queens County         | Queens               |
++-----------------------+-----------------------+----------------------+
+| 36085                 | Richmond County       | Staten Island        |
++-----------------------+-----------------------+----------------------+
+| 36061                 | New York County       | Manhattan            |
++-----------------------+-----------------------+----------------------+
+
+: New York City Boroughs
+
+In building a `tracts` call using tigris (to download tract geometries), we'll need to specify at a minimum the state and the vintage of tract geometry we want to download. Let's download 2020 tract data:
+
+```{r}
+#| message: false
+#| error: false
+#| include: false
+
+nyc_trt <- tracts(state = "NY", year = 2020)
+
+nyc_trt |> slice_head(n=5) |> gt()
+```
+
+Let's use `ggplot()` to visualize so that we can confirm what we've downloaded is indeed all tracts in the state of New York:
+
+```{r}
+ggplot() + 
+  geom_sf(data=nyc_trt)
+```
+
+That looks roughly like the state of New York.
+
+We have some things to unpack here. Out tigris call downloaded all tracts for the state of New York. We have tract properties, but then a list of lists in a field called "geometry". What's going on here?
+
+Our tract geographies were downloaded in what is known as [*simple features*](https://r-spatial.github.io/sf/articles/sf1.html) format. If you have dealt with prior formats for spatial data in R, you'll understand that simple features really are much simpler! The list that you see here is a list of points that define the vertices, in this case, which represent each tract polygon. Embedding the geometry with data that represents the qualities of each tract is very useful.
+
+We could query down to the counties that define New York City with the information we have in hand:
+
+```{r}
+nyc_trt <- nyc_trt |> 
+  filter(COUNTYFP %in% c("047", "005", "081", "085", "061"))
+```
+
+And again, let's visualize to confirm:
+
+```{r}
+ggplot()+
+  geom_sf(data=nyc_trt)
+```
+
+Again, a lot going on here, but we definitely have a subgeography from the New York State data.
+
+While downloading tracts for the whole state and then querying out NYC counties is ok, tigris, can accept counties as inputs to its API call:
+
+```{r}
+#| message: false
+#| error: false
+nyc_trt <- tracts(state = "NY", county = c("Bronx", "Kings", "New York", "Queens", "Richmond"), year = 2020)
+```
+
+Here we are just specifying counties by name - tigris looks them up and confirms which counties it has downloaded.
+
+Before we get into modifying this geography, let's transform it to an appropriate projection. The sf (simple features) package can handle this for us with `st_transform()`
+
+```{r}
+nyc_trt <- nyc_trt |> 
+  st_transform(26918)
+```
+
+The string of numbers here refers to the particular transformation we're doing - in this case to [NAD 1983](https://epsg.io/26918), a common coordinate reference system for the United States.
+
+Our NYC tracts look a little messy - they don't really look like the shape of New York City. Let's think about what role water might be playing here. In the tract data, there are fields called ALAND and AWATER which correspond to the tract area that is land and water (respectively). Let's take a look to see if there are any tracts that are all water:
+
+```{r}
+nyc_trt |> 
+  filter(ALAND == 0)
+```
+
+It turns out we have three tracts with no land area and that are all water. Let's remove them and see what our data looks like:
+
+```{r}
+nyc_trt <- nyc_trt |> 
+  filter(ALAND > 0)
+
+ggplot() +
+  geom_sf(data=nyc_trt)
+```
+
+A little better - we dropped a few tracts and can start to see more of the shape of the city. Let's continue to diagnose what's going on here by coloring each borough so we can see boundaries:
+
+```{r}
+ggplot() +
+  geom_sf(data=nyc_trt, aes(fill = COUNTYFP))
+```
+
+We add an aesthetic mapping to our `ggplot()` call that assigns a unique color to each county. Referring back to our borough image of New York City, it looks like tracts are continuous with some portions covering parts of water bodies.
+
+Can we do any better? You know the answer is yes! tigris can use census hydrography to clip the portions of tracts that are water:
+
+```{r}
+nyc_trt <- nyc_trt |> 
+  erase_water(area_threshold = .9, year = 2020)
+```
+
+You will need to play with the threshold value to get something that looks good. In this case, we're using a threshold of .9 which means that we are only removing the water areas that represent the largest 10 percent of all water geometries in the map.
+
+Let's once again visualize to see what we have here:
+
+```{r}
+ggplot() +
+  geom_sf(data=nyc_trt, aes(fill = COUNTYFP))
+```
+
+We have a bit more definition now.
+
+Before we move on to adding census data to these tracts, let's use them to create a new geometry - county boundaries. Yes, we could download them using tigris, but we actually have all the data we need in our tract files.
+
+One very cool think about the implementation of simple features in R is that tidyverse commands like `group_by()` and `summarise()` work on them. What if we group tracts by their county identifier and summarise?
+
+```{r}
+nyc_co <- nyc_trt |> 
+  group_by(COUNTYFP) |> 
+  summarise(tracts = n())
+
+ggplot() +
+  geom_sf(data = nyc_co, aes(fill = COUNTYFP))
+```
+
+We have now created a custom set of county boundaries for New York City.
+
+### Styling Maps
+
+I am a big proponent of making many bad maps so that you can progressively refine your visualization to something effective. Let's think about some key controls for styling our maps.
+
+First, let's start with our base tract data:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt)
+```
+
+Let's use a theme to remove some of the shading:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  theme_minimal()
+```
+
+If you don't want the graticules and latitude / longitude markings, you can either use a theme to remove them:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  theme_void()
+```
+
+Or you can manually remove them this way:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  coord_sf(datum = NA)
+```
+
+Let's add counties as an overlay:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  geom_sf(data = nyc_co) +
+  coord_sf(datum = NA)
+```
+
+Hmm - where's our tracts? We can see our counties, but tracts are underneath! Let's remove the fill from the counties file so we can see the tracts underneath:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  geom_sf(data = nyc_co, fill=NA) +
+  coord_sf(datum = NA)
+```
+
+Now we can see the tracts, but what about our counties? Let's use color to differentiate?
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  geom_sf(data = nyc_co, fill = NA, color = "blue") +
+  coord_sf(datum = NA)
+```
+
+Ok - now we can see the counties. Why don't we try to make the line weight heavier on the county outlines to create more hierarchy here.
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt) +
+  geom_sf(data = nyc_co, fill = NA, color = "blue", cex = .7) +
+  coord_sf(datum = NA)
+```
+
+A little thicker. Why don't we also decrease the line weight of the tracts to help differentiate more?
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt, cex = .1) + # Decrease the line weight to differentiate
+  geom_sf(data = nyc_co, fill = NA, color = "blue", cex = .7)+ # Increase the line weight to differentiate
+  coord_sf(datum = NA)
+```
+
+That's starting to look better. Maybe now we can try again but using only gray lines:
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_trt, cex = .1, color = "gray70", fill = NA) + # Decrease the line weight to differentiate
+  geom_sf(data = nyc_co, fill = NA, color = "gray30", cex = .6)+ # Increase the line weight to differentiate
+  coord_sf(datum = NA) +
+  theme_minimal()
+```
+
+Let's consider this "styled' enough for now...
+
+### Adding Data
+
+Let's add some census data on race from table [B03002](https://data.census.gov/table?q=B03002).
+
+To keep things organized, let's define the variables we want to download. Note that we're defining variable names as well as values.
+
+```{r}
+#| message: false
+#| error: false
+
+race_vars <- c(
+  White = "B03002_003",
+  Black = "B03002_004",
+  Native = "B03002_005",
+  Asian = "B03002_006",
+  HIPI = "B03002_007",
+  Hispanic = "B03002_012"
+)
+
+# Our tidycensus download call:
+
+nyc_race <- get_acs(
+  geography = "tract",
+  state = "NY",
+  county = c("Bronx", "Kings", "New York", "Queens", "Richmond"),
+  variables = race_vars,
+  summary_var = "B03002_001",
+  year = 2020
+) 
+
+nyc_race |>
+  slice_head(n=5) |> gt()
+```
+
+We downloaded this using tidycensus' default structure which is a tidy format. We also included a summary variable (the total population) so that we can easily calculate percentages. Let's do that.
+
+```{r}
+nyc_race <- nyc_race |> 
+  mutate(percent = (estimate / summary_est)*100)
+
+nyc_race |> 
+  slice_head(n=5) |> 
+  gt()
+```
+
+Now we can join this to our tract geographies:
+
+```{r}
+nyc_race_trt <- left_join(nyc_trt, nyc_race, by="GEOID")
+```
+
+Conceptually, what is contained within our nyc_race_trt dataset?
+
+### Visualizing our data
+
+The next trick here is to think about how to visualize what we have here. I asked conceptually what is contained within our dataset. We have 2325 unique tract geometries, and end up with 13950 observations in our nyc_race_trt dataset. Conceptually what we have here is a stack of observations for each tract by race. We can filter layers of that stack out to visualize:
+
+**Non-Hispanic White Population**
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_race_trt |> filter(variable == "White"), aes(color = percent, fill = percent)) +
+  coord_sf(datum = NA) +
+  theme_minimal()
+```
+
+**Asian Population**
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_race_trt |> filter(variable == "Asian"), aes(color = percent, fill = percent)) +
+  coord_sf(datum = NA) +
+  theme_minimal()
+```
+
+**Black Population**
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_race_trt |> filter(variable == "Black"), aes(color = percent, fill = percent)) +
+  coord_sf(datum = NA) +
+  theme_minimal()
+```
+
+**Hispanic Population**
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_race_trt |> filter(variable == "Hispanic"), aes(color = percent, fill = percent)) +
+  coord_sf(datum = NA) +
+  theme_minimal()
+```
+
+These certainly work, but we can also be more efficient, using facet_wrap():
+
+```{r}
+ggplot()+
+  geom_sf(data = nyc_race_trt, aes(color = percent, fill = percent)) +
+  facet_wrap(~variable, ncol = 3)+
+  coord_sf(datum = NA) +
+  theme_minimal()
+```
+
+
+
+In this case, our facets break out each of the layers so that we can observe them all together.
+
+### Non Spatial Analysis
+
+FIrst, let's create a table summarizing racial composition for the whole city:
+
+```{r}
+nyc_race |> 
+  group_by(variable) |> 
+  summarise(
+    percent = mean(percent, na.rm=TRUE),
+    population = sum(estimate, na.rm=TRUE)) |> 
+  gt() |> 
+  fmt_percent(2, decimals = 1, scale_values = FALSE) |> 
+  fmt_number(3, decimals = 0) |> 
+  cols_label(variable = "Race or Ethnicity",
+             percent = "Tract Average %",
+             population = "Total Population") |> 
+  tab_header(
+    title = "New York City Tract Racial Composition"
+  )
+```
+
+Next up, a Borough (county) level summary:
+
+```{r}
+#| warning: true
+
+nyc_race |> 
+  separate(NAME, c("Tract", "Borough", "State"), sep = ",") |> 
+  group_by(Borough, variable) |> 
+  summarise(
+    percent = mean(percent, na.rm=TRUE),
+    population = sum(estimate, na.rm=TRUE)) |> 
+  gt() |> 
+  fmt_percent(3, decimals = 1, scale_values = FALSE) |> 
+  fmt_number(4, decimals = 0) |> 
+  cols_label(variable = "Race or Ethnicity",
+             percent = "Tract Average %",
+             population = "Total Population") |> 
+  tab_header(
+    title = "New York City Tract Racial Composition"
+  )
+```
+
+What is the largest population by race for each tract?
+
+```{r}
+nyc_maj_trt <- nyc_race |> 
+  group_by(GEOID) |> 
+  filter(percent == max(percent))
+
+nyc_maj_trt |> 
+  ungroup() |> 
+  slice_head(n=5) |> 
+  gt()
+```
+
+We have one record per tract representing the tract observation with the largest percentage. What's the largest racial group for each tract?
+
+```{r}
+nyc_maj_trt |> 
+  group_by(variable) |> 
+  tally() |> 
+  gt()
+```
+
+Let's join back to our spatial data and map it!
+
+```{r}
+nyc_maj_trt <- left_join(nyc_maj_trt, nyc_trt, by="GEOID") |> st_as_sf()
+
+ggplot() +
+  geom_sf(data=nyc_maj_trt, aes(fill = variable), cex = .1)
+```
+
+Note that when we join spatial to aspatial data that we need to re-coerce this into an st object with `st_as_sf()`.
+
+Let's add county boundaries.
+
+```{r}
+ggplot() +
+  geom_sf(data=nyc_maj_trt, aes(fill = variable), cex = .1) +
+  geom_sf(data = nyc_co, fill=NA, cex = .8)
+```
+
+Let's treat the tract boundaries to the same color as the fill.
+
+```{r}
+ggplot() +
+  geom_sf(data=nyc_maj_trt, aes(fill = variable, color = variable), cex = .1) +
+  geom_sf(data = nyc_co, fill=NA, cex = .8)
+```
+
+### Adding More Demographic Data
+
+We have a pretty good sense of the racial characteristics of New York City tracts. Let's add some additional demographic data so that we can understand what differences may exist for tracts based upon who the largest population is there. Let's download a selection of demographic variables, and construct indicators.
+
++--------------------------------------------------+------------------------------+----------------+
+| Table                                            | Description                  | Variable(s)    |
++==================================================+==============================+================+
+| [B05002](https://data.census.gov/table?q=B05002) | Foreign Born Population (%)  | B05002_001     |
+|                                                  |                              |                |
+|                                                  |                              | B05002_013     |
++--------------------------------------------------+------------------------------+----------------+
+| [B19013](https://data.census.gov/table?q=B19013) | Median Household Income (\$) | B19013_001     |
++--------------------------------------------------+------------------------------+----------------+
+| [B17001](https://data.census.gov/table?q=B17001) | Population in Poverty (%)    | B17001_001     |
+|                                                  |                              |                |
+|                                                  |                              | B17001_002     |
++--------------------------------------------------+------------------------------+----------------+
+| [B25058](https://data.census.gov/table?q=B25058) | Median Rent (\$)             | B25058_001     |
++--------------------------------------------------+------------------------------+----------------+
+| [B25077](https://data.census.gov/table?q=B25077) | Median Home Value (\$)       | B25077_001     |
++--------------------------------------------------+------------------------------+----------------+
+| [B25003](https://data.census.gov/table?q=B25003) | Owner Occupied Units (%)     | B25003_001     |
+|                                                  |                              |                |
+|                                                  |                              | B25003_002     |
++--------------------------------------------------+------------------------------+----------------+
+| [B25002](https://data.census.gov/table?q=B25002) | Vacant Housing Units (%)     | B25002_001     |
+|                                                  |                              |                |
+|                                                  |                              | B25002_003     |
++--------------------------------------------------+------------------------------+----------------+
+
+: Selected Tract Demographic Variables
+
+```{r}
+sel_vars <- c(
+  "B05002_001",
+  "B05002_013",
+  "B19013_001",
+  "B17001_001",
+  "B17001_002",
+  "B25058_001",
+  "B25077_001",
+  "B25003_001",
+  "B25003_002",
+  "B25002_001",
+  "B25002_003"
+)
+
+nyc_trt_demog <- get_acs(
+  geography = "tract",
+  state = "NY",
+  variables = sel_vars,
+  output = "wide",
+  year = 2021
+) |> 
+  mutate(
+    p_fb = B05002_013E / B05002_001E,
+    m_hi = B19013_001E,
+    p_pov = B17001_002E / B17001_001E,
+    m_rent = B25058_001E,
+    m_hv = B25077_001E,
+    p_own = B25003_002E / B25003_001E,
+    p_vac = B25002_003E / B25002_001E
+  ) |> 
+  select(GEOID, p_fb, m_hi, p_pov, m_rent, m_hv, p_own, p_vac)
+
+```
+
+And let's join back to our dataset:
+
+```{r}
+nyc_maj_trt <- left_join(nyc_maj_trt, nyc_trt_demog, by="GEOID")
+```
+
+And let's take a look at a summary of these demographic characteristics by the largest racial population in each tract:
+
+```{r}
+nyc_maj_trt |> 
+  group_by(variable) |> 
+  summarise(tracts = n(), 
+            p_fb = mean(p_fb, na.rm=TRUE),
+            m_hi = mean(m_hi, na.rm=TRUE),
+            p_pov = mean(p_pov, na.rm=TRUE),
+            m_rent = mean(m_rent, na.rm=TRUE),
+            m_hv = mean(m_hv, na.rm=TRUE),
+            p_own = mean(p_own, na.rm=TRUE),
+            p_vac = mean(p_vac, na.rm=TRUE)
+  ) |> 
+  gt()
+```
+
+Uh oh - geometry!
+
+```{r}
+nyc_maj_trt |> 
+  st_set_geometry(NULL) |> 
+  group_by(variable) |> 
+  summarise(tracts = n(), 
+            p_fb = mean(p_fb, na.rm=TRUE),
+            m_hi = mean(m_hi, na.rm=TRUE),
+            p_pov = mean(p_pov, na.rm=TRUE),
+            m_rent = mean(m_rent, na.rm=TRUE),
+            m_hv = mean(m_hv, na.rm=TRUE),
+            p_own = mean(p_own, na.rm=TRUE),
+            p_vac = mean(p_vac, na.rm=TRUE)
+  ) |> 
+  gt()
+```
+
+How could we clean up and format this table further?
+
+What additional questions should we be asking from these data? What other kinds of variables would you like to bring into this analysis?
 
 ## Slides
 
