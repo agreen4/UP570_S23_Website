@@ -115,7 +115,8 @@ website:
               file: assignments/labs/04_describing.qmd
             - text: "Population and the Census"
               file: assignments/labs/05_census.qmd
-            - text: "Population Projections"
+            - text: "Population and the Census (Week 2)"
+              file: assignments/labs/06_census2.qmd
             - text: "Segregation"
             - text: "Neighborhood Change"
             - text: "Place Opportunity"

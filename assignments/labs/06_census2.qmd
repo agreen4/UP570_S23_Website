@@ -1,0 +1,165 @@
+---
+title: "Population and the Census (Week 2)"
+sidebar: false
+toc: true
+toc-depth: 4
+page-layout: full
+bibliography: ../references.bib
+csl: ../apa-6th-edition.csl
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+fig-responsive: true
+editor: visual
+---
+
+## Introduction
+In our previous lab, you learned some of the basics of how to download tables and variables from the census API using the tidycensus package. This week, we will continue to add depth to our exploration of census data, focused on refining our workflows, particularly workflows involving the visualization of census data.
+
+Please refer to our [interactive coding session](../../schedule/10_projections.qmd) focused on data refinement and visualization, which references workflows which you will use in your lab analysis.
+
+Portions of this lab are inspired by Kyle Walker's *Analyzing US Census Data: Methods, Maps and Models in R* [Chapter 3](https://walker-data.com/census-r/wrangling-census-data-with-tidyverse-tools.html).
+
+## Goals
+
+-   Practice using some of the strategies for geographic refinement and data analysis we explored in our Monday class session.
+
+-   Build familiarity with manipulating simple feature objects.
+
+-   Build familiarity with using tools that allow us to characterize, compare, and analyze many areal units at once.
+
+## Core Concepts
+
+### R and Rstudio
+
+-   dplyr::tally()
+-   ggplot::geom_sf()
+-   tidycensus::get_acs()
+-   tidyr::separate()
+-   tigris::tracts()
+
+Let's get going...
+
+## Github Lab Repository
+
+If you have not already done so, follow [this link](https://classroom.github.com/a/sfeCxfN2) to accept the lab Github Classroom assignment repository.
+
+## A Few Functions
+
+Much of the content covered in this lab was introduced in Monday's course description. Let's take a look at a few functions that may be useful to you in completing today's lab.
+
+```{r}
+#| output: false
+
+library(gt)
+library(tidyverse)
+```
+
+## Separate
+
+Sometimes we may have a variable that we need to separate into based upon a known delimiter. `separate` allows us to do so. Let's explore an example. Here's a table containing information on the name and location of [Big 10](https://btaa.org/about) schools.
+```{r}
+#| message: false
+#| warning: false
+#| error: false
+
+Institution <- c(
+  "University of Illinois", 
+  "Indiana University", 
+  "University of Iowa", 
+  "University of Maryland", 
+  "University of Michigan", 
+  "Michigan State University", 
+  "University of Minnesota", 
+  "University of Nebraska-Lincoln", 
+  "Northwestern University", 
+  "Ohio State University", 
+  "Pennsylvania State University", 
+  "Purdue University", 
+  "Rutgers University", 
+  "University of Wisconsin-Madison")
+
+Location <- c(
+  "Champaign, Champaign County, Illinois",
+  "Bloomington, Monroe County, Indiana",
+  "Iowa City, Johnson County, Iowa",
+  "College Park, Baltimore County, Maryland",
+  "Ann Arbor, Washtenaw County, Michigan",
+  "East Lansing, Ingham County, Michigan",
+  "Minneapolis, Hennepin County, Minnesota",
+  "Lincoln, Lancaster County, Nebraska",
+  "Evanston, Cook County, Illinois",
+  "Columbus, Franklin County, Ohio",
+  "State College, Centre County, Pennsylvania",
+  "West Lafayette, Tippecanoe County, Indiana",
+  "Newark, Middlesex County, New Jersey",
+  "Madison, Dane County, Wisconsin"
+  )
+
+big_10 <- tibble(Institution, Location)
+
+big_10 |> gt()
+```
+The Location field has quite a bit of information present that we might use to learn more about the locations of Big 10 schools. Let's use `separate()` to split the city, county, and state into their own fields.
+
+To use `separate()`, we specify the name of the field we want to separate, we specify the new column names we want to assign to each of the components we're separating, and we indicate what character is the separator (in this case a comma ",").
+
+```{r}
+big_10 |> separate(Location, into = c("City", "County", "State"), sep = ",") |> gt()
+```
+
+We get back three new fields that replace the existing location field.
+
+## Tally
+
+We have used the combination of `group_by()` and `summarise()` on many occasions in order to aggregate characteristics of data by groups. For simple operations, there are some helper functions that we can use to simplify our aggregation of groups. `tally()` for instance is the equivalent of `summarise(n = n())` which creates a count of the observations in each group.
+
+Let's explore an example using our Big 10 data. Let's say, for instance, that we want to count the number of Big 10 schools in each state. How would we do this using `group_by()` and `summarise()`?
+
+```{r}
+big_10 |> 
+  separate(Location, into = c("City", "County", "State"), sep = ",") |> 
+  group_by(State) |> 
+  summarise(Institutions = n()) |> 
+  gt()
+```
+In this case, we're taking our raw Big 10 data, separating the location into three columns, and then building a summary based upon the state field.
+
+Here's how we might do the same thing using `group_by()` and `tally()`.
+
+```{r}
+big_10 |> 
+  separate(Location, into = c("City", "County", "State"), sep = ",") |> 
+  group_by(State) |> 
+  tally() |> 
+  gt()
+```
+We get output that is basically the same, just with a count column labelled "n". We can specify the name of the count column so that we have a label that's more descriptive:
+
+```{r}
+big_10 |> 
+  separate(Location, into = c("City", "County", "State"), sep = ",") |> 
+  group_by(State) |> 
+  tally(name = "Institutions") |> 
+  gt()
+```
+## Lab Evaluation
+
+In evaluating your lab submission, we'll be paying attention to the following:
+
+-   Use of `dplyr` and `tidyverse` style formatting in your coding.
+
+-   Proper download calls to tidycensus and tigris.
+
+-   Use of ggplot to visualize spatial relationships.
+
+-   Refined table output formatting using tools such as `gt`.
+
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
+
+## References

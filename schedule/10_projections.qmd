@@ -47,19 +47,13 @@ Let's start by downloading census tract boundaries for New York City's Boroughs.
 
 ![](https://www.worldatlas.com/r/w960-q80/upload/c6/23/73/shutterstock-152208935.jpg) The city consists of five boroughs, each of which is its own county (this is atypical, but it's a New York thing).
 
-+-----------------------+-----------------------+----------------------+
-| FIPS Code             | County Name           | Borough Name         |
-+=======================+=======================+======================+
-| 36047                 | Kings County          | Brooklyn             |
-+-----------------------+-----------------------+----------------------+
-| 36005                 | Bronx County          | Bronx                |
-+-----------------------+-----------------------+----------------------+
-| 36081                 | Queens County         | Queens               |
-+-----------------------+-----------------------+----------------------+
-| 36085                 | Richmond County       | Staten Island        |
-+-----------------------+-----------------------+----------------------+
-| 36061                 | New York County       | Manhattan            |
-+-----------------------+-----------------------+----------------------+
+| FIPS Code | County Name     | Borough Name  |
+|-----------|-----------------|---------------|
+| 36047     | Kings County    | Brooklyn      |
+| 36005     | Bronx County    | Bronx         |
+| 36081     | Queens County   | Queens        |
+| 36085     | Richmond County | Staten Island |
+| 36061     | New York County | Manhattan     |
 
 : New York City Boroughs
 
@@ -377,8 +371,6 @@ ggplot()+
   theme_minimal()
 ```
 
-
-
 In this case, our facets break out each of the layers so that we can observe them all together.
 
 ### Non Spatial Analysis
@@ -477,31 +469,31 @@ ggplot() +
 
 We have a pretty good sense of the racial characteristics of New York City tracts. Let's add some additional demographic data so that we can understand what differences may exist for tracts based upon who the largest population is there. Let's download a selection of demographic variables, and construct indicators.
 
-+--------------------------------------------------+------------------------------+----------------+
-| Table                                            | Description                  | Variable(s)    |
-+==================================================+==============================+================+
-| [B05002](https://data.census.gov/table?q=B05002) | Foreign Born Population (%)  | B05002_001     |
-|                                                  |                              |                |
-|                                                  |                              | B05002_013     |
-+--------------------------------------------------+------------------------------+----------------+
-| [B19013](https://data.census.gov/table?q=B19013) | Median Household Income (\$) | B19013_001     |
-+--------------------------------------------------+------------------------------+----------------+
-| [B17001](https://data.census.gov/table?q=B17001) | Population in Poverty (%)    | B17001_001     |
-|                                                  |                              |                |
-|                                                  |                              | B17001_002     |
-+--------------------------------------------------+------------------------------+----------------+
-| [B25058](https://data.census.gov/table?q=B25058) | Median Rent (\$)             | B25058_001     |
-+--------------------------------------------------+------------------------------+----------------+
-| [B25077](https://data.census.gov/table?q=B25077) | Median Home Value (\$)       | B25077_001     |
-+--------------------------------------------------+------------------------------+----------------+
-| [B25003](https://data.census.gov/table?q=B25003) | Owner Occupied Units (%)     | B25003_001     |
-|                                                  |                              |                |
-|                                                  |                              | B25003_002     |
-+--------------------------------------------------+------------------------------+----------------+
-| [B25002](https://data.census.gov/table?q=B25002) | Vacant Housing Units (%)     | B25002_001     |
-|                                                  |                              |                |
-|                                                  |                              | B25002_003     |
-+--------------------------------------------------+------------------------------+----------------+
++--------------------------------------------------+------------------------------+-------------+
+| Table                                            | Description                  | Variable(s) |
++==================================================+==============================+=============+
+| [B05002](https://data.census.gov/table?q=B05002) | Foreign Born Population (%)  | B05002_001  |
+|                                                  |                              |             |
+|                                                  |                              | B05002_013  |
++--------------------------------------------------+------------------------------+-------------+
+| [B19013](https://data.census.gov/table?q=B19013) | Median Household Income (\$) | B19013_001  |
++--------------------------------------------------+------------------------------+-------------+
+| [B17001](https://data.census.gov/table?q=B17001) | Population in Poverty (%)    | B17001_001  |
+|                                                  |                              |             |
+|                                                  |                              | B17001_002  |
++--------------------------------------------------+------------------------------+-------------+
+| [B25058](https://data.census.gov/table?q=B25058) | Median Rent (\$)             | B25058_001  |
++--------------------------------------------------+------------------------------+-------------+
+| [B25077](https://data.census.gov/table?q=B25077) | Median Home Value (\$)       | B25077_001  |
++--------------------------------------------------+------------------------------+-------------+
+| [B25003](https://data.census.gov/table?q=B25003) | Owner Occupied Units (%)     | B25003_001  |
+|                                                  |                              |             |
+|                                                  |                              | B25003_002  |
++--------------------------------------------------+------------------------------+-------------+
+| [B25002](https://data.census.gov/table?q=B25002) | Vacant Housing Units (%)     | B25002_001  |
+|                                                  |                              |             |
+|                                                  |                              | B25002_003  |
++--------------------------------------------------+------------------------------+-------------+
 
 : Selected Tract Demographic Variables
 
