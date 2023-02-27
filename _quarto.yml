@@ -118,6 +118,7 @@ website:
             - text: "Population and the Census (Week 2)"
               file: assignments/labs/06_census2.qmd
             - text: "Segregation"
+              file: assignments/labs/07_segregation.qmd
             - text: "Neighborhood Change"
             - text: "Place Opportunity"
             - text: "Transportation Equity"

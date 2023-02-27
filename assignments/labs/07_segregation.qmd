@@ -1,0 +1,569 @@
+---
+title: "Measuring Residential Segregation"
+sidebar: false
+toc: true
+toc-depth: 4
+page-layout: full
+bibliography: ../references.bib
+csl: ../apa-6th-edition.csl
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+fig-responsive: true
+editor: visual
+---
+
+## Introduction
+
+In this lab, we'll explore some of the common measures of residential segregation and apply them at the city and regional levels.
+
+In our last lab, we got a basic idea of the racial distribution for census tracts. Now we can start to think about summary measures of the extent to which these groups are segregated within the region. We will use census tracts as a unit of analysis to help us describe county-level racial segregation.
+
+Most measures of residential segregation are set up to summarize the level of heterogeneity (or homogeneity) observed between neighborhoods to a city or regional scale to produce a summary measure that then tells us how even populations are distributed at the neighborhood level.
+
+There are also some measures that focus more on segregation at a neighborhood level. In this lab, we'll focus on those measures that summarize characteristics to more aggregate levels such as cities or regions.
+
+## Goals
+
+-   Gain exposure to common measures of residential segregation.
+-   Learn how to apply simple measures within R / RStudio.
+
+## Core Concepts
+
+### R and Rstudio
+
+-   \[concepts here\]
+
+Let's get going...
+
+## Github Lab Repository
+
+Follow [this link](https://classroom.github.com/a/iNNEeQDP) to accept the lab Github Classroom assignment repository.
+
+## Setup
+
+Let's start as usual by loading the packages that we'll need for our work.
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+library(gt)
+library(tigris)
+library(tidycensus)
+library(tidyverse)
+library(sf)
+```
+
+For the purposes of our example, we'll continue examining racial segregation in New York City - an extension of our previous lab example. Let's start by downloading and preparing data on race for New York City.
+
+### Get Tract Boundaries
+
+Let's download 2020 census tract boundaries for New York City's five Boroughs. While we're at it, we'll clean them up a little bit as we did in our last lab.
+
+| FIPS Code | County Name     | Borough Name  |
+|-----------|-----------------|---------------|
+| 36047     | Kings County    | Brooklyn      |
+| 36005     | Bronx County    | Bronx         |
+| 36081     | Queens County   | Queens        |
+| 36085     | Richmond County | Staten Island |
+| 36061     | New York County | Manhattan     |
+
+: New York City Boroughs
+
+```{r}
+#| message: false
+#| error: false
+#| include: false
+
+nyc_trt <- tracts(state = "NY", county = c("005", "047", "061", "081", "085"), year = 2020) |> 
+  st_transform(26918) |> 
+  filter(ALAND != 0) |> 
+  erase_water(area_threshold = .9, year = 2020)
+```
+
+As a reminder, the code above is accomplishing the following things:
+
+1.  Download tract-level census geometries as a simple features object for Kings, Bronx, Queens, Richmond, and New York Counties for the year 2020.
+2.  Transform these geometries to NAD 1983.
+3.  Remove those defined tract boundaries with no land area.
+4.  Erase the portion of tract boundaries that are water, focusing on the top 10 percent of largest defined water polygons, and using hydrography defined by the census in 2020.
+
+Let's use `ggplot()` to visualize so that we can confirm what we've downloaded is indeed New York City's boroughs:
+
+```{r}
+ggplot()+
+  geom_sf(data=nyc_trt)
+```
+
+### Get ACS Data
+
+Next, we'll download ACS data on race for New York City. We'll focus on 2020 data from the 5-year ACS from Table [B03002](https://data.census.gov/table?q=B03002).
+
+To keep things organized, let's define the variables we want to download. Note that we're defining variable names as well as values. To facilitate some of our later operations, let's download these data in *wide* format rather than *tidy* format. In wide format, we'll have one observation (row) for each census tract, with multiple columns containing estimates for each population subgroup and the total population.
+
+```{r}
+#| message: false
+#| error: false
+
+dl_vars <- c(
+  White = "B03002_003",
+  Black = "B03002_004",
+  Native = "B03002_005",
+  Asian = "B03002_006",
+  HIPI = "B03002_007",
+  Hispanic = "B03002_012",
+  Poptot = "B03002_001"
+)
+
+# Our tidycensus download call:
+
+nyc_race <- get_acs(
+  geography = "tract",
+  state = "NY",
+  county = c("Bronx", "Kings", "New York", "Queens", "Richmond"),
+  variables = dl_vars,
+  year = 2020,
+  output = "wide"
+) 
+
+nyc_race |> 
+  slice_head(n = 5) |> 
+  gt()
+```
+
+Note that tidycensus downloads the data, and labels each column with the label we have defined (with E and M denoting estimates and margins of error).
+
+While we're at it, let's separate our tract name label into separate tract, county, and state values.
+
+```{r}
+nyc_race <- nyc_race |> 
+  separate(NAME, into = c("Tract", "County", "State"), sep = ", ")
+```
+
+Note the use of `sep = ", "` includes the space after the comma so we don't have an extra space in our resulting county and state variables.
+
+### Create County Summaries
+
+Before we further manipulate our data, let's aggregate the data we have to form county population summaries. Because our tract data is hierarchical, we can sum up our population estimates from tracts to counties to produce county population totals. While we're at it, we'll also use the county FIPS codes to create a Borough identifier (we could also add county labels back as well).
+
+```{r}
+nyc_race_co <-
+  nyc_race |> 
+  group_by(STCO = substr(GEOID, 0, 5)) |> 
+  summarise(
+    co_WhiteE = sum(WhiteE, na.rm = TRUE),
+    co_WhiteM = moe_sum(WhiteM, WhiteE),
+    co_BlackE = sum(BlackE, na.rm = TRUE),
+    co_BlackM = moe_sum(BlackM, BlackE),
+    co_NativeE = sum(NativeE, na.rm = TRUE),
+    co_NativeM = moe_sum(NativeM, NativeE),
+    co_AsianE = sum(AsianE, na.rm = TRUE),
+    co_AsianM = moe_sum(AsianM, AsianE),
+    co_HIPIE = sum(HIPIE, na.rm = TRUE),
+    co_HIPIM = moe_sum(HIPIM, HIPIE),
+    co_HispanicE = sum(HispanicE, na.rm = TRUE),
+    co_HispanicM = moe_sum(HispanicM, HispanicE),
+    co_PoptotE = sum(PoptotE, na.rm = TRUE),
+    co_PoptotM = moe_sum(PoptotM, PoptotE),
+  ) |> 
+  mutate(Borough =
+    case_when(
+      STCO == "36005" ~ "Bronx",
+      STCO == "36047" ~ "Brooklyn",
+      STCO == "36061" ~ "Manhattan",
+      STCO == "36081" ~ "Queens",
+      STCO == "36085" ~ "Staten Island")
+  )
+```
+
+Let's walk through this:
+
+1.  We are going to use `group_by()` to aggregate our tract-level data to counties. In this case, we are pulling out the first five digits from the combined state-county-tract FIPS code (`substr(GEOID, 0, 5)`) using the `substr()` command from the stringr package. This allows us to create a combined state and county FIPS code (the state is the first two digits - 36 in the case of New York - and the county is the next three digits).
+2.  We use `summarise()` to create summary values for counties. We use `sum()` on our population estimates to sum up populations for tracts into county totals. We use `moe_sum()` from the `tidycensus()` package to properly aggregate margins of error accounting for the size of the population estimate being aggregated. The census provides [documentation](https://www2.census.gov/programs-surveys/acs/tech_docs/accuracy/MultiyearACSAccuracyofData2015.pdf) on what's implemented in tidycensus. We denote that these are county estimates by including `co_` as a prefix - you'll see why later.
+3.  We use `case_when()` construct borough labels from our combined state and county FIPS codes.
+
+As a result, we have a table containing county populations and margins of error for the boroughs of New York City:
+
+```{r}
+#| echo: false
+
+nyc_race_co |> 
+  gt() |> 
+  fmt_number(2:15, decimals = 0)
+```
+
+Let's create a more polished table showing the population by race for each NYC Borough:
+
+```{r}
+nyc_race_co |> 
+  mutate(other = co_NativeE+co_HIPIE) |> 
+  select(Borough, co_WhiteE, co_BlackE, co_AsianE, co_HispanicE, other, co_PoptotE) |> 
+  gt() |> 
+  fmt_number(2:7, decimals = 0) |> 
+  cols_label(
+    co_WhiteE = "White",
+    co_BlackE = "Black",
+    co_AsianE = "Asian",
+    co_HispanicE = "Hispanic",
+    other = "Other",
+    co_PoptotE = "Total"
+  ) |> 
+  summary_rows(
+    columns = 2:7, 
+    fns = list(Total = ~sum(.)),
+    formatter = fmt_number,
+    decimals = 0)
+```
+
+Note the addition of a summary row at the bottom of the table so we can see the total population by race across New York City. Also note the strategic use of an "Other" category which combines the Native American and Hawaiian Island and Pacific Islander categories.
+
+### Setup Summary
+
+We now have three resources available to us:
+
+1.  nyc_race: ACS data on race for all tracts in New York City.
+2.  nyc_race_co: ACS data on race for all counties in New York City.
+3.  nyc_trt: Tract geometry data for all tracts in New York City.
+
+These three pieces of information can form the basis for manipulation and analysis of dimensions of racial segregation in New York City.
+
+Let's now turn towards the measures of segregation.
+
+## Dissimilarity
+
+*Dissimilarity* is a common measure of *evenness* between two populations - dissimilarity measures the distribution of a minority population within a majority population. Conceptually, dissimilarity measures the proportion of that minority or subgroup population that would need to move in order to be equally distributed with the majority population. A dissimilarity score of 0 would mean a completely even distribution of a minority population amongst a majority population (no segregation). A dissimilarity score of 100 would mean a completely segregated minority population (100 percent of the minority population would need to move to achieve an even distribution amongst the population. Dissimilarity is calculated as follows:
+
+$D = .5*\sum_i |\frac{b_i}{B}-\frac{w_i}{W}|$
+
+where $b_i$ is the number of blacks in tract *i*
+
+$B$ is the number of blacks for the county
+
+$w_i$ is the number of whites in tract *i*
+
+$W$ is the number of whites for the county
+
+Now that we know the formula, we can start thinking about how to implement this in R with dplyr.
+
+### Black-White Dissimilarity
+
+This looks complicated, but we can actually do this fairly simply with dplyr notation. Let's start off by calculating Black-White dissimilarity.
+
+We have our white and black tract population data already in our il_trt data, and we have our county data in a separate object. Let's go ahead and join that county data to our tract data.
+
+```{r}
+nyc_race<-left_join(nyc_race |> mutate(STCO = substr(GEOID, 0,5)), nyc_race_co, by= "STCO")
+```
+
+Notice that this join looks pretty standard with the exception of `nyc_race |> mutate(STCO = substr(GEOID, 0,5))`. When we created our county-level summaries of the tract-level data, we created a new variable called STCO which is the combined city and county FIPS codes. In order to join those data to our tract data, we need to temporarily create the same code from our GEOID field in the tract data. The mutate statement temporarily creates the STCO column in the nyc_race data, and the join can be performed denoting the common column, STCO.
+
+Now that we've joined these together, we can start breaking down the dissimilarity formula into code-able pieces. Inside the absolute value we are calculating fractions of tract minority and majority populations compared to their county. We then subtract these from each other and use `abs()` to find the absolute value. After that, we need to sum these all up and multiply by .5. We are calculating these by county, so we can use group_by() to sum up only the data for each county to produce a series of final dissimilarity statistics for each county in the Chicago metropolitan area.
+
+```{r}
+nyc_race  |>
+  mutate(dissim_wb = abs(BlackE / co_BlackE - WhiteE / co_WhiteE)) |>  
+  group_by(Borough) |>  
+  summarise(dissimilarity = .5*sum(dissim_wb)) |> gt()
+```
+
+How would you interpret these black-white dissimilarity values? Where is Black-White dissimilarity the highest within the region? Where is it the lowest?
+
+## Nonwhite-White Dissimilarity
+
+```{r}
+nyc_race |>
+  mutate(dissim_nww = abs((PoptotE-WhiteE) / (co_PoptotE-co_WhiteE) - WhiteE / co_WhiteE)) |> 
+  group_by(Borough) |> 
+  summarise(dissimilarity = .5*sum(dissim_nww)) |> 
+  gt()
+```
+
+Compare and contrast this with Black-White dissimilarity - what do you observe?
+
+## Latino-White Dissimilarity
+
+```{r}
+
+nyc_race  |> 
+  mutate(dissim_lw = abs(HispanicE / co_HispanicE - WhiteE / co_WhiteE)) |> 
+  group_by(Borough) |>  
+  summarise(dissimilarity = .5*sum(dissim_lw)) |> 
+  gt()
+```
+
+Compare and contrast this with Black-White dissimilarity - what do you observe?
+
+# Interaction
+
+A second common measure of segregation is *interaction* which is a measure of *exposure*. Interaction measures the likelihood of population subgroups interacting with one another based upon their distribution within areal sub units (tracts). For instance, Black-White interaction is calculated as follows:
+
+$Interaction = \sum_i\frac{b_i}{B}*\frac{w_i}{t_i}$
+
+Where
+
+$b_i$ is the Black population of tract *i*
+
+$B$ is the Black population of the county
+
+$w_i$ is the White population of tract *i*
+
+$t_i$ is the total population of tract *i*
+
+Given that there are some similarities to the dissimilarity index, modify your existing code to measure Black White interaction for counties in the Chicago Metropolitan Area:
+
+```{r}
+nyc_race |> 
+  mutate(interaction_bw = ((BlackE / co_BlackE) * (WhiteE / PoptotE))) |> 
+  group_by(Borough) |>  
+  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  gt()
+```
+
+The output here is actually a *probability* that ranges from 0 to 1. A value closer to 1 indicates a higher probability of there being contact between these two population groups. A value closer to 0 indicates lower probabilities of contact.
+
+Provide your interpretation of Black-White Interaction for New York City boroughs.
+
+### Nonwhite-White Interaction
+
+```{r}
+nyc_race |> 
+  mutate(interaction_bw = ((PoptotE-WhiteE) / (co_PoptotE-co_WhiteE) * WhiteE / PoptotE)) |>  
+  group_by(Borough) |>
+  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  gt()
+```
+
+### Latino-White Interaction
+
+```{r}
+nyc_race |> 
+  mutate(interaction_bw = (HispanicE / co_HispanicE * WhiteE / PoptotE)) |>  
+  group_by(Borough) |>
+  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  gt()
+```
+
+How would you interpret Black-White, Non-White White, and Latino-White interaction jointly?
+
+# Isolation
+
+The final measure of racial segregation we'll look at in this lab is *isolation* which is only measured for one group at a time. Isolation measures the likelihood of contact for a subgroup with other subgroup members. It is interpreted similarly to Interaction (as a probability ranging from 0 to 1):
+
+Isolation for Blacks
+
+$Isolation = \sum_i\frac{b_i}{B}*\frac{b_i}{t_i}$
+
+Where
+
+$b_i$ is the Black population of tract *i*
+
+$B$ is the Black population of the county
+
+$t_i$ is the total population of tract *i*
+
+### Black Isolation
+
+Let's calculate Black Isolation:
+
+```{r}
+nyc_race  |>
+  mutate(interaction_bw = (BlackE / co_BlackE * BlackE / PoptotE)) |>  
+  group_by(Borough) |>  
+  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  gt()
+```
+
+You know what comes next. Let's calculate Nonwhite Isolation and Latino Isolation and interpret what you see.
+
+## Nonwhite Isolation
+
+```{r}
+nyc_race |> 
+  mutate(interaction_bw = ((PoptotE - WhiteE) / (co_PoptotE - co_WhiteE) * (PoptotE-WhiteE) / PoptotE)) |> 
+  group_by(Borough) |> 
+  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  gt()
+```
+
+## Latino Isolation
+
+```{r}
+
+nyc_race |> 
+  mutate(interaction_bw = (HispanicE / co_HispanicE * HispanicE / PoptotE)) |>  
+  group_by(Borough) |>
+  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  gt()
+```
+
+Provide your interpretation of how isolation differs for these groups and for each borough.
+
+# Income Inequality
+
+While we're at it, let's also pay attention to segregation on the basis of income. A simple measure of income inequality and distribution is to calculate the difference in median income between the county and the census tracts that make up the county.
+
+We have all of our census tract geographic data, but need to go back to census data to download tract and county median household income data (this is not a place to take the average or weighted average of the tract-level data). Let's download and prepare these as a new dataset. Median household income is contained in ACS table [B19013](https://data.census.gov/cedsci/table?q=B19013&tid=ACSDT1Y2019.B19013):
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+dl_vars <- c(
+  MHHI = "B19013_001")
+
+# Our tidycensus download call:
+
+nyc_income <- get_acs(
+  geography = "tract",
+  state = "NY",
+  county = c("Bronx", "Kings", "New York", "Queens", "Richmond"),
+  variables = dl_vars,
+  year = 2020,
+  output = "wide"
+) 
+
+dl_vars <- c(
+  co_MHHI = "B19013_001")
+
+nyc_income_co <- get_acs(
+  geography = "county",
+  state = "NY",
+  county = c("Bronx", "Kings", "New York", "Queens", "Richmond"),
+  variables = dl_vars,
+  year = 2020,
+  output = "wide"
+) 
+
+nyc_income |> 
+  slice_head(n = 5) |> 
+  gt()
+
+```
+
+Let's also take a look at our county income table:
+
+```{r}
+nyc_income_co |> 
+  slice_head(n=5) |> 
+  gt()
+```
+
+And now let's join the two together (again creating our state and county FIPS codes from our combined state, county, and tract FIPS codes):
+
+```{r}
+nyc_income = left_join(nyc_income |> mutate(STCO = substr(GEOID, 0, 5)), nyc_income_co, by=c("STCO" = "GEOID"))
+```
+
+Now we can calculate the ratio of income for our census tract to that of the county:
+
+```{r}
+nyc_income <-nyc_income |> 
+  mutate(inc_ratio = MHHIE / co_MHHIE)
+```
+
+Now let's map out this income ratio statistic for New York City tracts:
+
+```{r}
+nyc_income <- left_join(nyc_income, nyc_trt, by="GEOID") |> st_as_sf()
+
+ggplot()+
+  geom_sf(data=nyc_income, aes(fill=inc_ratio), colour = NA)+
+    labs(title = "New York City Boroigh Income Ratio", fill = "Income Ratio")+
+  theme_minimal()
+
+```
+
+What would a ratio of 1 indicate? What would a ratio of 3 indicate? Where do we see big differences?
+
+While we're at it, it might be interesting to create a scatter plot that illustrates the relationship between racial concentration and income. To do this, we'll need to join together our two datasets.
+
+```{r}
+nyc_dataset <- left_join(nyc_race, nyc_income |> st_set_geometry(NULL)|> select(GEOID, MHHIE, MHHIM, co_MHHIE, co_MHHIM, inc_ratio), by="GEOID")
+```
+
+Let's plot the Percent White on the X axis and the income ratio on the y axis using geom_point):
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+ggplot()+
+  geom_point(data=nyc_dataset, aes(x=(WhiteE/PoptotE), y=inc_ratio), cex = .5, alpha = .2) +
+  labs(title = "My Cool Plot", x = "Percent White", y = "Income Ratio") +
+  scale_x_continuous(labels = scales::percent)+
+  theme_minimal()
+```
+
+How would you describe this relationship?
+
+Now see if you can add a linear line of best fit to these data using geom_smooth (you'll need to set `method = lm` to get a fitted linear model):
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+ggplot()+
+  geom_point(data=nyc_dataset, aes(x=(WhiteE/PoptotE), y=inc_ratio), cex = .5, alpha = .2) +
+  geom_smooth(data=nyc_dataset, method = "lm", aes(x=(WhiteE/PoptotE), y=inc_ratio), alpha = .5)+
+  labs(title = "Tract Income Ratio by White Population", x = "Percent White", y = "Income Ratio") +
+  scale_x_continuous(labels = scales::percent)+
+  theme_minimal()
+
+```
+
+What's the relationship between the percent white population and the income ratio?
+
+What would it look like to split this out by boroughs using facets?
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+ggplot()+
+  geom_point(data=nyc_dataset, aes(x=(WhiteE/PoptotE), y=inc_ratio), cex = .5, alpha = .2) +
+  geom_smooth(data=nyc_dataset, method = "lm", aes(x=(WhiteE/PoptotE), y=inc_ratio), alpha = .5)+
+  labs(title = "Tract Income Ratio by White Population", x = "Percent White", y = "Income Ratio") +
+  scale_x_continuous(labels = scales::percent)+
+  theme_minimal()+
+  facet_wrap(~Borough)
+```
+
+How would you describe the differences observed by boroughs?
+
+Congratulations, you have learned some ways to calculate common measures of segregation, and have applied these measures as part of a data pipeline.
+
+By changing your download calls at the very beginning of this lab where you download ACS data, you could easily create segregation measures for other places (note that you would have to re-label some elements where we indicate boroughs which are counties within New York City).
+
+# Extending this Analysis
+
+Now that you have some new tools that you are familiar with, start exploring these data more. Make maps for other racial groups. Explore dimensions of segregation for other groups.
+
+1.  Can you produce the data which would populate a summary table of minority-majority dissimilarity? Which groups face the highest levels of segregation?
+
+2.  How does income relate to levels of segregation? Think about how you might use the median household income statistic to explore the relationship.
+
+3.  What are other forms of segregation that might be useful to explore (aside from racial and income segregation)?
+
+## Lab Evaluation
+
+In evaluating your lab submission, we'll be paying attention to the following:
+
+1.  Proper use of tigris tidycensus to download tabular and spatial data from the census bureau.
+2.  Production of clearly-labelled and well-formatted tables.
+3.  Production of well-formatted maps of income inequality.
+4.  Detailed reflection and diagnosis using measure of segregation.
+
+As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.
+
+## References
