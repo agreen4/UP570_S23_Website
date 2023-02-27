@@ -80,7 +80,6 @@ Let's download 2020 census tract boundaries for New York City's five Boroughs. W
 ```{r}
 #| message: false
 #| error: false
-#| include: false
 
 nyc_trt <- tracts(state = "NY", county = c("005", "047", "061", "081", "085"), year = 2020) |> 
   st_transform(26918) |> 
@@ -264,7 +263,7 @@ nyc_race<-left_join(nyc_race |> mutate(STCO = substr(GEOID, 0,5)), nyc_race_co, 
 
 Notice that this join looks pretty standard with the exception of `nyc_race |> mutate(STCO = substr(GEOID, 0,5))`. When we created our county-level summaries of the tract-level data, we created a new variable called STCO which is the combined city and county FIPS codes. In order to join those data to our tract data, we need to temporarily create the same code from our GEOID field in the tract data. The mutate statement temporarily creates the STCO column in the nyc_race data, and the join can be performed denoting the common column, STCO.
 
-Now that we've joined these together, we can start breaking down the dissimilarity formula into code-able pieces. Inside the absolute value we are calculating fractions of tract minority and majority populations compared to their county. We then subtract these from each other and use `abs()` to find the absolute value. After that, we need to sum these all up and multiply by .5. We are calculating these by county, so we can use group_by() to sum up only the data for each county to produce a series of final dissimilarity statistics for each county in the Chicago metropolitan area.
+Now that we've joined these together, we can start breaking down the dissimilarity formula into code-able pieces. Inside the absolute value we are calculating fractions of tract minority and majority populations compared to their county. We then subtract these from each other and use `abs()` to find the absolute value. After that, we need to sum these all up and multiply by .5. We are calculating these by county, so we can use group_by() to sum up only the data for each county to produce a series of final dissimilarity statistics for each county in New York City. For other regions, you might end up calculating dissimilarity for multiple counties within a region.
 
 ```{r}
 nyc_race  |>
@@ -316,7 +315,7 @@ $w_i$ is the White population of tract *i*
 
 $t_i$ is the total population of tract *i*
 
-Given that there are some similarities to the dissimilarity index, modify your existing code to measure Black White interaction for counties in the Chicago Metropolitan Area:
+Given that there are some similarities to the dissimilarity index, modify your existing code to measure Black White interaction for counties in the New York City:
 
 ```{r}
 nyc_race |> 
@@ -374,9 +373,9 @@ Let's calculate Black Isolation:
 
 ```{r}
 nyc_race  |>
-  mutate(interaction_bw = (BlackE / co_BlackE * BlackE / PoptotE)) |>  
+  mutate(isolation_bw = (BlackE / co_BlackE * BlackE / PoptotE)) |>  
   group_by(Borough) |>  
-  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  summarise(isolation = sum(isolation_bw, na.rm=TRUE)) |> 
   gt()
 ```
 
@@ -386,9 +385,9 @@ You know what comes next. Let's calculate Nonwhite Isolation and Latino Isolatio
 
 ```{r}
 nyc_race |> 
-  mutate(interaction_bw = ((PoptotE - WhiteE) / (co_PoptotE - co_WhiteE) * (PoptotE-WhiteE) / PoptotE)) |> 
+  mutate(isolation_bw = ((PoptotE - WhiteE) / (co_PoptotE - co_WhiteE) * (PoptotE-WhiteE) / PoptotE)) |> 
   group_by(Borough) |> 
-  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  summarise(isolation = sum(isolation_bw, na.rm=TRUE)) |> 
   gt()
 ```
 
@@ -397,9 +396,9 @@ nyc_race |>
 ```{r}
 
 nyc_race |> 
-  mutate(interaction_bw = (HispanicE / co_HispanicE * HispanicE / PoptotE)) |>  
+  mutate(isolation_bw = (HispanicE / co_HispanicE * HispanicE / PoptotE)) |>  
   group_by(Borough) |>
-  summarise(interaction = sum(interaction_bw, na.rm=TRUE)) |> 
+  summarise(isolation = sum(isolation_bw, na.rm=TRUE)) |> 
   gt()
 ```
 
@@ -459,7 +458,7 @@ nyc_income_co |>
 And now let's join the two together (again creating our state and county FIPS codes from our combined state, county, and tract FIPS codes):
 
 ```{r}
-nyc_income = left_join(nyc_income |> mutate(STCO = substr(GEOID, 0, 5)), nyc_income_co, by=c("STCO" = "GEOID"))
+nyc_income <- left_join(nyc_income |> mutate(STCO = substr(GEOID, 0, 5)), nyc_income_co, by=c("STCO" = "GEOID"))
 ```
 
 Now we can calculate the ratio of income for our census tract to that of the county:
@@ -476,7 +475,7 @@ nyc_income <- left_join(nyc_income, nyc_trt, by="GEOID") |> st_as_sf()
 
 ggplot()+
   geom_sf(data=nyc_income, aes(fill=inc_ratio), colour = NA)+
-    labs(title = "New York City Boroigh Income Ratio", fill = "Income Ratio")+
+    labs(title = "New York City Borough Income Ratio", fill = "Income Ratio")+
   theme_minimal()
 
 ```
