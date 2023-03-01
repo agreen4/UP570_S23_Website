@@ -25,4 +25,8 @@ U.S. Bureau of the Census: Measures of Residential Segregation [{{< fa file >}}]
 
 ## Slides
 
+```{=html}
+<iframe class="slide-deck" src="../slides/S12 Segregation/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
+
 ## Resources for Further Exploration

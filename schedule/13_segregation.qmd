@@ -9,9 +9,15 @@ editor: visual
 
 ## Session Description
 
-In this session, we will begin to work on a lab focused on measures of residential segregation.
+In this session, we will begin to work on a lab focused on measures of residential segregation. We will also spend some time workshopping your approach to the Population Memo.
+
+We'll take around 20 minutes at the beginning of class for you to share with each other what you're thinking and your approach.
+
+We'll then engage any questions you have about this week's lab or last week's lab.
 
 ## Before Class
+
+Please come ready to share your approach to the population memo in small groups. Please bring in examples of analysis or visualization that we can look at, either in small groups or collectively.
 
 ## Reflect
 
