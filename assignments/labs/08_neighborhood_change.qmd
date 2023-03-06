@@ -1,4 +1,3 @@
-
 ---
 title: "Neighborhood Change"
 sidebar: false
@@ -738,7 +737,7 @@ We currently have data from 1970, 1980, 1990, 2000, 2010 (2012 ACS), and 2020 (2
 -   **Employment:** Unemployment, Labor Force Participation, Occupation
 
 | Census Table                                                                                                                                                                                                                                             | Description               | Indicators to Construct                                   |
-|-------------------|-------------------|----------------------------------|
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------|
 | [B03002](https://data.census.gov/cedsci/table?q=ethnicity&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B03002)                                                                                                                  | Race and Ethnicity        | \% White, % Black, % Asian, % Other, % Latinx (all races) |
 | [B01001](https://data.census.gov/cedsci/table?q=B01001&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B01001)                                                                                                                     | Age Structure             | Age 0-19, Age 20-34, Age 35-64, Age 65 up                 |
 | [B18101](https://data.census.gov/cedsci/table?q=age&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B01001https://data.census.gov/cedsci/table?q=age&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B01001) | Disability Status         | \% Disabled                                               |
@@ -968,10 +967,10 @@ With this done, we can now develop some descriptives to help us understand diffe
 Following the descriptions provided on the Voorhees Center's [three cities study site](https://voorheescenter.uic.edu/chicago_communities/), let's systematically describe New York's neighborhoods based upon change in income.
 
 ### How Many Tracts? How Many People?
+
 Looking at the first tab in the Voorhees report, we need to describe how many tracts and how many people fall within each city.
 
-![](08_neighborhood_change/images/03_NVC_Three_Cities.png)
-Start by counting how many tracts there are in each city and how many people lived in each city in 2019. Use `group_by()` and `summarise()` to accomplish this.
+![](08_neighborhood_change/images/03_NVC_Three_Cities.png) Start by counting how many tracts there are in each city and how many people lived in each city in 2019. Use `group_by()` and `summarise()` to accomplish this.
 
 ```{r}
 nyc_income |> 
@@ -980,9 +979,11 @@ nyc_income |>
   gt() |> 
   fmt_number(3, decimals = 0)
 ```
+
 We can see the split in 2019 population between growing, middle and shrinking places. We have 65 tracts which are unclassified with a population of around 42,565.
 
 ### Race
+
 The next pane in the Voorhees analysis summarizes each city based upon it's racial composition:
 
 ![](08_neighborhood_change/images/05_Race.png)
@@ -1004,6 +1005,7 @@ POther = mean(P_Other, na.rm=TRUE)
   gt() |> 
   fmt_percent(3:7, decimals = 1)
 ```
+
 We might also want to revisit our based LTDB data so that we can describe change in racial composition for each city over time.
 
 ### Age
@@ -1031,6 +1033,7 @@ Age_65up = sum(Age_65up, na.rm=TRUE)/sum(POP19, na.rm=TRUE)
 ```
 
 ### Disability
+
 Next up, we'll examine disability, primarily be calculating the average share of each city that is disabled.
 
 ![](08_neighborhood_change/images/07_Disability.png)
@@ -1048,6 +1051,7 @@ P_Disabled = mean(P_Disabled, na.rm=TRUE)
 ```
 
 ### Housing
+
 Next up, we'll look at housing tenure (the balance between owners and renters), as well as cost burden (the share of households paying more than 30 percent of their income towards housing costs.
 
 ![](08_neighborhood_change/images/08_Housing.png)
@@ -1108,14 +1112,14 @@ P_Emp_PA = mean(P_Emp_PA, na.rm=TRUE)
   gt() |> 
   fmt_percent(3:14, decimals = 1)
 ```
-## Describing our Three Cities
 
+## Describing our Three Cities
 
 # Lab Summary
 
 In this lab, you started working with harmonized census data in order to describe trajectories of neighborhood change. You spent lots of time cleaning your data and preparing it for further analysis. You joined to the historical census data current ACS data, and then compared the current demographic attributes of those places based upon their historical trajectories of income change.
 
-In this lab, you've had the opportunitiy to work (more) independently, relying upon your past skills and R skillset. The focus in this lab has been on data cleaning and manipulation. 
+In this lab, you've had the opportunitiy to work (more) independently, relying upon your past skills and R skillset. The focus in this lab has been on data cleaning and manipulation.
 
 Your next steps might be to spend more time visualizing and analyzing the resulting data. Based upon what we've done here, here are some thoughts on some ways to extend this lab.
 

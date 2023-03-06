@@ -6623,7 +6623,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb95-811"><a href="#cb95-811" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Employment:** Unemployment, Labor Force Participation, Occupation</span>
 <span id="cb95-812"><a href="#cb95-812" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb95-813"><a href="#cb95-813" aria-hidden="true" tabindex="-1"></a>| Census Table                                                                                                                                                                                                                                             | Description               | Indicators to Construct                                   |</span>
-<span id="cb95-814"><a href="#cb95-814" aria-hidden="true" tabindex="-1"></a>|-------------------|-------------------|----------------------------------|</span>
+<span id="cb95-814"><a href="#cb95-814" aria-hidden="true" tabindex="-1"></a>|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------|</span>
 <span id="cb95-815"><a href="#cb95-815" aria-hidden="true" tabindex="-1"></a>| <span class="co">[</span><span class="ot">B03002</span><span class="co">](https://data.census.gov/cedsci/table?q=ethnicity&amp;y=2019&amp;d=ACS%205-Year%20Estimates%20Detailed%20Tables&amp;tid=ACSDT5Y2019.B03002)</span>                                                                                                                  | Race and Ethnicity        | \% White, % Black, % Asian, % Other, % Latinx (all races) |</span>
 <span id="cb95-816"><a href="#cb95-816" aria-hidden="true" tabindex="-1"></a>| <span class="co">[</span><span class="ot">B01001</span><span class="co">](https://data.census.gov/cedsci/table?q=B01001&amp;y=2019&amp;d=ACS%205-Year%20Estimates%20Detailed%20Tables&amp;tid=ACSDT5Y2019.B01001)</span>                                                                                                                     | Age Structure             | Age 0-19, Age 20-34, Age 35-64, Age 65 up                 |</span>
 <span id="cb95-817"><a href="#cb95-817" aria-hidden="true" tabindex="-1"></a>| <span class="co">[</span><span class="ot">B18101</span><span class="co">](https://data.census.gov/cedsci/table?q=age&amp;y=2019&amp;d=ACS%205-Year%20Estimates%20Detailed%20Tables&amp;tid=ACSDT5Y2019.B01001https://data.census.gov/cedsci/table?q=age&amp;y=2019&amp;d=ACS%205-Year%20Estimates%20Detailed%20Tables&amp;tid=ACSDT5Y2019.B01001)</span> | Disability Status         | \% Disabled                                               |</span>
@@ -6853,10 +6853,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb95-1067"><a href="#cb95-1067" aria-hidden="true" tabindex="-1"></a>Following the descriptions provided on the Voorhees Center's <span class="co">[</span><span class="ot">three cities study site</span><span class="co">](https://voorheescenter.uic.edu/chicago_communities/)</span>, let's systematically describe New York's neighborhoods based upon change in income.</span>
 <span id="cb95-1068"><a href="#cb95-1068" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb95-1069"><a href="#cb95-1069" aria-hidden="true" tabindex="-1"></a><span class="fu">### How Many Tracts? How Many People?</span></span>
-<span id="cb95-1070"><a href="#cb95-1070" aria-hidden="true" tabindex="-1"></a>Looking at the first tab in the Voorhees report, we need to describe how many tracts and how many people fall within each city.</span>
-<span id="cb95-1071"><a href="#cb95-1071" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1072"><a href="#cb95-1072" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/03_NVC_Three_Cities.png)</span></span>
-<span id="cb95-1073"><a href="#cb95-1073" aria-hidden="true" tabindex="-1"></a>Start by counting how many tracts there are in each city and how many people lived in each city in 2019. Use <span class="in">`group_by()`</span> and <span class="in">`summarise()`</span> to accomplish this.</span>
+<span id="cb95-1070"><a href="#cb95-1070" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1071"><a href="#cb95-1071" aria-hidden="true" tabindex="-1"></a>Looking at the first tab in the Voorhees report, we need to describe how many tracts and how many people fall within each city.</span>
+<span id="cb95-1072"><a href="#cb95-1072" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1073"><a href="#cb95-1073" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/03_NVC_Three_Cities.png)</span> Start by counting how many tracts there are in each city and how many people lived in each city in 2019. Use <span class="in">`group_by()`</span> and <span class="in">`summarise()`</span> to accomplish this.</span>
 <span id="cb95-1074"><a href="#cb95-1074" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb95-1077"><a href="#cb95-1077" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb95-1078"><a href="#cb95-1078" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
@@ -6865,157 +6865,162 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb95-1081"><a href="#cb95-1081" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb95-1082"><a href="#cb95-1082" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="dv">3</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span>
 <span id="cb95-1083"><a href="#cb95-1083" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1084"><a href="#cb95-1084" aria-hidden="true" tabindex="-1"></a>We can see the split in 2019 population between growing, middle and shrinking places. We have 65 tracts which are unclassified with a population of around 42,565.</span>
-<span id="cb95-1085"><a href="#cb95-1085" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1086"><a href="#cb95-1086" aria-hidden="true" tabindex="-1"></a><span class="fu">### Race</span></span>
-<span id="cb95-1087"><a href="#cb95-1087" aria-hidden="true" tabindex="-1"></a>The next pane in the Voorhees analysis summarizes each city based upon it's racial composition:</span>
+<span id="cb95-1084"><a href="#cb95-1084" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1085"><a href="#cb95-1085" aria-hidden="true" tabindex="-1"></a>We can see the split in 2019 population between growing, middle and shrinking places. We have 65 tracts which are unclassified with a population of around 42,565.</span>
+<span id="cb95-1086"><a href="#cb95-1086" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1087"><a href="#cb95-1087" aria-hidden="true" tabindex="-1"></a><span class="fu">### Race</span></span>
 <span id="cb95-1088"><a href="#cb95-1088" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1089"><a href="#cb95-1089" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/05_Race.png)</span></span>
+<span id="cb95-1089"><a href="#cb95-1089" aria-hidden="true" tabindex="-1"></a>The next pane in the Voorhees analysis summarizes each city based upon it's racial composition:</span>
 <span id="cb95-1090"><a href="#cb95-1090" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1091"><a href="#cb95-1091" aria-hidden="true" tabindex="-1"></a>Let's develop a table that does the same:</span>
+<span id="cb95-1091"><a href="#cb95-1091" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/05_Race.png)</span></span>
 <span id="cb95-1092"><a href="#cb95-1092" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1095"><a href="#cb95-1095" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb95-1096"><a href="#cb95-1096" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
-<span id="cb95-1097"><a href="#cb95-1097" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1098"><a href="#cb95-1098" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb95-1099"><a href="#cb95-1099" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
-<span id="cb95-1100"><a href="#cb95-1100" aria-hidden="true" tabindex="-1"></a><span class="at">PWhite =</span> <span class="fu">mean</span>(P_White, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1101"><a href="#cb95-1101" aria-hidden="true" tabindex="-1"></a><span class="at">PBlack =</span> <span class="fu">mean</span>(P_Black, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1102"><a href="#cb95-1102" aria-hidden="true" tabindex="-1"></a><span class="at">PAsian =</span> <span class="fu">mean</span>(P_Asian, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1103"><a href="#cb95-1103" aria-hidden="true" tabindex="-1"></a><span class="at">PLatinx =</span> <span class="fu">mean</span>(P_Latinx, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1104"><a href="#cb95-1104" aria-hidden="true" tabindex="-1"></a><span class="at">POther =</span> <span class="fu">mean</span>(P_Other, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb95-1105"><a href="#cb95-1105" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1106"><a href="#cb95-1106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb95-1107"><a href="#cb95-1107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
-<span id="cb95-1108"><a href="#cb95-1108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1109"><a href="#cb95-1109" aria-hidden="true" tabindex="-1"></a>We might also want to revisit our based LTDB data so that we can describe change in racial composition for each city over time.</span>
-<span id="cb95-1110"><a href="#cb95-1110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1111"><a href="#cb95-1111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Age</span></span>
-<span id="cb95-1112"><a href="#cb95-1112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1113"><a href="#cb95-1113" aria-hidden="true" tabindex="-1"></a>We will next summarize each of the three cities by their age composition. Consider calculating percentages in addition to reporting the population counts.</span>
-<span id="cb95-1114"><a href="#cb95-1114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1115"><a href="#cb95-1115" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/06_Age.png)</span></span>
-<span id="cb95-1116"><a href="#cb95-1116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1119"><a href="#cb95-1119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb95-1120"><a href="#cb95-1120" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
-<span id="cb95-1121"><a href="#cb95-1121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1122"><a href="#cb95-1122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb95-1123"><a href="#cb95-1123" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
-<span id="cb95-1124"><a href="#cb95-1124" aria-hidden="true" tabindex="-1"></a><span class="at">PopTot =</span> <span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1125"><a href="#cb95-1125" aria-hidden="true" tabindex="-1"></a><span class="at">Age_00_19 =</span> <span class="fu">sum</span>(Age_00_19, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1126"><a href="#cb95-1126" aria-hidden="true" tabindex="-1"></a><span class="at">Age_20_34 =</span> <span class="fu">sum</span>(Age_20_34, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1127"><a href="#cb95-1127" aria-hidden="true" tabindex="-1"></a><span class="at">Age_35_64 =</span> <span class="fu">sum</span>(Age_35_64, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1128"><a href="#cb95-1128" aria-hidden="true" tabindex="-1"></a><span class="at">Age_65up =</span> <span class="fu">sum</span>(Age_65up, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb95-1129"><a href="#cb95-1129" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1130"><a href="#cb95-1130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb95-1131"><a href="#cb95-1131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1132"><a href="#cb95-1132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
-<span id="cb95-1133"><a href="#cb95-1133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1134"><a href="#cb95-1134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1135"><a href="#cb95-1135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1136"><a href="#cb95-1136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Disability</span></span>
-<span id="cb95-1137"><a href="#cb95-1137" aria-hidden="true" tabindex="-1"></a>Next up, we'll examine disability, primarily be calculating the average share of each city that is disabled.</span>
+<span id="cb95-1093"><a href="#cb95-1093" aria-hidden="true" tabindex="-1"></a>Let's develop a table that does the same:</span>
+<span id="cb95-1094"><a href="#cb95-1094" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1097"><a href="#cb95-1097" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb95-1098"><a href="#cb95-1098" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
+<span id="cb95-1099"><a href="#cb95-1099" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1100"><a href="#cb95-1100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb95-1101"><a href="#cb95-1101" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
+<span id="cb95-1102"><a href="#cb95-1102" aria-hidden="true" tabindex="-1"></a><span class="at">PWhite =</span> <span class="fu">mean</span>(P_White, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1103"><a href="#cb95-1103" aria-hidden="true" tabindex="-1"></a><span class="at">PBlack =</span> <span class="fu">mean</span>(P_Black, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1104"><a href="#cb95-1104" aria-hidden="true" tabindex="-1"></a><span class="at">PAsian =</span> <span class="fu">mean</span>(P_Asian, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1105"><a href="#cb95-1105" aria-hidden="true" tabindex="-1"></a><span class="at">PLatinx =</span> <span class="fu">mean</span>(P_Latinx, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1106"><a href="#cb95-1106" aria-hidden="true" tabindex="-1"></a><span class="at">POther =</span> <span class="fu">mean</span>(P_Other, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb95-1107"><a href="#cb95-1107" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1108"><a href="#cb95-1108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb95-1109"><a href="#cb95-1109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
+<span id="cb95-1110"><a href="#cb95-1110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb95-1111"><a href="#cb95-1111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1112"><a href="#cb95-1112" aria-hidden="true" tabindex="-1"></a>We might also want to revisit our based LTDB data so that we can describe change in racial composition for each city over time.</span>
+<span id="cb95-1113"><a href="#cb95-1113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1114"><a href="#cb95-1114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Age</span></span>
+<span id="cb95-1115"><a href="#cb95-1115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1116"><a href="#cb95-1116" aria-hidden="true" tabindex="-1"></a>We will next summarize each of the three cities by their age composition. Consider calculating percentages in addition to reporting the population counts.</span>
+<span id="cb95-1117"><a href="#cb95-1117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1118"><a href="#cb95-1118" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/06_Age.png)</span></span>
+<span id="cb95-1119"><a href="#cb95-1119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1122"><a href="#cb95-1122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb95-1123"><a href="#cb95-1123" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
+<span id="cb95-1124"><a href="#cb95-1124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1125"><a href="#cb95-1125" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb95-1126"><a href="#cb95-1126" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
+<span id="cb95-1127"><a href="#cb95-1127" aria-hidden="true" tabindex="-1"></a><span class="at">PopTot =</span> <span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1128"><a href="#cb95-1128" aria-hidden="true" tabindex="-1"></a><span class="at">Age_00_19 =</span> <span class="fu">sum</span>(Age_00_19, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1129"><a href="#cb95-1129" aria-hidden="true" tabindex="-1"></a><span class="at">Age_20_34 =</span> <span class="fu">sum</span>(Age_20_34, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1130"><a href="#cb95-1130" aria-hidden="true" tabindex="-1"></a><span class="at">Age_35_64 =</span> <span class="fu">sum</span>(Age_35_64, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1131"><a href="#cb95-1131" aria-hidden="true" tabindex="-1"></a><span class="at">Age_65up =</span> <span class="fu">sum</span>(Age_65up, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sum</span>(POP19, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb95-1132"><a href="#cb95-1132" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1133"><a href="#cb95-1133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb95-1134"><a href="#cb95-1134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1135"><a href="#cb95-1135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
+<span id="cb95-1136"><a href="#cb95-1136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1137"><a href="#cb95-1137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb95-1138"><a href="#cb95-1138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1139"><a href="#cb95-1139" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/07_Disability.png)</span></span>
+<span id="cb95-1139"><a href="#cb95-1139" aria-hidden="true" tabindex="-1"></a><span class="fu">### Disability</span></span>
 <span id="cb95-1140"><a href="#cb95-1140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1143"><a href="#cb95-1143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb95-1144"><a href="#cb95-1144" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
-<span id="cb95-1145"><a href="#cb95-1145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1146"><a href="#cb95-1146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb95-1147"><a href="#cb95-1147" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
-<span id="cb95-1148"><a href="#cb95-1148" aria-hidden="true" tabindex="-1"></a><span class="at">P_Disabled =</span> <span class="fu">mean</span>(P_Disabled, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb95-1149"><a href="#cb95-1149" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1150"><a href="#cb95-1150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb95-1151"><a href="#cb95-1151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
-<span id="cb95-1152"><a href="#cb95-1152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1153"><a href="#cb95-1153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1154"><a href="#cb95-1154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1155"><a href="#cb95-1155" aria-hidden="true" tabindex="-1"></a><span class="fu">### Housing</span></span>
-<span id="cb95-1156"><a href="#cb95-1156" aria-hidden="true" tabindex="-1"></a>Next up, we'll look at housing tenure (the balance between owners and renters), as well as cost burden (the share of households paying more than 30 percent of their income towards housing costs.</span>
-<span id="cb95-1157"><a href="#cb95-1157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1158"><a href="#cb95-1158" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/08_Housing.png)</span></span>
-<span id="cb95-1159"><a href="#cb95-1159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1162"><a href="#cb95-1162" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb95-1163"><a href="#cb95-1163" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
-<span id="cb95-1164"><a href="#cb95-1164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1165"><a href="#cb95-1165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb95-1166"><a href="#cb95-1166" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
-<span id="cb95-1167"><a href="#cb95-1167" aria-hidden="true" tabindex="-1"></a><span class="at">P_Own =</span> <span class="fu">mean</span>(P_Own, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1168"><a href="#cb95-1168" aria-hidden="true" tabindex="-1"></a><span class="at">P_Rent =</span> <span class="fu">mean</span>(P_Rent, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1169"><a href="#cb95-1169" aria-hidden="true" tabindex="-1"></a><span class="at">P_CostBurden =</span> <span class="fu">mean</span>(P_CostBurden, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb95-1170"><a href="#cb95-1170" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1171"><a href="#cb95-1171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb95-1172"><a href="#cb95-1172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
-<span id="cb95-1173"><a href="#cb95-1173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1174"><a href="#cb95-1174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1175"><a href="#cb95-1175" aria-hidden="true" tabindex="-1"></a><span class="fu">### Employment</span></span>
-<span id="cb95-1176"><a href="#cb95-1176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1177"><a href="#cb95-1177" aria-hidden="true" tabindex="-1"></a>Let's finally calculate labor force participation and unemployment by city.</span>
-<span id="cb95-1178"><a href="#cb95-1178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1179"><a href="#cb95-1179" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/09_Labor.png)</span></span>
-<span id="cb95-1180"><a href="#cb95-1180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1183"><a href="#cb95-1183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb95-1184"><a href="#cb95-1184" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
-<span id="cb95-1185"><a href="#cb95-1185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1186"><a href="#cb95-1186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb95-1187"><a href="#cb95-1187" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
-<span id="cb95-1188"><a href="#cb95-1188" aria-hidden="true" tabindex="-1"></a><span class="at">P_Unemp =</span> <span class="fu">mean</span>(P_Unemp, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1189"><a href="#cb95-1189" aria-hidden="true" tabindex="-1"></a><span class="at">P_LabForce =</span> <span class="fu">mean</span>(P_LabForce, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb95-1190"><a href="#cb95-1190" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1191"><a href="#cb95-1191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb95-1192"><a href="#cb95-1192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
-<span id="cb95-1193"><a href="#cb95-1193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1194"><a href="#cb95-1194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1195"><a href="#cb95-1195" aria-hidden="true" tabindex="-1"></a>Also calculate average employment by industry for the three cities.</span>
-<span id="cb95-1196"><a href="#cb95-1196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1199"><a href="#cb95-1199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb95-1200"><a href="#cb95-1200" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
-<span id="cb95-1201"><a href="#cb95-1201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1202"><a href="#cb95-1202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb95-1203"><a href="#cb95-1203" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
-<span id="cb95-1204"><a href="#cb95-1204" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Ag =</span> <span class="fu">mean</span>(P_Emp_Ag, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1205"><a href="#cb95-1205" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Const =</span> <span class="fu">mean</span>(P_Emp_Const, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1206"><a href="#cb95-1206" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Manuf =</span> <span class="fu">mean</span>(P_Emp_Manuf, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1207"><a href="#cb95-1207" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Wholesale =</span> <span class="fu">mean</span>(P_Emp_Wholesale, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1208"><a href="#cb95-1208" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Retail =</span> <span class="fu">mean</span>(P_Emp_Retail, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1209"><a href="#cb95-1209" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Transportation =</span> <span class="fu">mean</span>(P_Emp_Transportation, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1210"><a href="#cb95-1210" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_FIRE =</span> <span class="fu">mean</span>(P_Emp_FIRE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1211"><a href="#cb95-1211" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Management =</span> <span class="fu">mean</span>(P_Emp_Management, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1212"><a href="#cb95-1212" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Education =</span> <span class="fu">mean</span>(P_Emp_Education, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1213"><a href="#cb95-1213" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Arts =</span> <span class="fu">mean</span>(P_Emp_Arts, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1214"><a href="#cb95-1214" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Other =</span> <span class="fu">mean</span>(P_Emp_Other, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb95-1215"><a href="#cb95-1215" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_PA =</span> <span class="fu">mean</span>(P_Emp_PA, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb95-1216"><a href="#cb95-1216" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb95-1217"><a href="#cb95-1217" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb95-1218"><a href="#cb95-1218" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">14</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
-<span id="cb95-1219"><a href="#cb95-1219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb95-1220"><a href="#cb95-1220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Describing our Three Cities</span></span>
-<span id="cb95-1221"><a href="#cb95-1221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1222"><a href="#cb95-1222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1223"><a href="#cb95-1223" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lab Summary</span></span>
-<span id="cb95-1224"><a href="#cb95-1224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1225"><a href="#cb95-1225" aria-hidden="true" tabindex="-1"></a>In this lab, you started working with harmonized census data in order to describe trajectories of neighborhood change. You spent lots of time cleaning your data and preparing it for further analysis. You joined to the historical census data current ACS data, and then compared the current demographic attributes of those places based upon their historical trajectories of income change.</span>
-<span id="cb95-1226"><a href="#cb95-1226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1227"><a href="#cb95-1227" aria-hidden="true" tabindex="-1"></a>In this lab, you've had the opportunitiy to work (more) independently, relying upon your past skills and R skillset. The focus in this lab has been on data cleaning and manipulation. </span>
-<span id="cb95-1228"><a href="#cb95-1228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1229"><a href="#cb95-1229" aria-hidden="true" tabindex="-1"></a>Your next steps might be to spend more time visualizing and analyzing the resulting data. Based upon what we've done here, here are some thoughts on some ways to extend this lab.</span>
-<span id="cb95-1230"><a href="#cb95-1230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1231"><a href="#cb95-1231" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Join the "long" income data to census geographies and visualize the time series.</span>
-<span id="cb95-1232"><a href="#cb95-1232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Map out census tracts based upon their belonging to the three cities, both the entire region, and for each county.</span>
-<span id="cb95-1233"><a href="#cb95-1233" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the five income labels to describe trajectories of change for each census tract. Consider categorizing census tracts based upon their long run trajectories.</span>
-<span id="cb95-1234"><a href="#cb95-1234" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Examine the demographics of census tracts in each decade (we could have pulled that from the LTDB sample data). How have demographic attributes changed of places in each income category?</span>
+<span id="cb95-1141"><a href="#cb95-1141" aria-hidden="true" tabindex="-1"></a>Next up, we'll examine disability, primarily be calculating the average share of each city that is disabled.</span>
+<span id="cb95-1142"><a href="#cb95-1142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1143"><a href="#cb95-1143" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/07_Disability.png)</span></span>
+<span id="cb95-1144"><a href="#cb95-1144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1147"><a href="#cb95-1147" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb95-1148"><a href="#cb95-1148" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
+<span id="cb95-1149"><a href="#cb95-1149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1150"><a href="#cb95-1150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb95-1151"><a href="#cb95-1151" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
+<span id="cb95-1152"><a href="#cb95-1152" aria-hidden="true" tabindex="-1"></a><span class="at">P_Disabled =</span> <span class="fu">mean</span>(P_Disabled, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb95-1153"><a href="#cb95-1153" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1154"><a href="#cb95-1154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb95-1155"><a href="#cb95-1155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
+<span id="cb95-1156"><a href="#cb95-1156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1157"><a href="#cb95-1157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb95-1158"><a href="#cb95-1158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1159"><a href="#cb95-1159" aria-hidden="true" tabindex="-1"></a><span class="fu">### Housing</span></span>
+<span id="cb95-1160"><a href="#cb95-1160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1161"><a href="#cb95-1161" aria-hidden="true" tabindex="-1"></a>Next up, we'll look at housing tenure (the balance between owners and renters), as well as cost burden (the share of households paying more than 30 percent of their income towards housing costs.</span>
+<span id="cb95-1162"><a href="#cb95-1162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1163"><a href="#cb95-1163" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/08_Housing.png)</span></span>
+<span id="cb95-1164"><a href="#cb95-1164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1167"><a href="#cb95-1167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb95-1168"><a href="#cb95-1168" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
+<span id="cb95-1169"><a href="#cb95-1169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1170"><a href="#cb95-1170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb95-1171"><a href="#cb95-1171" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
+<span id="cb95-1172"><a href="#cb95-1172" aria-hidden="true" tabindex="-1"></a><span class="at">P_Own =</span> <span class="fu">mean</span>(P_Own, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1173"><a href="#cb95-1173" aria-hidden="true" tabindex="-1"></a><span class="at">P_Rent =</span> <span class="fu">mean</span>(P_Rent, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1174"><a href="#cb95-1174" aria-hidden="true" tabindex="-1"></a><span class="at">P_CostBurden =</span> <span class="fu">mean</span>(P_CostBurden, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb95-1175"><a href="#cb95-1175" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1176"><a href="#cb95-1176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb95-1177"><a href="#cb95-1177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
+<span id="cb95-1178"><a href="#cb95-1178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb95-1179"><a href="#cb95-1179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1180"><a href="#cb95-1180" aria-hidden="true" tabindex="-1"></a><span class="fu">### Employment</span></span>
+<span id="cb95-1181"><a href="#cb95-1181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1182"><a href="#cb95-1182" aria-hidden="true" tabindex="-1"></a>Let's finally calculate labor force participation and unemployment by city.</span>
+<span id="cb95-1183"><a href="#cb95-1183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1184"><a href="#cb95-1184" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/09_Labor.png)</span></span>
+<span id="cb95-1185"><a href="#cb95-1185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1188"><a href="#cb95-1188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb95-1189"><a href="#cb95-1189" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
+<span id="cb95-1190"><a href="#cb95-1190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1191"><a href="#cb95-1191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb95-1192"><a href="#cb95-1192" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
+<span id="cb95-1193"><a href="#cb95-1193" aria-hidden="true" tabindex="-1"></a><span class="at">P_Unemp =</span> <span class="fu">mean</span>(P_Unemp, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1194"><a href="#cb95-1194" aria-hidden="true" tabindex="-1"></a><span class="at">P_LabForce =</span> <span class="fu">mean</span>(P_LabForce, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb95-1195"><a href="#cb95-1195" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1196"><a href="#cb95-1196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb95-1197"><a href="#cb95-1197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
+<span id="cb95-1198"><a href="#cb95-1198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb95-1199"><a href="#cb95-1199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1200"><a href="#cb95-1200" aria-hidden="true" tabindex="-1"></a>Also calculate average employment by industry for the three cities.</span>
+<span id="cb95-1201"><a href="#cb95-1201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1204"><a href="#cb95-1204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb95-1205"><a href="#cb95-1205" aria-hidden="true" tabindex="-1"></a>nyc_income <span class="sc">|&gt;</span> </span>
+<span id="cb95-1206"><a href="#cb95-1206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(change_cat_70<span class="fl">.19</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1207"><a href="#cb95-1207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb95-1208"><a href="#cb95-1208" aria-hidden="true" tabindex="-1"></a><span class="at">Tracts =</span> <span class="fu">n</span>(), </span>
+<span id="cb95-1209"><a href="#cb95-1209" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Ag =</span> <span class="fu">mean</span>(P_Emp_Ag, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1210"><a href="#cb95-1210" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Const =</span> <span class="fu">mean</span>(P_Emp_Const, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1211"><a href="#cb95-1211" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Manuf =</span> <span class="fu">mean</span>(P_Emp_Manuf, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1212"><a href="#cb95-1212" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Wholesale =</span> <span class="fu">mean</span>(P_Emp_Wholesale, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1213"><a href="#cb95-1213" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Retail =</span> <span class="fu">mean</span>(P_Emp_Retail, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1214"><a href="#cb95-1214" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Transportation =</span> <span class="fu">mean</span>(P_Emp_Transportation, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1215"><a href="#cb95-1215" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_FIRE =</span> <span class="fu">mean</span>(P_Emp_FIRE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1216"><a href="#cb95-1216" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Management =</span> <span class="fu">mean</span>(P_Emp_Management, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1217"><a href="#cb95-1217" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Education =</span> <span class="fu">mean</span>(P_Emp_Education, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1218"><a href="#cb95-1218" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Arts =</span> <span class="fu">mean</span>(P_Emp_Arts, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1219"><a href="#cb95-1219" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_Other =</span> <span class="fu">mean</span>(P_Emp_Other, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb95-1220"><a href="#cb95-1220" aria-hidden="true" tabindex="-1"></a><span class="at">P_Emp_PA =</span> <span class="fu">mean</span>(P_Emp_PA, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb95-1221"><a href="#cb95-1221" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb95-1222"><a href="#cb95-1222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb95-1223"><a href="#cb95-1223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">14</span>, <span class="at">decimals =</span> <span class="dv">1</span>)</span>
+<span id="cb95-1224"><a href="#cb95-1224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb95-1225"><a href="#cb95-1225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1226"><a href="#cb95-1226" aria-hidden="true" tabindex="-1"></a><span class="fu">## Describing our Three Cities</span></span>
+<span id="cb95-1227"><a href="#cb95-1227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1228"><a href="#cb95-1228" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lab Summary</span></span>
+<span id="cb95-1229"><a href="#cb95-1229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1230"><a href="#cb95-1230" aria-hidden="true" tabindex="-1"></a>In this lab, you started working with harmonized census data in order to describe trajectories of neighborhood change. You spent lots of time cleaning your data and preparing it for further analysis. You joined to the historical census data current ACS data, and then compared the current demographic attributes of those places based upon their historical trajectories of income change.</span>
+<span id="cb95-1231"><a href="#cb95-1231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1232"><a href="#cb95-1232" aria-hidden="true" tabindex="-1"></a>In this lab, you've had the opportunitiy to work (more) independently, relying upon your past skills and R skillset. The focus in this lab has been on data cleaning and manipulation.</span>
+<span id="cb95-1233"><a href="#cb95-1233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1234"><a href="#cb95-1234" aria-hidden="true" tabindex="-1"></a>Your next steps might be to spend more time visualizing and analyzing the resulting data. Based upon what we've done here, here are some thoughts on some ways to extend this lab.</span>
 <span id="cb95-1235"><a href="#cb95-1235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1236"><a href="#cb95-1236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lab Evaluation</span></span>
-<span id="cb95-1237"><a href="#cb95-1237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1238"><a href="#cb95-1238" aria-hidden="true" tabindex="-1"></a>In evaluating your lab submission, we'll be paying attention to the following:</span>
-<span id="cb95-1239"><a href="#cb95-1239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1240"><a href="#cb95-1240" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Proper import, cleaning, and formatting of LTDB data, paying particular attention to building reproducible data pipelines that you could use for any geographic location.</span>
-<span id="cb95-1241"><a href="#cb95-1241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1242"><a href="#cb95-1242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Thoughtful reflection on data process and outputs.</span>
-<span id="cb95-1243"><a href="#cb95-1243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1244"><a href="#cb95-1244" aria-hidden="true" tabindex="-1"></a>As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.</span>
-<span id="cb95-1245"><a href="#cb95-1245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-1246"><a href="#cb95-1246" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb95-1236"><a href="#cb95-1236" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Join the "long" income data to census geographies and visualize the time series.</span>
+<span id="cb95-1237"><a href="#cb95-1237" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Map out census tracts based upon their belonging to the three cities, both the entire region, and for each county.</span>
+<span id="cb95-1238"><a href="#cb95-1238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the five income labels to describe trajectories of change for each census tract. Consider categorizing census tracts based upon their long run trajectories.</span>
+<span id="cb95-1239"><a href="#cb95-1239" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Examine the demographics of census tracts in each decade (we could have pulled that from the LTDB sample data). How have demographic attributes changed of places in each income category?</span>
+<span id="cb95-1240"><a href="#cb95-1240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1241"><a href="#cb95-1241" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lab Evaluation</span></span>
+<span id="cb95-1242"><a href="#cb95-1242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1243"><a href="#cb95-1243" aria-hidden="true" tabindex="-1"></a>In evaluating your lab submission, we'll be paying attention to the following:</span>
+<span id="cb95-1244"><a href="#cb95-1244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1245"><a href="#cb95-1245" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Proper import, cleaning, and formatting of LTDB data, paying particular attention to building reproducible data pipelines that you could use for any geographic location.</span>
+<span id="cb95-1246"><a href="#cb95-1246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1247"><a href="#cb95-1247" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Thoughtful reflection on data process and outputs.</span>
+<span id="cb95-1248"><a href="#cb95-1248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1249"><a href="#cb95-1249" aria-hidden="true" tabindex="-1"></a>As you get into the lab, please feel welcome to ask us questions, and please share where you're struggling with us and with others in the class.</span>
+<span id="cb95-1250"><a href="#cb95-1250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-1251"><a href="#cb95-1251" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
