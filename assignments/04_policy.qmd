@@ -9,7 +9,7 @@ editor: visual
 
 ## Introduction
 
-In your prior memorandums you developed a preliminary narrative around your place based upon the characteristics of the population. Simultaneously, in your labs, you've been learning about a range of analytical strategies. In this lab, you will identify a specific policy-based problem and will develop and implement an appropriate analysis to better inform the problem. This is the final sub-element of your final policy report which will draw from your prior writing and analysis to present a polished report for your place.
+In your prior memorandums you developed a preliminary narrative around your place based upon the characteristics of the population. Simultaneously, in your labs, you've been learning about a range of analytical strategies. In this memorandum, you will identify a specific policy-based problem and will develop and implement an appropriate analysis to better inform the problem. This is the final sub-element of your final policy report which will draw from your prior writing and analysis to present a polished report for your place.
 
 ## Goals
 
@@ -21,15 +21,26 @@ In your prior memorandums you developed a preliminary narrative around your plac
 
 -   The challenge of this assignment is picking an appropriate policy question to engage with. Please rely upon each other as peer reviewers and on your instructors for help in identifying an appropriate policy or research question to focus your memorandum on.
 
+-   Based upon your prior work in choosing a place and in analyzing some of the main demographic characteristics of that place, you likely have a good sense for where to go with this assignment. If you are struggling to identify a policy issue that is of interest or struggling to think about how you will conceptualize your analysis of that issue, please come speak with us early so that we can provide feedback and guidance.
+
 -   Policy analysis depends upon following a logical chain of thought through existing policies and questions. Be sure to review and understand these before attempting to develop your own approach. Please also think carefully and critically about how your your chosen analysis may iterate over various neighborhoods in your place.
 
--   At this point in the semester, we expect to see refined maps, data visualizations, and tables in your memos. Please allocate appropriate time to working on these elements of your memo.
+-   At this point in the semester, we expect to see refined maps, data visualizations, and tables in your memos. Please allocate appropriate time to refine these elements of your memo.
 
 -   Think through how the story of your policy analysis relates back to the other stories you've told in subsequent memos over the course of the semester. Your final assignment depends upon you integrating these items into a final policy report, so having a good understanding of how these stories are related will make it easier to develop a coherent narrative in your final report.
 
 ## Submission Instructions
 
 Follow [this link](https://classroom.github.com/a/bk5EAieS) to accept the lab Github Classroom assignment repository. Save your memorandum as a Quarto markdown document and upload along with your post-assignment reflection to GitHub.
+
+### Assignment Evaluation
+
+We are looking for a well-told story that connects us to the policy issue in question, identifies who is impacted, and provides analysis in service of informing policy deliberation, reflection, or action. Our feedback on this assignment will focus on the following elements:
+
+1.  A clear understanding and command of the policy issue in question, drawing from local and national evidence.
+2.  A clear sense for how neighborhood analysis techniques might be applied to describing the policy issue.
+3.  A clear description of the impacts of the policy issue and a clear sense of *who* and *where* these impacts are likely to occur.
+4.  A clear and coherent analysis that adapts some of the techniques we have used over the course of the semester.
 
 ### Assignment Reflection
 
