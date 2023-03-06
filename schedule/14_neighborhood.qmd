@@ -23,8 +23,13 @@ WBEZ: [There Goes the Neighborhood](https://interactive.wbez.org/gentrification/
 
 -   What role should planners take in managing neighborhood change?
 -   How do planners balance changes across multiple neighborhoods?
+-   How can value judgements placed on change influence the types of solutions we propose (and their feasibility)?
 
 ## Slides
+
+```{=html}
+<iframe class="slide-deck" src="../slides/S14_Neighborhood_Change/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
 
 ## Resources for Further Exploration
 
