@@ -30,6 +30,9 @@ Let's start by downloading tract and place geometries and selecting Chicago (as 
 First, download tracts, subset to Cook County, and plot to confirm:
 
 ```{r}
+#| message: false
+#| warning: false
+#| error: false
 library(sf)
 library(tigris)
 library(tidyverse)
@@ -45,6 +48,9 @@ ggplot()+
 Next, download census place boundaries, filter to Chicago, and plot to confirm:
 
 ```{r}
+#| message: false
+#| warning: false
+#| error: false
 il_place <- places(state = "IL") |> 
   filter(NAME == "Chicago")
 
@@ -55,6 +61,9 @@ ggplot()+
 Plot together to see overlay:
 
 ```{r}
+#| message: false
+#| warning: false
+#| error: false
 ggplot()+
   geom_sf(data = il_trt, cex=.1)+
   geom_sf(data = il_place, color = "blue",cex = .5, fill = NA)
@@ -65,6 +74,9 @@ ggplot()+
 Perform a spatial join to identify all tracts that overlap with Chicago's municipal boundaries, plot to confirm:
 
 ```{r}
+#| message: false
+#| warning: false
+#| error: false
 test <- st_join(il_trt, il_place) |> 
   filter(NAME.y == "Chicago")
 
@@ -78,6 +90,9 @@ ggplot() +
 Another option is to find the spatial intersection of the two objects:
 
 ```{r}
+#| message: false
+#| warning: false
+#| error: false
 test2 <- st_intersection(il_trt, il_place)
 
 ggplot() +
