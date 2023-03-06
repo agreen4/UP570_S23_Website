@@ -193,11 +193,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
   <li><a href="#github-lab-repository" id="toc-github-lab-repository" class="nav-link" data-scroll-target="#github-lab-repository">Github Lab Repository</a></li>
   <li><a href="#introduction-to-ltdb-data" id="toc-introduction-to-ltdb-data" class="nav-link" data-scroll-target="#introduction-to-ltdb-data">Introduction to LTDB Data</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
-  <ul>
-  <li><a href="#ltdb-data-download" id="toc-ltdb-data-download" class="nav-link" data-scroll-target="#ltdb-data-download">LTDB Data Download</a></li>
-  <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import">Data Import</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -266,469 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>While some tracts may stay the same, some may be <em>split</em> in cases where the population increases, and others may be <em>merged</em> in cases where the population decreases. See this <a href="https://www2.census.gov/geo/pdfs/partnerships/psap/G-650.pdf">quick reference guide</a> for more information on thresholds for redefinition:</p>
 <p><img src="08_neighborhood_change/images/04_2020PSAP.png" class="img-fluid"></p>
 <p>The Census Bureau produces <a href="https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html">geographic relationship files</a> which can help show the relationships between geographies over time.</p>
-<div class="cell" data-hash="08_neighborhood_change_cache/html/unnamed-chunk-2_e835385d87ca52fca121e57454526fd2">
-<div class="cell-output-display">
+<div class="cell" data-hash="08_neighborhood_change_cache/html/unnamed-chunk-2_e56775fe7dd355850ea631d88de9bf86">
 
-<div id="vgzhellzdj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-:where(#vgzhellzdj) .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-:where(#vgzhellzdj) .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-:where(#vgzhellzdj) .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-:where(#vgzhellzdj) .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-:where(#vgzhellzdj) .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-:where(#vgzhellzdj) .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-:where(#vgzhellzdj) .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-:where(#vgzhellzdj) .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-:where(#vgzhellzdj) .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-:where(#vgzhellzdj) .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-:where(#vgzhellzdj) .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-:where(#vgzhellzdj) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-:where(#vgzhellzdj) .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vgzhellzdj) .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-:where(#vgzhellzdj) .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-:where(#vgzhellzdj) .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vgzhellzdj) .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-:where(#vgzhellzdj) .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vgzhellzdj) .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-:where(#vgzhellzdj) .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vgzhellzdj) .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vgzhellzdj) .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vgzhellzdj) .gt_left {
-  text-align: left;
-}
-
-:where(#vgzhellzdj) .gt_center {
-  text-align: center;
-}
-
-:where(#vgzhellzdj) .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-:where(#vgzhellzdj) .gt_font_normal {
-  font-weight: normal;
-}
-
-:where(#vgzhellzdj) .gt_font_bold {
-  font-weight: bold;
-}
-
-:where(#vgzhellzdj) .gt_font_italic {
-  font-style: italic;
-}
-
-:where(#vgzhellzdj) .gt_super {
-  font-size: 65%;
-}
-
-:where(#vgzhellzdj) .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 75%;
-  vertical-align: 0.4em;
-}
-
-:where(#vgzhellzdj) .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-:where(#vgzhellzdj) .gt_indent_1 {
-  text-indent: 5px;
-}
-
-:where(#vgzhellzdj) .gt_indent_2 {
-  text-indent: 10px;
-}
-
-:where(#vgzhellzdj) .gt_indent_3 {
-  text-indent: 15px;
-}
-
-:where(#vgzhellzdj) .gt_indent_4 {
-  text-indent: 20px;
-}
-
-:where(#vgzhellzdj) .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">GEOID_TRACT_10</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">GEOID_TRACT_20</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">NAMELSAD_TRACT_10</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">NAMELSAD_TRACT_20</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">AREALAND_TRACT_10</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">AREALAND_TRACT_20</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">01001020100</td>
-<td class="gt_row gt_right">01001020100</td>
-<td class="gt_row gt_left">Census Tract 201</td>
-<td class="gt_row gt_left">Census Tract 201</td>
-<td class="gt_row gt_right">9,827,271</td>
-<td class="gt_row gt_right">9,825,304</td></tr>
-    <tr><td class="gt_row gt_right">01001020200</td>
-<td class="gt_row gt_right">01001020100</td>
-<td class="gt_row gt_left">Census Tract 202</td>
-<td class="gt_row gt_left">Census Tract 201</td>
-<td class="gt_row gt_right">3,325,674</td>
-<td class="gt_row gt_right">9,825,304</td></tr>
-    <tr><td class="gt_row gt_right">01001020200</td>
-<td class="gt_row gt_right">01001020200</td>
-<td class="gt_row gt_left">Census Tract 202</td>
-<td class="gt_row gt_left">Census Tract 202</td>
-<td class="gt_row gt_right">3,325,674</td>
-<td class="gt_row gt_right">3,320,818</td></tr>
-    <tr><td class="gt_row gt_right">01001020300</td>
-<td class="gt_row gt_right">01001020300</td>
-<td class="gt_row gt_left">Census Tract 203</td>
-<td class="gt_row gt_left">Census Tract 203</td>
-<td class="gt_row gt_right">5,349,271</td>
-<td class="gt_row gt_right">5,349,271</td></tr>
-    <tr><td class="gt_row gt_right">01001020400</td>
-<td class="gt_row gt_right">01001020400</td>
-<td class="gt_row gt_left">Census Tract 204</td>
-<td class="gt_row gt_left">Census Tract 204</td>
-<td class="gt_row gt_right">6,384,282</td>
-<td class="gt_row gt_right">6,384,282</td></tr>
-    <tr><td class="gt_row gt_right">01001020500</td>
-<td class="gt_row gt_right">01001020501</td>
-<td class="gt_row gt_left">Census Tract 205</td>
-<td class="gt_row gt_left">Census Tract 205.01</td>
-<td class="gt_row gt_right">11,408,867</td>
-<td class="gt_row gt_right">6,203,654</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
 </div>
 <p>Note from these example records shifts in tract definitions and areas. These relationship files can help you identify which census tracts have changed, however, creating consistent estimates over time from this information is challenging. Researchers tend to use strategies that either attribute characteristics using either <em>area</em> or <em>share of population</em> to weight how portions of one tract might translate into a new boundary in a different year.</p>
 <p>Brown University’s <a href="https://s4.ad.brown.edu/projects/diversity/index.htm">Spatial Structures in the Social Sciences</a> group has produced a <a href="https://s4.ad.brown.edu/projects/diversity/researcher/LTDB.htm">Longitudinal Tract Database</a> which provides demographic estimates for prior decennial census years 1970, 1980, 1990, and 2000 adjusted to 2010 boundaries. The files also include selected demographic indicators that are comparable across each of these decennial census enumerations (the questions are asked in the same or similar enough way to be able to reliably compare these qualities over time).</p>
@@ -740,62 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Decennial data continues to be collected, but the 1 in 6 count sample data has now been replaced by the American Community Survey which annually samples the population creating valuable intercensal estimates used by analysts today.</p>
 <p>You can find more information about the LTDB in the following <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4134912/pdf/nihms-522336.pdf">technical documentation</a>.</p>
 <p>In order to examine income and demographic change for census tracts, we’re going to use LTDB data, and ultimately will supplement what’s in these data with additional ACS data. We do this so that we can compare estimates over time using the same census tract geographies.</p>
-</section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Let’s get set up by loading a few packages:</p>
-<div class="cell" data-hash="08_neighborhood_change_cache/html/unnamed-chunk-3_769e930f5089e06bd7275aa20076d430">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<section id="ltdb-data-download" class="level3">
-<h3 class="anchored" data-anchor-id="ltdb-data-download">LTDB Data Download</h3>
-<p>Let’s start by downloading LTDB data for analysis.</p>
-<p>Go to the <a href="https://s4.ad.brown.edu/projects/diversity/researcher/LTBDDload/Default.aspx">data download</a> page. You will need to enter your email address and certify that you will follow terms of use for the data.</p>
-<p>Make note of what datasets are aggregated in the LTDB Standard Datasets. <img src="08_neighborhood_change/images/01_ltdb.png" class="img-fluid"></p>
-<p>Download both the <em>full</em> and <em>sample</em> standard data set files for all years. Also download the codebook.</p>
-<p>Decompress the downloaded folder containing the data files and place the raw data csv files in your raw data folder. You should have 12 files - six “fullcount” files and six “sample” files (you can ignore those files in the fullcount download with “Global Neighborhood” in their file name).</p>
-<p>Place the codebook in your data documentation folder.</p>
-<p>Now that we have data and documentation manually downloaded, we can import the data for analysis.</p>
-</section>
-<section id="data-import" class="level3">
-<h3 class="anchored" data-anchor-id="data-import">Data Import</h3>
-<div class="cell" data-hash="08_neighborhood_change_cache/html/unnamed-chunk-4_da11c70e38198ec2b19ef5b26314d21a">
-
-</div>
-<p>Let’s import our data. These are csv files - in the past we’ve used <code>read_csv()</code> from the readr package to do this (readr is part of the tidyverse so you don’t need to load it separately).</p>
-<p>For clarity, use the prefix “F_” for full count data and “S_” for sample data when you read the LTDB into table objects in R. Go ahead and import the ten data files:</p>
-<div class="cell" data-hash="08_neighborhood_change_cache/html/unnamed-chunk-5_3f57ffc13432cc6aa0ac8c2dfe1d8cef">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>F_1970<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_1970_fullcount.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>S_1970<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_1970_sample.csv"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>F_1980<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_1980_fullcount.csv"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>S_1980<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_1980_sample.csv"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>F_1990<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_1990_fullcount.csv"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>S_1990<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_1990_sample.csv"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>F_2000<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_2000_fullcount.csv"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>S_2000<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_2000_sample.csv"</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>F_2010<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_2010_fullcount.csv"</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>S_2010<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_std_200812_Sample.csv"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>F_2020<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_2020_fullcount.csv"</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>S_2020<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_std_201519_Sample.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Now that we have all of the data loaded, we can start working on preparing it for analysis.</p>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -983,186 +465,106 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Neighborhood Change"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">sidebar:</span><span class="co"> false</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 4</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: true</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: none</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="an">fig-responsive:</span><span class="co"> true</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidycensus)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>In this lab, we'll explore in detail the <span class="co">[</span><span class="ot">Nathalie P. Voorhees Center's</span><span class="co">](https://voorheescenter.uic.edu)</span> methodology for measuring neighborhood change. The center has produced multiple analyses and strategies for measuring such change, focused on the Chicago metropolitan area.</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>By the end of this lab, you will replicate elements of the Voorhees Center's *Who Can Live in Chicago?* report including maps and other visualizations of neighborhood change. We will develop a code base that could be applied to any location in the United States.</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Goals</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>In this lab, we will use a combination of decennial census data and American Community Survey data to examine patterns of neighborhood income change. We will overlay on these patterns of income change information about the demographics of who lives in these neighborhoods. Our goals for this lab are as follows:</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Continue to work with common sources of sociodemographic information, including those that have been pre-processed by sources other than the Census Bureau.</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Think critically about data processing pipelines and data requirements.</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explore strategies for spatial longitudinal data description and analysis.</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>Taking a close look at the visuals from the <span class="co">[</span><span class="ot">Voorhees Center website</span><span class="co">](https://voorheescenter.uic.edu/chicago_communities/)</span>, they calculate for each census tract in each year the average per capita income for the time periods 1970, 1980, 1990, 2000, 2010, and 2017 for each census tract and then compare it to the regional weighted average income.</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/02_NVC_Combined-Decades.png)</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>They classify tracts based upon whether they are:</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Very High Income:** Greater than 40% above the regional average</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**High Income:** 20% - 40% above the reg ional average</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Middle Income:** 20% below to 20% above the regional average</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Low Income:** 20% below to 40% below the regional average</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Very Low Income:** Greater than 40% below the regional average</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>After classifying tracts, the study examines change over time, and then examines recent demographic characteristics based upon this change.</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/03_NVC_Three_Cities.png)</span> This gives us a sense of what we need to do to prepare our data.</span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Github Lab Repository</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>If you have not already done so, follow <span class="co">[</span><span class="ot">this link</span><span class="co">](https://classroom.github.com/a/QZUuklCL)</span> to accept the lab Github Classroom assignment repository.</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to LTDB Data</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>At this point, you have spent time working with census data and common census geographies. We have used the tidycensus package to download census data from the Census Bureau's servers using API calls.</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>In this lab, we are going to look at another source of historical census data - the Longitudinal Tract Database. Census tracts are a common geography used by planners and other analysts because tracts roughly approximate neighborhoods, especially in highly urbanized areas where population density means that tracts are relatively small. One challenge faced by analysts looking to examine neighborhood level characteristics over time is that the geographic definitions for census tracts change every 10 years following the decennial census. These changes are performed as part of the Census' <span class="co">[</span><span class="ot">Participant Statistical Areas Program (PSAP)</span><span class="co">](https://www.census.gov/programs-surveys/decennial-census/about/psap.html)</span>.</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>While some tracts may stay the same, some may be *split* in cases where the population increases, and others may be *merged* in cases where the population decreases. See this <span class="co">[</span><span class="ot">quick reference guide</span><span class="co">](https://www2.census.gov/geo/pdfs/partnerships/psap/G-650.pdf)</span> for more information on thresholds for redefinition:</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/04_2020PSAP.png)</span></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>The Census Bureau produces <span class="co">[</span><span class="ot">geographic relationship files</span><span class="co">](https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html)</span> which can help show the relationships between geographies over time.</span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="st">"https://www2.census.gov/geo/docs/maps-data/data/rel2020/tract/tab20_tract20_tract10_natl.txt"</span>, <span class="at">delim =</span> <span class="st">"|"</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">OID_TRACT_20 =</span> <span class="fu">col_character</span>(),</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>     <span class="at">OID_TRACT_10 =</span> <span class="fu">col_character</span>())) <span class="sc">|&gt;</span> </span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(GEOID_TRACT_10, GEOID_TRACT_20, NAMELSAD_TRACT_10, NAMELSAD_TRACT_20, AREALAND_TRACT_10, AREALAND_TRACT_20) <span class="sc">|&gt;</span> </span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>Note from these example records shifts in tract definitions and areas. These relationship files can help you identify which census tracts have changed, however, creating consistent estimates over time from this information is challenging. Researchers tend to use strategies that either attribute characteristics using either *area* or *share of population* to weight how portions of one tract might translate into a new boundary in a different year.</span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>Brown University's <span class="co">[</span><span class="ot">Spatial Structures in the Social Sciences</span><span class="co">](https://s4.ad.brown.edu/projects/diversity/index.htm)</span> group has produced a <span class="co">[</span><span class="ot">Longitudinal Tract Database</span><span class="co">](https://s4.ad.brown.edu/projects/diversity/researcher/LTDB.htm)</span> which provides demographic estimates for prior decennial census years 1970, 1980, 1990, and 2000 adjusted to 2010 boundaries. The files also include selected demographic indicators that are comparable across each of these decennial census enumerations (the questions are asked in the same or similar enough way to be able to reliably compare these qualities over time).</span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>LTDB data come from two sources:</span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Decennial "short form" census data from the 100 percent count of the population. This includes race and ethnicity, age, household composition, and household tenure information.</span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Decennial "long form" census data administered to a sample of 1 in 6 households. These surveys contain far more detailed information on the characteristics of the population.</span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>Decennial data continues to be collected, but the 1 in 6 count sample data has now been replaced by the American Community Survey which annually samples the population creating valuable intercensal estimates used by analysts today.</span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>You can find more information about the LTDB in the following <span class="co">[</span><span class="ot">technical documentation</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4134912/pdf/nihms-522336.pdf)</span>.</span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>In order to examine income and demographic change for census tracts, we're going to use LTDB data, and ultimately will supplement what's in these data with additional ACS data. We do this so that we can compare estimates over time using the same census tract geographies.</span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup</span></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>Let's get set up by loading a few packages:</span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a><span class="fu">### LTDB Data Download</span></span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>Let's start by downloading LTDB data for analysis.</span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>Go to the <span class="co">[</span><span class="ot">data download</span><span class="co">](https://s4.ad.brown.edu/projects/diversity/researcher/LTBDDload/Default.aspx)</span> page. You will need to enter your email address and certify that you will follow terms of use for the data.</span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>Make note of what datasets are aggregated in the LTDB Standard Datasets. <span class="al">![](08_neighborhood_change/images/01_ltdb.png)</span></span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>Download both the *full* and *sample* standard data set files for all years. Also download the codebook.</span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>Decompress the downloaded folder containing the data files and place the raw data csv files in your raw data folder. You should have 12 files - six "fullcount" files and six "sample" files (you can ignore those files in the fullcount download with "Global Neighborhood" in their file name).</span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>Place the codebook in your data documentation folder.</span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>Now that we have data and documentation manually downloaded, we can import the data for analysis.</span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Import</span></span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>F_1970<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_Std_1970_fullcount.csv"</span>)</span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>S_1970<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/ltdb_std_1970_sample.csv"</span>)</span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>F_1980<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_Std_1980_fullcount.csv"</span>)</span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>S_1980<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/ltdb_std_1980_sample.csv"</span>)</span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>F_1990<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_Std_1990_fullcount.csv"</span>)</span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>S_1990<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/ltdb_std_1990_sample.csv"</span>)</span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>F_2000<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_Std_2000_fullcount.csv"</span>)</span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>S_2000<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/ltdb_std_2000_sample.csv"</span>)</span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>F_2010<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_Std_2010_fullcount.csv"</span>)</span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>S_2010<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_std_200812_Sample.csv"</span>)</span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>F_2020<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_Std_2020_fullcount.csv"</span>)</span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>S_2020<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"08_neighborhood_change/data_raw/LTDB_std_201519_Sample.csv"</span>)</span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>Let's import our data. These are csv files - in the past we've used <span class="in">`read_csv()`</span> from the readr package to do this (readr is part of the tidyverse so you don't need to load it separately).</span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>For clarity, use the prefix "F<span class="sc">\_</span>" for full count data and "S<span class="sc">\_</span>" for sample data when you read the LTDB into table objects in R. Go ahead and import the ten data files:</span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a>F_1970<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_1970_fullcount.csv"</span>)</span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>S_1970<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_1970_sample.csv"</span>)</span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>F_1980<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_1980_fullcount.csv"</span>)</span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a>S_1980<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_1980_sample.csv"</span>)</span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a>F_1990<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_1990_fullcount.csv"</span>)</span>
-<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>S_1990<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_1990_sample.csv"</span>)</span>
-<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>F_2000<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_2000_fullcount.csv"</span>)</span>
-<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>S_2000<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/ltdb_std_2000_sample.csv"</span>)</span>
-<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a>F_2010<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_2010_fullcount.csv"</span>)</span>
-<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a>S_2010<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_std_200812_Sample.csv"</span>)</span>
-<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>F_2020<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_Std_2020_fullcount.csv"</span>)</span>
-<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a>S_2020<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data_raw/LTDB_std_201519_Sample.csv"</span>)</span>
-<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a>Now that we have all of the data loaded, we can start working on preparing it for analysis.</span>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Neighborhood Change"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">sidebar:</span><span class="co"> false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 4</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: true</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: none</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="an">fig-responsive:</span><span class="co"> true</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidycensus)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>In this lab, we'll explore in detail the <span class="co">[</span><span class="ot">Nathalie P. Voorhees Center's</span><span class="co">](https://voorheescenter.uic.edu)</span> methodology for measuring neighborhood change. The center has produced multiple analyses and strategies for measuring such change, focused on the Chicago metropolitan area.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>By the end of this lab, you will replicate elements of the Voorhees Center's *Who Can Live in Chicago?* report including maps and other visualizations of neighborhood change. We will develop a code base that could be applied to any location in the United States.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Goals</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>In this lab, we will use a combination of decennial census data and American Community Survey data to examine patterns of neighborhood income change. We will overlay on these patterns of income change information about the demographics of who lives in these neighborhoods. Our goals for this lab are as follows:</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Continue to work with common sources of sociodemographic information, including those that have been pre-processed by sources other than the Census Bureau.</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Think critically about data processing pipelines and data requirements.</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explore strategies for spatial longitudinal data description and analysis.</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>Taking a close look at the visuals from the <span class="co">[</span><span class="ot">Voorhees Center website</span><span class="co">](https://voorheescenter.uic.edu/chicago_communities/)</span>, they calculate for each census tract in each year the average per capita income for the time periods 1970, 1980, 1990, 2000, 2010, and 2017 for each census tract and then compare it to the regional weighted average income.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/02_NVC_Combined-Decades.png)</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>They classify tracts based upon whether they are:</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Very High Income:** Greater than 40% above the regional average</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**High Income:** 20% - 40% above the reg ional average</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Middle Income:** 20% below to 20% above the regional average</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Low Income:** 20% below to 40% below the regional average</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Very Low Income:** Greater than 40% below the regional average</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>After classifying tracts, the study examines change over time, and then examines recent demographic characteristics based upon this change.</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/03_NVC_Three_Cities.png)</span> This gives us a sense of what we need to do to prepare our data.</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Github Lab Repository</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>If you have not already done so, follow <span class="co">[</span><span class="ot">this link</span><span class="co">](https://classroom.github.com/a/QZUuklCL)</span> to accept the lab Github Classroom assignment repository.</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to LTDB Data</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>At this point, you have spent time working with census data and common census geographies. We have used the tidycensus package to download census data from the Census Bureau's servers using API calls.</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>In this lab, we are going to look at another source of historical census data - the Longitudinal Tract Database. Census tracts are a common geography used by planners and other analysts because tracts roughly approximate neighborhoods, especially in highly urbanized areas where population density means that tracts are relatively small. One challenge faced by analysts looking to examine neighborhood level characteristics over time is that the geographic definitions for census tracts change every 10 years following the decennial census. These changes are performed as part of the Census' <span class="co">[</span><span class="ot">Participant Statistical Areas Program (PSAP)</span><span class="co">](https://www.census.gov/programs-surveys/decennial-census/about/psap.html)</span>.</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>While some tracts may stay the same, some may be *split* in cases where the population increases, and others may be *merged* in cases where the population decreases. See this <span class="co">[</span><span class="ot">quick reference guide</span><span class="co">](https://www2.census.gov/geo/pdfs/partnerships/psap/G-650.pdf)</span> for more information on thresholds for redefinition:</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="al">![](08_neighborhood_change/images/04_2020PSAP.png)</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>The Census Bureau produces <span class="co">[</span><span class="ot">geographic relationship files</span><span class="co">](https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html)</span> which can help show the relationships between geographies over time.</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="st">"https://www2.census.gov/geo/docs/maps-data/data/rel2020/tract/tab20_tract20_tract10_natl.txt"</span>, <span class="at">delim =</span> <span class="st">"|"</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">OID_TRACT_20 =</span> <span class="fu">col_character</span>(),</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>     <span class="at">OID_TRACT_10 =</span> <span class="fu">col_character</span>())) <span class="sc">|&gt;</span> </span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(GEOID_TRACT_10, GEOID_TRACT_20, NAMELSAD_TRACT_10, NAMELSAD_TRACT_20, AREALAND_TRACT_10, AREALAND_TRACT_20) <span class="sc">|&gt;</span> </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>Note from these example records shifts in tract definitions and areas. These relationship files can help you identify which census tracts have changed, however, creating consistent estimates over time from this information is challenging. Researchers tend to use strategies that either attribute characteristics using either *area* or *share of population* to weight how portions of one tract might translate into a new boundary in a different year.</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>Brown University's <span class="co">[</span><span class="ot">Spatial Structures in the Social Sciences</span><span class="co">](https://s4.ad.brown.edu/projects/diversity/index.htm)</span> group has produced a <span class="co">[</span><span class="ot">Longitudinal Tract Database</span><span class="co">](https://s4.ad.brown.edu/projects/diversity/researcher/LTDB.htm)</span> which provides demographic estimates for prior decennial census years 1970, 1980, 1990, and 2000 adjusted to 2010 boundaries. The files also include selected demographic indicators that are comparable across each of these decennial census enumerations (the questions are asked in the same or similar enough way to be able to reliably compare these qualities over time).</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>LTDB data come from two sources:</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Decennial "short form" census data from the 100 percent count of the population. This includes race and ethnicity, age, household composition, and household tenure information.</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Decennial "long form" census data administered to a sample of 1 in 6 households. These surveys contain far more detailed information on the characteristics of the population.</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>Decennial data continues to be collected, but the 1 in 6 count sample data has now been replaced by the American Community Survey which annually samples the population creating valuable intercensal estimates used by analysts today.</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>You can find more information about the LTDB in the following <span class="co">[</span><span class="ot">technical documentation</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4134912/pdf/nihms-522336.pdf)</span>.</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>In order to examine income and demographic change for census tracts, we're going to use LTDB data, and ultimately will supplement what's in these data with additional ACS data. We do this so that we can compare estimates over time using the same census tract geographies.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

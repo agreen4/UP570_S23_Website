@@ -21,6 +21,72 @@ Please come ready to share your approach to the population memo in small groups.
 
 ## Reflect
 
+## Code
+
+In class, we spent some time looking at code that would select tracts within census place geographies. Here's that code for your reference.
+
+Let's start by downloading tract and place geometries and selecting Chicago (as an example):
+
+First, download tracts, subset to Cook County, and plot to confirm:
+
+```{r}
+library(sf)
+library(tigris)
+library(tidyverse)
+
+
+il_trt <- tracts(state = "IL") |> 
+  filter(COUNTYFP == "031")
+
+ggplot()+
+  geom_sf(data = il_trt) 
+```
+
+Next, download census place boundaries, filter to Chicago, and plot to confirm:
+
+```{r}
+il_place <- places(state = "IL") |> 
+  filter(NAME == "Chicago")
+
+ggplot()+
+  geom_sf(data = il_place, cex = 1) 
+```
+
+Plot together to see overlay:
+
+```{r}
+ggplot()+
+  geom_sf(data = il_trt, cex=.1)+
+  geom_sf(data = il_place, color = "blue",cex = .5, fill = NA)
+```
+
+### Option 1: Spatial Join
+
+Perform a spatial join to identify all tracts that overlap with Chicago's municipal boundaries, plot to confirm:
+
+```{r}
+test <- st_join(il_trt, il_place) |> 
+  filter(NAME.y == "Chicago")
+
+ggplot() +
+  geom_sf(data = test) +
+  geom_sf(data = il_place, color = "blue", fill = NA)
+
+```
+
+### Option 2: Intersection
+Another option is to find the spatial intersection of the two objects:
+
+```{r}
+test2 <- st_intersection(il_trt, il_place)
+
+ggplot() +
+  geom_sf(data = test2)+
+  geom_sf(data = il_place, color = "blue", fill = NA)
+```
+
+As we discussed in class, there may be good reasons for pursuing either method. Intersection may produce visually "cleaner" output, but we may need to spend more time explaining that there are portions of tract geometry that fall outside of the city boundary. We may even want to do some analysis to estimate where uncertainty may come from due to our strategy.
+
 ## Slides
 
 ## Resources for Further Exploration
