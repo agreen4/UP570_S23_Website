@@ -20,6 +20,7 @@ editor: visual
 
 ```{r}
 #| output: false
+#| echo: false
 library(gt)
 library(tidycensus)
 library(tidyverse)
@@ -242,6 +243,7 @@ When `read_csv()` initiates the process of reading data, it reads the first seve
 
 ```{r}
 #| output: false
+#| echo: false
 
 F_1970<-read_csv("08_neighborhood_change/data_raw/LTDB_Std_1970_fullcount.csv", col_types = cols(TRTID10 = col_character()))
 S_1970<-read_csv("08_neighborhood_change/data_raw/ltdb_std_1970_sample.csv", col_types = cols(TRTID10 = col_character()))
@@ -267,8 +269,6 @@ S_2020<-read_csv("08_neighborhood_change/data_raw/LTDB_std_201519_Sample.csv", c
 
 F_1970<-read_csv("data_raw/LTDB_Std_1970_fullcount.csv", col_types = cols(TRTID10=col_character()))
 S_1970<-read_csv("data_raw/ltdb_std_1970_sample.csv", col_types = cols(TRTID10=col_character()))
-
-# Finish (re)importing the LTDB data here.
 
 F_1980<-read_csv("data_raw/LTDB_Std_1980_fullcount.csv", col_types = cols(TRTID10=col_character()))
 S_1980<-read_csv("data_raw/ltdb_std_1980_sample.csv", col_types = cols(trtid10=col_character()))
@@ -405,6 +405,7 @@ Before we move forward, let's update our data import code so that we incorporate
 
 ```{r}
 #| output: false
+#| echo: false
 
 F_1970<-read_csv("08_neighborhood_change/data_raw/LTDB_Std_1970_fullcount.csv", col_types = cols(TRTID10 = col_character())) |> 
    mutate(TRTID10 = str_pad(TRTID10, width = 11, side="left", pad= "0"))
@@ -445,8 +446,6 @@ F_1970<-read_csv("data_raw/LTDB_Std_1970_fullcount.csv", col_types = cols(TRTID1
 S_1970<-read_csv("data_raw/ltdb_std_1970_sample.csv", col_types = cols(TRTID10=col_character())) |>
   mutate(TRTID10 = str_pad(TRTID10, width = 11, side="left", pad= "0"))
 
-# Finish (re)importing the LTDB data here.
-
 F_1980<-read_csv("data_raw/LTDB_Std_1980_fullcount.csv", col_types = cols(TRTID10=col_character())) |>
   mutate(TRTID10 = str_pad(TRTID10, width = 11, side="left", pad= "0"))
 S_1980<-read_csv("data_raw/ltdb_std_1980_sample.csv", col_types = cols(trtid10=col_character())) |> 
@@ -475,7 +474,6 @@ S_2010<-read_csv("data_raw/ltdb_std_2010_sample.csv", col_types = cols(tractid=c
 And from here we can re-create the inc\_\[year\] datasets:
 
 ```{r}
-
 inc_70<-S_1970 |>  
   select(TRTID10, INCPC70)
 inc_80<-S_1980 |>  
@@ -651,7 +649,7 @@ nyc_income<-nyc_income |>
 )
 ```
 
-Recall that the Voorhees Center's study classifies tracts based upon the percentage change:
+Recall that the Voorhees Center's study classifies tracts based upon the local income in relationship to the area weighted average income:
 
 -   **Very High Income:** Greater than 40% above the regional average
 -   **High Income:** 20% - 40% above the regional average
@@ -737,7 +735,7 @@ We currently have data from 1970, 1980, 1990, 2000, 2010 (2012 ACS), and 2020 (2
 -   **Employment:** Unemployment, Labor Force Participation, Occupation
 
 | Census Table                                                                                                                                                                                                                                             | Description               | Indicators to Construct                                   |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------|
+|----------------------------------------------|-------------|-------------|
 | [B03002](https://data.census.gov/cedsci/table?q=ethnicity&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B03002)                                                                                                                  | Race and Ethnicity        | \% White, % Black, % Asian, % Other, % Latinx (all races) |
 | [B01001](https://data.census.gov/cedsci/table?q=B01001&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B01001)                                                                                                                     | Age Structure             | Age 0-19, Age 20-34, Age 35-64, Age 65 up                 |
 | [B18101](https://data.census.gov/cedsci/table?q=age&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B01001https://data.census.gov/cedsci/table?q=age&y=2019&d=ACS%205-Year%20Estimates%20Detailed%20Tables&tid=ACSDT5Y2019.B01001) | Disability Status         | \% Disabled                                               |
@@ -752,6 +750,7 @@ We currently have data from 1970, 1980, 1990, 2000, 2010 (2012 ACS), and 2020 (2
 While you're at it, be sure to download population data so you can calculate weighted regional averages.
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -769,6 +768,7 @@ acs_race<-get_acs(geography = "tract", state = "NY", variables = c("B03002_001",
 ### Age Structure
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -784,6 +784,7 @@ acs_age<-get_acs(geography = "tract", state = "NY", table = c("B01001"), year = 
 ### Disability Status
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -797,6 +798,7 @@ acs_disability<-get_acs(geography = "tract", state = "NY", table = c("B18101"), 
 ### Housing Tenure
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -809,6 +811,7 @@ acs_tenure<-get_acs(geography = "tract", state = "NY", table = c("B25003"), year
 ### Housing Cost Burden
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -822,6 +825,7 @@ acs_cost<-get_acs(geography = "tract", state = "NY", table = c("B25106"), year =
 ### Labor Force Participation / Unemployment
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -835,6 +839,7 @@ acs_labor<-get_acs(geography = "tract", state = "NY", table = c("B23025"), year 
 ### Employment by Industry
 
 ```{r}
+#| output: false
 #| message: false
 #| error: false
 #| warning: false
@@ -871,6 +876,7 @@ acs_19<-left_join(acs_19, acs_tenure, by="GEOID")
 
 ```{r}
 #| output: false
+#| echo: false
 rm(acs_age, acs_cost, acs_disability, acs_employment, acs_labor, acs_race, acs_tenure)
 ```
 
@@ -938,7 +944,15 @@ nyc_income<-nyc_income |>
 
 ### Calculate Three Cities Categories
 
-If you look on the "Three Cities" tab on the Voorhees website, you'll note that they separate tracts based upon the change in income between 1970 and the most recent time period (they use 2016 but we'll use 2019). Let's go ahead and calculate that change as well as the categorization of each census tract:
+If you look on the "Three Cities" tab on the Voorhees website, you'll note that they separate tracts based upon the change in income between 1970 and the most recent time period (they use 2016 but we'll use 2019). Recall that...
+
+- **City One** includes all Census Tracts that increased their proportion of regional income by 20 percent;
+
+- **City Two** includes all Census Tracts that increased or decreased their proportion of regional income by less than 20 percent;
+
+- **City Three** includes all Census Tracts that decreased their proportion of regional income by 20 percent.
+
+Let's go ahead and calculate that change as well as the categorization of each census tract:
 
 ```{r}
 nyc_income<-nyc_income |> 
