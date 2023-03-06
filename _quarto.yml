@@ -120,7 +120,7 @@ website:
             - text: "Segregation"
               file: assignments/labs/07_segregation.qmd
             - text: "Neighborhood Change"
-              filw: assignments/labs/08_neighborhood_change.qmd
+              file: assignments/labs/08_neighborhood_change.qmd
             - text: "Place Opportunity"
             - text: "Transportation Equity"
             - text: "Neighborhood Health Equity"
