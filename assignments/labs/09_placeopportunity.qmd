@@ -514,13 +514,12 @@ The values are all rescaled so that the minimum is now zero and the maximum valu
 
 # Visualizing Index Values
 
-```{r}
-library(ggplot2)
-```
-
 Let's start our data visualization by making a simple histogram of values for our tot_index measure:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram()
 ```
 
@@ -529,6 +528,9 @@ What's going on here? We call `ggplot` (`ggplot()`) and then start adding layers
 You have probably observed that ggplot tells us that it is using a somewhat arbitrary bin width for our histogram. We can select another one by adding to the histogram geometry a specification for a different number of bins:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram(bins=100)
 ```
 
@@ -537,6 +539,9 @@ Notice, we go from 30 bins to 100 bins, meaning that they become much narrower a
 We can add other elements to our plot that help to make it look nice:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram(bins=100)+
   labs(title = "Opportunity Index: Histogram", x="Opportunity Index", y="Count")+
   theme_classic()
@@ -544,10 +549,12 @@ ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram(bins=100)+
 
 Have a look at the [ggplot2 cheat sheet](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) for some inspiration on how you can alter your plots further.
 
-Go ahead and produce similar histograms for each of the subindex components. Feel free to play around with some of the aesthetics just for fun!
+Let's produce similar histograms for each of the subindex components. Feel free to play around with some of the aesthetics just for fun!
 
 ```{r}
-# Your Code Here
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=dem_index))+geom_histogram(bins=100)+
   labs(title = "Demographic Structure Subindex: Histogram", x="Opportunity Index", y="Count")+
   theme_classic()
@@ -573,6 +580,9 @@ ggplot(data=dataset_scaled, aes(x=tra_index))+geom_histogram(bins=100)+
 Referring back to the [ggplot2 cheat sheet](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf), try your hand at some other one variable visualizations (good places to start would be `geom_area`, `geom_density`, and `geom_bar`:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tra_index))+geom_area(stat="bin", bins=100)+
   labs(title = "Transportation Subindex: Histogram", x="Opportunity Index", y="Count")+
   theme_classic()
@@ -583,6 +593,9 @@ ggplot(data=dataset_scaled, aes(x=tra_index))+geom_area(stat="bin", bins=100)+
 Let's take a look at our overall opportunity index again:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram(bins=100)+
   labs(title = "Opportunity Index: Histogram", x="Opportunity Index", y="Count")+
   theme_classic()
@@ -593,12 +606,18 @@ How might we start to think about some of the demographic correlates of who live
 We might turn towards a some bivariate visualizations to help us here. Let's start with a simple scatterplot:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index))+geom_point()
 ```
 
 How would you describe the relationship visualized here (note that I shifted the index values to the y scale and placed percent white on the x scale)? To make it easier, let's add another geometry to the same plot, in this case, by fitting a line to our data:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index))+geom_point()+geom_smooth(method = "lm")
 ```
 
@@ -607,6 +626,9 @@ How would you describe the relationship between the tract-level concentration of
 We might want to polish things up a little more - here are some suggested additions to think about.
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index))+
   geom_point(alpha = .6, cex = .75)+ # Use alpha to control the transparency of the points and cex to control their size
   geom_smooth(method = "lm")+
@@ -618,7 +640,9 @@ ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index))+
 Your turn - produce similar plots for the Black, Asian, and Latino populations:
 
 ```{r}
-# Your Work Here
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PBlack, y =tot_index))+geom_point()+geom_smooth(method = "lm")
 ggplot(data=dataset_scaled, aes(x=PAsian, y =tot_index))+geom_point()+geom_smooth(method = "lm")
 ggplot(data=dataset_scaled, aes(x=PLatino, y =tot_index))+geom_point()+geom_smooth(method = "lm")
@@ -659,6 +683,9 @@ In this case, we create a new variable called location, and then label those rec
 Now that we have this new differentiating variable, we can modify our existing plots to illustrate differences between boroughs. We can start by **faceting** our existing chart. Facets take categorical variables and split the chart into as many multiples as there are categories. In our case, we can use our new location variable as a facet, so we should expect five multiples in an updated chart:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram(bins=100)+
   labs(title = "Opportunity Index: Histogram", x="Opportunity Index", y="Count")+
   theme_classic()+
@@ -670,6 +697,9 @@ The tilde (`~`) is necessary before listing the variable you want to facet.
 This gives us a sense of the relative shape and distribution of opportunity index values for each county. As an alternative strategy to use our facets, we might want to set our scales to "free" in our histogram settings so that we can better compare the shape of our histograms. The distortion we see is due to Brooklyn and Queens having more tracts, thereby creating higher peaks within any given bin. By setting scales to "free", ggplot sets the scales based upon the range of data contained only within a given facet instead of across all facets:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=tot_index))+geom_histogram(bins=100)+
   labs(title = "Opportunity Index: Histogram", x="Opportunity Index", y="Count")+
   theme_classic()+
@@ -681,6 +711,9 @@ What can this tell us about the distribution of opportunity scores within each b
 Now go ahead and re-create the scatterplot we previously created that compared the White population on the x axis to the overall opportunity index score on the y axis. Be sure to facet by location. Go ahead and add a summary line of best fit as well.
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index))+geom_point()+geom_smooth(method = "lm")+
   facet_wrap(~location)+
   theme_minimal()
@@ -689,6 +722,9 @@ ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index))+geom_point()+geom_smoot
 Let's try faceting subindex values to see how they differ. Are there any that you can see any substantial visual differences on? How would you explain the differences that you see?
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =dem_index))+geom_point()+geom_smooth(method = "lm")+
   facet_wrap(~location)
 ggplot(data=dataset_scaled, aes(x=PWhite, y =emp_index))+geom_point()+geom_smooth(method = "lm")+
@@ -704,6 +740,9 @@ ggplot(data=dataset_scaled, aes(x=PWhite, y =tra_index))+geom_point()+geom_smoot
 So far, we have learned how to display fit regression lines on top of our point data. Sometimes, it can be useful to simply display those lines without the associated point data. As part of our aesthetic mapping, we can set a grouping variable (group), and also tell ggplot to vary the colour (British spelling, please) of each group. In this case, we set both of these based upon the location variable:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index, group=location, colour=location))+geom_smooth(method = "lm")+
   theme_minimal()
 ```
@@ -713,6 +752,9 @@ How would you interpret the differences between the two lines (without points)? 
 Finally, let's combine some of what we've learned here to visualize groups for both the point data and the associated regression lines:
 
 ```{r}
+#| warning: false
+#| message: false
+#| error: false
 ggplot(data=dataset_scaled, aes(x=PWhite, y =tot_index, group=location, colour=location))+
   geom_point(alpha=.075)+
   geom_smooth(method = "lm", se=FALSE, alpha = .1)+
@@ -730,10 +772,6 @@ Spend some time playing around with these visualizations using different aesthet
 The most standard next step in opportunity mapping is...
 
 -   Making a map. Drawing from your index data, make a map of your overall index score for your place or region, as well as for index sub-components. What spatial patterns emerge? Map out key demographic information - how do these seem to be related to your overall measures of opportunity?
-
-```{=html}
-<!-- -->
-```
 -   Create summary visualizations and tables that display where the highest and lowest levels of opportunity are within the region? Who lives in these places?
 -   Consider connecting your opportunity indexes to other data (examples might include public health statistics, transportation costs, presence of public or subsidized housing, etc.) How does a multidimensional opportunity index help you tell stories about these places?
 -   Create a journalistic narrative about opportunity in your place or for another region. What makes your story powerful, and what story is it telling?
