@@ -31,4 +31,8 @@ Balachandran, Sowmya, and Andrew Greenlee. (2022). *Examining Spatial Opportunit
 
 ## Slides
 
+```{=html}
+<iframe class="slide-deck" src="../slides/S18_Opportunity_Mapping/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
+
 ## Resources for Further Exploration
