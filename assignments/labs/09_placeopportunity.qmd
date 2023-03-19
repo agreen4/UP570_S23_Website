@@ -40,11 +40,12 @@ This lab introduces you to the following: - Common methods for standardizing and
 
 ## Core Concepts
 
-https://uofi.box.com/s/4vb4oxiahv766yo3h32s8v6ya40nqep7
-
 ### R and Rstudio
 
--   \[concepts here\]
+-   `across()`
+-   `reduce()`
+-   `rowwise()`
+-   `scale()`
 
 Let's get going...
 
