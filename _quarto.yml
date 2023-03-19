@@ -122,6 +122,7 @@ website:
             - text: "Neighborhood Change"
               file: assignments/labs/08_neighborhood_change.qmd
             - text: "Place Opportunity"
+              file: assignments/labs/09_placeopportunity.qmd
             - text: "Transportation Equity"
             - text: "Neighborhood Health Equity"
         - section: "Assignments"

@@ -5,3 +5,7 @@
 
 /.quarto/
 /data_raw/
+/assignments/labs/09_placeopportunity/data_raw/
+/assignments/labs/09_placeopportunity_cache/
+/assignments/labs/09_placeopportunity_files/
+/_freeze/assignments/labs/09_placeopportunity/
