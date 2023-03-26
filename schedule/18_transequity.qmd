@@ -9,10 +9,28 @@ editor: visual
 
 ## Session Description
 
+This week, we'll be examining principles of transit equity. Our discussions and lab will be facilitated by Ouafa, and inspired by her work.
+
 ## Before Class
 
+Introduction to Transportation Equity [{{< fa file >}}](https://uofi.box.com/s/737m7uyriafcyyerrb11on4h9z2vfh9e) 
+
+Introduction to Measuring Transportation Equity [{{< fa file >}}](https://uofi.box.com/s/7zjd9hl1c8u55a9v15g200b2wukv0a7x) 
+
+Transportation Equity [{{< fa link >}}](https://www.youtube.com/watch?v=jKZXznuO82I)
+
+Mobility justice [{{< fa link >}}](https://chi.streetsblog.org/2019/10/11/what-does-mobility-justice-mean-reflections-on-last-weekends-untokening-convening/)
+
+Mobility justice [{{< fa link >}}](https://www.tandfonline.com/doi/full/10.1080/2325548X.2020.1760059?src=recsys)
+
+Equiticity [{{< fa link >}}](https://www.equiticity.org)
+ 
 ## Reflect
 
+- What are other urban factors that contribute to transportation and accessibility to jobs and amenities?
+- How can these measures help or put at disadvantage impacted communities and groups?
+- How can planners and policy makers facilitate sustainable (long term) interventions that assure equitable access to mobility?
+ 
 ## Slides
 
 ## Resources for Further Exploration
