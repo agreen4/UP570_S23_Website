@@ -1,0 +1,31 @@
+---
+title: "Final Project Check-In: Monday"
+sidebar: true
+toc: true
+page-layout: full
+format: html
+editor: visual
+---
+
+## Session Description
+
+You have now completed four assignments that when integrated will form the basis for your final policy memorandum. Our sessions this week will be largely unstructured - we'll work in small groups and one-on-one to check in on your progress on your final assignment, engage in any questions you have about strategy regarding telling your story, and share any work in progress that you would like feedback on.
+
+## Before Class
+
+Come prepared with a strong plan for how you'll use the unstructured time this week. If you have conceptual frameworks or ideas that need further refinement, come prepared to share in small groups. If you have analysis-related or technical questions, come ready to share those or work through them one-on-one.
+
+## Reflect
+
+1. What's the major story you're telling in your policy memorandum?
+
+2. Who is the audience for the story? What's the best way to convey your point?
+
+3. What are the counterarguments or counterfactuals to the evidence that you are sharing. How will you engage with that?
+
+4. What types of technical issues are you running into that we could help address? Are there any technical concepts or issues that remain unclear that we should engage with or address as a class? If so, come prepared to share or discuss.
+
+## Slides
+No slides for this session.
+
+## Resources for Further Exploration

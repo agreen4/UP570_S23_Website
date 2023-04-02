@@ -207,14 +207,14 @@
     "href": "schedule/index.html#strategies-for-analysis",
     "title": "Schedule",
     "section": "Strategies for Analysis",
-    "text": "Strategies for Analysis\n\n\n\nWeek\nSession\nDate\nDescription\n\n\n\n\nWeek 5\nSession 8\nFebruary 13\nPopulation and the Census\n\n\nWeek 5\nSession 9\nFebruary 15\nPopulation and the Census\n\n\nWeek 5\n\nFebruary 17\nPlace Background Memorandum\n\n\nWeek 6\nSession 10\nFebruary 20\nPopulation and the Census\n\n\nWeek 6\nSession 11\nFebruary 22\nPopulation and the Census\n\n\nWeek 7\nSession 12\nFebruary 27\nSegregation\n\n\nWeek 7\nSession 13\nMarch 1\nSegregation\n\n\nWeek 7\n\nMarch 6\nPopulation Memorandum\n\n\nWeek 8\nSession 14\nMarch 6\nNeighborhood Change\n\n\nWeek 8\nSession 15\nMarch 8\nNeighborhood Change\n\n\nWeek 9\n\nMarch 13\nSpring Break\n\n\nWeek 9\n\nMarch 15\nSpring Break\n\n\nWeek 10\nSession 16\nMarch 20\nPlace Opportunity\n\n\nWeek 10\nSession 17\nMarch 22\nPlace Opportunity\n\n\nWeek 10\n\nMarch 27\nPolicy Memorandum\n\n\nWeek 11\nSession 18\nMarch 27\nTransportation Equity\n\n\nWeek 11\nSession 19\nMarch 29\nTransportation Equity\n\n\nWeek 12\nSession 20\nApril 3\nNeighborhood Health Equity\n\n\nWeek 12\nSession 21\nApril 5\nNeighborhood Health Equity\n\n\nWeek 13\nSession 22\nApril 10\nField Observation\n\n\nWeek 13\nSession 23\nApril 12\nField Observation\n\n\nWeek 13\n\nApril 17\nFinal Assignment First Draft"
+    "text": "Strategies for Analysis\n\n\n\nWeek\nWeek 5\nSession\nSession 8\nDate\nFebruary 13\nDescription\nPopulation and the Census\n\n\n\n\n\n\n\n\n\n\nWeek 5\nSession 9\nFebruary 15\nPopulation and the Census\n\n\n\nWeek 5\n\nFebruary 17\nPlace Background Memorandum\n\n\n\nWeek 6\nSession 10\nFebruary 20\nPopulation and the Census\n\n\n\nWeek 6\nSession 11\nFebruary 22\nPopulation and the Census\n\n\n\nWeek 7\nSession 12\nFebruary 27\nSegregation\n\n\n\nWeek 7\nSession 13\nMarch 1\nSegregation\n\n\n\nWeek 7\n\nMarch 6\nPopulation Memorandum\n\n\n\nWeek 8\nSession 14\nMarch 6\nNeighborhood Change\n\n\n\nWeek 8\nSession 15\nMarch 8\nNeighborhood Change\n\n\n\nWeek 9\n\nMarch 13\nSpring Break\n\n\n\nWeek 9\n\nMarch 15\nSpring Break\n\n\n\nWeek 10\nSession 16\nMarch 20\nPlace Opportunity\n\n\n\nWeek 10\nSession 17\nMarch 22\nPlace Opportunity\n\n\n\nWeek 10\n\nMarch 27\nPolicy Memorandum\n\n\n\nWeek 11\nSession 18\nMarch 27\nTransportation Equity\n\n\n\nWeek 11\nSession 19\nMarch 29\nTransportation Equity\n\n\n\nWeek 12\nSession 20\nApril 3\nFinal Project Check-In\n\n\n\nWeek 12\nSession 21\nApril 5\nFinal Project Check-In\n\n\n\nWeek 13\nSession 22\nApril 10\nNeighborhood Health Equity\n\n\n\nWeek 13\nSession 23\nApril 12\nNeighborhood Health Equity\n\n\n\nWeek 13\n\nApril 17\nFinal Assignment First Draft"
   },
   {
     "objectID": "schedule/index.html#course-wrap-up",
     "href": "schedule/index.html#course-wrap-up",
     "title": "Schedule",
     "section": "Course Wrap-Up",
-    "text": "Course Wrap-Up\n\n\n\nWeek\nSession\nDate\nDescription\n\n\n\n\nWeek 14\nSession 24\nApril 17\nFinal Project Peer Review\n\n\nWeek 14\nSession 25\nApril 19\nFinal Presentations\n\n\nWeek 15\nSession 26\nApril 24\nIndependent Work and Advising\n\n\nWeek 15\nSession 27\nApril 26\nIndependent Work and Advising\n\n\nWeek 16\nSession 28\nMay 1\nFinal Presentations\n\n\nWeek 16\nSession 29\nMay 3\nFinal Presentations\n\n\nWeek 17\n\nMay 12 (Friday)\nFinal Assignment"
+    "text": "Course Wrap-Up\n\n\n\nWeek\nSession\nDate\nDescription\n\n\n\n\nWeek 14\nSession 24\nApril 17\nField Observation\nFinal Project Peer Review\n\n\nWeek 14\nSession 25\nApril 19\nField Observation\nFinal Presentations\n\n\nWeek 15\nSession 26\nApril 24\nIndependent Work and Advising\n\n\nWeek 15\nSession 27\nApril 26\nIndependent Work and Advising\n\n\nWeek 16\nSession 28\nMay 1\nFinal Presentations\n\n\nWeek 16\nSession 29\nMay 3\nFinal Presentations\n\n\nWeek 17\n\nMay 12 (Friday)\nFinal Assignment"
   },
   {
     "objectID": "schedule/01_introduction.html",
@@ -1376,7 +1376,7 @@
     "href": "schedule/22_fieldobs.html",
     "title": "Field Observations",
     "section": "",
-    "text": "So far, we have started to learn how to tell stories about places using existing indicators. With so many available sources of existing information, it can be easy to experience a disconnect between the values of those indicators and the complexity of what they represent. To think more about what grounds our analysis as planners, we will go explore a neighborhood in person and then think through elements of the stories that may help us describe that place through indicators.\nWe are going to spend this class session doing field observation of the West Urbana neighborhood which we read about during the first week of class. This neighborhood is designated as an American Planning Association Great Place in America. We will meet at Carle Park in Urbana at the intersection of Carle and Indiana streets. We will not meet in CIF for this session.\nCome prepared to spend the course session exploring the neighborhood. We will use the insights you gather during this course session to inform Thursday’s lab assignment."
+    "text": "So far, we have started to learn how to tell stories about places using existing indicators. With so many available sources of existing information, it can be easy to experience a disconnect between the values of those indicators and the complexity of what they represent. To think more about what grounds our analysis as planners, we will go explore a neighborhood in person and then think through elements of the stories that may help us describe that place through indicators.\nWe are going to spend this class session doing field observation of the West Urbana neighborhood which we read about during the first week of class. This neighborhood is designated as an American Planning Association Great Place in America. We will meet at Carle Park in Urbana at the intersection of Carle and Indiana streets.\nCome prepared to spend the course session exploring the neighborhood."
   },
   {
     "objectID": "schedule/22_fieldobs.html#before-class",
@@ -1390,7 +1390,7 @@
     "href": "schedule/22_fieldobs.html#during-class",
     "title": "Field Observations",
     "section": "During Class",
-    "text": "During Class\nWe will split up into small groups in order to observe elements of the West Urbana Neighborhood (group assignments are below). Working in groups of four or five, you will each be responsible for focusing on one element of observation (you may double up in an area of your choice if you have five in your group):\n\nInfrastructure and Environment\nEconomy and Housing\nHealth and Wellbeing\nSense of Place\n\nObservation 1: In your group, spend 20 minutes walking around the neighborhood, taking in and observing your specific element. Then take 5-10 minutes to write down your overall impressions and any questions you have after this brief exploration.\nObservation 2: As a group, pick a block to systematically analyze. Spend 20 minutes observing your specific element as it is reflected on your block. You may want to take pictures, sketch a map, or use other methods to record what you observe.\nObservation 3: Spend the remaining 30 minutes comparing notes with your other group members. Record a list of shared questions you have about the block and portions of the neighborhood that you explored. Reflect as a group upon what you were able to observe.\nAt the end of our class time you can leave. Please bring your individual and shared reflections and observational materials to Thursday’s lab session."
+    "text": "During Class\nWe will split up into small groups in order to observe elements of the West Urbana Neighborhood (group assignments are below). Working in groups of four or five, you will each be responsible for focusing on one element of observation (you may double up in an area of your choice if you have five in your group):\n\nInfrastructure and Environment\nEconomy and Housing\nHealth and Wellbeing\nSense of Place\n\nObservation 1: In your group, spend 20 minutes walking around the neighborhood, taking in and observing your specific element. Then take 5-10 minutes to write down your overall impressions and any questions you have after this brief exploration.\nObservation 2: As a group, pick a block to systematically analyze. Spend 20 minutes observing your specific element as it is reflected on your block. You may want to take pictures, sketch a map, or use other methods to record what you observe.\nObservation 3: Spend the remaining 30 minutes comparing notes with your other group members. Record a list of shared questions you have about the block and portions of the neighborhood that you explored. Reflect as a group upon what you were able to observe.\nAt the end of our class time you can leave. Please upload your individual and shared reflections."
   },
   {
     "objectID": "schedule/22_fieldobs.html#reflect",
@@ -1740,14 +1740,14 @@
     "href": "schedule/20_healthequity.html#before-class",
     "title": "Health Equity",
     "section": "Before Class",
-    "text": "Before Class\nCome to class ready to workshop ways in which we can tell stories about health and wellbeing.\nSome class members will be absent due to the APA Annual Meeting. Consequently, there are no readings for this course session. Those attending the conference should focus on being present and enjoying connecting with others in our field."
+    "text": "Before Class\nCome to class ready to workshop ways in which we can tell stories about health and wellbeing."
   },
   {
     "objectID": "schedule/20_healthequity.html#reflect",
     "href": "schedule/20_healthequity.html#reflect",
     "title": "Health Equity",
     "section": "Reflect",
-    "text": "Reflect\n\nWhat are some tropes or conventions we use to talk about individual health? Collective health?\nHow might health disparities (at a neighborhood or population level) be connected to the many themes we’ve talked about in this class?\nIs population health a planning issue? What role do practitioners and researchers in planning have for influencing how we think and act around health at the neighborhood level? ## Slides"
+    "text": "Reflect\n\nWhat are some tropes or conventions we use to talk about individual health? Collective health?\nHow might health disparities (at a neighborhood or population level) be connected to the many themes we’ve talked about in this class?\nIs population health a planning issue? What role do practitioners and researchers in planning have for influencing how we think and act around health at the neighborhood level?"
   },
   {
     "objectID": "schedule/20_healthequity.html#slides",
@@ -1775,7 +1775,7 @@
     "href": "schedule/21_healthequity.html#reflect",
     "title": "Health Equity",
     "section": "Reflect",
-    "text": "Reflect"
+    "text": "Reflect\n\nWhat are some tropes or conventions we use to talk about individual health? Collective health?\nHow might health disparities (at a neighborhood or population level) be connected to the many themes we’ve talked about in this class?\nIs population health a planning issue? What role do practitioners and researchers in planning have for influencing how we think and act around health at the neighborhood level?"
   },
   {
     "objectID": "schedule/21_healthequity.html#slides",
@@ -2469,5 +2469,82 @@
     "title": "Health Equity",
     "section": "",
     "text": "A growing public conversation recognizes that individual health and collective health of populations is determined by a range of factors, including many that are social and rooted in social relationships. As this conversation grows and evolves, planners have an important role to play helping to disentangle and describe how places matter and influence the health of populations.\nThis week, we will explore a case study strategy for linking social determinants measures rooted in neighborhood indicators with measures of health outcomes. Rather than focus on building out new methodological or analytical techniques, our focus this week will be on storytelling and in thinking about how to engage communities in further conversations about their health and wellbeing."
+  },
+  {
+    "objectID": "schedule/20x1_CheckIn.html",
+    "href": "schedule/20x1_CheckIn.html",
+    "title": "Final Project Check-In: Monday",
+    "section": "",
+    "text": "You have now completed four assignments that when integrated will form the basis for your final policy memorandum. Our sessions this week will be largely unstructured - we’ll work in small groups and one-on-one to check in on your progress on your final assignment, engage in any questions you have about strategy regarding telling your story, and share any work in progress that you would like feedback on."
+  },
+  {
+    "objectID": "schedule/20x1_CheckIn.html#reflect",
+    "href": "schedule/20x1_CheckIn.html#reflect",
+    "title": "Final Project Check-In: Monday",
+    "section": "Reflect",
+    "text": "Reflect\n\nWhat’s the major story you’re telling in your policy memorandum?\nWho is the audience for the story? What’s the best way to convey your point?\nWhat are the counterarguments or counterfactuals to the evidence that you are sharing. How will you engage with that?\nWhat types of technical issues are you running into that we could help address? Are there any technical concepts or issues that remain unclear that we should engage with or address as a class? If so, come prepared to share or discuss."
+  },
+  {
+    "objectID": "schedule/20x1_CheckIn.html#slides",
+    "href": "schedule/20x1_CheckIn.html#slides",
+    "title": "Final Project Check-In: Monday",
+    "section": "Slides",
+    "text": "Slides\nNo slides for this session."
+  },
+  {
+    "objectID": "schedule/20x1_CheckIn.html#resources-for-further-exploration",
+    "href": "schedule/20x1_CheckIn.html#resources-for-further-exploration",
+    "title": "Final Project Check-In: Monday",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/20x2_CheckIn.html#before-class",
+    "href": "schedule/20x2_CheckIn.html#before-class",
+    "title": "Final Project Check-In: Wednesday",
+    "section": "Before Class",
+    "text": "Before Class\nPrepare your best evidence for sharing. This might be preparing or exporting a bit of analysis or coming the class prepared to articulate and share this evidence."
+  },
+  {
+    "objectID": "schedule/20x2_CheckIn.html#reflect",
+    "href": "schedule/20x2_CheckIn.html#reflect",
+    "title": "Final Project Check-In: Wednesday",
+    "section": "Reflect",
+    "text": "Reflect\n\nHow does this evidence support the point you’re trying to make?\nHow do you plan to use the evidence in your argument?\nWhat critiques might others have regarding your evidence? How are you planning to preemptively engage these critiques in your analysis?"
+  },
+  {
+    "objectID": "schedule/20x2_CheckIn.html#slides",
+    "href": "schedule/20x2_CheckIn.html#slides",
+    "title": "Final Project Check-In: Wednesday",
+    "section": "Slides",
+    "text": "Slides\nNo slides for this session."
+  },
+  {
+    "objectID": "schedule/20x2_CheckIn.html#resources-for-further-exploration",
+    "href": "schedule/20x2_CheckIn.html#resources-for-further-exploration",
+    "title": "Final Project Check-In: Wednesday",
+    "section": "Resources for Further Exploration",
+    "text": "Resources for Further Exploration"
+  },
+  {
+    "objectID": "schedule/20x2_CheckIn.html",
+    "href": "schedule/20x2_CheckIn.html",
+    "title": "Final Project Check-In: Wednesday",
+    "section": "",
+    "text": "We’ll continue to check-in and workshop your final projects. For this session, we’ll be examining your best evidence - the facts or analysis that you believe best makes the point you’re trying to convey to your audience.\nCome to class prepared to share your best evidence with the entire class. You will each be asked to take a few minutes to present your best evidence and recieve feedback on it."
+  },
+  {
+    "objectID": "schedule/20x1_CheckIn.html#before-class",
+    "href": "schedule/20x1_CheckIn.html#before-class",
+    "title": "Final Project Check-In: Monday",
+    "section": "Before Class",
+    "text": "Before Class\nCome prepared with a strong plan for how you’ll use the unstructured time this week. If you have conceptual frameworks or ideas that need further refinement, come prepared to share in small groups. If you have analysis-related or technical questions, come ready to share those or work through them one-on-one."
+  },
+  {
+    "objectID": "schedule/21_healthequity.html",
+    "href": "schedule/21_healthequity.html",
+    "title": "Health Equity",
+    "section": "",
+    "text": "We will be joined for our class session today by Dr. Christine Joseph, of Henry Ford Health. Dr. Joseph does work that examines the social determinants of health and health disparities. She will share some of her perspective on why neighborhoods matter and form an important framework for analysis within her work."
   }
 ]

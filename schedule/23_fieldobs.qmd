@@ -13,12 +13,12 @@ On Tuesday, you spent time walking and observing portions of the West Urbana nei
 
 ## Session Goals
 
-1. Collaboratively build a story about the West Urbana neighborhood that leverages both your direct observation and existing indicators.
-2. Reflect upon the tactical and design choices you have made in telling your story.
+1.  Collaboratively build a story about the West Urbana neighborhood that leverages both your direct observation and existing indicators.
+2.  Reflect upon the tactical and design choices you have made in telling your story.
 
 ## Before Class
 
-- Review your notes and observational materials from your neighborhood field visit.
+-   Review your notes and observational materials from your neighborhood field visit.
 
 ## During Class
 
@@ -26,19 +26,19 @@ Work collaboratively with your group members to develop a short memorandum descr
 
 Your report should describe the following:
 
-1. Neighborhood character, identity, and assets - integrating both primary and secondary data, describe the character, identity, and assets of the neighborhood, addressing (at a minimum) your areas of focus.
-    1. Infrastructure and Environment
-    2. Economy and Housing
-    3. Health and Wellbeing
-    4. Sense of Place
-2. Information Gaps - based upon your description above, what information gaps exist? What types of information would you like to have to better convey what you observed on the ground in the West Urbana neighborhood?
-3. Proposed Strategy for Systematic Examination - based upon your assessment of information gaps, how do you propose collecting that information, and how would you integrate it into your report?
-4. Reflection - as a group, reflect upon some of the challenges you faced in systematically observing elements of the neighborhood, linking those observations with existing data or information, and conveying that story in a memorandum.
+1.  Neighborhood character, identity, and assets - integrating both primary and secondary data, describe the character, identity, and assets of the neighborhood, addressing (at a minimum) your areas of focus.
+    1.  Infrastructure and Environment
+    2.  Economy and Housing
+    3.  Health and Wellbeing
+    4.  Sense of Place
+2.  Information Gaps - based upon your description above, what information gaps exist? What types of information would you like to have to better convey what you observed on the ground in the West Urbana neighborhood?
+3.  Proposed Strategy for Systematic Examination - based upon your assessment of information gaps, how do you propose collecting that information, and how would you integrate it into your report?
+4.  Reflection - as a group, reflect upon some of the challenges you faced in systematically observing elements of the neighborhood, linking those observations with existing data or information, and conveying that story in a memorandum.
 
 ## After Class
 
-- Please submit one memorandum as an R notebook and associated files.
-- Please add to your initial reflection on what you knew about the neighborhood before you visited your thoughts on what you know now and what you experienced in attempting to systematically observe the neighborhood and communicate its qualities. Combine these materials into a single notebook file and push these to the appropriate folder in your group’s GitHub repository.
+-   Please submit one memorandum as an R notebook and associated files.
+-   Please add to your initial reflection on what you knew about the neighborhood before you visited your thoughts on what you know now and what you experienced in attempting to systematically observe the neighborhood and communicate its qualities. Combine these materials into a single notebook file and push these to the appropriate folder in your group's GitHub repository.
 
 ## Slides
 
