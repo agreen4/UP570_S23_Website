@@ -31,6 +31,8 @@ Please email me your best evidence slide before 9am tomorrow (Wednesday) morning
 
 ## Slides
 
-No slides for this session.
+```{=html}
+<iframe class="slide-deck" src="../slides/S21_Best_Evidence/index.html" style="width:100%;height:50vh;margin:0;padding:0"; frameborder="2"></iframe>
+```
 
 ## Resources for Further Exploration
