@@ -20,6 +20,10 @@ editor: visual
 
 ## Introduction
 
+A growing public conversation recognizes that individual health and collective health of populations is determined by a range of factors, including many that are social and rooted in social relationships. As this conversation grows and evolves, planners have an important role to play helping to disentangle and describe how places matter and influence the health of populations.
+
+This week, we will explore a case study strategy for linking social determinants measures rooted in neighborhood indicators with measures of health outcomes. Rather than focus on building out new methodological or analytical techniques, our focus this week will be on storytelling and in thinking about how to engage communities in further conversations about their health and wellbeing.
+
 ## Goals
 
 -   Think critically about how to translate conceptual arguments and data into coherent stories.
