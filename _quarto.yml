@@ -126,6 +126,7 @@ website:
             - text: "Transportation Equity"
               file: assignments/labs/10_transitequity/10_transit_equity.qmd
             - text: "Neighborhood Health Equity"
+              file: assignments/labs/11_health_equity.qmd
         - section: "Assignments"
           contents:
             - text: "Place Selection Memorandum"
