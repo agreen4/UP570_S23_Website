@@ -32,7 +32,7 @@ Let's get going...
 
 ## Github Lab Repository
 
-If you have not already done so, follow [this link]() to accept the lab Github Classroom assignment repository.
+If you have not already done so, follow [this link](https://classroom.github.com/a/zVHL30C9) to accept the lab Github Classroom assignment repository.
 
 ```{r}
 #| include: false
@@ -153,6 +153,7 @@ pr_pov <- get_acs(geography = "tract", variables = acs_vars, state = "MI", outpu
 ### Joining Together Census Data
 
 With these three measures in hand, we can joini together our three prevalence ratios:
+
 ```{r}
 dataset <- list(pr_own, pr_ed, pr_pov) |> reduce(left_join, by="GEOID")
 ```
@@ -167,6 +168,7 @@ dataset <- dataset |>
 
 detroit <- dataset |> filter(MSA_Flag == 1)
 ```
+
 Now that we have specific data on three tract-level measures of structural racism for the Detroit metropolitan area, let's connect these data to information on health outcomes.
 
 ## Identifying a Connection to Health Outcomes
@@ -223,17 +225,17 @@ detroit <-detroit |>
 
 ## Lab Tasks
 
-In our class session, split into three groups. Each group will focus on one dimension of structural racism (housing, education, employment). Working in your group, explore the relationship between your structural racism domain and the CDC health outcomes. 
+In our class session, split into three groups. Each group will focus on one dimension of structural racism (housing, education, employment). Working in your group, explore the relationship between your structural racism domain and the CDC health outcomes.
 
 To get you started, I've prepared a summary table for each domain. Recall that the Low, Moderate, and High are categorical splits of the prevalence ratios based upon their distribution in the data. The values for each of the indicators are typically the percentage of individuals experiencing that condition at the tract level.
 
-1. Articulate what a low, moderate, or high prevalence ratio means based upon the structural racism indicator you're looking at.
+1.  Articulate what a low, moderate, or high prevalence ratio means based upon the structural racism indicator you're looking at.
 
-2. Referring to CDC's [measure definitions](https://www.cdc.gov/places/measure-definitions/index.html), identify one health outcome, health risk behavior, prevention indicator, and health status indicator, and focus on telling a story about the Detroit region relating your four health indicators back to your assigned structural racism indicator.
+2.  Referring to CDC's [measure definitions](https://www.cdc.gov/places/measure-definitions/index.html), identify one health outcome, health risk behavior, prevention indicator, and health status indicator, and focus on telling a story about the Detroit region relating your four health indicators back to your assigned structural racism indicator.
 
-3. Develop one (or more) key visuals that help to substantiate your story. Prepare to share this key visual during the last 15 minutes of class.
+3.  Develop one (or more) key visuals that help to substantiate your story. Prepare to share this key visual during the last 15 minutes of class.
 
-4. Identify key questions and next steps to take based upon the story and evidence you've analyzed.
+4.  Identify key questions and next steps to take based upon the story and evidence you've analyzed.
 
 ### Housing
 
@@ -279,6 +281,7 @@ detroit |>
   fmt_percent(2:4, decimals = 2, scale_values = FALSE)
 
 ```
+
 ### Poverty
 
 ```{r}
@@ -324,6 +327,7 @@ detroit |>
 ```
 
 ### Education
+
 ```{r}
 detroit |> 
   group_by(cat_education) |> 
