@@ -9,21 +9,35 @@ editor: visual
 
 ## Session Description
 
-You made it! This is the final session for Neighborhood Analysis. We will discuss what we have covered over the course of the semester, as well as some next steps in your journey as neighborhood analysts.
+You made it! This is the final session for Neighborhood Analysis. Most of our time will focus on presentations, but I will also recap what we have covered over the course of the semester, as well as some next steps in your journey as neighborhood analysts.
 
-Some questions to seed our discussion:
+## Today's Presenters
 
-1.  Are there things that you wish we covered over the course of the semester that we didn\'t?
+Reminder - each presenter has eight minutes to share.
+
+1. Bo P.
+2. Elizabeth R.
+3. Prithvi H.
+4. Linda D.
+5. Natalia F.
+6. Priyanka C.
+7. Aditya S.
+8. Tak L.
+
+
+## Before Class
+
+## Reflect
+
+Some questions to seed end of class reflections:
+
+1.  Are there things that you wish we covered over the course of the semester that we didn't?
 
 2.  Are there ways that Professor Greenlee could have better supported learning (individually and collectively) over the course of the semester?
 
 3.  Was there sufficient balance between technical and non-technical content?
 
 4.  Were labs and other supporting materials clear? Were there resources or content you wish you had to support your independent learning using this format?
-
-## Before Class
-
-## Reflect
 
 ## Slides
 
