@@ -90,7 +90,7 @@ Please find descriptions for our course sessions here - you will also find resou
 +===========+============+=================+=================================================+
 | Week 14   | Session 24 | April 17        | [Field Observation](22_fieldobs.qmd)            |
 +-----------+------------+-----------------+-------------------------------------------------+
-| Week 14   | Session 25 | April 19        | [Final Presentations](28_finalpresent.qmd)      |
+| Week 14   | Session 25 | April 19        | [Final Presentations](23_fieldobs.qmd)      |
 +-----------+------------+-----------------+-------------------------------------------------+
 | Week 15   | Session 26 | April 24        | [Independent Work and Advising](26_indwork.qmd) |
 +-----------+------------+-----------------+-------------------------------------------------+
