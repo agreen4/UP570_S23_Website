@@ -12,7 +12,7 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Course Introduction
 
 | Week   | Session   | Date       | Description                                                         |
-|---------------|---------------|---------------|----------------------------|
+|-----------|-----------|-----------|----------------------------------------|
 | Week 1 | Session 1 | January 18 | [Course Introduction](01_introduction.qmd)                          |
 | Week 2 | Session 2 | January 23 | [What is a Neighborhood?](02_neighborhood.qmd)                      |
 | Week 2 | Session 3 | January 25 | [Building a Data Pipeline](03_datapipeline.qmd)                     |
@@ -25,7 +25,7 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Strategies for Analysis
 
 |         |            |             |                                                                       |     |
-|-------------|-------------|-------------|--------------------|-------------|
+|---------|---------|---------|------------------------------------|---------|
 | Week    | Session    | Date        | Description                                                           |     |
 | Week 5  | Session 8  | February 13 | [Population and the Census](08_census.qmd)                            |     |
 | Week 5  | Session 9  | February 15 | [Population and the Census](09_census.qmd)                            |     |
@@ -53,7 +53,7 @@ Please find descriptions for our course sessions here - you will also find resou
 ## Course Wrap-Up
 
 | Week    | Session    | Date            | Description                                                |
-|---------------|---------------|---------------|---------------------------|
+|------------|------------|------------|------------------------------------|
 | Week 14 | Session 24 | April 17        | [Field Observation - Meet at TBH](22_fieldobs.qmd)         |
 | Week 14 | Session 25 | April 19        | [Field Observation - Meet in West Urbana](23_fieldobs.qmd) |
 | Week 15 | Session 26 | April 24        | [Independent Work (No Class)](26_indwork.qmd)              |

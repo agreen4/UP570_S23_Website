@@ -11,7 +11,9 @@ editor: visual
 
 So far, we have started to learn how to tell stories about places using existing indicators. With so many available sources of existing information, it can be easy to experience a disconnect between the values of those indicators and the complexity of what they represent. To think more about what grounds our analysis as planners, this week we will go explore a neighborhood in person and then think through elements of the stories that may help us describe that place through indicators.
 
-We will meet at TBH on Monday to start thinking about our plans for storytelling and description about the West Urbana neighborhood. On Wednesday, we will meet in the neighborhood to focus on field observation.
+- We will meet at TBH on Monday to start thinking about our plans for storytelling and description about the West Urbana neighborhood. 
+- On Wednesday, we will meet in the neighborhood to focus on field observation.
+- Following the completion of our lab, you'll submit your individual reflection via GitHub. [Repository link.](https://classroom.github.com/a/v6Poqvso)
 
 ## Before Class
 
@@ -36,15 +38,19 @@ We will use this background information as a starting place which you will build
 ## Groups
 
 ### Group 1
+
 Rafi A., Natalia F., Tak L., Elizabeth R., Tingxuan T.
 
 ### Group 2
+
 Priyanka C., Prithvi H., Bo P., Aditya S.
 
 ### Group 3
+
 Julia P., Chestha K., Rose R., Shiva S.
 
 ### Group 4
+
 Linda D., Aakanksha K., Josh R., Luke T.
 
 ## Slides
