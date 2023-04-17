@@ -88,7 +88,7 @@ Please find descriptions for our course sessions here - you will also find resou
 +-----------+------------+-----------------+-------------------------------------------------+
 | Week      | Session    | Date            | Description                                     |
 +===========+============+=================+=================================================+
-| Week 14   | Session 24 | April 17        | [Field Observation - Meeti in TBH](22_fieldobs.qmd)            |
+| Week 14   | Session 24 | April 17        | [Field Observation - Meet at TBH](22_fieldobs.qmd)            |
 +-----------+------------+-----------------+-------------------------------------------------+
 | Week 14   | Session 25 | April 19        | [Field Observation - Meet in West Urbana](23_fieldobs.qmd)      |
 +-----------+------------+-----------------+-------------------------------------------------+
