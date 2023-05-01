@@ -26,11 +26,7 @@ Reminder - each presenter has eight minutes to share.
 
 ## Providing Feedback
 
-Please provide feedback to each other - I will consolidate your written feedback on each presentation and will send it to you.
-
-```{=html}
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMtazMAUZHGyYF9Mj-IFlzojYJkW6QYCGVaf2zJ6uoJ8xg9w/viewform?embedded=true" width="640" height="586" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-```
+Please provide feedback to each other in the [following form](https://forms.gle/KUcP3Ek23b4uymQh6) - I will consolidate your written feedback on each presentation and will send it to you.
 
 ## Reflect
 
