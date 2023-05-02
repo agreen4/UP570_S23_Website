@@ -20,10 +20,9 @@ Reminder - each presenter has eight minutes to share.
 3.  Aakanksha K.
 4.  Luke T.
 5.  Josh R.
-6.  Shiva S.
-7.  Rafi A.
-8.  Tingxuan T.
-9.  Rose R.
+6.  Rafi A.
+7.  Tingxuan T.
+8.  Rose R.
 
 ## Providing Feedback
 
